@@ -34,6 +34,7 @@ Installing locally or in the cloud.
   * [Installation on Windows](Installation on Windows)
   * [Installation on Docker](Installation on Docker)
   * [Installation on the RaspberryPi](Installation on the RaspberryPi)
+  * [Installation on Ubuntu Snappy](Installation on Ubuntu Snappy)
 * [Setup in the Cloud](Setup in the Cloud)
   * [Setup on Microsoft Azure](Setup on Microsoft Azure)
   * [Setup on Amazon EC2](Setup on Amazon EC2)
