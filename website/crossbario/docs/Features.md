@@ -55,7 +55,13 @@
   * [C++](https://github.com/tavendo/AutobahnCpp)
   * [Objective-C](https://github.com/mogui/MDWamp)
   * [C#](https://github.com/Code-Sharp/WampSharp)
-  * [Erlang](https://github.com/bwegh/erwa)
+  * [Erlang](https://github.com/bwegh/awre)
+  * [Lua](https://github.com/KSDaemon/Loowy)
+
+## REST Bridge
+
+* integrate services providing REST APIs into WAMP applications
+* supports all four roles (subscriber, publisher, callee, caller)
 
 ## Component Host
 
