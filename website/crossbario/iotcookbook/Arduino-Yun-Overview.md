@@ -10,8 +10,7 @@ This page provides some basic information about the Arduino Yun, as well as link
 The [Arduino Yun](arduino.cc/en/Main/ArduinoBoardYun) is a small embedded computer which can be used as a flexible platform for all kinds of hardware projects:
 
 <figure>
-   <img style="width: 480px;" src="{{ url_for('static', filename='img/blog/arduino-yun-getting-started-part-1/arduino-yun.jpg') }}" alt="Arduino Yun" class="imgCentered">
-   <figcaption>Arduino Yun</figcaption>
+   <img style="width: 480px;" src="/static/img/iotcookbook/yun/arduino-yun.jpg" alt="Arduino Yun" class="imgCentered">
 </figure>
 
 The Yun actually is *2 computers in one*:
@@ -34,14 +33,11 @@ Here is an example of what you can do with Arduino Yun and WAMP:
  * stream sensor readings in real-time from the Arduino Yun via WebSocket to HTML5 browsers on desktop and mobile
  * control LEDs directly from your browser (again in real-time with very small latency)
 
-{% if config.NONETWORK %}
-   <center><br><br><b>YouTube video excluded in "no-network mode"!</b><br><br></center>
-{% else %}
-   <div class="videoBox">
-      <iframe class="video" type="text/html" src="http://www.youtube.com/embed/Egvu4jL_Wlo?version=3&vq=hd720&frameborder=0&allowfullscreen&autohide=2&modestbranding=1&showinfo=0&rel=0&origin=http://tavendo.com" frameborder="0"/></iframe>
-      <div class="videoCaption">Arduino Yun Real-time Charting over WebSocket with Autobahn</div>
-   </div>   
-{% endif %}
+<div class="videoBox">
+   <iframe class="video" type="text/html" src="http://www.youtube.com/embed/Egvu4jL_Wlo?version=3&vq=hd720&frameborder=0&allowfullscreen&autohide=2&modestbranding=1&showinfo=0&rel=0&origin=http://crossbar.io" frameborder="0"/></iframe>
+   <div class="videoCaption">Arduino Yun Real-time Charting over WebSocket with Autobahn</div>
+</div>   
+
 
 > The demo shows a shield on the Yun with 2 potis, 3 LEDs and 2 buttons, which are controlled from a simple sketch running on the Arduino. The sketch communicates over serial with Autobahn|Python running on the Linux side of the Yun, providing WAMP connectivity. And Autobahn in turn runs as a bridge that shuffles data from/to serial and to WebSocket/WAMP clients (here, Chrome running on desktop and on Nexus 4) connecting to Autobahn over Wifi.
 > 
@@ -50,6 +46,6 @@ We'll give you step-by-step instructions for how to set up a Yun to work with WA
 
 ## Next steps
 
-- [Basic setup]() 
-- [Expanding disk space]()
-- [installing node/autobahn/firmata for remote control]()
+- [Basic setup](Arduino-Yun-Basic-Setup) 
+- [Expanding disk space](Arduino-Yun-Expanding-Disk-Space)
+- [installing the software for remote control](Arduino-Yun-Remote-Control)

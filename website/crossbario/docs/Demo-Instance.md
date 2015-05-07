@@ -1,0 +1,1 @@
+-- describes how to acces the demo instance + access conditions --

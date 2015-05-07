@@ -1,0 +1,54 @@
+## IoT Cookbook for WAMP and Crossbar.io
+
+You want to solve a problem - we offer components & recipes to build your solutions
+
+* All components come with **built-in connectivity**. They can connect from anywhere,  and you can easily  build distributed applications.
+
+* All components can **communicate freely with each other** - including calling procedures. The compoments connect via a Crossbar.io application router. Client libraries for WAMP, the protocol used, are available for 9 languages (and growing). You can also integrate services with REST APIs, so your applications can talk to pretty much anything on the internet.
+           
+* All recipes include **step-by-step instructions** to get things working. Just follow the instructions - no need to worry about the technological background details. If you want to dive deeper into the technology, we provide links to get your started.
+
+* The software used in these recipes is **open source**, and part of a growing ecosystem aorund the WAMP protocol.
+
+* A **variety of microcontrollers**, including the Raspberry Pi and Arduino Yun, are used as part of components.
+
+## The components
+
+Building blocks, ready to use for solving your problem!
+
+* Speech Synthesis (Raspberry Pi)
+* X-Box Controller (Raspberry Pi)
+* Acceleromoted (Tessel)
+* Camera (Tessel)
+* [Digital Signage](Digital Signage):
+   
+   + [Browser Remote Control]()
+   + [Reveal.js Remote Control]()
+   + [WAMP widgets]()
+
+## The applications
+
+Applications which use the components. Get an idea for how combining things works, find code to re-use, be inspired - and maybe already find a solution which fits your needs!
+
+* Tessel Alarm App
+* Real-time charting with the Arduino Yun
+* [Digital Signage](Digital Signage)
+  
+## Components and applications by device
+
+Pick a microcontroller and see what we are offering for it: 
+
+* [[Raspberry Pi]]
+* [[Arduino Yun]]
+* [[Tessel]]
+
+
+## Getting a WAMP router
+
+There are three main ways to gettin a WAMP router
+
+* We offer a [demo instance](../docs/Demo Instance) for testing and light development workloads.
+* You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](), but [Amazon EC2]() also works.
+* You can install Crossbar.io yourself - [locally]() or [in the cloud]().
+
+

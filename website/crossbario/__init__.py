@@ -284,15 +284,37 @@ def page_docs(path = None):
    else:
       return "no such page"
 
+## generic template for all iotcookbook pages
+##
+@app.route('/iotcookbook/<path:path>/')
+@app.route('/iotcookbook/')
+def page_cookbook(path = None):
+   session['tab_selected'] = 'page_iotcookbook'
+
+   if path is None or path.strip() == "":
+      title = 'IoT Cookbook'
+      path = 'Home'
+      # last_commit = app.latest_doc_commit # no longer possible with the docs in the same repo
+      last_commit = None
+   else:
+      title = path.replace('-', ' ')
+      last_commit = None
+
+   contents = app.cookbookpages.render(path)
+   if contents:
+      return render_template('page_t_cookbook_page.html', contents = contents, title = title, last_commit = last_commit)
+   else:
+      return "no such page"
+
 @app.route('/impressum/')
 def page_impressum():
    session['tab_selected'] = 'page_impressum'
    return render_template('page_t_impressum.html')
 
-@app.route('/iotcookbook/')
-def page_iotcookbook():
-   session['tab_selected'] = 'page_iotcookbook'
-   return render_template('page_t_iotcookbook.html')
+# @app.route('/iotcookbook/')
+# def page_iotcookbook():
+#    session['tab_selected'] = 'page_iotcookbook'
+#    return render_template('page_t_iotcookbook.html')
 
 
 
@@ -344,6 +366,11 @@ if __name__ == "__main__":
                       default = "website/crossbario/docs",
                       help = "documenation markdown files directory")
 
+   parser.add_option ("--cookbookdir",
+                      dest = "cookbookdir",
+                      default = "website/crossbario/iotcookbook",
+                      help = "iotcookbook markdown files directory")
+
    parser.add_option ("--cstatic",
                       dest = "cstatic",
                       default = "//tavendo-common-static.s3-eu-west-1.amazonaws.com",
@@ -354,6 +381,9 @@ if __name__ == "__main__":
    app.nonetwork = options.nonetwork
    app.wikidir = str(options.wikidir).strip()
    app.wikipages = DocPages(app.wikidir)
+
+   app.cookbookdir = str(options.cookbookdir).strip()
+   app.cookbookpages = DocPages(app.cookbookdir)
    # app.latest_doc_commit = get_git_latest_commit(os.path.join(app.wikidir, '.git'))
 
    app.cstatic = str(options.cstatic).strip()
@@ -377,6 +407,13 @@ if __name__ == "__main__":
          for p in app.wikipages._pages.keys():
             yield "/docs/{}/".format(p)
 #            yield {'path': p}
+
+      @freezer.register_generator
+      def list_cookbook_pages():
+         for p in app.cookbookpages._pages.keys():
+            yield "/iotcookbook/{}/".format(p)
+#            yield {'path': p}
+
 
       freezer.freeze()
 

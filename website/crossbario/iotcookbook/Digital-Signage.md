@@ -2,6 +2,8 @@
 
 'Digital Signage' refers to using digital displays instead of printer materials, neon etc. as signs. This becomes especially useful with the possibility to update or control the content remotely.
 
+Digital Signage can be an end in itself (which is why it's linked to under 'Apps'), or form part of a larger application (thus the )
+
 We describe how to create your own digital signage solutions using open source software and cheap, off-the-shelf hardware.
 
 The command & control channel to the digital signs is created using WAMP & Crossbar.io.
@@ -26,11 +28,6 @@ The [browserremote]() component can be embedded in any Web page whose source cod
 
 * reload the page (e.g. when the content has changed)
 * navigate to another page
-
-The latter allows chaining of pages if each page has the browserremote component embedded.
-
-To show pages which you cannot modify to include browser control, you can also 
-
 * open up an additional tab and control the page this displays.
 
 * [browsercontrol]()
@@ -65,7 +62,7 @@ If you want more types of visualization, more graphically appealing widgets, or 
 
 ## Setting up a Raspberry Pi
 
-At a retail price of around 30 €, and with a huge developer community around it, the Raspberry Pi 2 is a perfect candidate for controlling digital signage. 
+At a retail price of around 30 euros, and with a huge developer community around it, the Raspberry Pi 2 is a perfect candidate for controlling digital signage. 
 
 We have a [tutorial]() which shows you how to set up a Raspberry Pi so that it boots into a browser and loads a pre-configured page. This means that all you need to do is to clone the basic setup when you've done it and then copy it to an SD card for each new Pi you want to add. 
 

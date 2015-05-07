@@ -22,6 +22,7 @@ To get things working you need to
 
 This requires:
 
+* [extending the disk space](Arduino-Yun-Extending-Disk-Space) on the Yun
 * Yun with internet access
 * shell access to the Yun
 * Node.js installed on your computer
@@ -33,14 +34,18 @@ We are using the serial connection between the MCU and the CPU. By default, ther
 
 Edit the file `/etc/inittab` and comment the following line (by preceding it with `#`):
 
-   # ttyATH0::askfirst:/bin/ash --login
+```shell
+# ttyATH0::askfirst:/bin/ash --login
+```
 
 > The Linux SoC (CPU) and the Atmel MCU are connected via a UART (a serial connection) which maps to the device `/dev/ttyATH0` on the Linux side and the [serial stream](http://arduino.cc/en/Reference/Serial) class `Serial1` on the Arduino side. The default `inittab` entry on the Linux side will start a shell connected to that serial port when Linux boots. Then, when your sketch starts the Arduino Yun bridge library (by doing `Bridge.begin()`), the bridge library writes a command to the serial that will in turn start a script on the Linux side which then connects to the serial port. That Linux script is essentially the Linux-side part of the Yun bridge library and will keep on running regardless of wether you reload a new sketch to the MCU or reset the MCU. It will keep on running until you reset the CPU or reboot Linux (or manually kill the script). However, as long as there is a script running and using the serial port, we cannot use the serial for our purposes. The commenting of the `inittab` line will disable starting a shell on the serial port altogether in the first place. **This means we can use the serial port for our stuff, but it also means you won't be able to use the Yun brigde library anymore.**
 > 
 
 and reboot Linux:
 
-   reboot
+```shell
+reboot
+```
 
 > Be patient, a reboot (either via the `reboot` command like above, or by doing a cold boot via power cycling or pressing the "Yun RST" button) can take 60-90s.
 > 
@@ -50,13 +55,13 @@ and reboot Linux:
 
 Update `opkg` (yes, again: this doesn't persist agains reboots):
 
-```
+```shell
 opkg update
 ```
 
 Then install Node.js
 
-```
+```shell
 opkg install node
 ```
 
@@ -70,7 +75,7 @@ In addition to Node.js, we need a few dependencies:
 
 Unfortunately, only the first of these can be installed directly on the Yun:
 
-```
+```shell
 opkg install node-serialport
 ```
 
@@ -78,7 +83,7 @@ The other two packages need to be installed via Node.js - and the Yun does not h
 
 We need to install them on another system and copy them over to the Yun. So you need to create an installation directory on your PC/Laptop, and do 
 
-```
+```shell
 npm install arduino-firmata
 npm install autobahn
 ```
@@ -89,7 +94,7 @@ Before moving these over to the Yun, we need to remove the serialport component 
 
 Then copy over the two modules using `scp`, e.g. from the `node-modules` directory open in a shell do
 
-```
+```shell
 scp -r ./arduino-firmata root@192.168.1.150.local:/usr/lib/node_modules
 scp -r ./autobahn root@192.168.1.150.local:/usr/lib/node_modules
 ```
@@ -104,30 +109,30 @@ Connect your Yun via USB, start the Arduino IDE and check that your Yun has been
 
 To check that your connection is working, it's easiest to use the [blinky code](http://www.arduino.cc/en/Tutorial/Blink?from=Tutorial.BlinkingLED) provided by the Arduino project, which makes the LED L13 on the Yun, which is connected to one of the GPIO pins, blink (as the name suggests).
 
-```
+```c
 /*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
- 
-  This example code is in the public domain.
- */
- 
+  Blink
+  Turns on an LED on for one second, then off for one second, repeatedly.
+ 
+  This example code is in the public domain.
+ */
+ 
 // Pin 13 has an LED connected on most Arduino boards.
 // give it a name:
-int led = 13;
+int led = 13;
 
 // the setup routine runs once when you press reset:
-void setup() {                
-  // initialize the digital pin as an output.
-  pinMode(led, OUTPUT);     
+void setup() {                
+  // initialize the digital pin as an output.
+  pinMode(led, OUTPUT);     
 }
 
 // the loop routine runs over and over again forever:
-void loop() {
-  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);               // wait for a second
-  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);               // wait for a second
+void loop() {
+  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);               // wait for a second
+  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);               // wait for a second
 }
 ```
 
@@ -159,7 +164,7 @@ var stat = true
 
 and then run it
 
-```
+```shell
 node node-blinky.js
 ```
 
