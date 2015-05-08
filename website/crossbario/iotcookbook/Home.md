@@ -1,6 +1,6 @@
-## IoT Cookbook for WAMP and Crossbar.io
+## for WAMP and Crossbar.io
 
-You want to solve a problem - we offer components & recipes to build your solutions
+## You want to solve a problem - we offer components and recipes to build your solutions
 
 * All components come with **built-in connectivity**. They can connect from anywhere,  and you can easily  build distributed applications.
 
@@ -16,15 +16,15 @@ You want to solve a problem - we offer components & recipes to build your soluti
 
 Building blocks, ready to use for solving your problem!
 
-* Speech Synthesis (Raspberry Pi)
-* X-Box Controller (Raspberry Pi)
-* Acceleromoted (Tessel)
-* Camera (Tessel)
+* [Speech Synthesis (Raspberry Pi)]()
+* [X-Box Controller (Raspberry Pi)]()
+* [Accelerometer (Tessel)]()
+* [Camera (Tessel)]()
 * [Digital Signage](Digital Signage):
    
-   + [Browser Remote Control]()
-   + [Reveal.js Remote Control]()
-   + [WAMP widgets]()
+   + [Browser Remote Control](Browser Remote Control)
+   + [Reveal.js Remote Control](Reveal.js Remote Control)
+   + [WAMP widgets](WAMP Browser Widgets)
 
 ## The applications
 
@@ -47,8 +47,8 @@ Pick a microcontroller and see what we are offering for it:
 
 There are three main ways to gettin a WAMP router
 
-* We offer a [demo instance](../docs/Demo Instance) for testing and light development workloads.
-* You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](), but [Amazon EC2]() also works.
-* You can install Crossbar.io yourself - [locally]() or [in the cloud]().
+* We offer a [demo instance](../docs/Demo-Instance) for testing and light development workloads.
+* You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](../docs/Setup-on-Microsoft-Azure), but [Amazon EC2](../docs/Setup-on-Amazon-EC2) also works.
+* You can [install Crossbar.io yourself](../docs/Local-Installation).
 
 

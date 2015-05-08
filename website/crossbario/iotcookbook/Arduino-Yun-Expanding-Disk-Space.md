@@ -1,4 +1,10 @@
-This page contains instructions for how to exand the disk space available on the Yun using a microSD card. The Yun itself has only 16MB of flash, and half of that is reserved as a recovery partition. 
+This page contains instructions for how to exand the disk space available on the Yun using a microSD card.  For an overview of all materials we have concerning the Yun, see
+
+* [Arduino Yun - Links](Arduino Yun)
+
+## The disk space problem
+
+The Yun itself has only 16MB of flash, and half of that is reserved as a recovery partition. 
 
 ```shell
 root@Arduino:~# df -h
@@ -12,6 +18,8 @@ overlayfs:/overlay        7.5M    392.0K      7.1M   5% /
 ```
 
 The free space on this is not enough for the software we want to install. 
+
+## Using a microSD for storage
 
 Hence we will create a new filesystem on a micro SD card which we can use for both programs and data and mount that filesystem as an overlay on top of the root directory (usually, this is called an "extroot").
 
@@ -31,7 +39,11 @@ overlayfs:/overlay      816.7M      3.0M    771.4M   0% /
 /dev/sda1                99.8M      4.0K     99.8M   0% /mnt/sda1
 ```
 
+## The official way
+
 There is an [official tutorial](http://arduino.cc/en/Tutorial/ExpandingYunDiskSpace) for the disk expansion. However, the process there has proven to be quite brittle (we go about 20% success rate). So here's an alternative way.
+
+## Our way
 
 The following can be pasted into your remote shell on the Yun as is block-by-block. However, you may want to take the time to paste them line-by-line since this makes it easier to find where a problem lies should any occur.
 
@@ -74,7 +86,7 @@ uci commit
 ```
 * reboot the Yun
 
-## Next steps
+## Next
 
 Install the software to remote control the Yun's Arduino pins.
 

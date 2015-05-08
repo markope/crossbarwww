@@ -1,1 +1,0 @@
-This is only a test with a simple title to check whether the flask routing for the iotcookbook is working.

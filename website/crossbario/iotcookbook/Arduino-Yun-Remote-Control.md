@@ -1,6 +1,8 @@
-This page describes how to install the necessary software on a Yun to enable remote control of the Yun's Arduino pins via WAMP.
+This page describes how to install the necessary software on a Yun to enable remote control of the Yun's Arduino pins via WAMP.  For an overview of all materials we have concerning the Yun, see
 
-## Overview
+* [Arduino Yun - Links](Arduino Yun)
+
+## The big picture
 
 The GPIO pins are managed by the Arduino MCU part of the Yun, while all network communcation is managed by the MIPS part. 
 
@@ -177,3 +179,6 @@ We can now control the Arduino GPIO pins from Node.js - and the Node.js code in 
 This is fine, but we really want to be able to develop on our own machines and in more comfort - and in our language of choice.
 
 This is made possible by the serial-to-WAMP-bridge code which we offer for running in Node.js. With this, input and output is run via standardized WAMP publishes and subscriptions, so that you can just set up the bridge once on the Yun and then develop components which use the pins whereever you want.
+
+
+# Next

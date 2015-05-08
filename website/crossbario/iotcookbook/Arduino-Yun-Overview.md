@@ -1,8 +1,6 @@
-This page provides some basic information about the Arduino Yun, as well as links to resources on how to
+This page provides some basic information about the Arduino Yun. For an overview of all materials we have concerning the Yun, see
 
-* [Do basic setup of the Yun]()
-* [Expand the disk space to a microSD card]()
-* [Install software to remote-control the Arduino pins]()
+* [Arduino Yun - Links](Arduino Yun)
 
 
 ## What is the Arduino Yun?
@@ -44,8 +42,6 @@ Here is an example of what you can do with Arduino Yun and WAMP:
 
 We'll give you step-by-step instructions for how to set up a Yun to work with WAMP. Specifically, we're going to set up Node.js and Autobahn|JS to enable you to access the Arduino pins on the Yun remotely (from any language with a WAMP implementation).
 
-## Next steps
+## Next 
 
 - [Basic setup](Arduino-Yun-Basic-Setup) 
-- [Expanding disk space](Arduino-Yun-Expanding-Disk-Space)
-- [installing the software for remote control](Arduino-Yun-Remote-Control)

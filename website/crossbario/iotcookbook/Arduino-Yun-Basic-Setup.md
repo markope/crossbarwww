@@ -1,4 +1,8 @@
-This page exlains the basic setup of the Yun: 
+This page exlains the basic setup of the Yun.  For an overview of all materials we have concerning the Yun, see
+
+* [Arduino Yun - Links](Arduino Yun)
+
+We'll go over
 
 * connecting to your wifi network
 * access via SSH
@@ -235,7 +239,7 @@ sysupgrade -v -n openwrt-ar71xx-generic-yun-16M-squashfs-sysupgrade.bin
 
 If you haven't set up the wifi yet, now is the time to do so. If you previously did - do it again (we told you that it would be better to use ethernet - though it's a small hassle, really).
 
-## Next steps
+## Next
 
 Your Yun is now read for exanding the file system to use a microSD card - which we'll need to have the space to install Node.js + Autobahn|JS.
 

@@ -79,7 +79,12 @@
                   </li>
                   <li {% if session['tab_selected'] == 'page_docs' %} class="active" {% else %} class="" {% endif %}>
                      <a href="{{ url_for('page_docs') }}">
-                        Crossbar.io Docs
+                        Docs
+                     </a>
+                  </li>
+                  <li {% if session['tab_selected'] == 'page_cookbook' %} class="active" {% else %} class="" {% endif %}>
+                     <a href="{{ url_for('page_cookbook') }}">
+                        IoT Cookbook
                      </a>
                   </li>
 
@@ -94,7 +99,7 @@
                   -->
                   <li class="external first">
                      <a href="https://demo.crossbar.io/">
-                        Crossbar.io Live Demos
+                        Live Demos
                         <img src="{{ url_for('static', filename = 'img/gen/link_external.svg') }}" alt="external link">
                      </a>
                   </li>

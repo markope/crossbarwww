@@ -289,7 +289,7 @@ def page_docs(path = None):
 @app.route('/iotcookbook/<path:path>/')
 @app.route('/iotcookbook/')
 def page_cookbook(path = None):
-   session['tab_selected'] = 'page_iotcookbook'
+   session['tab_selected'] = 'page_cookbook'
 
    if path is None or path.strip() == "":
       title = 'IoT Cookbook'

@@ -1,13 +1,19 @@
-The Arduino Yun is a Linux computer + microcontroller with built-in wifi which runs OpenWRT.
+The [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN) is a Linux computer + microcontroller with built-in wifi which runs OpenWRT (a Linux flavor used mainly on DSL routers).
 
-* We have a more detailed [overview](Arduino-Yun-Overview) of the Yun and its features:
-* There are instructions for [basic setup](Arduino-Yun-Basic-Setup) and [extending the disk space](Arduino-Yun-Expanding-Disk-Space)
+* [Overview](Arduino-Yun-Overview): a more detailed overview of the Yun and its features
+* [Basic setup](Arduino-Yun-Basic-Setup) takes you through connecting to the Yun and updating its software
+* [Extending the disk space](Arduino-Yun-Expanding-Disk-Space) explains the steps to configure the Yun to use a microSD card as storage (necessary due to the exteremely limited onboard flash)
 
 ## Generic Control of GPIO
 
-* [yun-gpio-to-wamp] gives access to the GPIO pins on the Arduino Yun. Each pin has a pre-set associated endpoint. Requires [extending the disk space](Arduino-Yun-Expanding-Disk-Space)
+* [yun-gpio-to-wamp]() gives access to the GPIO pins on the Arduino Yun. Each pin has a pre-set associated endpoint. Requires [extending the disk space](Arduino-Yun-Expanding-Disk-Space)
 
 ## Components
 
+* [accelerometer]() - receive raw acceleromter data or events when a certain threshold has been exceeded
+* [buttons]() - receive events for up to 6 buttons connected to a Yun
+* [signallight]() - light up up to 6 LEDs remotely
 
 ## Apps
+
+* [alarmapp]() - simple alarm system. Uses accelerometers, buttons, signallight components and comes with a Web frontend (for desktop + mobile)
