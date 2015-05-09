@@ -26,11 +26,16 @@ Building blocks, ready to use for solving your problem!
    + [Reveal.js Remote Control](Reveal.js Remote Control)
    + [WAMP widgets](WAMP Browser Widgets)
 
+plus generic remote access & control of GPIO pins on the
+
+* [Arduino Yun](Arduino Yun Remote GPIO)
+* [Raspberry Pi](Raspberry Pi Remote GPIO)
+
 ## The applications
 
 Applications which use the components. Get an idea for how combining things works, find code to re-use, be inspired - and maybe already find a solution which fits your needs!
 
-* Tessel Alarm App
+* [Alarm Application](Apps Alarm)
 * Real-time charting with the Arduino Yun
 * [Digital Signage](Digital Signage)
   

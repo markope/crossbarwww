@@ -8,6 +8,7 @@ The [Raspberry Pi](https://www.raspberrypi.org/) is a family of small computers 
 * [Digital Signage](Raspberry Pi Digital Signage Setup)
 * [Xbox controller](Raspberry Pi Xbox Contoller)
 * [Speech Synthesis](Raspberry Pi Speeech Synthesis)
+* [GPIO Connect](Raspberry Pi GPIO Connect)
 
 # Apps
 

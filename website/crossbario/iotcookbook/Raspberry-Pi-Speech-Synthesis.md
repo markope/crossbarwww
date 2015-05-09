@@ -51,10 +51,16 @@ This will also serve the browser frontend under
 http://localhost:8080/speechsynth_frontend.html
 ```
 
-Get `speechsynth_adapter.py` onto the Pi and then start it, passing the URL of Crossbar.io and the realm to connect to
+Get `speechsynth_adapter.py` onto the Pi, e.g. via scp
 
 ```console
-python speechsynth_adapter.py --router 'ws://192.168.1.134:8080/ws' --realm 'iotcookbook'
+scp speechsynth_adapter.py pi@<IP of your Pi>:~/
+```
+
+and then start it, passing the URL of Crossbar.io and the realm to connect to
+
+```console
+python speechsynth_adapter.py --router 'ws://192.168.1.134:8080/ws' --realm 'iot_cookbook'
 ```
 
 Then use the browser frontend to send a text of your choice. (Be aware that the full text you send is rendered to audio before playback starts. Long texts can take a while to start - so better to chunk them into smaller bits.)
