@@ -186,7 +186,7 @@ opkg update
 opkg install openssh-sftp-server
 ```
 
-Now, on **Windows**, [Win-SSHFS](http://code.google.com/p/win-sshfs/) which you can download from [here](http://code.google.com/p/win-sshfs/downloads/detail?name=win-sshfs-0.0.1.5-setup.exe) is open-source and installs without hassles up to Windows 7 (and with a few workarounds on Windows 8 as well). It is, however, unstable. A commercial alternative (with a free tier) is [SFTP Net Drive](https://www.eldos.com/sftp-net-drive/).
+Now, on **Windows**, [Win-SSHFS](http://code.google.com/p/win-sshfs/) which you can download from [here](http://code.google.com/p/win-sshfs/downloads/detail?name=win-sshfs-0.0.1.5-setup.exe) is open-source and installs without hassles up to Windows 7 (and with a few workarounds on Windows 8 as well). It is, however, unstable. A commercial alternative (with a free version perfectly sufficient for our purposes) is [SFTP Net Drive](https://www.eldos.com/sftp-net-drive/), which works stable..
 
 On **Mac OSX**, there is a nice tutorial [here](http://fortysomethinggeek.blogspot.de/2012/11/sshfs-on-osx-mount-sshsftp-shares-on-mac.html) that walks you through setting things up with [FUSE for OSX](http://osxfuse.github.io/).
 

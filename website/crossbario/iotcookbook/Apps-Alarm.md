@@ -37,10 +37,15 @@ With the default Crossbar.io configuration for this app, the frontend is served 
 
 The accelerometer publishes its state. 
 
-Code for two hardware platforms is currently provided, with code for both in the `accelerometer` directory of this app. In each case, transfer the code over to the device, with the accelerometer connected to it, and run it. More information can be found in the description of the respective component:
+Code for two hardware platforms is currently provided, with code for both in the `accelerometer` directory of this app. In each case, transfer the code over to the device, with the accelerometer connected to it, and run it. More information about any additional setup which may be required can be found in the description of the respective component:
 
 * [[Tessel Accelerometer]]
 * [[Arduino Yun Accelerometer]]
+
+<figure>
+   <img src="/static/img/iotcookbook/alarmapp/accelerometer_tessel.jpg" alt="alarm app accelerometer - Tessel" class="imgCentered">
+   <figcaption>Tessel with accelerometer module</figcaption>
+</figure>
 
 
 ### Launching it all
@@ -69,10 +74,33 @@ No changes to the backend are required when using Alarm Lights - they get trigge
 
 ### Hardware Controls
 
-The Hardware Controls can be added using any microcontroller which can trigger LEDs or other lights based on WAMP messages, and receive trigger events from buttons. We currently offer code for this for the Arduino Yun and Raspberry Pi.
+The Hardware Controls can be added using any microcontroller which can trigger LEDs or other lights based on WAMP messages, and receive trigger events from buttons. We currently offer code for this for the Arduino Yun.
 
 No changes to the backend are required when using Hardware Controls - they use the same events and procedures that the browser frontend does.
 
+<figure>
+   <img src="/static/img/iotcookbook/alarmapp/hardware_controls_yun.jpg" alt="alarm app hardware controls on a yun with Tinkerkit" class="imgCentered">
+   <figcaption>Yun with Tinkerkit controls</figcaption>
+</figure>
+
+The hardware requirements on the Yun are two Tinkerkit buttons and two Tinkerkit LEDs. The buttons need to be connected to pin 0 (arm/disarm the alarm) and 1 (trigger/cancel the alarm). The LEDS need to be connected to pin 11 (armed state indicator) and pin 10 (alarm state indicator).
+
+You need to set up the Yun for [remote GPIO access](Arduino Yun Remote GPIO). Instead of the generic library provided there, use `hardware_controls_yun.js` in the `hardware_controls` folder.
+
+Once you have your hardware connected, run the script
+
+```shell
+node hardware_controls_yun.js
+```
+
+which should log
+
+```shell
+Alarm App - Arduino Yun Hardware Controls starting ...
+Arduino connected (over /dev/ttyATH0, board version 2.3)
+Connecting to router ...
+Router connected. Session ID: 196598121
+```
 
 ### Taking Photos
 
