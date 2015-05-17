@@ -6,14 +6,14 @@ The [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.Arduin
 
 ## Generic Control of GPIO
 
-* [yun-gpio-to-wamp]() gives access to the GPIO pins on the Arduino Yun. Each pin has a pre-set associated endpoint. Requires [extending the disk space](Arduino-Yun-Expanding-Disk-Space)
+* [[Remote GPIO]] gives access to the GPIO pins on the Arduino Yun. Each pin has a pre-set associated endpoint.
 
 ## Components
 
-* [accelerometer]() - receive raw acceleromter data or events when a certain threshold has been exceeded
-* [buttons]() - receive events for up to 6 buttons connected to a Yun
-* [signallight]() - light up up to 6 LEDs remotely
+* [Accelerometer](Arduino Yun Accelerometer) - receive raw acceleromter data or events when a certain threshold has been exceeded
+* [Buttons](Arduino Yun Buttons) - receive events for up to 6 buttons connected to a Yun
+* [Lights](Arduino Yun Lights) - light up up to 6 LEDs remotely
 
 ## Apps
 
-* [alarmapp]() - simple alarm system. Uses accelerometers, buttons, signallight components and comes with a Web frontend (for desktop + mobile)
+* [Alarm](Apps Alarm) - simple alarm system. Uses accelerometers, buttons, signallight components and comes with a Web frontend (for desktop + mobile). Can include Arduino Yun, [[Raspberry Pi]] and [[Tessel]]

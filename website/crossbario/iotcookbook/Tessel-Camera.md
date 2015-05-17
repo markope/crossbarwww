@@ -16,7 +16,7 @@ Start up Crossbar.io:
 crossbar start
 ```
 
-This also serves a frontend where you can view the accelerometer data logged at
+This also serves a frontend which allows you to trigger the taking of an image and displays the progress feedback as well as the image:
 
 ```
 http://localhost:8080
@@ -31,7 +31,7 @@ var connection = new autobahn.Connection({
 });
 ```
 
-Then run `camera.js` on a Tessel with an accelerometer module connected to port A.
+Then run `camera.js` on a Tessel with a camera module connected to port A. (This needs to be port A - no changing ports on this module!)
 
 ```shell
 tessel run camera.js
@@ -39,11 +39,22 @@ tessel run camera.js
 
 This should log
 
+```shell
+camera ready
+main called
+connected
+Procedure 'io.crossbar.examples.tessel.camera.take_photo' registered: R1993040553
 ```
 
+You might also get 
+
+```shell
+camera error Error: No UART Response...
 ```
 
-Once this is running, in the browser frontend click on `take photo`. You should first see the progress report indicators, e.g. `XXXXXX` and the, eventually, the photo.
+as part of this. This doesn't necessarily mean that the camera is non-functional - just give it a try!
+
+Once this is running, in the browser frontend click on `take photo`. You should first see the progress report indicators, e.g. `Photo has been taken.` and then, eventually, the photo.
 
 ## The API
 
@@ -53,7 +64,7 @@ The component exposes a single procedure
 io.crossbar.examples.tessel.camera.take_photo
 ```
 
-This returns a hex-encoded photo.
+This returns a hex-encoded photo. (In the example frontent, this is converted to a base64-encoded data URL.)
 
 The procedure can also be called to yield [progressive results](../docs/Progressive Call Results) by setting the option `receive_progress: true`. In this case, a third handler is attached to the call, and this receives updates about the stage of the process (e.g. "photo taken", "transmitting photo").
 

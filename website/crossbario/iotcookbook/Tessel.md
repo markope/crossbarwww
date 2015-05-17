@@ -11,4 +11,4 @@ The [Tessel](http://tessel.io) is a microcontroller with built-in wifi which can
 
 # Apps
 
-* [Alarm App](Alarm App)
+* [Alarm](Apps Alarm)

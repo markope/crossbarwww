@@ -1,15 +1,18 @@
--- unfinished ---
+Receive controller events from a Xbox controller connected to a Raspberry Pi. Events are transmitted using WAMP.
 
-
-Send events from an Xbox controller connected to a Pi to WAMP components anywhere.
+This example uses [xboxdrv](https://github.com/xboxdrv/xboxdrv), a usersprace driver for Xbox game controllers.
 
 ## Try it out
 
 The code for the example consists of a adapter written in Python and AutobahnPython using Twisted. The adapter runs on the Pi and connects to Crossbar.io running on a network accessible from the Pi.
 
-Included is a frontend running in the browser. The frontend is written in JavaScript using AutobahnJS and connects to the same Crossbar.io router instance as the adapter connects to. Consequently, the frontend is able to invoke the procedures exposed on the Pi and subscribe to events generated from there.
+Included is a frontend running in the browser. The frontend is written in JavaScript using AutobahnJS and connects to the same Crossbar.io router instance as the adapter connects to. Consequently, the frontend is able to  subscribe to events generated from there.
 
-## Preparations on the Pi
+### Pairing the controller
+
+To pair the controller with the receiver, press the button on the receiver (there's only one), and the small button next to the port for wired controller connections on the controller simultaneously for a few seconds
+
+### Preparations on the Pi
 
 Install [xboxdrv](https://github.com/xboxdrv/xboxdrv) (a userspace drive for Xbox gamepad controllers):
 
@@ -62,14 +65,22 @@ crossbar start
 This will also serve the browser frontend under
 
 ```
-http://localhost:8080/xboxcontroller_frontend.html
+http://localhost:8080
 ```
 
-Get `xboxcontroller_adapter.py` onto the Pi and then start it, passing the URL of Crossbar.io and the realm to connect to
+Get `xboxcontroller_adapter.py` onto the Pi, e.g. by doing
+
+```
+scp xboxcontroller_adapter.py pi@<IP of your Pi>:~/
+```
+
+and then start it, passing the URL of Crossbar.io
 
 ```console
 sudo xboxdrv --quiet --detach-kernel-driver | python xboxcontroller_adapter.py --router ws://192.168.1.134:8080/ws
 ```
+
+Open the developer console of the browser frontend and interact with the controller to see a log of the event stream.
 
 
 ## The API
@@ -92,5 +103,4 @@ which yields a continuous stream of controller data.
 
 The controller data itself is sent as JSON, and you can extract relevant events from this.
 
-## Using it
 

@@ -16,10 +16,12 @@
 
 Building blocks, ready to use for solving your problem!
 
-* [Speech Synthesis (Raspberry Pi)]()
-* [X-Box Controller (Raspberry Pi)]()
-* [Accelerometer (Tessel)]()
-* [Camera (Tessel)]()
+* [Speech Synthesis (Raspberry Pi)](Raspberry Pi Speech Synthesis)
+* [X-Box Controller (Raspberry Pi)](Raspberry Pi Xbox Controller)
+* Accelerometer [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Acclerometer)
+* Lights [Yun](Arduini Yun Lights)
+* Camera [Tessel](Tessel Camera)
+
 * [Digital Signage](Digital Signage):
    
    + [Browser Remote Control](Browser Remote Control)

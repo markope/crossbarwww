@@ -13,3 +13,4 @@ The [Raspberry Pi](https://www.raspberrypi.org/) is a family of small computers 
 # Apps
 
 * [Digital Signage](Raspberry Pi Digital Signage Setup)
+* [Alarm](Apps Alarm)
