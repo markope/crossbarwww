@@ -1,3 +1,7 @@
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/raspberry_pi.jpg" alt="">   
+</div>
+
 The [Raspberry Pi](https://www.raspberrypi.org/) is a family of small computers which all feature ethernet, USB and HDMI connections and run Linux (among other options).
 
 Because of its popularity, there are plenty of tutorials for installation and setup, e.g. [the official one](https://www.raspberrypi.org/documentation/installation/).

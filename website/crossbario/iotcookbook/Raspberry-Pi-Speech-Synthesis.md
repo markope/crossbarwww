@@ -1,6 +1,12 @@
 Output (English) sentences from your Pi which are sent as text via WAMP.
 
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/speech_raspberry_pi.jpg" alt="">   
+</div>
+
 The example uses the [flite](http://www.festvox.org/flite/) text-to-speech engine to convert english sentences to voice which is then output via the Pi's audio output.
+
+
 
 
 ## Try it out

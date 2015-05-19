@@ -1,3 +1,7 @@
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="">   
+</div>
+
 The [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN) is a Linux computer + microcontroller with built-in wifi which runs OpenWRT (a Linux flavor used mainly on DSL routers).
 
 * [Overview](Arduino-Yun-Overview): a more detailed overview of the Yun and its features

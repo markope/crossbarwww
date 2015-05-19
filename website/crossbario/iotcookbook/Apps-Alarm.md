@@ -1,5 +1,9 @@
 In this application, an alarm can be triggered by one or more accelerometers. The alarm is displayed in a browser frontend, of which any number of instances can be run concurrently.
 
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/alarm_app.jpg" alt="">   
+</div>
+
 Extensions to this are
 
 * use a camera to take an image of the protected space on alarm, periodically or on user request (code for Tessel with camera module or Raspberry Pi with a webcam)

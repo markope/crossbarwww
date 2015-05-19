@@ -2,6 +2,10 @@ This page contains instructions for how to exand the disk space available on the
 
 * [Arduino Yun - Links](Arduino Yun)
 
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="">   
+</div>
+
 ## The disk space problem
 
 The Yun itself has only 16MB of flash, and half of that is reserved as a recovery partition. 

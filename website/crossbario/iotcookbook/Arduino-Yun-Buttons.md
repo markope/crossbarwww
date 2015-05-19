@@ -1,5 +1,9 @@
 The Arduino Yun Button component publishes events for presses on up to 6 Tinkerkit button modules via WAMP.
 
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/buttons_arduino_yun.jpg" alt="">   
+</div>
+
 ## Trying it out
 
 The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).

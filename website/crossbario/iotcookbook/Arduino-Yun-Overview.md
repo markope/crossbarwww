@@ -2,8 +2,7 @@ This page provides some basic information about the Arduino Yun. For an overview
 
 * [Arduino Yun - Links](Arduino Yun)
 
-
-## What is the Arduino Yun?
+# What is the Arduino Yun?
 
 The [Arduino Yun](arduino.cc/en/Main/ArduinoBoardYun) is a small embedded computer which can be used as a flexible platform for all kinds of hardware projects:
 

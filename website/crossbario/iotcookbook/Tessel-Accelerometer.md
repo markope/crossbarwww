@@ -1,5 +1,9 @@
 The Tessel Accelerometer component publishes the raw accelerometer data from an accelerometer module via WAMP.
 
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/alarmapp/accelerometer_tessel.jpg" alt="">   
+</div>
+
 ## Trying it out
 
 The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).

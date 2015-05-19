@@ -76,14 +76,15 @@ body {
 
 /* the page content container */
 #container {
-    padding: 0 0 57px 0;
+    /* padding: 0 0 57px 0; */
 
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto 1em;
     /*width: 960px;*/
     max-width: 960px;
     width: 90%;
     max-width: 1200px;
+    padding-bottom: 2em;
 }
 
 
@@ -369,7 +370,7 @@ span.partiallyImplemented {
 #footer {
    width: 95%;
    max-width: 780px;
-   margin: 40px auto 1em auto;
+   margin: 0px auto 1em auto;
    padding: 0.8em 1em 20px 1em;
    border-top: 1px solid #ccc;
    font-size: 13px;

@@ -1,5 +1,9 @@
 The Raspberry Pi Camera component allows the remote triggering of a photo via a WAMP procedure call. The photo is returned as the call result. 
 
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/camera_raspberry_pi.jpg" alt="">   
+</div>
+
 ## Trying it out
 
 The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).

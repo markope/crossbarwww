@@ -1,5 +1,9 @@
 The Arduino Yun Lights component allows the remote controls of up to 6 Tinkerkit LED modules (or other modules which can be accessed via digital write) via WAMP.
 
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/lights_arduino_yun.jpg" alt="">   
+</div>
+
 ## Trying it out
 
 The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).

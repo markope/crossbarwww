@@ -2,6 +2,10 @@ This page exlains the basic setup of the Yun.  For an overview of all materials 
 
 * [Arduino Yun - Links](Arduino Yun)
 
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="">   
+</div>
+
 We'll go over
 
 * connecting to your wifi network

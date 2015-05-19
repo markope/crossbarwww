@@ -1,5 +1,10 @@
 The Tessel Camera component allows the remote triggering of a photo via a WAMP procedure call. The photo is returned as the call result. (Since the Tessel is very slow in processing and transferring the image, you can use progressive call results to inform you of what step is currently taking place).
 
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/camera_tessel.jpg" alt="">   
+</div>
+
+
 ## Trying it out
 
 Open a shell for the component directory. 

@@ -27,11 +27,55 @@
 }
 
 #container {
-   background-color: #fff;
+   background-color: #f5f5f5;
    box-shadow: 0 0 17px 0px rgba(0,0,0,0.3);
 }
 
 #footer {
    background-color: #fff;
    box-shadow: 0 0 17px 0px rgba(0,0,0,0.3);
+}
+
+#container {
+   max-width: 900px;
+   padding-top: 0.2em;
+   margin-top: 2em;
+}
+
+
+.cookbook_topbox_landingpage  {
+    background-color: #D8D8D8;
+   
+    padding: 1em 1em;
+}
+
+#contents .cookbook_topbox_landingpage h2 {
+    margin-top: 0px;
+
+}
+
+#contents #cookbook_home_topimage {
+    padding: 0;
+
+    box-shadow: none;
+    /* position: absolute; */
+    /* top: -18px; */
+    /* right: 0px; */
+    width: 57%;
+}
+
+#cookbook_home_topimage_container {
+    /* float: right; */
+   
+}
+
+.topimage_container {
+    /* width: 80%; */
+   
+    /* max-width: 400px; */
+}
+
+#contents img.topimage {
+    max-width: 380px;
+
 }

@@ -1,26 +1,48 @@
 ## for WAMP and Crossbar.io
 
-## You want to solve a problem - we offer components and recipes to build your solutions
 
-* All components come with **built-in connectivity**. They can connect from anywhere,  and you can easily  build distributed applications.
 
-* All components can **communicate freely with each other** - including calling procedures. The compoments connect via a Crossbar.io application router. Client libraries for WAMP, the protocol used, are available for 9 languages (and growing). You can also integrate services with REST APIs, so your applications can talk to pretty much anything on the internet.
-           
-* All recipes include **step-by-step instructions** to get things working. Just follow the instructions - no need to worry about the technological background details. If you want to dive deeper into the technology, we provide links to get your started.
 
-* The software used in these recipes is **open source**, and part of a growing ecosystem aorund the WAMP protocol.
+<div class="cookbook_topbox_landingpage">
+   <div id="cookbook_home_topimage_container">
+      <img id="cookbook_home_topimage" src="../static/img/iotcookbook/lego_duplo_smaller.jpg" alt="">   
+   </div>
+   
+   <h2>
+      You want to solve a problem - we offer components and recipes to build your solutions
+   </h2>
 
-* A **variety of microcontrollers**, including the Raspberry Pi and Arduino Yun, are used as part of components.
+   <ul>
+      <li>
+         All components come with <strong>built-in connectivity</strong>. They can connect from anywhere,  and you can easily  build distributed applications.
+      </li>
+      <li>
+         All components can <strong>communicate freely with each other</strong> - including calling procedures. The compoments connect via a Crossbar.io application router. Client libraries for WAMP, the protocol used, are available for 9 languages (and growing). You can also integrate services with REST APIs, so your applications can talk to pretty much anything on the internet.
+      </li>
+      <li>
+         All recipes include <strong>step-by-step instructions</strong> to get things working. Just follow the instructions - no need to worry about the technological background details. If you want to dive deeper into the technology, we provide links to get your started.
+      </li>
+      <li>
+         The software used in these recipes is <strong>open source</strong>, and part of a growing ecosystem aorund the WAMP protocol.
+      </li>
+      <li>
+         A <strong>variety of microcontrollers</strong>, including the Raspberry Pi and Arduino Yun, are used as part of components.
+      </li>
+   </ul>
+</div>
 
 ## The components
 
 Building blocks, ready to use for solving your problem!
 
-* [Speech Synthesis (Raspberry Pi)](Raspberry Pi Speech Synthesis)
-* [X-Box Controller (Raspberry Pi)](Raspberry Pi Xbox Controller)
+
+
+* Speech Synthesis [Raspberry Pi](Raspberry Pi Speech Synthesis)
+* X-Box Controller [Raspberry Pi](Raspberry Pi Xbox Controller)
 * Accelerometer [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Accelerometer)
 * Lights [Yun](Arduino Yun Lights)
 * Camera [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
+* Buttons [Yun](Arduino Yun Buttons)
 
 * [Digital Signage](Digital Signage):
    

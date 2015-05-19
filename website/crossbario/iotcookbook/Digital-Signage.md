@@ -1,3 +1,8 @@
+<div class="topimage_container">
+   <img class="topimage" src="../../static/img/iotcookbook/digital_signage.jpg" alt="">   
+</div>
+
+
 ## What this is about
 
 'Digital Signage' refers to using digital displays instead of printer materials, neon etc. as signs. This becomes especially useful with the possibility to update or control the content remotely.

@@ -6,6 +6,7 @@ code {
    width: 95%;
    max-width: 820px;
    margin: 40px auto 0 auto;
+   position: relative;
 }
 
 
