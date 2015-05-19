@@ -1,5 +1,4 @@
--- describes how to acces the demo instance + access conditions --
--- is not finished --
+**--- under construction ---**
 
 We run a demo instance which serves the [Crossbar.io demos](https://demo.crossbar.io/) and can be used for light development work and testing.
 

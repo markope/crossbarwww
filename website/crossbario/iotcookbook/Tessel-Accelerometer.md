@@ -2,6 +2,8 @@ The Tessel Accelerometer component publishes the raw accelerometer data from an 
 
 ## Trying it out
 
+The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
+
 Open a shell for the component directory. 
 
 Install the Node.js dependencies by doing
@@ -39,7 +41,7 @@ tessel run accelerometer.js
 
 This should log
 
-```
+```shell
 accelerometer initialized (output rates: 800,400,200,100,50,12.5,6.25,1.56)
 connected!
 sending accel data
@@ -49,7 +51,7 @@ sending accel data
 
 Once this is running, open the browser console for the frontend page, and you'll see the raw accelerometer data logged as it is received.
 
-```
+```shell
 received accelerometer data
 Object {y: "-0.03", x: "0.02", z: "1.02"}
 ```

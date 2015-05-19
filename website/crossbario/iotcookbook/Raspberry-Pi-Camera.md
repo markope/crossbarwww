@@ -2,6 +2,8 @@ The Raspberry Pi Camera component allows the remote triggering of a photo via a 
 
 ## Trying it out
 
+The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
+
 The Pi should support most standard WebCams once you've done
 
 ```shell
@@ -45,13 +47,21 @@ Then get `camera_pi.js` onto the Raspberry Pi, e.g. by doing
 scp camera_pi.js pi@<IP of your Pi>:~/
 ```
 
-`camera_pi.js` is run using Node.js, so you need this installed, and additionally Autobahn|JS. Once you've got Node.js, in the directory where `camera_pi.js`is, do
+`camera_pi.js` is run using Node.js, so you need this installed.
+
+Additionally, it uses `uuencode`, which you need to install by doing
+
+```shell
+sudo apt-get install sharutils.
+```
+
+Finally, there's a need for Autobahn|JS. In the directory where `camera_pi.js`is, do
 
 ```shell
 npm install autobahn
 ```
 
-Run it using Node.js
+Now run the camera component using Node.js
 
 ```shell
 nodejs camera_pi.js
@@ -65,7 +75,7 @@ connected
 Procedure 'io.crossbar.examples.pi.camera.take_photo' registered: 1902454329
 ```
 
-Once this is running, in the browser frontend click on `take photo`. The standard burglar should be replaced with an image of whatever is in front of your webcam.
+Once this is running, in the browser frontend click on `take photo`. The default image of a burglar should be replaced with an image of whatever is in front of your webcam.
 
 ## The API
 

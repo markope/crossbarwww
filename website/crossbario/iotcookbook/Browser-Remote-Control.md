@@ -8,7 +8,7 @@ Features
 
 **Reload** enables you to refresh content which is displayed remotely.
 
-**Navigating to another page** allows you to chain content, if you can modify all pages to load this control code.
+**Navigating to another page** allows you to chain content if you can modify all pages to load this control code.
 
 **Open a second tab & set its URL** enables you to sequence arbitrary web pages for display. (This requires allowing pop-ups for the domain the controlled page is served from.)
 
@@ -16,7 +16,8 @@ These features are just a basic set, and can be easily extended to other control
 
 ## Try it out
 
-Get the [Crossbarexamples git repository]().
+The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
+
 
 Then navigate to 'iotcookbook/device/browser/browserremote' and do
 
@@ -63,7 +64,7 @@ session.publish("io.crossbar.examples.remotecontrol.on_close_external");
 > Note: Since only a single external tab is ever opened, this does not require any arguments to identify the tab to close.
 
 
-> General Note: The above actions may more naturally be expressed through RPCs. However, with PubSub simultaneous control of multiple displays is possible. I just felt that this beat other considerations.
+> General Note: The above actions may more naturally be expressed through RPCs. However, with PubSub simultaneous control of multiple displays is possible. I just felt that this beat other considerations. (Alex)
 
 ## Using it
 
@@ -80,4 +81,4 @@ As is, both `remote.js` and the provided control page assume that they are being
 
 ## Where next
 
-* [Remote control Reveal.js presentations via WAMP](https://github.com/crossbario/crossbarexamples/tree/master/revealremote)
+* [Remote control Reveal.js presentations via WAMP](Reveal.js Remote Control)

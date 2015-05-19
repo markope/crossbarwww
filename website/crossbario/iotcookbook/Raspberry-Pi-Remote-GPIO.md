@@ -1,4 +1,4 @@
--- unfinished --
+**-- under construction --**
 
 The example shows how to expose two LEDs and a button wired to the Pi's [GPIOs](https://www.raspberrypi.org/documentation/usage/gpio/) via WAMP so you can turn on/off the LEDs and sense the button from **any other** WAMP component.
 
@@ -14,6 +14,8 @@ Comes with a frontend running in browsers. The frontend is written in JavaScript
 
 
 ### The software side
+
+The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
 
 If you don't have aleady, login to your Pi and install Autobahn:
 

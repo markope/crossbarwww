@@ -2,6 +2,8 @@ The Arduino Yun Accelerometer component publishes the raw accelerometer data fro
 
 ## Trying it out
 
+The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
+
 Open a shell for the component directory. 
 
 Start up Crossbar.io:
@@ -41,7 +43,7 @@ node accelerometer.js
 
 This should log
 
-```
+```shell
 Arduino Yun Accelerometer starting ...
 Arduino connected (over /dev/ttyATH0, board version 2.3)
 Connecting to router ...
@@ -50,7 +52,7 @@ Router connected. Session ID: 1595783623
 
 Once this is running, open the browser console for the frontend page, and you'll see the raw accelerometer data logged as it is received.
 
-```
+```javascript
 received accelerometer data Object {y: 566, x: 551}
 received accelerometer data Object {y: 566, x: 552}
 received accelerometer data Object {y: 565, x: 551}
@@ -58,7 +60,7 @@ received accelerometer data Object {y: 565, x: 551}
 
 and when you move the accelerometer beyond the acceleration threshold
 
-```
+```javascript
 received accelerometer data Object {y: 978, x: 504}
 alarm activated!
 received accelerometer data Object {y: 772, x: 543}

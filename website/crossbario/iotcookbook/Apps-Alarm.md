@@ -2,9 +2,8 @@ In this application, an alarm can be triggered by one or more accelerometers. Th
 
 Extensions to this are
 
-* use a camera to take an image of the protected space on alarm, periodically or on user request (code for Tessel with camera module)
+* use a camera to take an image of the protected space on alarm, periodically or on user request (code for Tessel with camera module or Raspberry Pi with a webcam)
 * play an alarm message to the intruder (code for speech synthesis on the Raspberry Pi)
-* trigger alarm lights (code for the Arduino Yun and Raspberry Pi)
 * hardware control for arming, disarming, manually triggering and stopping an alarm (code for the Arduino Yun and Raspberry Pi)
 
 ## The Basics
@@ -19,7 +18,7 @@ The technical requirements are:
 
 ### The Backend
 
-The backend receives a live stream of accelerometer data and determines whether any changes here should trigger an alarm. This is based, among other things, on whether the alarm is currently armed. It centrally distributes alarm events and changes in the armed state to all frontends.
+The backend receives a live stream of accelerometer data when the alarm is armed and determines whether any changes here should trigger an alarm. It centrally distributes alarm events and changes in the armed state to all frontends.
 
 The backend as is is written for Node.js, but would be trivial to adapt for other languages with a WAMP library. 
 
@@ -52,6 +51,10 @@ Code for two hardware platforms is currently provided, with code for both in the
 
 Launch Crossbar.io from the app directory. This also starts the backend and serves the frontend.
 
+```shell
+crossbar start
+```
+
 Start one or more microcontrollers with accelerometers.
 
 Open the frontend in a browser (served at: `http://<IP-of-System-running-Crossbar.io>:8080).
@@ -60,17 +63,12 @@ Arm the alarm and move an accelerometer to test.
 
 
 
+
 ## The Extras
 
-The alarm app can be easily extended with additional hardware. Two of these do not require any modificactions to the basic app code: the Alarm Lights and the Hardware Controls. These just use existing events and procedures which the browser frontend already utilizes.
+The alarm app can be easily extended with additional hardware. One of these does not require any modificactions to the basic app code: the Hardware Controls. This just uses existing events and procedures which the browser frontend already utilizes.
 
 The Photos and Robo-Voice require additional code, with the former also requiring an extension of the browser frontend.
-
-### Alarm Lights
-
-The Alarm Lights can be added using any microcontroller which can trigger LEDs or other lights based on WAMP messages. We currently offer this for the Arduino Yun and Raspberry Pi.
-
-No changes to the backend are required when using Alarm Lights - they get triggered by the same alarm event that the frontend subscribes to.
 
 ### Hardware Controls
 
@@ -104,14 +102,25 @@ Router connected. Session ID: 196598121
 
 ### Taking Photos
 
-We currently offer code to use the camera module on the Tessel. This works, but the encoding of the image and its transfer are slow. The default resolution for testing this is therefore QQVGA (yes, this low). Regard this more as a proof-of-concept than anything else. But then, when you already have a Tessel with a camera module, it's at least something you can do with it!
+We currently offer code to use the camera module on the Tessel and a webcam connected to the Pi. 
 
-The code you need to run on the Tessel with the camera module is in the `camera` directory. More information about this component and how to get it working can be found in the [component documentation](Tessel Camera).
-
-When you use the camera module, then you need to 
+When you use a camera module you need to 
 
 * replace the standard backend code with `backend_camera.js` - best by editing the Crossbar.io config to run this,
-* use `frontend_camera.hmtl` instead of `index.html`. This is served under `http://<IP-of-System-running-Crossbar.io>:8080/frontend_camera.html`, or you could rename the files.
+* use `frontend_camera.hmtl` instead of `index.html`. This is served under `http://<IP-of-System-running-Crossbar.io>:8080/frontend_camera.html` (or you could rename the files).
+
+#### Tessel
+
+The Tessel camera module somewhat works, but the encoding of the image and its transfer are slow. The default resolution for testing this is therefore QQVGA (yes, this low, but try how long a VGA image takes!). Regard this more as a proof-of-concept than anything else. But then, when you already have a Tessel with a camera module, it's at least something you can do with it!
+
+The code you need to run on the Tessel with the camera module is in the `camera` directory - `camera_tessel.js`. More information about this component and how to get it working can be found in the [component documentation](Tessel Camera).
+
+#### Raspberry Pi
+
+The Pi supports most webcams, and works much faster than the Tessel.
+
+The code you need is `camera_pi.js`. For instructions on how to get this working in general see the [Pi Camera Component documentation](Raspberry Pi Camera).
+
 
 ### Robo-Voice the Intruder
 
@@ -131,4 +140,4 @@ When you use this extra, you also need to replace the standard backend code with
 
 You may additionally want to adapt the text which is spoken (`alertText`) and the number of times this is repeated (`repetitions`).
 
-> Note: If you want to use both a camera and speech synthesis, then you need to create your own `backend.js` for this. This is a simple copy & paste job - there are no conflicts when merging the code from `backend_camera.js` and `backend_speech.js`. As a frontend you can use `frontend_camera.js`, since the speech synthesis is just an additional output channel.
+> Note: If you want to use both a camera and speech synthesis, then you should use `backend_complete.js` and the camera frontend.

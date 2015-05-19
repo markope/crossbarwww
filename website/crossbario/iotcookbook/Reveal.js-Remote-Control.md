@@ -6,8 +6,7 @@ Control a Reveal.js presentation remotely via WAMP.
 
 ## Try it out
 
-Get the [Crossbarexamples git repository]().
-
+The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
 Then navigate to 'iotcookbook/device/browser/revealremote' and do
 
 ```
@@ -57,24 +56,24 @@ Setting `delay` to `0` stops auto play.
 
 This should cover the most common actions needed. It is easy to extend this to cover the rest of the Reveal.js API.
 
-> General Note: The above actions may more naturally be expressed through RPCs. However, with PubSub simultaneous control of multiple displays is possible. I just felt that this beat other considerations.
+> General Note: The above actions may more naturally be expressed through RPCs. However, with PubSub simultaneous control of multiple displays is possible. I just felt that this beat other considerations. (Alex)
 
 ## Using it
 
 Remote control requires loading two additional JavaScript files in your Reveal.js presentation:
 
-* AutobahnJS
+* Autobahn|JS
 * revealremote.js
 
-AutobahnJS provides the WAMP connectivity, while `revealremote.js` actually establishes the WAMP connection, subscribes to control events and issues commands to Reveal.js.
+Autobahn|JS provides the WAMP connectivity, while `revealremote.js` actually establishes the WAMP connection, subscribes to control events and issues commands to Reveal.js.
 
 This presently contains just basic navigation commands plus setup for autoplay, but can be trivially extended to support the entire Reveal.js API.
 
 As is, both `revealremote.js` and the provided control page assume that they are being served from Crossbar.io, and thus attempt to connect to this IP. Should this not be the case, then you need to adapt both to use the endpoint of the Crossbar.io instance you want to use (i.e. replace the last occurence of `wsuri` in each file with the correct endpoint URL).
 
-> Note: Here AutobahnJS is loaded from our S3 storage. This is provided for development purposes only, and some restrictions regarding download IPs apply. For production, please host your own version!
+> Note: Here Autobahn|JS is loaded from our S3 storage. This is provided for development purposes only, and some restrictions regarding download IPs apply. For production, please host your own version!
 
 ## Links
 
 * [Reveal.js](https://github.com/hakimel/reveal.js/)
-* [remote control webpage content via WAMP](https://github.com/crossbario/crossbarexamples/tree/master/browserremote) - combine this with the reveal control to e.g. do playlists of presentations, or presentations with other web content 
+* [remote control webpage content via WAMP](Browser Remote Control) - combine this with the reveal control to e.g. do playlists of presentations, or presentations with other web content 

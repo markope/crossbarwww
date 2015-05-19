@@ -4,7 +4,7 @@ This example uses [xboxdrv](https://github.com/xboxdrv/xboxdrv), a usersprace dr
 
 ## Try it out
 
-The code for the example consists of a adapter written in Python and AutobahnPython using Twisted. The adapter runs on the Pi and connects to Crossbar.io running on a network accessible from the Pi.
+The code for the example consists of an adapter written in Python and AutobahnPython using Twisted. The adapter runs on the Pi and connects to Crossbar.io running on a network accessible from the Pi.
 
 Included is a frontend running in the browser. The frontend is written in JavaScript using AutobahnJS and connects to the same Crossbar.io router instance as the adapter connects to. Consequently, the frontend is able to  subscribe to events generated from there.
 
@@ -20,7 +20,7 @@ Install [xboxdrv](https://github.com/xboxdrv/xboxdrv) (a userspace drive for Xbo
 sudo apt-get install -y xboxdrv
 ```
 
-Test the driver:
+With your Xbox controller connected to the Pi, test the driver:
 
 ```console
 pi@raspberrypi ~/scm/crossbarexamples/device/pi/xboxcontroller $ sudo xboxdrv --quiet --detach-kernel-driver
@@ -54,6 +54,8 @@ sudo pip install autobahn
 
 ## Running the example
 
+The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
+
 You need a Crossbar.io instance for the Xbox Controller adapter on the Pi and the browser frontend to connect to.
 
 The simplest way is to navigate to `iotcookbook/device/pi/xboxcontroller` in your local `crossbarexamples` repo, and do
@@ -74,7 +76,7 @@ Get `xboxcontroller_adapter.py` onto the Pi, e.g. by doing
 scp xboxcontroller_adapter.py pi@<IP of your Pi>:~/
 ```
 
-and then start it, passing the URL of Crossbar.io
+and then start it, passing the URL of Crossbar.io, e.g.
 
 ```console
 sudo xboxdrv --quiet --detach-kernel-driver | python xboxcontroller_adapter.py --router ws://192.168.1.134:8080/ws

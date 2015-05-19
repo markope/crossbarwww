@@ -2,6 +2,8 @@ The Arduino Yun Lights component allows the remote controls of up to 6 Tinkerkit
 
 ## Trying it out
 
+The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
+
 Open a shell for the component directory. 
 
 Start up Crossbar.io:
@@ -41,7 +43,7 @@ node lights_yun.js
 
 This should log
 
-```
+```shell
 Arduino Yun Lights starting ...
 Arduino connected (over /dev/ttyATH0, board version 2.3)
 Connecting to router ...
@@ -51,7 +53,7 @@ procedure 'io.crossbar.examples.yun.lights.set_light_state' registered
 
 Once this is running, open the browser console for the frontend page and trigger the lights via the buttons. 
 
-Use the 'disco' mode to get all blinking!
+Use the 'disco' mode to get all of them blinking at once!
 
 ## The API
 

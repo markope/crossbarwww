@@ -6,7 +6,7 @@ The [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.Arduin
 
 ## Generic Control of GPIO
 
-* [[Remote GPIO]] gives access to the GPIO pins on the Arduino Yun. Each pin has a pre-set associated endpoint.
+* [Remote GPIO](Arduino Yun Remote GPIO) gives access to the GPIO pins on the Arduino Yun. Each pin has a pre-set associated endpoint.
 
 ## Components
 

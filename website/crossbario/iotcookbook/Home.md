@@ -18,27 +18,27 @@ Building blocks, ready to use for solving your problem!
 
 * [Speech Synthesis (Raspberry Pi)](Raspberry Pi Speech Synthesis)
 * [X-Box Controller (Raspberry Pi)](Raspberry Pi Xbox Controller)
-* Accelerometer [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Acclerometer)
-* Lights [Yun](Arduini Yun Lights)
-* Camera [Tessel](Tessel Camera)
+* Accelerometer [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Accelerometer)
+* Lights [Yun](Arduino Yun Lights)
+* Camera [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
 
 * [Digital Signage](Digital Signage):
    
    + [Browser Remote Control](Browser Remote Control)
    + [Reveal.js Remote Control](Reveal.js Remote Control)
-   + [WAMP widgets](WAMP Browser Widgets)
+   + [WAMP widgets](WAMP Browser Widgets) (**under construction**)
 
 plus generic remote access & control of GPIO pins on the
 
 * [Arduino Yun](Arduino Yun Remote GPIO)
-* [Raspberry Pi](Raspberry Pi Remote GPIO)
+* [Raspberry Pi](Raspberry Pi Remote GPIO) (**under construction**)
 
 ## The applications
 
 Applications which use the components. Get an idea for how combining things works, find code to re-use, be inspired - and maybe already find a solution which fits your needs!
 
 * [Alarm Application](Apps Alarm)
-* Real-time charting with the Arduino Yun
+* [Real-time charting with the Arduino Yun](Arduino Yun Real-time Charting) (**under construction**)
 * [Digital Signage](Digital Signage)
   
 ## Components and applications by device
@@ -50,11 +50,15 @@ Pick a microcontroller and see what we are offering for it:
 * [[Tessel]]
 
 
+## Running things
+
+The code for all of the above is in the [crossbarexamples repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. Clone this locally or download it as a ZIP file.
+
 ## Getting a WAMP router
 
 There are three main ways to gettin a WAMP router
 
-* We offer a [demo instance](../docs/Demo-Instance) for testing and light development workloads.
+* We offer a [demo instance](../docs/Demo-Instance) (**under construction**) for testing and light development workloads.
 * You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](../docs/Setup-on-Microsoft-Azure), but [Amazon EC2](../docs/Setup-on-Amazon-EC2) also works.
 * You can [install Crossbar.io yourself](../docs/Local-Installation).
 

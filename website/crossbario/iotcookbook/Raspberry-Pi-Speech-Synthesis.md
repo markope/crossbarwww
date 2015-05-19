@@ -5,7 +5,7 @@ The example uses the [flite](http://www.festvox.org/flite/) text-to-speech engin
 
 ## Try it out
 
-The code for the example consists of a adapter written in Python and AutobahnPython using Twisted. The adapter runs on the Pi and connects to Crossbar.io running on a network accessible from the Pi.
+The code for the example consists of an adapter written in Python and AutobahnPython using Twisted. The adapter runs on the Pi and connects to Crossbar.io running on a network accessible from the Pi.
 
 Included is a frontend running in the browser. The frontend is written in JavaScript using AutobahnJS and connects to the same Crossbar.io router instance as the adapter connects to. Consequently, the frontend is able to invoke the procedures exposed on the Pi and subscribe to events generated from there.
 
@@ -29,6 +29,14 @@ Test the text-to-speech engine:
 flite -voice slt "Hi, my name is Susan. How can I help you?"
 ```
 
+The volume may be a bit low. To increase that to (near) the maximum, do
+
+```shell
+sudo amixer set PCM -- -100
+```
+
+You can, of course, increase the volume less by choosing a higher value than `-100`.
+
 Install Autobahn|Python
 
 ```console
@@ -36,6 +44,8 @@ sudo pip install autobahn
 ```
 
 ### Running the Speech Synthesis
+
+The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
 
 You need a Crossbar.io instance for the Speech Synthesis adapter on the Pi and the browser frontend to connect to.
 
@@ -57,7 +67,7 @@ Get `speechsynth_adapter.py` onto the Pi, e.g. via scp
 scp speechsynth_adapter.py pi@<IP of your Pi>:~/
 ```
 
-and then start it, passing the URL of Crossbar.io and the realm to connect to
+and then start it, passing the URL of Crossbar.io and the realm to connect to, e.g.
 
 ```console
 python speechsynth_adapter.py --router 'ws://192.168.1.134:8080/ws' --realm 'iot_cookbook'

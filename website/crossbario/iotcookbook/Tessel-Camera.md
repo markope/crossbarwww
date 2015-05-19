@@ -1,4 +1,4 @@
-The Tessel Camera component allows the remote triggering of a photo via a WAMP procedure call. The photo is returned as the call result. (Since the Tessel is very slow in processing and transferring the image, this uses progressive call result to inform you of what step is currently taking place).
+The Tessel Camera component allows the remote triggering of a photo via a WAMP procedure call. The photo is returned as the call result. (Since the Tessel is very slow in processing and transferring the image, you can use progressive call results to inform you of what step is currently taking place).
 
 ## Trying it out
 
@@ -66,7 +66,7 @@ io.crossbar.examples.tessel.camera.take_photo
 
 This returns a hex-encoded photo. (In the example frontent, this is converted to a base64-encoded data URL.)
 
-The procedure can also be called to yield [progressive results](../docs/Progressive Call Results) by setting the option `receive_progress: true`. In this case, a third handler is attached to the call, and this receives updates about the stage of the process (e.g. "photo taken", "transmitting photo").
+The procedure can also be called to yield [progressive results](../docs/Progressive Call Results) by setting the option `receive_progress: true`. In this case, a third handler is attached to the call, and this receives updates about the stage of the process (e.g. "photo taken", "transmitting photo"). The provided example uses progressive results.
 
 ## Using it
 
