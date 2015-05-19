@@ -35,7 +35,7 @@ The volume may be a bit low. To increase that to (near) the maximum, do
 sudo amixer set PCM -- -100
 ```
 
-You can, of course, increase the volume less by choosing a higher value than `-100`.
+to set this to near maximun (and try larger values instead of `-100` to decrease the volume a bit again).
 
 Install Autobahn|Python
 

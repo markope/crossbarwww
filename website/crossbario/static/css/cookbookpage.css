@@ -20,3 +20,18 @@
    margin-bottom: 0;
    width: 100%;
 }
+
+
+#wrap {
+   background-image: url(/static/img/schaltplan_2.png);
+}
+
+#container {
+   background-color: #fff;
+   box-shadow: 0 0 17px 0px rgba(0,0,0,0.3);
+}
+
+#footer {
+   background-color: #fff;
+   box-shadow: 0 0 17px 0px rgba(0,0,0,0.3);
+}

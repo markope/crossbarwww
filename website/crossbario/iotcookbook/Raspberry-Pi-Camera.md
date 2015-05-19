@@ -47,6 +47,7 @@ Then get `camera_pi.js` onto the Raspberry Pi, e.g. by doing
 scp camera_pi.js pi@<IP of your Pi>:~/
 ```
 
+<<<<<<< Updated upstream
 `camera_pi.js` is run using Node.js, so you need this installed.
 
 Additionally, it uses `uuencode`, which you need to install by doing
@@ -55,13 +56,25 @@ Additionally, it uses `uuencode`, which you need to install by doing
 sudo apt-get install sharutils.
 ```
 
-Finally, there's a need for Autobahn|JS. In the directory where `camera_pi.js`is, do
+`camera_pi.js` is run using Node.js, so you need this installed, and additionally npm, Node.js's package managenment, and Autobahn|JS. Once you've got Node.js and npm, in the directory where `camera_pi.js`is, do
 
 ```shell
 npm install autobahn
 ```
 
-Now run the camera component using Node.js
+(In case you get a certificate error, doing 
+```shell
+npm config set registry http://registry.npmjs.org/
+```
+is one way to solve this, though you now no longer use https!)
+
+We also need `uuencode`, which we install by doing
+
+```shell
+sudo apt-get install sharutils
+```
+
+Now run our camera component using Node.js
 
 ```shell
 nodejs camera_pi.js
