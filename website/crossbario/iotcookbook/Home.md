@@ -31,7 +31,7 @@
    </ul>
 </div>
 
-## The components
+# The components
 
 Building blocks, ready to use for solving your problem!
 
@@ -55,7 +55,7 @@ plus generic remote access & control of GPIO pins on the
 * [Arduino Yun](Arduino Yun Remote GPIO)
 * [Raspberry Pi](Raspberry Pi Remote GPIO) (**under construction**)
 
-## The applications
+# The applications
 
 Applications which use the components. Get an idea for how combining things works, find code to re-use, be inspired - and maybe already find a solution which fits your needs!
 
@@ -63,7 +63,7 @@ Applications which use the components. Get an idea for how combining things work
 * [Real-time charting with the Arduino Yun](Arduino Yun Real-time Charting) (**under construction**)
 * [Digital Signage](Digital Signage)
   
-## Components and applications by device
+# The Devices
 
 Pick a microcontroller and see what we are offering for it: 
 
@@ -71,12 +71,18 @@ Pick a microcontroller and see what we are offering for it:
 * [[Arduino Yun]]
 * [[Tessel]]
 
+<div id="cookbook_home_devices_container">
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">   
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">   
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="">   
+</div>
 
-## Running things
+
+# Running things
 
 The code for all of the above is in the [crossbarexamples repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. Clone this locally or download it as a ZIP file.
 
-## Getting a WAMP router
+# Getting a WAMP router
 
 There are three main ways to gettin a WAMP router
 

@@ -1,4 +1,4 @@
-A registration is created within Crossbar.io when a first client issues a registration request for a topic, and it is deleted when the last client unregistrers or its session is disconnected. In between, depending on the [invokation rule](Invokation Rules) used during the first registration, other client sessions may be attached to the registration or removed from it.
+A registration is created within Crossbar.io when a first client issues a registration request for a topic, and it is deleted when the last client unregistrers or its session is disconnected. In between, depending on the [invocation rule](Shared Registrations) used during the first registration, other client sessions may be attached to the registration or removed from it.
 
 Registration meta-events give information about these events. 
 
@@ -63,7 +63,7 @@ session.call("wamp.registration.match", ["com.myapp.procedure1"]).then(session.l
 
 Using a registration ID, information about a specific registration can be retrieved using:
 
-* `wamp.registration.get`: Returns data about the registration itself: the registration URI, ID, matching policy, invokation rule and creation date.
+* `wamp.registration.get`: Returns data about the registration itself: the registration URI, ID, matching policy, invocation rule and creation date.
 * `wamp.registration.list_callees`: Returns a list of session IDs for sessions currently attached to the registration.
 * `wamp.registration.count_callees`: Returns the number of sessions currently attached to the registration.
 

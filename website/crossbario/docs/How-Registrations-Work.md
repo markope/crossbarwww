@@ -10,6 +10,6 @@ As a default, exact matching is used for RPCs, i.e. a call is only accepted (and
 
 As a default, a procedure can only be registered by a single callee. All further registration attempts return an error. The routed nature of RPCs as implemented by WAMP allows other patterns as well, i.e. multiple registrations may be allowed, and the procedure is then invoked  on the last callee to register which is currently still connected. For more on this see [Invokation Rules](Invokation Rules).
 
-[How a callee is determined](How a callee is determined) covers rules which are necessary to make sure that only a single, predictable callee receives an invokation of a procedure for each call that a caller makes.
+[How a callee is determined](How a callee is determined) covers rules which are necessary to make sure that only a single, predictable callee receives an invocation of a procedure for each call that a caller makes.
 
 Finally, [Registration Meta-Events and Procedures](Registration Meta Events and Procedures) allow clients to be notfied of events regarding the lifecycle of registrations, and to query for information about existing registrations.
