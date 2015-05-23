@@ -1,16 +1,10 @@
-## Release 1.0
-(planned for early December 2014)
+Crossbar.io is under active development. Below are features which are under development or planned. 
 
-Release 1.0 consolidates existing functionality and improves stability.
+Since we are resource-constrained we cannot give a precise roadmap for these features. We try to consider user interest when prioritizing features. So please contact us if you need something - or better yet, help us in implementing it!
 
-- finish authorization & authentication mechanisms 
-- add application templates covering authentication and authorization
-- stabilization & cleanup
+### Support for Python 3
 
-## Release 2.0
-(planned for May 2015)
-
-Release 2.0 adds new features. It primarily allows databases to act as application components in WAMP applications, and adds new features from the WAMP Advanced Profile.
+We're supporting the porting of the Twisted framework to Python 3, and have already gotten Crossbar.io to run on Python 3. 
 
 ### Database Integration
 
@@ -30,26 +24,23 @@ These allow databases to become WAMP clients. They offer all four WAMP client ro
 
 ### Features from the WAMP Advanced Profile
    
-* pattern-based subscription & registrations
-* more meta events, e.g. first subscribe/last unsubscribe for a topic
+* forced subscriber unsubscribe
+* event history
+* call timeouts
+* forced callee unregister
+* cancelling calls
 
 ### Additional Features
 
 * automatic reloading of components
 
-## Release 3.0
-(planned for August 2015)
-
-Release 3.0 adresses scalability and robustness/high availability both for Crossbar itself and for WAMP applications.
-
 ### Multi-core and Multi-node Support
 
 WAMP messages are routed between routers. This allows to scale Crossbar and/or increase system availability by scaling up to multiple cores and/or scaling out to multiple nodes (clustering, federation).
 
-### Partitioned and distributed Calls and Events
+### Partitioned Calls and Events
 
-* Distributed calls allow load balancing for callees.
-* Partitioned calls enable using e.g. database sharding.
+Partitioned calls enable using e.g. database sharding.
 
 -----------------------------------
 
@@ -61,3 +52,5 @@ Additionally, Tavendo, the maintainers of the Crossbar.io project, are planning 
   * instances connect to a central cloud management service run by Tavendo
 
 * Hosted Crossbar Realms (Routing-as-a-Service)
+
+and are already offering commercial support (see their [website](http://tavendo.com) for contact details).
