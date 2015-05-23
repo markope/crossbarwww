@@ -8,7 +8,7 @@ Using the registration ID, a callee can unregister the procedure at any time.
 
 As a default, exact matching is used for RPCs, i.e. a call is only accepted (and routed to a callee) if a callee has registered for the exact URI used by a caller. Additionally, patter-based registrations are possible, e.g. a callee could register a URI which is prefix-matched, so that a registration for "com.myapp.create" would lead to calls for both "com.myapp.create.user" and  "com.myapp.create.device" to be accepted and invoked on the callee. For more on this see [Pattern-Based Registrations](Pattern Based Registrations).
 
-As a default, a procedure can only be registered by a single callee. All further registration attempts return an error. The routed nature of RPCs as implemented by WAMP allows other patterns as well, i.e. multiple registrations may be allowed, and the procedure is then invoked  on the last callee to register which is currently still connected. For more on this see [Invokation Rules](Invokation Rules).
+As a default, a procedure can only be registered by a single callee. All further registration attempts return an error. The routed nature of RPCs as implemented by WAMP allows other patterns as well, i.e. multiple registrations may be allowed, and the procedure is then invoked  on the last callee to register which is currently still connected. For more on this see [Shared Registrations](Shared Registrations).
 
 [How a callee is determined](How a callee is determined) covers rules which are necessary to make sure that only a single, predictable callee receives an invocation of a procedure for each call that a caller makes.
 
