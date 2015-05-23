@@ -31,18 +31,34 @@
    </ul>
 </div>
 
+# The Devices
+
+Pick a microcontroller and see what we are offering for it: 
+
+* [[Raspberry Pi]]
+* [[Arduino Yun]]
+* [[Tessel]]
+
+<div id="cookbook_home_devices_container">
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">   
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">   
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="">   
+</div>
+
 # The components
 
 Building blocks, ready to use for solving your problem!
 
-
-
-* Speech Synthesis [Raspberry Pi](Raspberry Pi Speech Synthesis)
-* X-Box Controller [Raspberry Pi](Raspberry Pi Xbox Controller)
-* Accelerometer [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Accelerometer)
-* Lights [Yun](Arduino Yun Lights)
-* Camera [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
-* Buttons [Yun](Arduino Yun Buttons)
+* Speech Synthesis - [Raspberry Pi](Raspberry Pi Speech Synthesis)
+* Sample Playback -[Raspberry Pi](Raspberry Pi Sample Player)
+* X-Box Controller -[Raspberry Pi](Raspberry Pi Xbox Controller)
+* Accelerometer - [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Accelerometer)
+* Lights - [Yun](Arduino Yun Lights)
+* Camera - [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
+* Buttons - [Yun](Arduino Yun Buttons)
+* Ambient Light - [Yun](Arduinp Yun Ambient Light Sensor)
+* Potentiometer - [Yun](Arduino Yun Potentiometer)
+* [Raspberry Pi Temperature Monitor](Raspberry Pi Temperature Monitor)
 
 * [Digital Signage](Digital Signage):
    
@@ -63,20 +79,6 @@ Applications which use the components. Get an idea for how combining things work
 * [Real-time charting with the Arduino Yun](Arduino Yun Real-time Charting) (**under construction**)
 * [Digital Signage](Digital Signage)
   
-# The Devices
-
-Pick a microcontroller and see what we are offering for it: 
-
-* [[Raspberry Pi]]
-* [[Arduino Yun]]
-* [[Tessel]]
-
-<div id="cookbook_home_devices_container">
-      <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">   
-      <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">   
-      <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="">   
-</div>
-
 
 # Running things
 

@@ -56,8 +56,6 @@ How to get started using your language or device of choice.
 * [Getting started with Java](Getting-started-with-Java)
 * [Getting started with Tessel](Getting-started-with-Tessel)
 
-
-
 ## Administration
 
 How to adapt Crossbar.io for your specific use case.
@@ -164,6 +162,8 @@ Guides for using Crossbar.io in specific scenarios, or for using specific featur
 * Crossbar.io features
 
   - [Starting and Stopping Crossbar.io](Starting and Stopping Crossbar.io)
+
+In addition to these general programming guides, we offer a wide range of materials for [IoT devices, components and applications](../iotcookbook).
 
 
 ## Client Libraries
