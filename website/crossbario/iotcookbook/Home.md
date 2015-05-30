@@ -56,8 +56,9 @@ Building blocks, ready to use for solving your problem!
 * Lights - [Yun](Arduino Yun Lights)
 * Camera - [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
 * Buttons - [Yun](Arduino Yun Buttons)
-* Ambient Light - [Yun](Arduinp Yun Ambient Light Sensor)
+* Ambient Light - [Yun](Arduino Yun Ambient Light Sensor)
 * Potentiometer - [Yun](Arduino Yun Potentiometer)
+* Tilt Sensor - [Yun](Arduino Yun Tilt Sensor)
 * [Raspberry Pi Temperature Monitor](Raspberry Pi Temperature Monitor)
 
 * [Digital Signage](Digital Signage):

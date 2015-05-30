@@ -1,14 +1,14 @@
 The Arduino Yun Potentiometer component publishes events when the state of a Tinkerit potentiometer changes.
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/tilt_arduino_yun.jpg" alt="">   
+   <img class="topimage" src="../../static/img/iotcookbook/yun_potentiometer.jpg" alt="">   
 </div>
 
 ## Trying it out
 
 The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
 
-You need to have one Tinkerkit potentiometer connected to 'I0' on the Tinkerkit shield (pin 0).
+You need to have at least one Tinkerkit potentiomete, which as a default should be connected to 'I0' on the Tinkerkit shield (pin 0).
 
 Open a shell for the component directory. 
 
@@ -61,22 +61,17 @@ Once this is running, open the browser console for the frontend page and reload 
 
 ```
 connected
-potentiometer value currently is:  20
+potentiometer value currently is: 0 20
 ```
 
-and when you turn the potentiometer
+and when you turn the potentiometer something like
 
 ```
-Value changed to:  22
-Value changed to:  25
-Value changed to:  28
-Value changed to:  30
-Value changed to:  32
-Value changed to:  35
-Value changed to:  37
-Value changed to:  39
-Value changed to:  43
-Value changed to:  45
+potentiometer value change: [0, 24]
+potentiometer value change: [0, 26]
+potentiometer value change: [0, 28]
+potentiometer value change: [0, 31]
+potentiometer value change: [0, 33]
 ```
 
 ## The API
@@ -87,7 +82,7 @@ The component provides one procedure
 io.crossbar.examples.yun.potentiometer.get_potentiometer_value
 ```
 
-which returns the current potentiometer value (0 - 100),
+which takes the pin the potentiometer is connected to as an argument and returns the current potentiometer value (0 - 100),
 
 and publishes to one topic
 
@@ -95,9 +90,9 @@ and publishes to one topic
 io.crossbar.examples.yun.potentiometer.on_value_change
 ```
 
-which provides the current potentiometer value (0 - 100).
+which provides the pin of the potentiometer where the value change occured adn the current potentiometer value (0 - 100).
 
 
 ## Using it
 
-Adjust the pin and topics as needed.
+Adjust the pin and topics as needed, add potentiometers.

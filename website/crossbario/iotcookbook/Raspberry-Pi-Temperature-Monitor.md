@@ -102,5 +102,5 @@ To produce a temperature increase by keeping the CPU busy, you can call
 io.crossbar.examples.pi.<your_pi_serial>.tempmon.impose_stress
 ```
 
-with an integer as an argument (values greater than 100000ß are suggested).
+with an integer as an argument (values greater than 100000 are suggested).
 

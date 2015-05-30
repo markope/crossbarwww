@@ -1,7 +1,7 @@
 The Arduino Yun Ambient Light Sensor component allows querying the current state of a Tinkerkit ambient light (LDR) sensor and publishes events when this state changes.
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/tilt_arduino_yun.jpg" alt="">   
+   <img class="topimage" src="../../static/img/iotcookbook/yun_ambient_light.jpg" alt="">   
 </div>
 
 ## Trying it out
