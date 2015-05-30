@@ -49,24 +49,25 @@ Pick a microcontroller and see what we are offering for it:
 
 Building blocks, ready to use for solving your problem!
 
-* Speech Synthesis - [Raspberry Pi](Raspberry Pi Speech Synthesis)
-* Sample Playback -[Raspberry Pi](Raspberry Pi Sample Player)
-* X-Box Controller -[Raspberry Pi](Raspberry Pi Xbox Controller)
-* Accelerometer - [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Accelerometer)
-* Lights - [Yun](Arduino Yun Lights)
-* Camera - [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
-* Buttons - [Yun](Arduino Yun Buttons)
-* Ambient Light - [Yun](Arduino Yun Ambient Light Sensor)
-* Potentiometer - [Yun](Arduino Yun Potentiometer)
-* Tilt Sensor - [Yun](Arduino Yun Tilt Sensor)
-* [Raspberry Pi Temperature Monitor](Raspberry Pi Temperature Monitor)
-
-* [Digital Signage](Digital Signage):
-   
+* Sensors
+   * Accelerometer - [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Accelerometer)
+   * Ambient Light - [Yun](Arduino Yun Ambient Light Sensor)
+   * Camera - [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
+   * Tilt Sensor - [Yun](Arduino Yun Tilt Sensor)
+   * [Raspberry Pi Temperature Monitor](Raspberry Pi Temperature Monitor)
+* Inputs
+   * X-Box Controller -[Raspberry Pi](Raspberry Pi Xbox Controller)
+   * Buttons - [Yun](Arduino Yun Buttons)
+   * Potentiometer - [Yun](Arduino Yun Potentiometer)
+* Outputs
+   * Speech Synthesis - [Raspberry Pi](Raspberry Pi Speech Synthesis)
+   * Sample Playback -[Raspberry Pi](Raspberry Pi Sample Player)
+   * Lights - [Yun](Arduino Yun Lights)
    + [Browser Remote Control](Browser Remote Control)
    + [Reveal.js Remote Control](Reveal.js Remote Control)
    + [WAMP widgets](WAMP Browser Widgets) (**under construction**)
 
+ 
 plus generic remote access & control of GPIO pins on the
 
 * [Arduino Yun](Arduino Yun Remote GPIO)

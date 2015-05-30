@@ -14,9 +14,17 @@ The [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.Arduin
 
 ## Components
 
+**Input**
+
 * [Accelerometer](Arduino Yun Accelerometer) - receive raw acceleromter data or events when a certain threshold has been exceeded
+* [Tilt Sensor](Arduino Yun Tilt Sensor) - get notifications when the state of a Tinkerkit tilt sensor changes
+* [Ambient Light](Arduino Yun Ambient Light Sensor) - get the current light level and receive notifications if a threshold value is crossed
 * [Buttons](Arduino Yun Buttons) - receive events for up to 6 buttons connected to a Yun
-* [Lights](Arduino Yun Lights) - light up up to 6 LEDs remotely
+* [Potentiometer](Arduino Yun Potentiometer) - get the value and updates from up to 6 Tinkerkit potentiometers
+
+**Output**
+
+* [Lights](Arduino Yun Lights) - light up up to 6 LEDs remotely (or any other modules which accept digital write)
 
 ## Apps
 
