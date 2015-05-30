@@ -55,14 +55,17 @@ Building blocks, ready to use for solving your problem!
    * Camera - [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
    * Tilt Sensor - [Yun](Arduino Yun Tilt Sensor)
    * [Raspberry Pi Temperature Monitor](Raspberry Pi Temperature Monitor)
+   * Weighing Pad - [Yun](Arduino Yun Weighing Pad) (**under construction**)
 * Inputs
    * X-Box Controller -[Raspberry Pi](Raspberry Pi Xbox Controller)
    * Buttons - [Yun](Arduino Yun Buttons)
    * Potentiometer - [Yun](Arduino Yun Potentiometer)
+   * Novation Launchpad - [Raspberry Pi](Raspberry Pi Novation Launchpad) (**under construction**)
 * Outputs
    * Speech Synthesis - [Raspberry Pi](Raspberry Pi Speech Synthesis)
    * Sample Playback -[Raspberry Pi](Raspberry Pi Sample Player)
    * Lights - [Yun](Arduino Yun Lights)
+   * [LED Matrix Display](Arduino Yun LED Matrix Display)
    + [Browser Remote Control](Browser Remote Control)
    + [Reveal.js Remote Control](Reveal.js Remote Control)
    + [WAMP widgets](WAMP Browser Widgets) (**under construction**)
@@ -78,9 +81,8 @@ plus generic remote access & control of GPIO pins on the
 Applications which use the components. Get an idea for how combining things works, find code to re-use, be inspired - and maybe already find a solution which fits your needs!
 
 * [Alarm Application](Apps Alarm)
-* [Real-time charting with the Arduino Yun](Arduino Yun Real-time Charting) (**under construction**)
 * [Digital Signage](Digital Signage)
-  
+* [Real-time charting with the Arduino Yun](Arduino Yun Real-time Charting) (**under construction**)
 
 # Running things
 
