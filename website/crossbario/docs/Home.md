@@ -167,13 +167,16 @@ Guides for using Crossbar.io in specific scenarios, or for using specific featur
 
 ## Client Libraries
 
-Programming WAMP application components is tied to the particular client library you're using. Below we give links to documentations we know about. 
+Programming WAMP application components is tied to the particular client library you're using. The [Autobahn](http://autobahn.ws) family of WAMP client libraries is provided by us
 
 * [Autobahn|Python](http://autobahn.ws/python/)
 * [Autobahn|JS](http://autobahn.ws/js/)
 * [Autobahn|CPP](http://autobahn.ws/cpp/)
 
-## Contributing
+whereas you can find more WAMP client libraries [here](http://wamp.ws/implementations/#libraries).
+
+
+## Developers
 
 Notes for developers working on the **Crossbar**.io code base (*not* application developers).
 
@@ -181,12 +184,14 @@ Notes for developers working on the **Crossbar**.io code base (*not* application
 * [Manhole](Manhole)
 * [Management API](Management API)
 
-## Licenses
 
-All you need to know about the legal aspects of using Crossbar.io
+## Legal
+
+Licenses for Crossbar.io code and documentation can be found here
 
 * [Crossbar License](Crossbar License)
 * [Documentation License](Documentation License)
+
 
 ## Support
 
