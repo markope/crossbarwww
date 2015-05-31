@@ -12,7 +12,7 @@ crossbar templates
 
 The 'default' template sets up Crossbar.io with a WebSocket transport and a static Web server. Just doing `crossbar init` without any further arguments uses the default template.
 
-The 'Hello' tempaltes show both RPC and PubSub functionality. A backend offers a simple addition as a procedure to be called, and publishes a counter as a PubSub event. A HTML5 frontend, served by Crossbar's integrated Web server, calls the procedure, and subscribes to the counter event.
+The 'Hello' templates show both RPC and PubSub functionality. A backend offers a simple addition as a procedure to be called, and publishes a counter as a PubSub event. A HTML5 frontend, served by Crossbar's integrated Web server, calls the procedure, and subscribes to the counter event.
 
 The backend is available for the following languages & runtimes:
 
@@ -59,13 +59,12 @@ All application templates are licensed either under the BSD 2-clause license or 
 
 ## Additional Examples and Demos
 
-In addition to the simple 'Hello' templates, there are [examples](https://github.com/crossbario/crossbarexamples) and [demos](https://github.com/crossbario/crossbardemo).
+In addition to the simple 'Hello' templates, there are a lot of [examples](https://github.com/crossbario/crossbarexamples).
 
-The [examples](https://github.com/crossbario/crossbarexamples) provide working code illustrating various aspects and features of using Crossbar.io, whereas the [demos](https://github.com/crossbario/crossbardemo) are mini-applications. To use the examples, just clone the repo, and do `crossbar start` in the respective folder in the repo.
+Thsi ranges from simple examples which provide working code illustrating various aspects and features of using Crossbar.io to [demos](https://github.com/crossbario/crossbarexamples/demos) mini-applications. To use the examples or demos, just clone the repo, and do `crossbar start` in the respective folder in the repo. For the demos, there's also a launcher (do `crossbar start` in the `_demo_launcher` directory).
 
 More information can be found on the [examples page](Examples).
 
-The demos mainly illustrate PubSub functionality, and were mostly created during the development of a previous version of Crossbar.io. They require the installation of an additional Python package (`pip install crossbardemo`). Due to their heritage, these may not always provide the best guidance for how to do HTML5/WAMP applications.
 
 
 

@@ -19,15 +19,15 @@ Now connect to the machine via SSH software of your choice.
 * The IP or domain name are listed in the instance information
 * The user name is 'ubuntu'.
 
-Once you've logged into the machine, you can set up Crossbar.io using the [command line](First Steps). For example, to set up the votes demo and run it, do
+Once you've logged into the machine, you can set up Crossbar.io using the [command line](First Steps). For example, to set up the hello:browser demo and run it, do
 
 ```
-crossbar init --template votes:python --appdir votes_python
-cd votes_python
+crossbar init --template hello:browser --appdir hello_browser
+cd hello_browser
 crossbar start
 ```
 
-You can then access the demo from any (modern) browser.
+You can then access the demo from any (modern) browser at the IP of your machine at port 8080.
 
 ## Updating Crossbar.io
 

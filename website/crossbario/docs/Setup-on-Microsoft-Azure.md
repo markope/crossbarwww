@@ -39,7 +39,7 @@ You should then see the welcome screen below:
 
 To test the actual Crossbar.io core functionality, i.e. WAMP routing, you can run any of the [Crossbar.io examples](https://github.com/crossbario/crossbarexamples). For these you need to adapt the connection data. 
 
-We suggest you use the [Votes Browser Demo](https://github.com/crossbario/crossbarexamples/tree/master/votes/browser), since this runs entirely in the browser. To run this
+We suggest you use the [Votes Browser Demo](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/browser), since this runs entirely in the browser. To run this
 
 * Get a local copy of the repository. You can clone it using [git](http://www.git-scm.com/), or download the repository as a [zip file](https://github.com/crossbario/crossbarexamples/archive/master.zip).
 * Set the appropriate connection data, i.e. in 'crossbarexamples/votes/browser/js' you need to modify both 'backend.js' and 'frontend.js' so that 'wsuri' is the IP of your Azure instance, with port 80.   

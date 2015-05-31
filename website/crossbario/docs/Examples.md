@@ -29,9 +29,10 @@ To give you a better idea of a small working WAMP application there is
 For a slightly more compley (and realistic) application:
 
 * [Votes](https://github.com/crossbario/crossbarexamples/tree/master/votes) - basic WAMP application using both PubSub and RPC, with a Web frontend. Comes with backends for 
-   + [Python](https://github.com/crossbario/crossbarexamples/tree/master/votes/python)
-   + [Node.js](https://github.com/crossbario/crossbarexamples/tree/master/votes/nodejs) 
-   + [the browser](https://github.com/crossbario/crossbarexamples/tree/master/votes/browser)
+   + [Python](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/python)
+   + [Node.js](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/nodejs) 
+   + [the browser](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/browser)
+plus with an additional [Kivy (Python) frontend](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/kivy)
 
 The following examples cover **specific features** of WAMP/Crossbar.io
 
@@ -46,13 +47,14 @@ The following examples cover **specific features** of WAMP/Crossbar.io
    + [HTTPS](https://github.com/crossbario/crossbarexamples/tree/master/pushertls)
 * [Secure WebSockets (WSS)](https://github.com/crossbario/crossbarexamples/tree/master/wss/python)
 
-And finally, there are examples using specific devices or technologies:
+There are examples using specific technologies:
 
-* [Raspberry Pi](https://github.com/crossbario/crossbarexamples/tree/master/device/pi)
-* [Tessel microcontroller](https://github.com/crossbario/crossbarexamples/tree/master/hello/tessel)
 * [Django framework](https://github.com/crossbario/crossbarexamples/tree/master/django/realtimemonitor)
 * [ExpressJS](https://github.com/crossbario/crossbarexamples/tree/master/expressjs)
 
+There is also an entire [subsection for the IoT](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook), for which we also offer [documentation](http://crossbar.io/iotcookbook).
+
+And, finally, there are [more demos](https://github.com/crossbario/crossbarexamples/tree/master/demos) in the vein of the votes app. These range from really old code (written for a precursor version of Crossbar.io - so beware not to take this as examples!) to newer stuff, illustrating some of the things you can do with Crossbar.io.
 
 ## Adapting for other languages
 

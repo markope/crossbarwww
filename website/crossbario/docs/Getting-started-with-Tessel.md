@@ -74,4 +74,4 @@ The Crossbar.io configuration for this demo is completely standard - with a sing
 
 ## Where to go now?
 
-* For more Tessel code, see the [Alarm App](https://github.com/crossbario/crossbardemo/tree/master/crossbardemo/crossbardemo/iot/tessel/alarmapp) which we created as part of a Microsoft IoT Hackation.
+* For more Tessel code, see the [Alarm App](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/app/alarm) which we created as part of a Microsoft IoT Hackation.
