@@ -31,39 +31,7 @@
    </ul>
 </div>
 
-## The components
-
-Building blocks, ready to use for solving your problem!
-
-
-
-* Speech Synthesis [Raspberry Pi](Raspberry Pi Speech Synthesis)
-* X-Box Controller [Raspberry Pi](Raspberry Pi Xbox Controller)
-* Accelerometer [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Accelerometer)
-* Lights [Yun](Arduino Yun Lights)
-* Camera [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
-* Buttons [Yun](Arduino Yun Buttons)
-
-* [Digital Signage](Digital Signage):
-   
-   + [Browser Remote Control](Browser Remote Control)
-   + [Reveal.js Remote Control](Reveal.js Remote Control)
-   + [WAMP widgets](WAMP Browser Widgets) (**under construction**)
-
-plus generic remote access & control of GPIO pins on the
-
-* [Arduino Yun](Arduino Yun Remote GPIO)
-* [Raspberry Pi](Raspberry Pi Remote GPIO) (**under construction**)
-
-## The applications
-
-Applications which use the components. Get an idea for how combining things works, find code to re-use, be inspired - and maybe already find a solution which fits your needs!
-
-* [Alarm Application](Apps Alarm)
-* [Real-time charting with the Arduino Yun](Arduino Yun Real-time Charting) (**under construction**)
-* [Digital Signage](Digital Signage)
-  
-## Components and applications by device
+# The Devices
 
 Pick a microcontroller and see what we are offering for it: 
 
@@ -71,12 +39,56 @@ Pick a microcontroller and see what we are offering for it:
 * [[Arduino Yun]]
 * [[Tessel]]
 
+<div id="cookbook_home_devices_container">
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">   
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">   
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="">   
+</div>
 
-## Running things
+# The components
+
+Building blocks, ready to use for solving your problem!
+
+* Sensors
+   * Accelerometer - [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Accelerometer)
+   * Ambient Light - [Yun](Arduino Yun Ambient Light Sensor)
+   * Camera - [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
+   * Tilt Sensor - [Yun](Arduino Yun Tilt Sensor)
+   * [Raspberry Pi Temperature Monitor](Raspberry Pi Temperature Monitor)
+   * Weighing Pad - [Yun](Arduino Yun Weighing Pad) (**under construction**)
+* Inputs
+   * X-Box Controller -[Raspberry Pi](Raspberry Pi Xbox Controller)
+   * Buttons - [Yun](Arduino Yun Buttons)
+   * Potentiometer - [Yun](Arduino Yun Potentiometer)
+   * Novation Launchpad - [Raspberry Pi](Raspberry Pi Novation Launchpad) (**under construction**)
+* Outputs
+   * Speech Synthesis - [Raspberry Pi](Raspberry Pi Speech Synthesis)
+   * Sample Playback -[Raspberry Pi](Raspberry Pi Sample Player)
+   * Lights - [Yun](Arduino Yun Lights)
+   * [LED Matrix Display](Arduino Yun LED Matrix Display)
+   + [Browser Remote Control](Browser Remote Control)
+   + [Reveal.js Remote Control](Reveal.js Remote Control)
+   + [WAMP widgets](WAMP Browser Widgets) (**under construction**)
+
+ 
+plus generic remote access & control of GPIO pins on the
+
+* [Arduino Yun](Arduino Yun Remote GPIO)
+* [Raspberry Pi](Raspberry Pi Remote GPIO) (**under construction**)
+
+# The applications
+
+Applications which use the components. Get an idea for how combining things works, find code to re-use, be inspired - and maybe already find a solution which fits your needs!
+
+* [Alarm Application](Apps Alarm)
+* [Digital Signage](Digital Signage)
+* [Real-time charting with the Arduino Yun](Arduino Yun Real-time Charting) (**under construction**)
+
+# Running things
 
 The code for all of the above is in the [crossbarexamples repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. Clone this locally or download it as a ZIP file.
 
-## Getting a WAMP router
+# Getting a WAMP router
 
 There are three main ways to gettin a WAMP router
 

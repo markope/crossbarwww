@@ -1,7 +1,7 @@
 Receive controller events from a Xbox controller connected to a Raspberry Pi. Events are transmitted using WAMP.
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/xbox_controller.jpg" alt="">   
+   <img class="topimage" src="../../static/img/iotcookbook/xbox_controller_won.jpg" alt="">   
 </div>
 
 This example uses [xboxdrv](https://github.com/xboxdrv/xboxdrv), a usersprace driver for Xbox game controllers.

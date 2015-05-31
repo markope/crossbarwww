@@ -34,6 +34,7 @@ Installing locally or in the cloud.
   * [Installation on Windows](Installation on Windows)
   * [Installation on Docker](Installation on Docker)
   * [Installation on the RaspberryPi](Installation on the RaspberryPi)
+  * [Installation on Ubuntu Snappy](Installation on Ubuntu Snappy)
 * [Setup in the Cloud](Setup in the Cloud)
   * [Setup on Microsoft Azure](Setup on Microsoft Azure)
   * [Setup on Amazon EC2](Setup on Amazon EC2)
@@ -54,8 +55,6 @@ How to get started using your language or device of choice.
 * [Getting started with C#](Getting-started-with-CSharp)
 * [Getting started with Java](Getting-started-with-Java)
 * [Getting started with Tessel](Getting-started-with-Tessel)
-
-
 
 ## Administration
 
@@ -163,6 +162,8 @@ Guides for using Crossbar.io in specific scenarios, or for using specific featur
 * Crossbar.io features
 
   - [Starting and Stopping Crossbar.io](Starting and Stopping Crossbar.io)
+
+In addition to these general programming guides, we offer a wide range of materials for [IoT devices, components and applications](../iotcookbook).
 
 
 ## Client Libraries

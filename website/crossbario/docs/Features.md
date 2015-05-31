@@ -5,7 +5,7 @@
 * Authentication via
 
   * [WAMP-CRA](WAMP CRA Authentication) (challenge-response mechanism)
-  * [Mozilla Persona](Mozilla Persona)
+  * [Mozilla Persona](Mozilla Persona) (planned)
   * [OTP](OTP-Authentication) (e.g for Google Authenticator)
   * [cookie-based](Cookie Authentication)
   * TLS client certificate (planned)
@@ -17,11 +17,16 @@
 
 ## WAMP Advanced Profile Features
 
-* [Subscriber Black & Whitelisting](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#subscriber-black--and-whitelisting)
-* [Publisher and caller identification](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#publisher-identification)
-* Meta-events:
-
-  + [session join & leave](Session Metaevents) 
++ [Subscriber Black- and Whitelisting](Subscriber Black and Whitelisting)
++ [Publisher Exclusion](Publisher Exclusion)
++ [Publisher Identification](Publisher Identification)
++ [Pattern-Based Subscriptions](Pattern Based Subscriptions)
++ [Subscription Meta-Events and Procedures](Subscription Meta Events and Procedures)
++ [Caller Identification](Caller Identification)
++ [Progressive Call Results](Progressive Call Results)
++ [Pattern-Based Registrations](Pattern Based Registrations)
++ [Shared Registrations](Shared Registrations)    
++ [Registration Meta-Events and Procedures](Registration Meta Events and Procedures)
 
 
 ## Multi-Transport and Serialization
@@ -35,7 +40,7 @@
   
   * [WebSocket](WebSocket Transports) with [Flash fallback](Flash Policy Transports)
   * [RawSocket](RawSocket Transports)
-  * HTTP/long poll
+  * [HTTP/long poll](WAMP Long-Poll Service)
 
 * Transport
 
@@ -49,10 +54,10 @@
 * Current WAMP libraries exist for:
 
   * [Python](http://autobahn.ws/python)
-  * [JavaScript](http://autobahn.ws/js)
+  * [JavaScript](http://autobahn.ws/js)/[alternative](https://github.com/KSDaemon/wampy.js)
   * [PHP](https://github.com/voryx/Thruway)
   * [Java](https://github.com/Matthias247/jawampa)
-  * [C++](https://github.com/tavendo/AutobahnCpp)
+  * [C++](https://github.com/tavendo/AutobahnCpp)/[alternative](https://github.com/ecorm/cppwamp)
   * [Objective-C](https://github.com/mogui/MDWamp)
   * [C#](https://github.com/Code-Sharp/WampSharp)
   * [Erlang](https://github.com/bwegh/awre)
@@ -95,7 +100,8 @@
 ## Upcoming Features
 
 * Database connectors - databases as WAMP components
-* Mult-core and multi-node architecture
+* Multi-core and multi-node architecture
+* Python 3 support
 
 For more details about upcoming features, see the [Roadmap](Roadmap).
 

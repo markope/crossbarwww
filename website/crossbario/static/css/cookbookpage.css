@@ -69,6 +69,18 @@
    
 }
 
+#cookbook_home_devices_container {
+
+}
+
+#contents #cookbook_home_devices_container .cookbook_home_device {
+    height: 175px;
+
+    display: inline;
+    margin: 1em 0;
+    padding: 0;
+}
+
 .topimage_container {
     /* width: 80%; */
    
