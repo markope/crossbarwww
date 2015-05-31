@@ -1,6 +1,13 @@
 The default transport for WAMP is WebSocket. For clients not supporting WebSocket, the WAMP specification defines a transport that runs over a HTTP long-poll mechanism.
 
+## Example using AutobahnJS
+
 AutobahnJS fully supports WAMP-over-Longpoll and you can find a complete working example in the Crossbar.io examples [here](https://github.com/crossbario/crossbarexamples/tree/master/longpoll).
+
+
+## Example using curl
+
+For developers that want to add WAMP-over-Longpoll support to their WAMP client library, we have another [example](https://github.com/crossbario/crossbarexamples/tree/master/longpoll_curl) which demonstrates the transport using **curl** only. This example can be useful during development and debugging. It is **not** intended for end-users.
 
 
 ## Configuration
@@ -47,8 +54,3 @@ option | description
 **`queue_limit_messages`** | Limit the number of queued messages. If 0, don't enforce a limit. (default: **100**)
 **`debug`** | A boolean that activates debug output for this service. (default: **false**).
 **`debug_transport_id`** | If given (e.g. `"kjmd3sBLOUnb3Fyr"`), use this fixed transport ID. (default: **null**).
-
-
-## Example using curl
-
-For developers that want to add WAMP-over-Longpoll support to their WAMP client library, we have another [example](https://github.com/crossbario/crossbarexamples/tree/master/longpoll_curl) which demonstrates the transport using **curl** only. This example can be useful during development and debugging. It is **not** for end-users.
