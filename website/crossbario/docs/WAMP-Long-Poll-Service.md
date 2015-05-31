@@ -1,11 +1,14 @@
 The default transport for WAMP is WebSocket. For clients not supporting WebSocket, the WAMP specification defines a transport that runs over a HTTP long-poll mechanism.
 
+AutobahnJS fully supports WAMP-over-Longpoll and you can find a complete working example in the Crossbar.io examples [here](https://github.com/crossbario/crossbarexamples/tree/master/longpoll).
+
+
 ## Configuration
 
 The *Long-Poll Service* is configured on a path of a Web transport - here is part of a Crossbar configuration:
 
 ```javascript
-{   
+{
    "workers": [
       {
          "type": "router",
@@ -45,117 +48,7 @@ option | description
 **`debug`** | A boolean that activates debug output for this service. (default: **false**).
 **`debug_transport_id`** | If given (e.g. `"kjmd3sBLOUnb3Fyr"`), use this fixed transport ID. (default: **null**).
 
-## Example using AutobahnJS
 
-You can find a working example for longpolling using AutobahnJS in the [Crossbar.io examples](https://github.com/crossbario/crossbarexamples/tree/master/longpoll).
+## Example using curl
 
-## Testing
-
-Here is how to test the *Long-Poll Service* using [curl](http://curl.haxx.se/).
-
-We are using the following config for Crossbar.io (put that into `.crossbar/config.json`):
-
-```javascript
-
-{
-   "controller": {
-   },
-   "workers": [
-      {
-         "type": "router",
-         "realms": [
-            {
-               "name": "realm1",
-               "roles": [
-                  {
-                     "name": "anonymous",
-                     "permissions": [
-                        {
-                           "uri": "*",
-                           "publish": true,
-                           "subscribe": true,
-                           "call": true,
-                           "register": true
-                        }
-                     ]
-                  }
-               ]
-            }
-         ],
-         "transports": [
-            {
-               "type": "web",
-               "endpoint": {
-                  "type": "tcp",
-                  "port": 8080
-               },
-               "paths": {
-                  "/": {
-                     "type": "static",
-                     "directory": ".."
-                  },
-                  "ws": {
-                     "type": "websocket"
-                  },
-                  "lp": {
-                     "type": "longpoll",
-                     "options": {
-                        "debug": true,
-                        "debug_transport_id": "kjmd3sBLOUnb3Fyr"
-                     }
-                  }
-               }
-            }
-         ]
-      }
-   ]
-}
-```
-
-Above config enables debug mode, and sets a fixed transport ID `kjmd3sBLOUnb3Fyr`.
-
-You can now **open** a new connection by running the following in a first terminal:
-
-```console
-curl -H "Content-Type: application/json" \
-   -d '{"protocols": ["wamp.2.json"]}' \
-   http://127.0.0.1:8080/lp/open
-```
-
-and **subscribe** to a topic by sending a `SUBSCRIBE` message:
-
-```console
-
-```
-
-then get ready to **receive** WAMP messages by long-polling:
-
-```console
-curl -H "Content-Type: application/json" -d "" \
-   http://127.0.0.1:8080/lp/kjmd3sBLOUnb3Fyr/receive
-```
-
-Now, in a second terminal, **establish** a WAMP session over the transport by sending a WAMP `HELLO` message:
-
-```console
-curl -H "Content-Type: application/json" \
-   -d '[1, "realm1", {"roles": {"subscriber": {}, "publisher": {}}}]' \
-   http://127.0.0.1:8080/lp/kjmd3sBLOUnb3Fyr/send
-```
-
-and **send** a message:
-
-```console
-curl -H "Content-Type: application/json" \
-   -d '[32, 1, {}, "com.myapp.topic1"]' \
-   http://127.0.0.1:8080/lp/kjmd3sBLOUnb3Fyr/send
-```
-
-The first terminal (which is doing the receive long-poll), will now receive WAMP events for topic `com.myapp.topic1`.
-
-To **close** the transport:
-
-```console
-curl -H "Content-Type: application/json" -d '' \
-   http://127.0.0.1:8080/lp/kjmd3sBLOUnb3Fyr/close
-```
+For developers that want to add WAMP-over-Longpoll support to their WAMP client library, we have another [example](https://github.com/crossbario/crossbarexamples/tree/master/longpoll_curl) which demonstrates the transport using **curl** only. This example can be useful during development and debugging. It is **not** for end-users.
