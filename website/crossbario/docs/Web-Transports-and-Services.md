@@ -6,7 +6,11 @@
  1. [CGI Script Service](CGI Script Service)
  1. [WSGI Host Service](WSGI Host Service)
  1. [WAMP Long-Poll Service](WAMP Long-Poll Service)
- 1. [HTTP Pusher Service](HTTP Pusher Service)
+ 1. [HTTP Bridge Services](HTTP Bridge Services)
+   - [HTTP Publisher](HTTP Bridge Services Publisher)
+   - [HTTP Caller](HTTP Bridge Services Caller)
+   - [HTTP Subscriber](HTTP Bridge Services Subscriber)
+   - [HTTP Callee](HTTP Bridge Services Callee)
  1. [File Upload Service](File-Upload-Service.md)
 
 ## Introduction
@@ -109,7 +113,11 @@ If present, the URL in the WebSocket part of the configuration MUST include the 
  1. [CGI Script Service](CGI Script Service)
  1. [WSGI Host Service](WSGI Host Service)
  1. [WAMP Long-Poll Service](WAMP Long-Poll Service)
- 1. [HTTP Pusher Service](HTTP Pusher Service)
+ 1. [HTTP Bridge Services](HTTP Bridge Services)
+   - [HTTP Publisher](HTTP Bridge Services Publisher)
+   - [HTTP Caller](HTTP Bridge Services Caller)
+   - [HTTP Subscriber](HTTP Bridge Services Subscriber)
+   - [HTTP Callee](HTTP Bridge Services Callee)
  1. [File Upload Service](File Upload Service)
 
 The WebSocket subpath service runs a WebSocket transport as part of a Web transport on a URL subpath. This accepts the `options`, `debug`, `url` and `auth` arguments similarly to a regular WebSocket transport.
