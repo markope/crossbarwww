@@ -7,6 +7,7 @@
  1. [WSGI Host Service](WSGI Host Service)
  1. [WAMP Long-Poll Service](WAMP Long-Poll Service)
  1. [HTTP Pusher Service](HTTP Pusher Service)
+ 1. [File Upload Service](File-Upload-Service.md)
 
 ## Introduction
 
@@ -14,7 +15,7 @@
 
 You can host static content on your existing Web server or a static hosting service like Amazon S3. It does not matter if your **Crossbar**.io nodes reside on different domain names from the static content. However, you can  let **Crossbar**.io also host the static assets. This is possible by using a **Web Transport** with your router.
 
-Besides hosting static content, the **Web Transport** also adds a whole number of other features like serving WSGI, redirection or CGI.
+Besides hosting static content, the **Web Transport** also adds a whole number of other features like serving WSGI, redirection, file upload or CGI.
 
 
 ## Web Transport Configuration
@@ -109,6 +110,7 @@ If present, the URL in the WebSocket part of the configuration MUST include the 
  1. [WSGI Host Service](WSGI Host Service)
  1. [WAMP Long-Poll Service](WAMP Long-Poll Service)
  1. [HTTP Pusher Service](HTTP Pusher Service)
+ 1. [File Upload Service](File Upload Service)
 
 The WebSocket subpath service runs a WebSocket transport as part of a Web transport on a URL subpath. This accepts the `options`, `debug`, `url` and `auth` arguments similarly to a regular WebSocket transport.
 
