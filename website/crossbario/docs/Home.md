@@ -164,6 +164,8 @@ Guides for using Crossbar.io in specific scenarios, or for using specific featur
 
   - [Starting and Stopping Crossbar.io](Starting and Stopping Crossbar.io)
 
+* [Crossbar.io Demo Instance](Demo Instance)
+
 In addition to these general programming guides, we offer a wide range of materials for [IoT devices, components and applications](../iotcookbook).
 
 
