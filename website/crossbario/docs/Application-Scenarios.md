@@ -82,11 +82,11 @@ _____________
 
 Another scenario is when you have an existing, classical Web application to which you just want to *add* some real-time features without rewriting the app.
 
-Crossbar.io features a [*HTTP Pusher* service](https://github.com/crossbario/crossbar/wiki/Using-the-REST-to-WebSocket-Pusher) which allows to inject WAMP real-time events using plain old HTTP/POSTs:
+Crossbar.io features a [*HTTP Publisher* service](HTTP Bridge Services Publisher) which allows to inject WAMP real-time events using plain old HTTP/POSTs:
 
 ![Crossbar.io Node](/static/img/docs/gen/crossbar_application_scenario_1.png)
 
-The *HTTP Pusher* service of Crossbar.io **can be used from any Web application framework that is able to do (outgoing) HTTP/POST requests**. It does not matter whether the framework is asynchronous, threaded, blocking or something else, as long as it can trigger HTTP/POSTs.
+The *HTTP Publisher* service of Crossbar.io **can be used from any Web application framework that is able to do (outgoing) HTTP/POST requests**. It does not matter whether the framework is asynchronous, threaded, blocking or something else, as long as it can trigger HTTP/POSTs.
 
 Which means it'll work from e.g.
 
@@ -98,7 +98,7 @@ Which means it'll work from e.g.
 
 *More information:*
 
-* [Using the REST to WebSocket Pusher)
+* [Using the REST bridge publisher](HTTP Bridge Services Publisher)
 
 _____________
 <br>
