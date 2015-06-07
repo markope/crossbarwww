@@ -1,5 +1,18 @@
 ## Introduction
 
+The PostgreSQL integration provided by Crossbar.io extends WAMP directly into the database. Using the integration services, you can
+
+* **publish** a WAMP event directly from within the database (e.g. a database trigger or stored procedure)
+* **call** database stored procedures transparently like any other WAMP procedure
+
+**Why?**
+
+This is an incredibly powerful feature, as it allows you to (selectively) move business logic into the database, close to your data, greatly reducing latencies, round-trips and increasing security, as you have full and application-independent control and a clean API to your database, that encaspulates and abstracts away SQL, shielding you from schema changes.
+
+And the best: doing so is fully transparent to all consumers. A WAMP caller that calls into PostgreSQL is completely *unaware* that the callee actually is a stored procedure running in PostgreSQL.
+
+> Note: The integration currently implements two of the four WAMP roles: PUBLISHER and CALLEE. The SUBSCRIBER role (receiving events on a stored procedure) is [easy to add](https://github.com/crossbario/crossbar/issues/355), while the CALLER role (calling out to a WAMP procedure from within the database) is [trickier](https://github.com/crossbario/crossbar/issues/356), as PostgreSQL session backend processes are blocking and single-transaction context by nature.
+
 
 ### Examples
 
@@ -58,7 +71,7 @@ DROP ROLE IF EXISTS crossbar;
 
 #### Running inside a Container Worker
 
-For running the **Publisher** integration, here is how you would configure your node (only relevant parts are shown) to have the adapter run in a separate worker process:
+For running the **Publisher** integration, here is how you would configure your node (only relevant parts are shown - [here](https://github.com/crossbario/crossbarexamples/blob/master/database/postgresql/publisher/.crossbar/config_using_container.json) is complete config) to have the adapter run in a separate worker process:
 
 ```json
 {
@@ -135,7 +148,7 @@ option | description
 
 #### Running inside a Router Worker
 
-Since the PostgreSQL integration is provided as a regular WAMP component (`crossbar.adapter.postgres.PostgreSQLPublisher`), you can also run the integration within a *router worker* (side-by-side):
+Since the PostgreSQL integration is provided as a regular WAMP component (`crossbar.adapter.postgres.PostgreSQLPublisher`), you can also run the integration within a *router worker* (side-by-side). Here are relevant parts of a config (complete config [here](https://github.com/crossbario/crossbarexamples/blob/master/database/postgresql/publisher/.crossbar/config.json)):
 
 ```json
 {
@@ -218,7 +231,7 @@ with these parameters
 * `args` Any positional payload for the event.
 * `kwargs` Any keyword-based payload for the event.
 * `options` WAMP publish options (see below).
-* `autonomous`: If `TRUE`, do the publish in an autonomous transaction, otherwise do the publish within the current transaction context (*NOT YET IMPLEMENTED*)
+* `autonomous`: If `TRUE`, do the publish in an autonomous transaction, otherwise do the publish within the current transaction context (*[NOT YET IMPLEMENTED](https://github.com/crossbario/crossbar/issues/223)*)
 
 Here are a couple of examples:
 
@@ -261,7 +274,7 @@ The following options are supported:
 
 * `exclude` - a list of WAMP session IDs (integers)
 * `eligible` - a list of WAMP session IDs (integers)
-* `acknowledge` - *NOT YET IMPLEMENTED*
+* `acknowledge` - *[NOT YET IMPLEMENTED](https://github.com/crossbario/crossbar/issues/357)*
 
 
 ### Notes on PostgreSQL
