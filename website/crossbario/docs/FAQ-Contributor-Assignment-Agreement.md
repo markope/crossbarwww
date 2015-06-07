@@ -33,3 +33,11 @@ It does not take away any rights of open-source users of the project.
 The code is and remains available under the open source license applicable at the time of contribution. This open source license (the AGPL v3 at the time of writing) is not modified or limited in any way by the possibility of parallel licensing under a different license.
 
 So the dual license does not affect you as an open source user - but without the possibility for dual licensing, we would not have released Crossbar.io as open source.
+
+# What if I don't own the copyright to the entire code I'm contributing?
+
+You need to get the owner of the copyright in the other code to also sign a CAA.
+
+If you've included code from an open source project into your code (not just used a library as-is), then we can't accept this unless you do the above. 
+
+This goes even if the code is licensed under the APGL or a compatible license. The reason for that is that this kills the possibility to freely re-license. Any re-licensing would be limited to APGL compatible licenses.
