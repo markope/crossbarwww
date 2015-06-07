@@ -86,7 +86,7 @@ The Configuration section covers configuring the basics of Crossbar.io, e.g. rea
            - [HTTP Caller](HTTP Bridge Services Caller)
            - [HTTP Subscriber](HTTP Bridge Services Subscriber)
            - [HTTP Callee](HTTP Bridge Services Callee)
-        - [File Upload Service](File-Upload-Service.md)
+        - [File Upload Service](File-Upload-Service)
      - [Flash Policy Transports](Flash-Policy-Transports)
   - [Router Components](Router Components)
   - [Authentication](Authentication)
@@ -98,6 +98,8 @@ The Configuration section covers configuring the basics of Crossbar.io, e.g. rea
   - [Authorization](Authorization)
 * [Container Configuration](Container Configuration)
 * [Guest Configuration](Guest Configuration)
+* [Database Integration](Database Integration)
+  - [PostgreSQL-Integration](PostgreSQL-Integration)
 
 ### Going to Production
 
