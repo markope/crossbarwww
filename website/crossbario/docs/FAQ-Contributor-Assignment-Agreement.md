@@ -34,7 +34,7 @@ The code is and remains available under the open source license applicable at th
 
 So the dual license does not affect you as an open source user - but without the possibility for dual licensing, we would not have released Crossbar.io as open source.
 
-# What if I don't own the copyright to the entire code I'm contributing?
+# What if I do not own the copyright to the entire code I am contributing?
 
 You need to get the owner of the copyright in the other code to also sign a CAA.
 
