@@ -2,8 +2,8 @@
 
 The PostgreSQL integration provided by Crossbar.io extends WAMP directly into the database. Using the integration services, you can
 
-* **publish** a WAMP event directly from within the database (e.g. a database trigger or stored procedure)
-* **call** database stored procedures transparently like any other WAMP procedure
+* **publish** WAMP events directly from within the database (e.g. a database trigger or stored procedure)
+* **register** database stored procedures to be called transparently like any other WAMP procedure
 
 **Why?**
 
