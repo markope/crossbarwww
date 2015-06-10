@@ -43,8 +43,8 @@ The *File Uploader* is configured on a path of a Web transport - here is part of
                "realm": "realm1",
                "role": "anonymous",
                "directory": "../uploaded",
+               "temp_directory": "../temp",
                "form_fields": {
-                  "file_id": "resumableIdentifier",
                   "file_name": "resumableFilename",
                   "mime_type": "resumableType",
                   "total_size": "resumableTotalSize",
@@ -52,13 +52,13 @@ The *File Uploader* is configured on a path of a Web transport - here is part of
                   "chunk_size": "resumableChunkSize",
                   "total_chunks": "resumableTotalChunks",
                   "content": "file",
-                  "on_progress": "on_progress"
+                  "on_progress": "on_progress",
+                  "session": "session"
                },
                "options": {
-                  "file_permissions": "0444",
                   "max_file_size": 209715200,
-                  "file_types": [".csv", ".txt", ".pdf", ".img"],
-                  "debug": true
+                  "file_permissions": "0644",
+                  "file_types": [".csv", ".txt", ".pdf", ".img"]
                }
             }
          }
@@ -76,15 +76,14 @@ option | description
 **`directory`** | The folder for completely uploaded files relative to the .crossbar folder in your crossbar node. (*required*)
 **`temp_directory`** | A folder to hold incomplete uploads. Each incomplete upload will be a subfolder containing the uploaded file chunks. (*required*)
 **`file_permissions`** | The file access permissions to use for the completely uploaded files. (chmod octal code)
-**`max_file_size`** | The maximally allowed file size in bytes to upload. Refers to the file not to the chunks of the file. 
-**`file_types`** | A JSON Array of permitted file extension strings including the dots. 
+**`max_file_size`** | The maximally allowed file size in bytes to upload. Refers to the file not to the chunks of the file.
+**`file_types`** | A JSON Array of permitted file extension strings including the dots.
 **`progress_realm`** | The realm inside which progress events may be published. (*required when progress_uri is set in the form_fields dictionary*)
 
 The `form_fields` dictionary contains the form field names that the client uses to upload files. It has the following configuration parameters (**all required**):
 
 ```javascript
 "form_fields": {
-   "file_id": "resumableIdentifier",
    "file_name": "resumableFilename",
    "mime_type": "resumableType",
    "total_size": "resumableTotalSize",
@@ -98,7 +97,6 @@ The `form_fields` dictionary contains the form field names that the client uses 
 
 option | description
 ---|---
-**`file_id`** | The name of the form field identifying the file. Two files with the same file_id are considered to be the same. (*required*)
 **`file_name`** | The name of the form field containing the file name. (The file name is not used for anything in the backend). (*required*)
 **`mime_type`** | The name of the form field to hold the MIME type of the uploaded file. (*required*)
 **`total_size`** | The name of the form field to hold the integer representing the size of the file in bytes. (*required*)
@@ -106,10 +104,10 @@ option | description
 **`chunk_size`** | The name of the form field holding the chunk size. (*required*)
 **`total_chunks`** | The name of the form field holding the total number of chunks for the file to be transfered. Needs to be POSTed with every chunk. (*required*)
 **`content`** | The name of the form field containing the file content. (*required*)
-**`progress_uri`** | The name of the form field containing the URI to publish upload related events to. Publish will be restricted to the globaly configured `progress_realm`. 
+**`progress_uri`** | The name of the form field containing the URI to publish upload related events to. Publish will be restricted to the globaly configured `progress_realm`.
 
 
-In the example above the file name is passsed to the backend in a POST multipart formdata field with name="myFilename") 
+In the example above the file name is passsed to the backend in a POST multipart formdata field with name="myFilename")
 
 ```html
 <input ... myFilename="test.csv" myprogress_uri="my.upload.progress.uri" ... />
@@ -117,14 +115,11 @@ In the example above the file name is passsed to the backend in a POST multipart
 
 ## Resumable Uploads
 
-To implement resumable uploads crossbar file upload functionality provides a GET response on the same path. The response will either be with 
+To implement resumable uploads crossbar file upload functionality provides a GET response on the same path. The response will either be with
 
-* `Status 200` which indicates that the file or chunk of file is already pressent in the backend. 
+* `Status 200` which indicates that the file or chunk of file is already pressent in the backend.
 * A response with any other Status means the file/chunk is not yet present in the backend and should be uploaded.
 
 With this service the upload client can check for existence of the chunk in the backend prior to POSTing the chunk. This effectively implements resumable uploads.
 
 The GET response needs to have the same arguments as the POST request above.
-
-
-
