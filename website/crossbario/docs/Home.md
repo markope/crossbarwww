@@ -188,7 +188,6 @@ Notes for developers working on the **Crossbar**.io code base (*not* application
 
 * [Contributing to the project](Contributing to the project)
 * [Manhole](Manhole)
-* [Management API](Management API)
 
 
 ## Legal
