@@ -42,9 +42,9 @@ The available options are:
  * `open_handshake_timeout`: WebSocket opening handshake timeout in ms or 0 to disable. (default: **0**)
  * `close_handshake_timeout`: WebSocket closing handshake timeout in ms or 0 to disable. (default: **0**)
  * `tcp_nodelay`: Set the TCP No-Delay ("Nagle") socket option (default: **true**)
- * `auto_ping_interval`: Send a WebSocket ping every this many ms (default: **null**)
- * `auto_ping_timeout`: Drop the connection if the peer did not respond to a previously sent ping in this many ms (default: **null**)
- * `auto_ping_size`: Payload size for pings sent, must be between **4** and **125** (default: **null**)
+ * `auto_ping_interval`: Send a WebSocket ping every this many ms or 0 to disable. (default: **0**)
+ * `auto_ping_timeout`: Drop the connection if the peer did not respond to a previously sent ping in this many ms or 0 to disable. (default: **0**)
+ * `auto_ping_size`: Payload size for pings sent, must be between **4** and **125** (default: **4**)
  * `compression` : enable WebSocket compression - see [[WebSocket Compression]]
  * `require_websocket_subprotocol`: require WebSocket clients to properly announce the WAMP-WebSocket subprotocols it wants to speak (currently one or more of `wamp.2.json`, `wamp.2.msgpack`, `wamp.2.json.batched`, `wamp.2.json.batched`). If deactivated, assume `wamp.2.json` when no WebSocket subprotocol is announced. (default: **true**)
 
