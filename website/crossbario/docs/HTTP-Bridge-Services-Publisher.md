@@ -250,3 +250,7 @@ key | timestamp | seq | nonce | body
 ```
 
 The `body` is the JSON serialized event. You can look at working code [here](https://github.com/crossbario/crossbarconnect/blob/master/python/lib/crossbarconnect/client.py#L197).
+
+## PHP - Symfony Publisher Bundle
+
+For PHP/Symfony users, there is a bundle which makes publishing via HTTP comfortable - [Crossbar HTTP Publisher Bundle](https://github.com/facile-it/crossbar-http-publisher-bundle) (thanks to [peelandsee](https://github.com/peelandsee) for providing this).
