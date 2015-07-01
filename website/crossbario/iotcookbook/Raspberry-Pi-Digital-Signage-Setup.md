@@ -2,7 +2,7 @@ The easiest way to use the Raspberry Pi for Digital Signage is displaying conten
 
 The following tutorial describes how to set up a Pi so that it boots directly into Chromium and displays a preset Web page.
 
-This is not WAMP or Crossbar.io related as such. We suggest you load the [browsercontrol component](Browser Remote Control) which allows you to change the displayed pages and/or a [Reveal.js]() presentation which you can control via the [revealcontrol component](Reveal.js Remote Control).
+This is not WAMP or Crossbar.io related as such. We suggest you load the [browsercontrol component](Browser Remote Control) which allows you to change the displayed pages and/or a [Reveal.js](http://lab.hakim.se/reveal-js/#/) presentation which you can control via the [revealcontrol component](Reveal.js Remote Control).
 
 ## Prerequisites
 
@@ -142,6 +142,5 @@ The boot process erases any user changes since the last boot, so this should be 
 
 If you want to control what the browser displays, we currently offer two components which both utilize WAMP connections:
 
-* [browserremote]() which allows you to control the contents of another tab (i.e. you can display arbitrary web pages), as well as reloading the current tab or navigating away from it. (There is a problem with Chromium opening a new tab in a separate Window, so if you want to use this feature a bit of manual setup is required after startup.)
-* [revealremote]() which allows you to remote control a [Reveal.js]()
- presentation. These are authored in HTML, and offer you the full power of the browser in your presentations.
+* [browserremote](Browser Remote Control) which allows you to control the contents of another tab (i.e. you can display arbitrary web pages), as well as reloading the current tab or navigating away from it. (There is a problem with Chromium opening a new tab in a separate Window, so if you want to use this feature a bit of manual setup is required after startup.)
+* [revealremote](Reveal.js Remote Control) which allows you to remote control a [Reveal.js](http://lab.hakim.se/reveal-js/#/) presentation. These are authored in HTML, and offer you the full power of the browser in your presentations.
