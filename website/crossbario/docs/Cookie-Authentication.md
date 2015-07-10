@@ -1,1 +1,3 @@
-- write me -
+*--- cookie authentication is currently **non-functional** (see https://github.com/crossbario/crossbar/issues/375) ---*
+
+Cookie authentication is intended to work in conjunction with other mehtods of authentication. Crossbar.io sets a cookie when a client is authenticated via another method. If cookie authentication is configured, then subsequent connects authenticate using the cookie. A timeout determines the period for which the cookie is valid.
