@@ -96,6 +96,7 @@ The Configuration section covers configuring the basics of Crossbar.io, e.g. rea
      - [OTP](OTP-Authentication)
      - [Anonymous Authentication](Anonymous Authentication)
   - [Authorization](Authorization)
+     * [URI Format](URI Format)
 * [Container Configuration](Container Configuration)
 * [Guest Configuration](Guest Configuration)
 * [Database Integration](Database Integration)
@@ -155,6 +156,7 @@ Guides for using Crossbar.io in specific scenarios, or for using specific featur
     + [Registration Meta-Events and Procedures](Registration Meta Events and Procedures)
 
   - [Error Handling](Error Handling)
+  - [URI Format](URI Format)
 
 * Frameworks & Specific Scenarios
 

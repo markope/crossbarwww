@@ -1,5 +1,7 @@
 With the Remote Procedure Call (RPC) messaging pattern in WAMP, any WAMP client can register a procedure for remote calling (become a callee). The procedure is registered for being called using a call URI (e.g. "com.myapp.myprocedure1").
 
+> Note: There are some [specific rules regarding URI formatting](URI Format).
+
 The registration is with the WAMP router, and calls for the procedure are also made to the router. The router then forwards a call to a respective callee. Unlike with traditional RPCs, this means that the caller does not have any knowledge of the callee's identity, and that all calls are routed via a single connection between the caller and the WAMP router respectively the callee and the WAMP router. 
 
 The callee receives a registration ID for the procedure it registers. While the caller uses the procedure URI to call a procedure, calls to the procedure from the WAMP router are made using this registration ID.
