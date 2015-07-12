@@ -32,6 +32,8 @@ Crossbar.io provides two mechanisms for authorization:
 
 The idea is to have the majority of scenarios covered using *Static Authorization*, and handle special requirements and scenarios using *Dynamic Authorization*.
 
+> Note: WAMP uses URIs to identify topics and registrations, with some [specific rules regarding formatting](URI Format).
+
 
 # Authorization Procedure
 
