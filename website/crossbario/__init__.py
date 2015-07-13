@@ -44,7 +44,7 @@ except ImportError:
    print("Warning: Jinja2-Highlight not available")
    MyFlask = Flask
    HAS_HIGHLIGHT = False
-else:   
+else:
    class MyFlask(Flask):
       jinja_options = dict(Flask.jinja_options)
       jinja_options.setdefault('extensions',[]).append('jinja2_highlight.HighlightExtension')

@@ -15,7 +15,7 @@ Learn the underlying concepts of Crossbar.io and what you can do with it.
 
 ## Getting Started
 
-How to install Crossbar.io, and start using it with your language or device of choice. 
+How to install Crossbar.io, and start using it with your language or device of choice.
 
 * [Quick Start](Quick Start)
 * [The Command Line](The Command Line)
@@ -73,6 +73,7 @@ The Configuration section covers configuring the basics of Crossbar.io, e.g. rea
   - [Router Realms](Router Realms)
   - [Router Transports](Router Transports)
      - [WebSocket Transports](WebSocket Transports)
+        - [Cookie Tracking](Cookie-Tracking)
      - [RawSocket Transports](RawSocket Transports)
      - [Web Transports and Services](Web Transports and Services)
         - [Static Web Service](Static Web Service)
@@ -88,13 +89,11 @@ The Configuration section covers configuring the basics of Crossbar.io, e.g. rea
            - [HTTP Callee](HTTP Bridge Services Callee)
         - [File Upload Service](File-Upload-Service)
      - [Flash Policy Transports](Flash-Policy-Transports)
-  - [Router Components](Router Components)
+  - [Router Components](Router-Components)
   - [Authentication](Authentication)
-     - [WAMP CRA (Challenge-Response Authentication)](WAMP CRA Authentication)
-     - [Mozilla Persona](Mozilla Persona)
-     - [Cookie](Cookie-Authentication)
-     - [OTP](OTP-Authentication)
      - [Anonymous Authentication](Anonymous Authentication)
+     - [WAMP Challenge-Response Authentication)](WAMP-CRA-Authentication)
+     - [Cookie-based Authentication](Cookie-Authentication)
   - [Authorization](Authorization)
      * [URI Format](URI Format)
 * [Container Configuration](Container Configuration)
@@ -152,7 +151,7 @@ Guides for using Crossbar.io in specific scenarios, or for using specific featur
     + [Caller Identification](Caller Identification)
     + [Progressive Call Results](Progressive Call Results)
     + [Pattern-Based Registrations](Pattern Based Registrations)
-    + [Shared Registrations](Shared Registrations)    
+    + [Shared Registrations](Shared Registrations)
     + [Registration Meta-Events and Procedures](Registration Meta Events and Procedures)
 
   - [Error Handling](Error Handling)
