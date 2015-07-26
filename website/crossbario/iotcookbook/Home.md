@@ -55,7 +55,7 @@ Building blocks, ready to use for solving your problem!
    * Camera - [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
    * Tilt Sensor - [Yun](Arduino Yun Tilt Sensor)
    * [Raspberry Pi Temperature Monitor](Raspberry Pi Temperature Monitor)
-   * Weighing Pad - [Yun](Arduino Yun Weighing Pad) (**under construction**)
+   * Weighing Pad - [Yun](Arduino Yun Weighing Pad) 
 * Inputs
    * X-Box Controller -[Raspberry Pi](Raspberry Pi Xbox Controller)
    * Buttons - [Yun](Arduino Yun Buttons)
@@ -82,6 +82,7 @@ Applications which use the components. Get an idea for how combining things work
 
 * [Alarm Application](Apps Alarm)
 * [Digital Signage](Digital Signage)
+* [Euro Pallet Load](Euro Pallet Load)
 * [Real-time charting with the Arduino Yun](Arduino Yun Real-time Charting) (**under construction**)
 
 # Running things

@@ -38,7 +38,7 @@ You need to have completed the setup for remote GPIO access on the Yun - see [[A
 Transfer `buttons_yun.js` on the Yun, e.g. by doing 
 
 ```console
-scp buttons_yun.js pi@<IP of your Yun>:~/
+scp buttons_yun.js root@<IP of your Yun>:~/
 ```
 
 Then run `buttons_yun.js` 

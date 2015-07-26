@@ -94,4 +94,4 @@ uci commit
 
 Install the software to remote control the Yun's Arduino pins.
 
-* [Remote Control](Arduino-Yun-Remote-Control)
+* [Remote Control](Arduino-Yun-Remote-GPIO)
