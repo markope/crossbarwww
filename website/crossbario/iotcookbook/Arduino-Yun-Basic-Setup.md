@@ -14,7 +14,7 @@ We'll go over
 * remote-mounting the Yun's filesystem
 * updating the software
 
-Feel free to skip any steps which you've already performed or feel aren't necessary (e.g. the adding of SSH keys or remote-mounting of the file system).
+Feel free to skip any steps which you've already performed or feel aren't necessary (e.g. the adding of SSH keys or remote-mounting of the file system). Please keep in mind throughout the process that while the Yun is capable, it is certainly not fast. Reboots and installation steps may take a while.
 
 ## System Recovery
 
@@ -46,7 +46,7 @@ where each network interface has it's *own* MAC address.
 
 For most use cases, the wifi connection will be used. 
 
-You may want to wait with the wifi setup until after the system software update and perform the update itself using an ethernet connection. The system software update also resets the wifi settings, so you'd have to do them twice otherwise. To do so you can go directly to the ssh part of this tutorial, and then come back to the wifi configuration later.
+You may want to **wait with the wifi setup until after the system software update** and perform the update itself using an ethernet connection. The system software update also resets the wifi settings, so you'd have to do them twice otherwise. To do so you can go directly to the ssh part of this tutorial, and then come back to the wifi configuration later.
 
 
 ### Ethernet
@@ -60,9 +60,7 @@ When you plug in the ethernet, the Yun ethernet interface should get assigned an
 
 ### Wifi
 
-When the Arduino Yun is first powered on, the Wifi will be starting in **AP-Mode** ("Access Point Mode") and the Yun creates a new wireless network on the IP range
-
-   192.168.240.0/24
+When the Arduino Yun is first powered on, the Wifi will be starting in **AP-Mode** ("Access Point Mode") and the Yun creates a new wireless network. You can configure the Yun to use your wifi by connecting to this, calling up a configuration page it serves, and entering your wifi credentials on this. (The configuration can easily be done on a smartphone or tablet if your dev machine does not have wifi.)
 
 When you scan for Wifi networks, you should see a new network with a SSID as
 
@@ -114,9 +112,11 @@ A quick look through the user interface of your router should tell you whether y
 
 Now that you have networking running for your Yun (either ethernet, Wifi or both), the next thing is to SSH into your Yun. This will allow you to do further software setup and advanced system configuration from a root shell.
 
-The default password for `root` is `arduino`.
+> Note: -nix systems should come with ssh preinstalled. On Windows, git installs an ssh client which you can use from the git shell - or you can use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). 
 
-Here is how that looks:
+The default password for `root` is `arduino`. (Don't be surprised if there's no cursor movement on entering the password - -nix systems have this as a safety feature.)
+
+Here is how that looks like on a first connect:
 
 ```shell
 
@@ -223,7 +223,7 @@ We need to download the update to RAM, since there isn't enough disk space, so w
 cd /tmp
 ```
 
-You need to get the current link to the upgrade from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software). Be aware that the link you get from this page only leads to a donation page - this then contains the actual link. We then download this
+You need to get the current link to the upgrade from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software). Scroll down a bit untill you get to 'Other Software' and click on the 'OpenWRT - Yun 1.x.x Upgrade Image'. Be aware that the link you get from this page only leads to a donation page - this then contains the actual link. We then download this, e.g. 
 
 ```shell
 wget http://downloads.arduino.cc/openwrtyun/1/YunSysupgradeImage_v1.5.3.zip 
@@ -242,6 +242,8 @@ sysupgrade -v -n openwrt-ar71xx-generic-yun-16M-squashfs-sysupgrade.bin
 ```
 
 If you haven't set up the wifi yet, now is the time to do so. If you previously did - do it again (we told you that it would be better to use ethernet - though it's a small hassle, really).
+
+> Note: On the next connect via SSH, you'll get a security warning, since the upgrade and the reset it did led to the creation of new SSH keys. You need to delete the previous SSH key from your keys file. This should be in the `.ssh` directory in your user directory. Each key here is one line, and the warning gives you the number of the line you need to delete. After you've deleted this, you'll be asked to accept the new SSH key since this is now considered an initial connect again.
 
 ## Next
 

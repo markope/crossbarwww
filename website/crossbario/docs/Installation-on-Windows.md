@@ -11,9 +11,9 @@ There are two possibilities to install Crossbar.io:
 
 Crossbar.io is a Python application. In addition to Python, setup requires the PyWin32 additions and `pip`, a Python package manager.
 
-1. Download [Python for Windows 2.7.9](https://www.python.org/downloads/windows/) - **32-bit** even on 64-bit systems (strongly recommended)
-2. Add `C:\Python27\` and `C:\Python27\Scripts` to your `PATH`
-3. Download [PyWin32](http://sourceforge.net/projects/pywin32/files/pywin32/) - 32-bit version for Python 2.7
+1. Download and install [Python for Windows 2.7.x](https://www.python.org/downloads/windows/) - **32-bit** even on 64-bit systems (strongly recommended)
+2. Add `C:\Python27\` and `C:\Python27\Scripts` to your `PATH` ('Control Panel' - 'System' - 'Change Settings' - 'Advanced' - 'Environment Variables' - 'Path' is part of the system variables)
+3. Download and install [PyWin32](http://sourceforge.net/projects/pywin32/files/pywin32/) - 32-bit version for Python 2.7 - 'win32'
 4. If you're on any Python version previous to 2.7.9, you need to install `pip`. Download the [`get-pip` script](https://bootstrap.pypa.io/get-pip.py) and run this (works from Windows Explorer or the download dialog of your browser).
 
 You now have all the dependencies for a basic Crossbar.io installation. 
@@ -25,6 +25,8 @@ Now you can install Crossbar.io by opening a command shell and doing
 ```sh
 pip install crossbar
 ```
+
+This installs Crossbar.io from the [Python Package Index](https://pypi.python.org/pypi).
 
 Ignore any possible warnings about C extensions not being installed. To verify that the installation was successful, in the shell do
 
@@ -52,7 +54,9 @@ The initial warning is about the missing SSL support - which does not affect you
 
 ### Where to go now
 
-To start exploring what Crossbar.io can do, and to get a basis for hacking your own applications, we suggest using the [application templates](Application Templates) which come with Crossbar.io. Using these, you can initialize a Crossbar.io instance which automatically starts a fully functioning (small) demo application. For example
+To start exploring what Crossbar.io can do, and to get a basis for hacking your own applications, we suggest using the [application templates](Application Templates) which come with Crossbar.io. Using these, you can initialize a Crossbar.io instance which automatically starts a fully functioning (small) demo application. 
+
+For example, in a diretory where the template should be initialized, do
 
 ```sh
 crossbar init --template hello:python
@@ -64,7 +68,7 @@ and then
 crossbar start
 ```
 
-will start up a Crossbar.io instance which serves the files for a small demo application at `http://localhost:8080`.
+which will start up a Crossbar.io instance which serves the files for a small demo application at `http://localhost:8080`. "F12" opens the development tools in most browsers on Windows. Then go to "console" so that you can see a log of WAMP events.
 
 
 ## Full Installation

@@ -90,6 +90,13 @@ uci commit
 ```
 * reboot the Yun
 
+* check that things have worked
+```shell
+df -h
+```
+which should now list the SD card size as free space.
+
+
 ## Next
 
 Install the software to remote control the Yun's Arduino pins.
