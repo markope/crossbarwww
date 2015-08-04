@@ -87,6 +87,7 @@ taschenmesser = pkg_resources.resource_filename('taschenmesser', '..')
 
 ## use this for Taschenmesser development only
 #taschenmesser = "../../infrequent/taschenmesser"
+#taschenmesser = "../../../taschenmesser"
 
 env = Environment(tools = ['default', 'taschenmesser'],
                   toolpath = [taschenmesser],

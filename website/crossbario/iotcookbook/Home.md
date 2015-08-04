@@ -1,20 +1,13 @@
-## for WAMP and Crossbar.io
-
-
-
-
 <div class="cookbook_topbox_landingpage">
    <div id="cookbook_home_topimage_container">
-      <img id="cookbook_home_topimage" src="../static/img/iotcookbook/lego_duplo_smaller.jpg" alt="">   
+      <img id="cookbook_home_topimage" src="../static/img/iotcookbook/lego_duplo_smaller.jpg" alt="" />
    </div>
-   
    <h2>
       You want to solve a problem - we offer components and recipes to build your solutions
    </h2>
-
    <ul>
       <li>
-         All components come with <strong>built-in connectivity</strong>. They can connect from anywhere,  and you can easily  build distributed applications.
+         All components come with <strong>built-in connectivity</strong>. They can connect from anywhere, and you can easily build distributed applications.
       </li>
       <li>
          All components can <strong>communicate freely with each other</strong> - including calling procedures. The compoments connect via a Crossbar.io application router. Client libraries for WAMP, the protocol used, are available for 9 languages (and growing). You can also integrate services with REST APIs, so your applications can talk to pretty much anything on the internet.
@@ -30,6 +23,7 @@
       </li>
    </ul>
 </div>
+
 
 # The Devices
 

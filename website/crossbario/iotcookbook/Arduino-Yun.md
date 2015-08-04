@@ -8,6 +8,10 @@ The [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.Arduin
 * [Basic setup](Arduino-Yun-Basic-Setup) takes you through connecting to the Yun and updating its software
 * [Extending the disk space](Arduino-Yun-Expanding-Disk-Space) explains the steps to configure the Yun to use a microSD card as storage (necessary due to the exteremely limited onboard flash)
 
+## Tutorial
+
+* [Arduino Yun Tutorial](Arduino Yun Tutorial)
+
 ## Generic Control of GPIO
 
 * [Remote GPIO](Arduino Yun Remote GPIO) gives access to the GPIO pins on the Arduino Yun. Each pin has a pre-set associated endpoint.
