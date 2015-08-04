@@ -1,5 +1,12 @@
 This page contains instructions for how to exand the disk space available on the Yun using a microSD card.  For an overview of all materials we have concerning the Yun, please see [here](Arduino Yun).
 
+## Links
+
+* http://wiki.openwrt.org/doc/howto/extroot
+* http://wiki.openwrt.org/doc/howto/extroot/extroot.theory
+* http://blog.lincomatic.com/?p=1287
+* https://samhobbs.co.uk/2013/11/more-space-for-packages-with-extroot-on-your-openwrt-router
+
 ## The disk space problem
 
 The Yun itself has only 16MB of flash, and half of that is reserved as a recovery partition.
@@ -19,7 +26,8 @@ The free space on this is not enough for the software we want to install.
 
 ## Using a microSD for storage
 
-Hence we will create a new filesystem on a micro SD card which we can use for both programs and data and mount that filesystem as an overlay on top of the root directory (usually, this is called an "extroot").
+Hence we will create a new filesystem on a micro SD card which we can use for both programs and data and mount that filesystem as an overlay on top of the root directory (called [extroot](
+http://wiki.openwrt.org/doc/howto/extroot)).
 
 We suggest formatting the entire SD card with a single partition, since otherwise the steps below may lead to only part of the card's capacity being accessible.
 
@@ -29,36 +37,31 @@ There is an [official tutorial](http://arduino.cc/en/Tutorial/ExpandingYunDiskSp
 
 ## Our way
 
-The following can be pasted into your remote shell on the Yun as is block-by-block. However, you may want to take the time to paste them line-by-line since this makes it easier to find where a problem lies should any occur.
+Insert a SD card (at least 1GB recommended) and run the following on the Yun:
 
-* install the required tools:
-```shell
+```console
+# install required tools
 opkg update
 opkg install e2fsprogs mkdosfs fdisk rsync
-```
-* erase the partition table
-```shell
+
+# erase the partition table
 dd if=/dev/zero of=/dev/sda bs=4096 count=1000
-```
-* create an Ext4 partition
-```shell
+
+# create an Ext4 partition
 (echo o; echo n; echo p; echo 1; echo ; echo; echo w) | fdisk /dev/sda
-```
-* format the partition
-```shell
+
+# format the partition
 umount /dev/sda1
 mkfs.ext4 /dev/sda1
-```
-* copy files from the Yun flash to the card
-```shell
+
+# copy files from the Yun flash to the card
 mkdir -p /mnt/sda1
 mount /dev/sda1 /mnt/sda1
 rsync -a --exclude=/mnt/ --exclude=/www/sd /overlay/ /mnt/sda1/
 umount /dev/sda1
 rm -rf /mnt/sda1
-```
-* enable the card as additional disk space
-```shell
+
+# enable the card as additional disk space
 uci add fstab mount
 uci set fstab.@mount[0].target=/overlay
 uci set fstab.@mount[0].device=/dev/sda1
@@ -68,10 +71,8 @@ uci set fstab.@mount[0].enabled_fsck=0
 uci set fstab.@mount[0].options=rw,sync,noatime,nodiratime
 uci commit
 ```
-* reboot the Yun
 
-
-After rebooting, this is what the filesystems looks like with SD card expanding (using a 1GB SD card):
+The reboot the Yun. After rebooting, this is what the filesystems looks (using a 1GB SD card):
 
 ```shell
 root@Arduino:~# df -h
@@ -86,6 +87,6 @@ overlayfs:/overlay      943.6M     31.2M    865.1M   3% /
 
 ## Next
 
-Install the software to remote control the Yun's Arduino pins.
+The microcontroller and CPU on the Yun are connected over a on-board serial connection. However, the connection is already used by some software, and we need to disable that to use the serial connection for our own purposes. Head over to:
 
-* [Remote Control](Arduino-Yun-Remote-Control)
+* [Disable Serial Bridge](Arduino-Yun-Disable-Bridge)

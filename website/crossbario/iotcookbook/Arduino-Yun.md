@@ -7,6 +7,10 @@ The [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.Arduin
 * [Overview](Arduino-Yun-Overview): a more detailed overview of the Yun and its features
 * [Basic setup](Arduino-Yun-Basic-Setup) takes you through connecting to the Yun and updating its software
 * [Extending the disk space](Arduino-Yun-Expanding-Disk-Space) explains the steps to configure the Yun to use a microSD card as storage (necessary due to the exteremely limited onboard flash)
+* [Disable Serial Bridge](Arduino-Yun-Disable-Bridge)
+* [Setup Autobahn|Python on the Yun](Arduino-Yun-AutobahnPython-Setup)
+* [Setup Autobahn|JS the Yun](Arduino-Yun-AutobahnJS-Setup)
+
 
 ## Tutorial
 

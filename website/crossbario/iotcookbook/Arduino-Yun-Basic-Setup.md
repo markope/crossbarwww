@@ -21,11 +21,13 @@ The relevant button to perform **both** of these functions is called *"Wifi Rese
 
 ![](/static/img/iotcookbook/yun/ArudinoYun_RST.jpg)
 
+Make sure the Yun is fully booted before performing reset/recovery. Then:
+
  1. Pressing the *Wifi Reset button* for >5s (but less than 30s) and then releasing will *reset the Wifi configuration to factory default*
 
  2. Pressing the *Wifi Reset button* for >30s and then releasing will *restore the Linux system image to factory default*
 
-Both functions will also reboot the Yun. Restoring the system image to factory defaults also resets any Wifi configuration you've done.
+Both functions will also reboot the Yun (after releasing the button). Restoring the system image to factory defaults also resets any Wifi configuration you've done.
 
 If you've previously tinkered around with the Yun, we suggest resetting it before following this tutorial, since it decreases chances of software/configuration conflicts.
 
@@ -112,7 +114,7 @@ The default password for `root` is `arduino`.
 
 Here is how that looks:
 
-```shell
+```console
 
 $ ssh -l root 192.168.1.150
 The authenticity of host '192.168.1.150 (192.168.1.150)' can't be established.
@@ -179,7 +181,7 @@ Why is that? Mounting over SSH allows you to edit files on the Yun using your fa
 This magic works via SFTP (secure FTP), which is a FTP-like protocol that runs over SSH. On the Yun side, you'll need to have the SFTP package installed, login via SSH as root and do:
 
 
-```shell
+```console
 opkg update
 opkg install openssh-sftp-server
 ```
@@ -201,43 +203,43 @@ Be aware that the system update also resets the Wifi settings, so you'll have to
 
 To update we first update the yun package management:
 
-```shell
+```console
 opkg update
 ```
 
 Then we need to install `unzip`:
 
-```shell
+```console
 opkg install unzip
 ```
 
 We need to download the update to RAM, since there isn't enough disk space, so we switch to `tmp`, which is in RAM:
 
-```shell
+```console
 cd /tmp
 ```
 
 You need to get the [current link to the upgrade](https://www.arduino.cc/download_handler.php?f=/openwrtyun/1/YunSysupgradeImage_v1.5.3.zip) from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software). Be aware that the link you get from this page only leads to a donation page - this then contains the actual link. We then download this
 
-```shell
+```console
 wget http://downloads.arduino.cc/openwrtyun/1/YunSysupgradeImage_v1.5.3.zip
 ```
 
 unzip it
 
-```shell
+```console
 unzip YunSysupgradeImage_v1.5.3.zip
 ```
 
 and install it
 
-```shell
+```console
 sysupgrade -v -n openwrt-ar71xx-generic-yun-16M-squashfs-sysupgrade.bin
 ```
 
 Please be patient. This takes a couple of minutes, and will finally reboot the Yun when done:
 
-```shell
+```console
 root@Arduino:/tmp# sysupgrade -v -n openwrt-ar71xx-generic-yun-16M-squashfs-sysupgrade.bin
 Sending TERM to remaining processes ... uhttpd dbus-daemon dnsmasq avahi-daemon thd ntpd uSDaemon sleep syslogd klogd hotplug2 ubusd netifd
 Sending KILL to remaining processes ... uhttpd
@@ -251,11 +253,20 @@ Upgrade completed
 Rebooting system...
 ```
 
+After updating, here is what I get:
+
+```console
+root@Arduino:~# uname -a
+Linux Arduino 3.3.8 #1 Fri Nov 14 08:57:34 CET 2014 mips GNU/Linux
+root@Arduino:~# dmesg | awk 'NR==1'
+[    0.000000] Linux version 3.3.8 (jenkins@jenkins) (gcc version 4.6.3 20120201 (prerelease) (Linaro GCC 4.6-2012.02) ) #1 Fri Nov 14 08:57:34 CET 2014
+```
+
 If you haven't set up the Wifi yet, now is the time to do so. If you previously did - do it again (we told you that it would be better to use ethernet - though it's a small hassle, really).
+
 
 ## Next
 
 Your Yun is now read for exanding the file system to use a microSD card - which we'll need to have the space to install more software like NodeJS, Python packages and the like.
 
-* [Expaning Disk Space](Arduino-Yun-Expanding-Disk-Space)
-
+* [Expanding Disk Space](Arduino-Yun-Expanding-Disk-Space)
