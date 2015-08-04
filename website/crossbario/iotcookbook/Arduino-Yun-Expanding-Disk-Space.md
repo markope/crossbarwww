@@ -1,14 +1,8 @@
-This page contains instructions for how to exand the disk space available on the Yun using a microSD card.  For an overview of all materials we have concerning the Yun, see
-
-* [Arduino Yun - Links](Arduino Yun)
-
-<div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="">   
-</div>
+This page contains instructions for how to exand the disk space available on the Yun using a microSD card.  For an overview of all materials we have concerning the Yun, please see [here](Arduino Yun).
 
 ## The disk space problem
 
-The Yun itself has only 16MB of flash, and half of that is reserved as a recovery partition. 
+The Yun itself has only 16MB of flash, and half of that is reserved as a recovery partition.
 
 ```shell
 root@Arduino:~# df -h
@@ -21,27 +15,13 @@ tmpfs                   512.0K         0    512.0K   0% /dev
 overlayfs:/overlay        7.5M    392.0K      7.1M   5% /
 ```
 
-The free space on this is not enough for the software we want to install. 
+The free space on this is not enough for the software we want to install.
 
 ## Using a microSD for storage
 
 Hence we will create a new filesystem on a micro SD card which we can use for both programs and data and mount that filesystem as an overlay on top of the root directory (usually, this is called an "extroot").
 
 We suggest formatting the entire SD card with a single partition, since otherwise the steps below may lead to only part of the card's capacity being accessible.
-
-This is what the filesystem looks like after exanding (using a 1GB SD card):
-
-```shell
-root@Arduino:~# df -h
-Filesystem                Size      Used Available Use% Mounted on
-rootfs                  816.7M      3.0M    771.4M   0% /
-/dev/root                 7.0M      7.0M         0 100% /rom
-tmpfs                    29.9M    104.0K     29.8M   0% /tmp
-tmpfs                   512.0K         0    512.0K   0% /dev
-/dev/sda2               816.7M      3.0M    771.4M   0% /overlay
-overlayfs:/overlay      816.7M      3.0M    771.4M   0% /
-/dev/sda1                99.8M      4.0K     99.8M   0% /mnt/sda1
-```
 
 ## The official way
 
@@ -65,7 +45,7 @@ dd if=/dev/zero of=/dev/sda bs=4096 count=1000
 (echo o; echo n; echo p; echo 1; echo ; echo; echo w) | fdisk /dev/sda
 ```
 * format the partition
-```shell 
+```shell
 umount /dev/sda1
 mkfs.ext4 /dev/sda1
 ```
@@ -89,6 +69,20 @@ uci set fstab.@mount[0].options=rw,sync,noatime,nodiratime
 uci commit
 ```
 * reboot the Yun
+
+
+After rebooting, this is what the filesystems looks like with SD card expanding (using a 1GB SD card):
+
+```shell
+root@Arduino:~# df -h
+Filesystem                Size      Used Available Use% Mounted on
+rootfs                  943.6M     31.2M    865.1M   3% /
+/dev/root                 7.5M      7.5M         0 100% /rom
+tmpfs                    29.8M    100.0K     29.7M   0% /tmp
+tmpfs                   512.0K         0    512.0K   0% /dev
+/dev/sda1               943.6M     31.2M    865.1M   3% /overlay
+overlayfs:/overlay      943.6M     31.2M    865.1M   3% /
+```
 
 ## Next
 

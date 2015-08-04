@@ -1,27 +1,21 @@
-This page exlains the basic setup of the Yun.  For an overview of all materials we have concerning the Yun, see
-
-* [Arduino Yun - Links](Arduino Yun)
-
-<div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="">   
-</div>
+This page explains the basic setup of the Yun.  For an overview of all materials we have concerning the Yun, please see [here](Arduino Yun).
 
 We'll go over
 
-* connecting to your wifi network
+* connecting to your Wifi network
 * access via SSH
 * adding SSH keys for password-free login
-* remote-mounting the Yun's filesystem
+* remote mounting the Yun's filesystem
 * updating the software
 
-Feel free to skip any steps which you've already performed or feel aren't necessary (e.g. the adding of SSH keys or remote-mounting of the file system).
+Feel free to skip any steps which you've already performed or feel aren't necessary for your use.
 
 ## System Recovery
 
 Should anything go wrong with your experiments here, don't worry - the Yun includes mechanisms to:
 
- * **reset Wifi** network configuration to factory default
- * **restore Linux** system image to factory default
+ * **reset the Wifi network configuration** to factory default
+ * **restore the Linux system image** to factory default
 
 The relevant button to perform **both** of these functions is called *"Wifi Reset button"* in the Yun documentation and is located here:
 
@@ -31,7 +25,7 @@ The relevant button to perform **both** of these functions is called *"Wifi Rese
 
  2. Pressing the *Wifi Reset button* for >30s and then releasing will *restore the Linux system image to factory default*
 
-Both functions will also reboot the Yun. Restoring the system image to factory defaults also resets any wifi configuration you've done.
+Both functions will also reboot the Yun. Restoring the system image to factory defaults also resets any Wifi configuration you've done.
 
 If you've previously tinkered around with the Yun, we suggest resetting it before following this tutorial, since it decreases chances of software/configuration conflicts.
 
@@ -44,9 +38,9 @@ The Yun has *two* network interfaces:
 
 where each network interface has it's *own* MAC address.
 
-For most use cases, the wifi connection will be used. 
+For most use cases, the Wifi connection will be used.
 
-You may want to wait with the wifi setup until after the system software update and perform the update itself using an ethernet connection. The system software update also resets the wifi settings, so you'd have to do them twice otherwise. To do so you can go directly to the ssh part of this tutorial, and then come back to the wifi configuration later.
+You may want to wait with the Wifi setup until after the system software update and perform the update itself using an ethernet connection. The system software update also resets the Wifi settings, so you'd have to do them twice otherwise. To do so you can go directly to the ssh part of this tutorial, and then come back to the Wifi configuration later.
 
 
 ### Ethernet
@@ -75,9 +69,9 @@ where `XXXXXXXXXXXX` is the MAC address of the Yun's *Wifi* interface:
 This is the factory default, and when you reset the Wifi configuration, it will be the recovered again.
 
 > Note: The ethernet interface has a *different* MAC address - see below.
-> 
+>
 
-You can access the Web configuration interface of your Yun by connecting e.g. your notebook to the above Wifi network and then open the following URL in your browser 
+You can access the Web configuration interface of your Yun by connecting e.g. your notebook to the above Wifi network and then open the following URL in your browser
 
 ```
 http://192.168.240.1
@@ -98,7 +92,7 @@ After reconfiguration, the Yun will reboot, and you now should see both network 
 ![](/static/img/iotcookbook/yun/network4.png)
 
 > Doing the above, the Yun will no longer function as a Wifi access point to which others Wifi clients could connect. As long as the Yuns IP is known to other peers on your network, those peers will however still be able to connect on the TCP/IP level to anything running as a server on your Yun.
-> 
+>
 
 ### Static DHCP
 
@@ -166,7 +160,7 @@ This isn't the place to give an introduction to SSH and public key authenticatio
 
 The Linino/OpenWRT Linux on the Yun does use Dropbear for SSH support (both client and server) - this is a different software package from usual Linux distributions and Unix systems (which is OpenSSHd).
 
-One difference is that to enable public key based authentication for root, the authorized public keys need to be added to the following file (and not the usual `/root/.ssh/authorized_keys`):  
+One difference is that to enable public key based authentication for root, the authorized public keys need to be added to the following file (and not the usual `/root/.ssh/authorized_keys`):
 
 ```text
 vi /etc/dropbear/authorized_keys
@@ -201,9 +195,9 @@ With SFTP set up, you now can simply open, edit, create, copy, delete and move f
 
 ## System update
 
-It is a good idea to ensure that your Yun runs the most recent version of it's operating system and other software. 
+It is a good idea to ensure that your Yun runs the most recent version of it's operating system and other software.
 
-Be aware that the system update also resets the wifi settings, so you'll have to go through these again!
+Be aware that the system update also resets the Wifi settings, so you'll have to go through these again!
 
 To update we first update the yun package management:
 
@@ -223,10 +217,10 @@ We need to download the update to RAM, since there isn't enough disk space, so w
 cd /tmp
 ```
 
-You need to get the current link to the upgrade from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software). Be aware that the link you get from this page only leads to a donation page - this then contains the actual link. We then download this
+You need to get the [current link to the upgrade](https://www.arduino.cc/download_handler.php?f=/openwrtyun/1/YunSysupgradeImage_v1.5.3.zip) from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software). Be aware that the link you get from this page only leads to a donation page - this then contains the actual link. We then download this
 
 ```shell
-wget http://downloads.arduino.cc/openwrtyun/1/YunSysupgradeImage_v1.5.3.zip 
+wget http://downloads.arduino.cc/openwrtyun/1/YunSysupgradeImage_v1.5.3.zip
 ```
 
 unzip it
@@ -241,11 +235,27 @@ and install it
 sysupgrade -v -n openwrt-ar71xx-generic-yun-16M-squashfs-sysupgrade.bin
 ```
 
-If you haven't set up the wifi yet, now is the time to do so. If you previously did - do it again (we told you that it would be better to use ethernet - though it's a small hassle, really).
+Please be patient. This takes a couple of minutes, and will finally reboot the Yun when done:
+
+```shell
+root@Arduino:/tmp# sysupgrade -v -n openwrt-ar71xx-generic-yun-16M-squashfs-sysupgrade.bin
+Sending TERM to remaining processes ... uhttpd dbus-daemon dnsmasq avahi-daemon thd ntpd uSDaemon sleep syslogd klogd hotplug2 ubusd netifd
+Sending KILL to remaining processes ... uhttpd
+Switching to ramdisk...
+Performing system upgrade...
+Unlocking firmware ...
+
+Writing from <stdin> to firmware ...  [w]
+
+Upgrade completed
+Rebooting system...
+```
+
+If you haven't set up the Wifi yet, now is the time to do so. If you previously did - do it again (we told you that it would be better to use ethernet - though it's a small hassle, really).
 
 ## Next
 
-Your Yun is now read for exanding the file system to use a microSD card - which we'll need to have the space to install Node.js + Autobahn|JS.
+Your Yun is now read for exanding the file system to use a microSD card - which we'll need to have the space to install more software like NodeJS, Python packages and the like.
 
 * [Expaning Disk Space](Arduino-Yun-Expanding-Disk-Space)
 
