@@ -1,4 +1,4 @@
-# 1) SUBSCRIBE to a topic to reveive events
+# 1) SUBSCRIBE to a topic to receive events
 def onhello(msg):
    print("Got event: {}".format(msg))
 session.subscribe(onhello, 'com.myapp.hello')

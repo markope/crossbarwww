@@ -1,4 +1,4 @@
-// 1) SUBSCRIBE to a topic to reveive events
+// 1) SUBSCRIBE to a topic to receive events
 function onhello(args) {
    console.log("Got event:", args[0]);
 }
