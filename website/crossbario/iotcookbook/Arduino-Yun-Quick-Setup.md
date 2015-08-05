@@ -1,34 +1,54 @@
 Write me.
 
+## burn card
 
-    
-https://s3-eu-west-1.amazonaws.com/crossbar.io/download/autobahn_yun_extroot.zip
+First, download the image
 
-http://bit.ly/1KR75d3
+```console
+cd /tmp
+wget https://s3-eu-west-1.amazonaws.com/crossbar.io/download/autobahn_yun_extroot.zip
+unzip autobahn_yun_extroot.zip
+```
 
+```console
+sudo fdisk -l
+umount /dev/sdf1
+```
 
-
+```console
 sudo dd if=/tmp/autobahn_yun_extroot.img of=/dev/sdf bs=1M
+```
 
+## update sys
 
+```console
+cd /tmp
+wget --no-check-certificate http://bit.ly/1IXKbTU -O step1.sh
+sh step1.sh
+```
 
 https://raw.githubusercontent.com/crossbario/crossbarexamples/master/iotcookbook/device/yun/quickinstall/step1.sh
 
 http://bit.ly/1IXKbTU
 
 
-https://raw.githubusercontent.com/crossbario/crossbarexamples/master/iotcookbook/device/yun/quickinstall/step2.sh
+## activate card
 
+insert card
+
+```console
+cd /tmp
+wget --no-check-certificate http://bit.ly/1P6OxHb -O step2.sh
+sh step2.sh
+``` 
+
+https://raw.githubusercontent.com/crossbario/crossbarexamples/master/iotcookbook/device/yun/quickinstall/step2.sh
 
 http://bit.ly/1P6OxHb
 
+## fix
 
-
-wget --no-check-certificate http://bit.ly/1IXKbTU -O step1.sh
-curl http://bit.ly/1IXKbTU -Lko step1.sh
-
-
-/tmp/overlay-disabled/etc/extroot.md5sum
+cp /.extroot.md5sum /tmp/overlay-disabled/etc/extroot.md5sum
 
 
 
@@ -100,7 +120,7 @@ sudo umount /dev/sdf
 
 
 sudo dd if=/dev/sdf of=/tmp/autobahn_yun_extroot.img bs=1M count=900
-zip -9 /tmp/autobahn_yun_extroot.zip /tmp/autobahn_yun_extroot.img
+zip -j -9 /tmp/autobahn_yun_extroot.zip /tmp/autobahn_yun_extroot.img
 
 
 oberstet@corei7ub1310:~/test8$ ls -la /tmp/autobahn_yun_extroot.*
