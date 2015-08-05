@@ -1,10 +1,10 @@
 This recipe describes how to install Autobahn|Python on the Yun.
 
-> Please make sure you have expanded the Yun's disk space, as the onboard Flash hasn't enough space left.
+> Please make sure you have expanded the Yun's disk space, as the onboard Flash hasn't enough space.
 
 ## Dependencies
 
-First, install dependencies. Login to the Yun and
+First, install required dependencies. Login to the Yun and
 
 ```console
 opkg update
@@ -21,7 +21,7 @@ opkg install python-bzip2
 opkg install python-ncurses
 ```
 
-Then install [pip](https://pip.pypa.io/), a modern package manager for Python
+Then install [pip](https://pip.pypa.io/), a modern package manager for Python:
 
 ```console
 easy_install pip
@@ -30,9 +30,22 @@ easy_install pip
 > With this, and the subsequent steps: please be patient, the Yun hasn't a lot of steam, and since we are using a SD card overlay, things are slow installing.
 
 
+## pySerial
+
+Since we want to talk to the MCU from the main CPU via serial, install Python serial support via [pySerial](https://pypi.python.org/pypi/pyserial):
+
+```console
+pip install pyserial
+```
+
+
 ## Twisted
 
-[Autobahn|Python](http://autobahn.ws/python/) supports two underlying network libraries: [Twisted](http://twistedmatrix.com/) and [asyncio](https://docs.python.org/3.4/library/asyncio.html). We'll be using Twisted:
+[Autobahn|Python](http://autobahn.ws/python/) supports two underlying network libraries: [Twisted](http://twistedmatrix.com/) and [asyncio](https://docs.python.org/3.4/library/asyncio.html).
+
+**Here we explain how to setup Twisted. You only need one of both: either Twisted or asyncio (not both)**.
+
+First, install this dependency:
 
 ```console
 pip install zope.interface
@@ -63,13 +76,18 @@ python setup.py install
 This will take a long time. Be patient;) The Yun doesn't have a lot of steam and we are installing onto a micro SD card, which means low filesystem performance on top.
 
 
-## pySerial
+## asyncio
 
-Since we want to talk to the MCU from the main CPU via serial, install Python serial support via [pySerial](https://pypi.python.org/pypi/pyserial):
+[Autobahn|Python](http://autobahn.ws/python/) supports two underlying network libraries: [Twisted](http://twistedmatrix.com/) and [asyncio](https://docs.python.org/3.4/library/asyncio.html).
+
+**Here we explain how to setup asyncio. You only need one of both: either Twisted or asyncio (not both)**.
+
+Installing asyncio (more precisely, Trollius, a backport of asyncio to Python 2) is easy:
 
 ```console
-pip install pyserial
+pip install trollius
 ```
+
 
 ## AutobahnPython
 
@@ -78,3 +96,17 @@ Finally, for WebSocket/WAMP protocol support install [Autobahn|Python](https://p
 ```console
 pip install autobahn
 ```
+
+To test your setup:
+
+```console
+root@Arduino:~# python
+Python 2.7.3 (default, Nov 13 2014, 21:40:08) 
+[GCC 4.6.3 20120201 (prerelease)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import autobahn
+>>> autobahn.__version__
+'0.10.4'
+```
+
+Congrats!

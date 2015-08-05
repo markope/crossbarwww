@@ -37,34 +37,42 @@ There is an [official tutorial](http://arduino.cc/en/Tutorial/ExpandingYunDiskSp
 
 ## Our way
 
-Insert a SD card (at least 1GB recommended) and run the following on the Yun:
+Insert a SD card:
+
+* **at least 1GB** required, bigger is fine
+* a **fast SD card** (*Class 10*) is strongly recommended
+
+Then run the following on the Yun:
 
 ```console
 # install required tools
 opkg update
 opkg install e2fsprogs mkdosfs fdisk rsync
 
+# unmount the SD card (should it be mounted)
+umount /dev/sda1
+
 # erase the partition table
 dd if=/dev/zero of=/dev/sda bs=4096 count=1000
 
-# create an Ext4 partition
-(echo o; echo n; echo p; echo 1; echo ; echo; echo w) | fdisk /dev/sda
+# create two partitions: 400MB FAT32, and 400MB Ext4
+(echo o; echo n; echo p; echo 1; echo; echo +400M; echo n; echo p; echo 2; echo; echo +400M; echo t; echo 1; echo c; echo w) | fdisk /dev/sda
 
 # format the partition
-umount /dev/sda1
-mkfs.ext4 /dev/sda1
+mkfs.vfat /dev/sda1
+mkfs.ext4 /dev/sda2
 
 # copy files from the Yun flash to the card
-mkdir -p /mnt/sda1
-mount /dev/sda1 /mnt/sda1
-rsync -a --exclude=/mnt/ --exclude=/www/sd /overlay/ /mnt/sda1/
-umount /dev/sda1
-rm -rf /mnt/sda1
+mkdir -p /mnt/sda2
+mount /dev/sda2 /mnt/sda2
+rsync -a --exclude=/mnt/ --exclude=/www/sd /overlay/ /mnt/sda2/
+umount /dev/sda2
+rm -rf /mnt/sda2
 
 # enable the card as additional disk space
 uci add fstab mount
 uci set fstab.@mount[0].target=/overlay
-uci set fstab.@mount[0].device=/dev/sda1
+uci set fstab.@mount[0].device=/dev/sda2
 uci set fstab.@mount[0].fstype=ext4
 uci set fstab.@mount[0].enabled=1
 uci set fstab.@mount[0].enabled_fsck=0
@@ -72,17 +80,46 @@ uci set fstab.@mount[0].options=rw,sync,noatime,nodiratime
 uci commit
 ```
 
-The reboot the Yun. After rebooting, this is what the filesystems looks (using a 1GB SD card):
+> If you are wondering about these `uci` commands, those are specific to OpenWRT. Please see [here](http://wiki.openwrt.org/doc/uci).
+
+Then reboot the Yun:
+
+```console
+reboot
+```
+
+After rebooting, this is what the filesystems looks:
 
 ```shell
 root@Arduino:~# df -h
 Filesystem                Size      Used Available Use% Mounted on
-rootfs                  943.6M     31.2M    865.1M   3% /
+rootfs                  396.8M     21.1M    355.7M   6% /
 /dev/root                 7.5M      7.5M         0 100% /rom
 tmpfs                    29.8M    100.0K     29.7M   0% /tmp
 tmpfs                   512.0K         0    512.0K   0% /dev
-/dev/sda1               943.6M     31.2M    865.1M   3% /overlay
-overlayfs:/overlay      943.6M     31.2M    865.1M   3% /
+/dev/sda2               396.8M     21.1M    355.7M   6% /overlay
+overlayfs:/overlay      396.8M     21.1M    355.7M   6% /
+/dev/sda1               399.8M         0    399.8M   0% /mnt/sda1
+```
+
+There are 2 things you may note:
+
+* we now have >350MB free on root `/`
+* the FAT32 partition is mounted at `/mnt/sda1`
+
+You can use the latter partition for data exchange with other systems (like Windows, Android or OSX) as FAT32 (but not Ext4) works on those.
+
+
+## Traps
+
+### Windows
+
+In Windows, fixed disks can have multiple partitions and removable disks can have only one partition. You can create two or more partitions on the removable disk in Linux, but Windows will recognize only the first partition on that disk.
+
+### extroot MD5
+
+```console
+cp /.extroot.md5sum /tmp/overlay-disabled/etc/extroot.md5sum
 ```
 
 ## Next
