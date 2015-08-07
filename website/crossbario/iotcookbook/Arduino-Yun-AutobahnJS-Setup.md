@@ -17,6 +17,17 @@ rm -rf node_modules/arduino-firmata/node_modules/serialport/
 scp -r ./node_modules/* root@192.168.1.141:/usr/lib/node_modules
 ```
 
+Test on the Yun:
+
+```console
+root@Arduino:~# node
+> var autobahn = require('autobahn');
+undefined
+> autobahn.version
+'0.9.6'
+> 
+```
+
 
 ```javascript
 console.log("blinky starting ..");

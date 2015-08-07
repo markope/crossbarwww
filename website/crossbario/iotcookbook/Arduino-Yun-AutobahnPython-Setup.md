@@ -106,7 +106,8 @@ Python 2.7.3 (default, Nov 13 2014, 21:40:08)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import autobahn
 >>> autobahn.__version__
-'0.10.4'
+'0.10.5'
+>>> 
 ```
 
 Congrats!
