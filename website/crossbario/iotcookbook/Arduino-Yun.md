@@ -8,7 +8,7 @@ The material here introduces the [Arduino Yun](http://www.arduino.cc/en/Main/Ard
 The [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN) is an open-source, single-board computer that combines a microcontroller with a CPU and Wifi:
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="">   
+   <img class="topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="">
 </div>
 
 The CPU runs a Linux flavor and has full TCP/IP networking capabilities. The microcontroller (MCU) runs in hard real-time and can talk to the CPU via an onboard serial connection:
@@ -22,18 +22,18 @@ Check out the [Overview](Arduino-Yun-Overview) for a more detailed discussion of
 
 We'll be making the Yun into a real IoT device by connecting it to Crossbar.io. This allows the Yun to publish real-time events e.g. to distribute sensor readings, and securily control the Yun with remote procedure calls from any other WAMP component:
 
-<img src="../../static/img/iotcookbook/crossbar_iot_integration_1.png" alt="">   
+<img src="../../static/img/iotcookbook/crossbar_iot_integration_1.png" alt="">
 
 ## Getting Started
 
-* [Overview](Arduino-Yun-Overview):
-    a more detailed overview of the Yun and its features
-* [Basic setup](Arduino-Yun-Basic-Setup) takes you through connecting to the Yun and updating its software
+* [Overview](Arduino-Yun-Overview): a more detailed overview of the Yun and its features
+* [Quick Setup](Arduino-Yun-Quick-Setup): a quick setup recipe
+* [Basic setup](Arduino-Yun-Basic-Setup): takes you through connecting to the Yun and updating its software
 * [Expanding disk space](Arduino-Yun-Expanding-Disk-Space): using a microSD card to expand the storage on the Yun
 * [Disable the serial bridge](Arduino-Yun-Disable-Bridge): disabling the default serial bridge so we can use serial for our own
 * [Setup Autobahn|Python](Arduino-Yun-AutobahnPython-Setup): setting up Autobahn|Python and Twisted for Python programming on the Yun
 * [Setup Autobahn|JS](Arduino-Yun-AutobahnJS-Setup): setting up Autobahn|JS and Node for JavaScript programming on the Yun
-
+* [Preparing an image](Arduino-Yun-Prepare-Image): how to create an extroot overlay SD card image for distribution
 
 ## Tutorials
 
