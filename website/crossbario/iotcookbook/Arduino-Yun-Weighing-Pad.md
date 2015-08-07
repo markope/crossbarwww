@@ -1,3 +1,5 @@
+--- under construction ---
+
 The Arduino Yun Weighing Pad component publishes data from a weighing pad component (see [instructions for making these](Weighing Pad)). It can publish both raw data and events when certain configurable thresholds are passed. 
 
 ## The sensor

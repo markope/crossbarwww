@@ -16,13 +16,13 @@ all:
 
 requirements:
 	# pip install --egg scons # Fails on Windows, so install manually
-	pip install taschenmesser
-	pip install scour
-	pip install boto
-	pip install flask
-	pip install jinja2-highlight
-	pip install mistune
-	pip install frozen-flask
+	pip install -U taschenmesser
+	pip install -U scour
+	pip install -U boto
+	pip install -U flask
+	pip install -U jinja2-highlight
+	pip install -U mistune
+	pip install -U frozen-flask
 
 clean:
 	rm -rf website/crossbario/build

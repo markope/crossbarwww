@@ -23,21 +23,44 @@
 
 
 #wrap {
-   background-image: url(/static/img/schaltplan_2.png);
+  /*
+     background-image: url(/static/img/schaltplan_2.png);
+   opacity: 0.2;
+   */
+}
+
+#cookbook_background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  height: 100%;
+  background-image: url(/static/img/schaltplan_2.png);
+  background-repeat: repeat;
+  z-index: -10;
+  opacity: 0.2;
 }
 
 #container {
    background-color: #f5f5f5;
-   box-shadow: 0 0 17px 0px rgba(0,0,0,0.3);
+   background-color: #fff;
+   box-shadow: 0 0 11px 0px rgba(0,0,0,0.2);
 }
 
 #footer {
+  border: none;
+/*
    background-color: #fff;
    box-shadow: 0 0 17px 0px rgba(0,0,0,0.3);
+*/
 }
 
 #container {
    max-width: 900px;
+   max-width: 1080px;
    padding-top: 0.2em;
    margin-top: 2em;
 }
@@ -45,7 +68,8 @@
 
 .cookbook_topbox_landingpage  {
     background-color: #D8D8D8;
-   
+    background-color: #fff;
+
     padding: 1em 1em;
 }
 
@@ -66,7 +90,7 @@
 
 #cookbook_home_topimage_container {
     /* float: right; */
-   
+
 }
 
 #cookbook_home_devices_container {
@@ -83,7 +107,7 @@
 
 .topimage_container {
     /* width: 80%; */
-   
+
     /* max-width: 400px; */
 }
 

@@ -156,13 +156,19 @@ The firmata code we need can be found on [GitHub](https://raw.githubusercontent.
 To verify that the Arduino - Linux firmata-over-serial connection works, it's easiest to run a blinky version in Node.js. Save the following in a file, e.g. `node-blinky.js` on the Yun:
 
 ```javascript
-var ArduinoFirmata = require('arduino-firmata');
-var arduino = new ArduinoFirmata().connect('/dev/ttyATH0');
-arduino.on('connect', function(){
-  console.log("connect!! "+arduino.serialport_name);
-  console.log("board version: "+arduino.boardVersion);
-var stat = true
-  setInterval(function(){
+console.log("blinky starting ..");
+
+var firmata = require('arduino-firmata');
+var arduino = new firmata().connect('/dev/ttyATH0');
+
+console.log("libraries loaded.");
+
+arduino.on('connect', function () {
+  console.log("serial connected: " + arduino.serialport_name);
+  console.log("board version: " + arduino.boardVersion);
+
+  var stat = true;
+  setInterval(function () {
     console.log(stat);
     arduino.digitalWrite(13, stat);
     arduino.digitalWrite(12, !stat);
