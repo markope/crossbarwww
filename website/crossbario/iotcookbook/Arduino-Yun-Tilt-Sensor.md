@@ -38,7 +38,7 @@ You need to have completed the setup for remote GPIO access on the Yun - see [[A
 Transfer `tilt_yun.js` on the Yun, e.g. by doing 
 
 ```console
-scp tilt_yun.js pi@<IP of your Yun>:~/
+scp tilt_yun.js root@<IP of your Yun>:~/
 ```
 
 The script is run using Node.js, so you need to have this installed ('opkg install node').

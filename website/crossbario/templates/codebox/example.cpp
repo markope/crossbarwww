@@ -1,4 +1,4 @@
-// 1) SUBSCRIBE to a topic to reveive events
+// 1) SUBSCRIBE to a topic to receive events
 void onhello(const anyvec&amp; args, const anymap&amp; kwargs) {
    cout << "Got event: " << any_cast<string>(args[0]) << endl;   
 }

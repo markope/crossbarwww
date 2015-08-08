@@ -145,6 +145,8 @@ void loop() {
 
 Paste this into the IDE, save it somewhere, verify it (which requires the previous saving step), and then upload it to the Yun. You should now have a blinking LED!
 
+### Installing firmata
+
 The firmata code we need can be found on [GitHub](https://raw.githubusercontent.com/firmata/arduino/master/examples/StandardFirmataYun/StandardFirmataYun.ino)
 . As with the blinky code: paste, save, verify and upload.
 

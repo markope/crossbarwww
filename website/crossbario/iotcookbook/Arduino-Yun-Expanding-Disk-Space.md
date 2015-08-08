@@ -122,6 +122,13 @@ In Windows, fixed disks can have multiple partitions and removable disks can hav
 cp /.extroot.md5sum /tmp/overlay-disabled/etc/extroot.md5sum
 ```
 
+* check that things have worked
+```shell
+df -h
+```
+which should now list the SD card size as free space.
+
+
 ## Next
 
 The microcontroller and CPU on the Yun are connected over a on-board serial connection. However, the connection is already used by some software, and we need to disable that to use the serial connection for our own purposes. Head over to:

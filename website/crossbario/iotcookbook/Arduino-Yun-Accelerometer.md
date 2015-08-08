@@ -36,13 +36,13 @@ You need to have completed the setup for remote GPIO access on the Yun - see [[A
 Transfer `accelerometer_yun.js` on the Yun, e.g. by doing 
 
 ```console
-scp accelerometer_yun.js pi@<IP of your Yun>:~/
+scp accelerometer_yun.js root@<IP of your Yun>:~/
 ```
 
 Then run `accelerometer_yun.js` 
 
 ```shell
-node accelerometer.js
+node accelerometer_yun.js
 ```
 
 This should log
