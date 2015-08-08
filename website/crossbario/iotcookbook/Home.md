@@ -91,9 +91,3 @@ There are three main ways to gettin a WAMP router
 * We offer a [demo instance](../docs/Demo-Instance) (**under construction**) for testing and light development workloads.
 * You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](../docs/Setup-on-Microsoft-Azure), but [Amazon EC2](../docs/Setup-on-Amazon-EC2) also works.
 * You can [install Crossbar.io yourself](../docs/Local-Installation).
-
-
-## Tutorials
-
-* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial1
-* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial2

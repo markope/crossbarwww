@@ -15,7 +15,7 @@ Make sure the little switch on the Edison expansion board points towards the two
 3. Select downloaded image (click the "Browse" button)
 4. Select "Configuration: RNDIS" (Windows) or "Configuration: CDC" (Linux)
 5. Click "Start to flash"
-6. Now (yes, only now), _quickly_ first plug in the 2nd micro USB
+6. Now (yes, only now!), quickly (!) first plug in the 2nd micro USB (J16)
 connecting to your computer, and secondly plug in external power supply
 
 The tool should now detect the device and start to flash. If everything
@@ -26,7 +26,9 @@ If it doesn't work, try to repeat. As said, this can be tricky.
 
 ## Wifi and SSH configuration
 
-To configure the Wifi, you will need to login to your Edison via serial. Connect the J3 micro-USB on the Edison expansion board to your computer.
+To configure the Wifi, you will need to login to your Edison via serial initially. After Wifi has been configured, you can remotely login to the Edison via SSH.
+
+Connect the J3 micro-USB on the Edison expansion board to your computer.
 
 On Windows, follow [this](https://software.intel.com/en-us/setting-up-serial-terminal-on-system-with-windows) for using Putty to login via serial.
 
@@ -37,9 +39,7 @@ sudo apt-get install screen
 sudo screen /dev/ttyUSB0 115200
 ```
 
-Then hit RETURN twice and login as `root`.
-
-Then, configure the Edison's name, Wifi and root password (required for SSH) by doing:
+Then hit RETURN twice and login as `root`. You don't need as password when logging in via serial. Then, configure the Edison's name, Wifi and root password (required for SSH) by doing:
 
 ```console
 configure_edison --name
@@ -171,3 +171,10 @@ function toggle_led () {
 
 toggle_led();
 ```
+
+## Tutorials
+
+<img src="../../static/img/iotcookbook/edison/edison_with_tinkerkit.jpg" alt="">
+
+* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial1
+* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial2
