@@ -115,3 +115,28 @@
     max-width: 380px;
 
 }
+
+
+#devices_quick_access {
+  width: 100%;
+  margin: auto;
+}
+
+#devices_quick_access div {
+  float: left;
+  max-width: 200px;
+  max-height: 140px;
+}
+
+#devices_quick_access img {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border: none;
+}
+
+.note {
+  font-size: 14px;
+  font-color: #666;
+  margin: 20px;
+}
