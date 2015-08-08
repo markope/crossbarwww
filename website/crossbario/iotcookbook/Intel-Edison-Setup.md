@@ -1,15 +1,36 @@
+## Firmware Update
+
+In general, the Edison is a very handsome device. However, firmware update, as with other devices, can be tricky.
+
+There are recipes on the Web for updating the firmware using different methods and on different host systems. The entry point on the Intel docs is [here](https://software.intel.com/en-us/flashing-your-firmware-edison).
+
+The method that worked for me is on Windows and using the [Flash Tool Lite](https://software.intel.com/de-de/using-flash-tool-lite). Install this tool.
+
+Then, goto [Intel Edison downloads](https://software.intel.com/en-us/iot/hardware/edison/downloads) and download the [latest firmware](http://downloadmirror.intel.com/25028/eng/edison-image-ww25.5-15.zip). No need to unzip the image.
+
+Make sure the little switch on the Edison expansion board points towards the two micro USB connectors. But do NOT yet connect the Edison to your computer! The order (and timing) of the following steps is essential.
+
+1. Start Intel Flash Tool Lite
+2. Connect the micro USB J3 on the Edison expansion board to your computer (but NOT the other USB!)
+3. Select downloaded image (click the "Browse" button)
+4. Select "Configuration: RNDIS" (Windows) or "Configuration: CDC" (Linux)
+5. Click "Start to flash"
+6. Now (yes, only now), _quickly_ first plug in the 2nd micro USB
+connecting to your computer, and secondly plug in external power supply
+
+The tool should now detect the device and start to flash. If everything
+works fine, this will finish in 3-5 minutes.
+
+If it doesn't work, try to repeat. As said, this can be tricky.
 
 
-Goto https://software.intel.com/en-us/iot/hardware/edison/downloads and download latest image
+## Wifi and SSH configuration
 
-```console
-cd /media/oberstet/Edison
-rm -rf *
-rfm -rf \.*
-wget http://downloadmirror.intel.com/25028/eng/edison-image-ww25.5-15.zip
-unzip edison-image-ww25.5-15.zip
-```
+To configure the Wifi, you will need to login to your Edison via serial. Connect the J3 micro-USB on the Edison expansion board to your computer.
 
+On Windows, follow [this](https://software.intel.com/en-us/setting-up-serial-terminal-on-system-with-windows) for using Putty to login via serial.
+
+On Linux, do:
 
 ```console
 sudo apt-get install screen
@@ -18,82 +39,77 @@ sudo screen /dev/ttyUSB0 115200
 
 Then hit RETURN twice and login as `root`.
 
+Then, configure the Edison's name, Wifi and root password (required for SSH) by doing:
 
+```console
 configure_edison --name
 configure_edison --wifi
 configure_edison --password
-shutdown -h -P
+reboot
+```
 
+When the Edison has rebooted, you should be able to log into the Edison via SSH from your local network the Edison has connected to.
 
-root@edison:~# uname -a
-Linux edison 3.10.17-poky-edison+ #1 SMP PREEMPT Wed Aug 20 16:09:18 CEST 2014 i686 GNU/Linux
+After the update, you can check what version is running:
 
+```console
+root@Edison2:~# uname -a
+Linux Edison2 3.10.17-poky-edison+ #1 SMP PREEMPT Fri Jun 19 12:06:40 CEST 2015 i686 GNU/Linux
+root@Edison2:~# configure_edison --version
+159
+```
 
+## Install MRAA
 
-sudo apt-get install gdebi libncurses5:i386 libstdc++6:i386 
-wget http://downloadmirror.intel.com/24910/eng/phoneflashtoollite_5.2.4.0_linux_x86_64.deb
-sudo gdebi phoneflashtoollite_5.2.4.0_linux_x86_64.deb
+Intel has published [MRAA](https://github.com/intel-iot-devkit/mraa), an open-source library for hardware access from high-level languages running on the Linux CPU such as C/C++, Python, JavaScript.
 
+We'll be using this library. To install, login to the Edison and:
 
-/usr/bin/phoneflashtoollite
-
-
-* Edison1
-* FC:C2:DE:30:EE:59
-* edison1.office.tavendo.de
-* 192.168.1.149
-* root pw: edison123
-
-
-* Edison2
-* FC:C2:DE:36:B0:5B
-* edison1.office.tavendo.de
-* 192.168.1.143
-* root pw: edison123
-
-
-====
-
+```console
 opkg update
 opkg install libmraa0
+```
 
-https://github.com/intel-iot-devkit/mraa
-http://iotdk.intel.com/docs/master/mraa/python
-http://iotdk.intel.com/docs/master/mraa/node/modules/mraa.html
+You can find the docs here:
+
+* [MRAA Python documention](http://iotdk.intel.com/docs/master/mraa/python)
+* [MRAA JavaScript documentation](http://iotdk.intel.com/docs/master/mraa/node/modules/mraa.html)
 
 
-/etc/opkg/base-feeds.conf
+## Install AutobahnPython
 
+To install AutobahnPython, first configure additional pacakge repositories on the Edison. Login to the Edison and edit `/etc/opkg/base-feeds.conf` for:
+
+```
 src/gz all http://repo.opkg.net/edison/repo/all
 src/gz edison http://repo.opkg.net/edison/repo/edison
 src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32
+```
 
-opkg update
+Then do
 
-===
-
+```console
 opkg update
 opkg install python-pip
 pip install autobahn[twisted,accelerate,serialization]
+```
 
+This will take some minutes. You can check the installation:
 
+```console
 root@Edison2:~# python
-Python 2.7.3 (default, Jun 19 2015, 07:08:38) 
+Python 2.7.3 (default, Jun 19 2015, 07:08:38)
 [GCC 4.9.1] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import autobahn
 >>> autobahn.__version__
 '0.10.5'
->>> 
+>>>
+```
 
+You can also use the following simple [blinking program](https://github.com/crossbario/crossbarexamples/blob/master/iotcookbook/device/edison/blinky/blinky.py) to test:
 
-
-http://iotdk.intel.com/docs/master/mraa/python/
-
-
-
-
-
+```python
 import mraa
 import time
 
@@ -105,17 +121,30 @@ while True:
     time.sleep(0.2)
     x.write(0)
     time.sleep(0.2)
+```
 
 
+## Install AutobahnJS
 
-==============
+To install AutobahnPython, first configure additional pacakge repositories on the Edison. Login to the Edison and edit `/etc/opkg/base-feeds.conf` for:
 
+```
+src/gz all http://repo.opkg.net/edison/repo/all
+src/gz edison http://repo.opkg.net/edison/repo/edison
+src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32
+```
+
+Then do
+
+```console
 opkg update
 opkg install nodejs
-
 npm install -g autobahn
+```
 
+This will take some minutes. You can check the installation:
 
+```console
 root@Edison2:~# node --version
 v0.10.40
 root@Edison2:~# node
@@ -123,14 +152,12 @@ root@Edison2:~# node
 undefined
 > autobahn.version
 '0.9.6'
-> 
+>
+```
 
+You can also use the following simple [blinking program](https://github.com/crossbario/crossbarexamples/blob/master/iotcookbook/device/edison/blinky/blinky.js) to test:
 
-
-https://communities.intel.com/thread/58813
-
-
-
+```python
 var mraa = require('mraa');
 var led = new mraa.Gpio(13);
 led.dir(mraa.DIR_OUT);
@@ -143,4 +170,4 @@ function toggle_led () {
 }
 
 toggle_led();
-
+```
