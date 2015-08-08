@@ -19,9 +19,13 @@ unzip autobahn_yun_extroot.zip
 sudo dd if=/tmp/autobahn_yun_extroot.img of=/dev/sde bs=1M
 ```
 
+> Note: The image contains two partitions - a first FAT32 partition intended for data exchange, and a second EXT4 partition which contains the OS and is used as an overlay over the flash storage in the Yun. Windows machines can only read the first partition, so only files on this can be edited when it's mounted on the system.
+
 ## Update the Yun
 
-Login to your Yun and do
+Read how to [connect the Yun to your network](Arduino Yun Network Connectivity) and [access the Yun via SSH](Arduino Yun SSH Access).
+
+Login to your Yun via SSH and do
 
 ```console
 cd /tmp
@@ -51,6 +55,13 @@ which downloads and runs [this script](https://raw.githubusercontent.com/crossba
 The Yun will now reboot. Done!
 
 **You now have AutobahnPython (on Python/Twstied) and AutobahnJS (on NodeJS) setup on the Yun, as well as a generic serial-to-WAMP bridge.**
+
+## Running the software for the MCU
+
+The above sets up the software on the Linux side of the Yun. For the MCU side:
+
+* If you want to **use the generic serial-to-WAMP bridge** or one of the components, you also need to [install Firmata on the MCU](Arduino Yun Installing Firmata).
+* If you want to follow the programming tutorials (for [Python](Arduino Yun Python Tutorial) or [JavaScript/Node.js](Arduino Yun JavaScript tutorial)), then you'll find the code you need to run on the MCU as part of these. 
 
 ## Next
 

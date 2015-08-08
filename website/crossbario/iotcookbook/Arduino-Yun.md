@@ -12,14 +12,10 @@ If you want to do custome stuff, then take a look at the Specific Tutorials, or 
 
 * [Overview](Arduino-Yun-Overview): an overview of the Yun, its features and the integration into IoT applications
 * [Quick Setup](Arduino-Yun-Quick-Setup): a quick setup recipe
-* [Generic Serial-to-WAMP bridge](Arduino Yun Generic Serial to WAMP Bridge): access the Yun's GPIO pins via WAMP
+* [Generic Serial-to-WAMP bridge](Arduino Yun Serial to WAMP Bridge): access the Yun's GPIO pins via WAMP
 
 
 ## Basic Tutorials
-
-* [Arduino Yun Tutorial](Arduino Yun Tutorial): a three part tutorial that shows how to hook up the Yun to Crossbar.io and communicate from any other WAMP component
-
---- should be ---
 
 A three part tutorial that shows how to hook up the Yun to Crossbar.io and communicate from any other WAMP component. Available for 
 
