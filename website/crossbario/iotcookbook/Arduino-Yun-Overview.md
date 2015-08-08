@@ -2,7 +2,7 @@ This page provides some basic information about the Arduino Yun. For an overview
 
 # What is the Arduino Yun?
 
-The [Arduino Yun](arduino.cc/en/Main/ArduinoBoardYun) is a small embedded computer which can be used as a flexible platform for all kinds of hardware projects:
+The [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN) is an open-source, single-board computer that combines a microcontroller with a CPU and Wifi:
 
 <figure>
    <img style="width: 480px;" src="/static/img/iotcookbook/yun/arduino-yun.jpg" alt="Arduino Yun" class="imgCentered">
@@ -15,13 +15,19 @@ The Yun actually is *2 computers in one*:
 
 The MCU runs in *hard* real-time: you can use it to e.g. directly control servo motors or interface to sensors. The CPU on the other hand is powered by an embedded Linux ([Linino](https://github.com/arduino/linino)) that does not run in hard real-time, but is **capable of doing full flavored TCP/IP networking over Ethernet and Wifi**. The MCU and the CPU are connected via a serial interface.
 
+<img src="../../static/img/iotcookbook/yun/yun_diagram.png" alt="">
+
 The Yun's CPU and RAM are enough to run things like Node.js (but not much more). The biggest limitation are the 16MB flash, of which 8MB are reserved as a a recovery partition. We provide a tutorial for how to set up the Yun to use a microSD card for its filesystem.
 
 ## Connecting the Yun to the World
 
 Now, while the Arduino Yun (like all Arduinos) already allows you to create awesome hardware oriented projects, wouldn't it be great if you could connect your Arduino Yun to other devices, browsers or mobile apps, communicating in *(soft) real-time* over the Web?
 
-You can do so using [WAMP](http://wamp.ws/). Using WebSocket as a transport allows bidirectional real-time messaging on the Web and WAMP adds asynchronous [Remote Procedure Calls](http://wamp.ws/faq/#rpc) and [Publish & Subscribe](http://wamp.ws/faq/#pubsub) on top of WebSocket.
+We'll be making the Yun into a real IoT device by connecting it to Crossbar.io. This allows the Yun to publish real-time events e.g. to distribute sensor readings, and securily control the Yun with remote procedure calls from any other WAMP component:
+
+<img src="../../static/img/iotcookbook/crossbar_iot_integration_1.png" alt="">
+
+[WAMP](http://wamp.ws/) uses WebSocket as a transport and allows bidirectional real-time messaging on the Web and WAMP adds asynchronous [Remote Procedure Calls](http://wamp.ws/faq/#rpc) and [Publish & Subscribe](http://wamp.ws/faq/#pubsub) on top of WebSocket.
 
 Here is an example of what you can do with Arduino Yun and WAMP:
 
@@ -41,4 +47,4 @@ We'll give you step-by-step instructions for how to set up a Yun to work with WA
 
 ## Next
 
-- [Basic setup](Arduino-Yun-Basic-Setup)
+- [Quick Setup](Arduino-Yun-Quick-Setup)

@@ -1,3 +1,5 @@
+This quick setup represents the simplest, fastest way we could find to get the software necessary to connect to a WAMP router onto the Yun. Once you've completed this you'll be able to run WAMP components in Python or JavaScript/Node.js, as well as use the generic serial-to-WAMP bridge.
+
 ## Get the image
 
 Download the [image](https://s3-eu-west-1.amazonaws.com/crossbar.io/download/autobahn_yun_extroot.zip) and write the image to an SD card.
