@@ -1,6 +1,6 @@
 This quick setup represents the simplest, fastest way we could find to get the software necessary to connect to a WAMP router onto the Yun. Once you've completed this you'll be able to run WAMP components in Python or JavaScript/Node.js, as well as use the generic serial-to-WAMP bridge.
 
-We recommend the quick setup if you just want to start using the Yun as part of a WAMP application. In case you want to learn more about the Yun, or need to modify parts things, the specific tutorials give you information about individual aspects of setting up the Yun. 
+We recommend the quick setup if you just want to start using the Yun as part of a WAMP application. In case you want to learn more about the Yun, or need to modify parts things, the specific tutorials give you information about individual aspects of setting up the Yun.
 
 ## Get the image
 
@@ -54,14 +54,14 @@ which downloads and runs [this script](https://raw.githubusercontent.com/crossba
 
 The Yun will now reboot. Done!
 
-**You now have AutobahnPython (on Python/Twstied) and AutobahnJS (on NodeJS) setup on the Yun, as well as a generic serial-to-WAMP bridge.**
+**You now have AutobahnPython (on Python/Twisted) and AutobahnJS (on NodeJS) setup on the Yun, as well as a generic serial-to-WAMP bridge.**
 
 ## Running the software for the MCU
 
 The above sets up the software on the Linux side of the Yun. For the MCU side:
 
 * If you want to **use the generic serial-to-WAMP bridge** or one of the components, you also need to [install Firmata on the MCU](Arduino Yun Installing Firmata).
-* If you want to follow the programming tutorials (for [Python](Arduino Yun Python Tutorial) or [JavaScript/Node.js](Arduino Yun JavaScript tutorial)), then you'll find the code you need to run on the MCU as part of these. 
+* If you want to follow the programming tutorials (for [Python](Arduino Yun Python Tutorial) or [JavaScript/Node.js](Arduino Yun JavaScript tutorial)), then you'll find the code you need to run on the MCU as part of these.
 
 ## Next
 
@@ -69,7 +69,7 @@ Check out the components and apps for the Arduino Yun (listed on the [Arduino Yu
 
 Read about how to use the [serial-to-WAMP bridge](Arduin Yun Serial to WAMP Bridge).
 
-Learn step-by-step about the basics of programming the Yun with our three-part tutorial for 
+Learn step-by-step about the basics of programming the Yun with our three-part tutorial for
 
 * [Python](Arduino Yun Python Tutorial)
 * [JavaScript/Node.js](Arduino Yun JavaScript Tutorial)

@@ -1,10 +1,12 @@
 <img id="cookbook_home_topimage" src="../static/img/iotcookbook/lego_duplo_smaller.jpg" alt="" style="float: right; max-width: 340px; margin: 20px; padding: 0;" />
 
-The **IoT Cookbook** provides a collection of ready-to-build recipes for IoT components.
+**MAKERS & DEVELOPERS**: The **IoT Cookbook** provides a collection of ready-to-build recipes for IoT components to create your next IoT application.
 
-Building on components, developers get a head start and can focus on creating the actual application functionality. But of course you learn how to build your own, reusable components as well.
+Building on tested and documented components, makers and developers get a head start and can focus on creating the actual application functionality.
 
-The IoT Cookbook is all open-source: the <b><a href="https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook">code is on GitHub</a></b> and Apache 2.0 or MIT licensed, and the recipes and texts are free to use under the Creative Commons license.
+<strong>Crossbar.io</strong> allows you to <strong>talk to WAMP-enabled IoT devices</strong> from more than <strong><a href="http://wamp.ws/implementations/#libraries">9 programming languages</a></strong>. The IoT Cookbook has material for different languages as well. And we show how to build your own, reusable components, giving you the ultimate control.
+
+The IoT Cookbook is a community effort and all open-source: the <b><a href="https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook">code is on GitHub</a></b> and Apache 2.0 or MIT licensed, and the recipes and texts are free to use under the Creative Commons license.
 
 <p class="note">
 <b>News, 2015/08/08:</b> We've streamlined the Getting Started pages for all devices, in particular the Yun is now much simpler to setup. And we've released first pages for the Intel Edison
@@ -13,40 +15,38 @@ The IoT Cookbook is all open-source: the <b><a href="https://github.com/crossbar
 
 <b>Quick access by device type:</b>
 
-All recipes and documentation in the IoT Cookbook can be accessed starting from one of the covered devices. The devices we currently support are:
+All recipes and documentation in the IoT Cookbook can be accessed starting from one of the covered devices. The devices we currently cover in the IoT Cookbook are:
 <br><br>
 
 <div id="devices_quick_access">
    <div class="device">
-      <a href="Raspberry-Pi">
-         Raspberry Pi<br>
-         <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">
-      </a>
-   </div>
-   <div class="device">
       <a href="Arduino-Yun">
-         Arduino Yun<br>
+         Arduino Yun (MIPS)<br>
          <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">
       </a>
    </div>
    <div class="device">
-      <a href="Tessel">
-         Tessel<br>
-         <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="" >
+      <a href="Intel-Edison">
+         Intel Edison (x86)<br>
+         <img class="cookbook_home_device" src="../static/img/iotcookbook/edison/edison.jpg" alt="" >
       </a>
    </div>
    <div class="device">
-      <a href="Edison">
-         Edison<br>
-         <img class="cookbook_home_device" src="../static/img/iotcookbook/edison/edison.jpg" alt="" >
+      <a href="Raspberry-Pi">
+         Raspberry Pi (ARM)<br>
+         <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">
+      </a>
+   </div>
+   <div class="device">
+      <a href="Tessel">
+         Tessel / Tessel 2 (MIPS)<br>
+         <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="" >
       </a>
    </div>
 </div>
 
 <div style="clear: both;">&nbsp;</div>
 
-<br>
-<br>
 <br>
 
 <p class="note">
@@ -70,7 +70,7 @@ If you find errors, bugs or other issues in above, or if you have new contributi
          All components come with <strong>built-in connectivity</strong>. They can connect from anywhere, and you can easily build distributed applications.
       </li>
       <li>
-         All components can <strong>communicate freely with each other</strong> - including calling procedures. The compoments connect via a Crossbar.io application router. Client libraries for WAMP, the protocol used, are available for 9 languages (and growing). You can also integrate services with REST APIs, so your applications can talk to pretty much anything on the internet.
+         All components can <strong>communicate freely with each other</strong> - including calling procedures. The components connect via a Crossbar.io application router. Client libraries for WAMP, the protocol used, are available for <strong><a href="http://wamp.ws/implementations/#libraries">9 languages</a></strong> (and growing). You can also integrate services with REST APIs, so your applications can talk to pretty much anything on the internet.
       </li>
       <li>
          All recipes include <strong>step-by-step instructions</strong> to get things working. Just follow the instructions - no need to worry about the technological background details. If you want to dive deeper into the technology, we provide links to get your started.

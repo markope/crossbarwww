@@ -1,34 +1,41 @@
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/yun_tutorial_hardware.jpg" alt="">   
+   <img class="topimage" src="../../static/img/iotcookbook/yun_tutorial_hardware.jpg" alt="">
 </div>
 
 This tutorial shows you the basics of programming the Yun, as well as how to connect the Arduino Yun to Crossbar.io. Having finished the tutorial will enable you to access the Yun from any WAMP application component, and give you a start in programming your own components.
 
-We'll show you how to run code within the the Arduino MCU on the Yun, how to communication between the MCU and the Linux system works, and how to connect the Linux system as part of a WAMP application. 
+We'll show you how to run code within the the Arduino MCU on the Yun, how to communication between the MCU and the Linux system works, and how to connect the Linux system as part of a WAMP application.
 
 ## Prerequisites
 
-You need to have a basic understanding of Python, and some knowledge of C would be good (though you can probably do some basic hacking of the C code for the MCU without that). 
+You need to have a basic understanding of Python, and some knowledge of C would be good (though you can probably do some basic hacking of the C code for the MCU without that).
 
 If you want to run the example code, you should also have an Arduino Yun set up to run AutobahnPython - see either the [Quick Setup](Arduino Yun Quick Setup) or the [Detailed Setup](Arduino Yun Detailed Setup). You also need a button, a potentiometer and a LED connected to the Yun (though you can substitute other input & output devices).
 
+## The tutorial
+
 The tutorial consists of three parts. The code for the parts is on GitHub:
 
-1. [Part 1](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial1)
-2. [Part 2](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial2)
-3. [Part 3](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial3)
+1. [Part One](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial1)
+2. [Part Two](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial2)
+3. [Part Three](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial3)
 
-The **first part** only involves the Yun microcontroller running a simple firmware that reads a digital value from a button and an analog value from a potentiometer, and turns on the LED if either the button is pressed or the potentiometer is turned beyond a certain threshold. The system in this case looks like
+### Part One
+
+Tutorial [Part One](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial1) only involves the Yun microcontroller running a simple firmware that reads a digital value from a button and an analog value from a potentiometer, and turns on the LED if either the button is pressed or the potentiometer is turned beyond a certain threshold. The system in this case looks like
 
 <img src="../../static/img/iotcookbook/yun_tutorial_part1.jpg" alt="" />
 
 To run the the code for the first part:
-    * download it to your dev machine, 
-    * connect the dev machine to the Yun via USB, 
-    * run the Arduino IDE and select your Yun
-    * compile & upload the downloaded code to the Yun
 
-The **second part** shows how to talk to the microcontroller from a Python program via serial. It still does not involve Crossbar.io or WAMP, but it is essential to let the Yun microcontroller talk to the outside world.
+* download it to your dev machine,
+* connect the dev machine to the Yun via USB,
+* run the Arduino IDE and select your Yun
+* compile & upload the downloaded code to the Yun
+
+### Part Two
+
+Tutorial [Part Two](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial2) shows how to talk to the microcontroller from a Python program via serial. It still does not involve Crossbar.io or WAMP, but it is essential to let the Yun microcontroller talk to the outside world.
 
 Here the code on for the MCU reads the digital value from the button and the analog value from the potentiomenter and writes these to the serial port. The Python code on the Linux system reads the serial port, decides what the LED state should be based on the received values, and then writes the button state on the serial port. The code uses Twisted, a Pyhton framework for asynchronous programming, which is used by AutobahnPython and Crossbar.io. In this case the system looks like:
 
@@ -39,10 +46,13 @@ Tun run the code for the second part:
 * for the code for the MCU, follow the instructions for the first part
 * download the Pyhton code
 * transfer this to the Linux part of the Yun, e.g. using SSH
-    ```shell
-    scp 
-    ```
 
-The **third part** now combines the knowledge from the previous parts and extends the Python program to act as a bridge between the serial connection (talking to the microcontroller) and a WAMP session (talking to Crossbar.io).
+```shell
+scp ...
+```
+
+### Part Three
+
+Tutorial [Part Three](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial3) now combines the knowledge from the previous parts and extends the Python program to act as a bridge between the serial connection (talking to the microcontroller) and a WAMP session (talking to Crossbar.io).
 
 <img src="../../static/img/iotcookbook/yun_tutorial_part3.jpg" alt="" />
