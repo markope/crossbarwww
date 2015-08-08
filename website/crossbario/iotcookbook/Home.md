@@ -27,16 +27,17 @@
 
 # The Devices
 
-Pick a microcontroller and see what we are offering for it: 
+Pick a microcontroller and see what we are offering for it:
 
 * [[Raspberry Pi]]
 * [[Arduino Yun]]
 * [[Tessel]]
+* Upcoming: [Intel Edison](Intel-Edison-Setup)
 
 <div id="cookbook_home_devices_container">
-      <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">   
-      <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">   
-      <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="">   
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">
+      <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="">
 </div>
 
 # The components
@@ -49,7 +50,7 @@ Building blocks, ready to use for solving your problem!
    * Camera - [Tessel](Tessel Camera)/[Raspberry Pi](Raspberry Pi Camera)
    * Tilt Sensor - [Yun](Arduino Yun Tilt Sensor)
    * [Raspberry Pi Temperature Monitor](Raspberry Pi Temperature Monitor)
-   * Weighing Pad - [Yun](Arduino Yun Weighing Pad) 
+   * Weighing Pad - [Yun](Arduino Yun Weighing Pad)
 * Inputs
    * X-Box Controller -[Raspberry Pi](Raspberry Pi Xbox Controller)
    * Buttons - [Yun](Arduino Yun Buttons)
@@ -64,7 +65,7 @@ Building blocks, ready to use for solving your problem!
    + [Reveal.js Remote Control](Reveal.js Remote Control)
    + [WAMP widgets](WAMP Browser Widgets) (**under construction**)
 
- 
+
 plus generic remote access & control of GPIO pins on the
 
 * [Arduino Yun](Arduino Yun Remote GPIO)
@@ -90,5 +91,3 @@ There are three main ways to gettin a WAMP router
 * We offer a [demo instance](../docs/Demo-Instance) (**under construction**) for testing and light development workloads.
 * You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](../docs/Setup-on-Microsoft-Azure), but [Amazon EC2](../docs/Setup-on-Amazon-EC2) also works.
 * You can [install Crossbar.io yourself](../docs/Local-Installation).
-
-
