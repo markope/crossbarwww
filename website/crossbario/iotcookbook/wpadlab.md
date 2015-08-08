@@ -1,3 +1,5 @@
+--- under construction ---
+
 `wpadlab` is an application which
 
 * visualizes the current raw values received from a weighing pad component (such as the [Arduino Yun Weighing Pad](Arduino Yun Weighing Pad))
