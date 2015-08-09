@@ -87,15 +87,15 @@ If you find errors, bugs or other issues in above, or if you have new contributi
 
 # Running things
 
-The code for all of the above is in the [crossbarexamples repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. Clone this locally or download it as a ZIP file.
+All the code and examples from the IoT Cookbook is on GitHub **[here](https://github.com/crossbario/crossbarexamples/iotcookbook)**. Clone this locally or [download](https://github.com/crossbario/crossbarexamples/archive/master.zip) it as a ZIP archive.
 
-# Getting a WAMP router
+Most of the examples in the IoT Cookbook **require a WAMP router** for communication between WAMP-enabled IoT devices and other application components. While you can use [any WAMP router](http://wamp.ws/implementations/#routers), we recommend Crossbar.io:
 
-There are three main ways to gettin a WAMP router
+* Use our hosted [Crossbar.io demo instance](../docs/Demo-Instance) for testing and light development
+* **Spin up your own [Crossbar.io VM on Microsoft Azure](../docs/Setup-on-Microsoft-Azure)**
+* Spin up your own [Crossbar.io VM on Amazon EC2](../docs/Setup-on-Amazon-EC2)
+* Install and [run Crossbar.io locally](../docs/Local-Installation)
 
-* We offer a [demo instance](../docs/Demo-Instance) (**under construction**) for testing and light development workloads.
-* You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](../docs/Setup-on-Microsoft-Azure), but [Amazon EC2](../docs/Setup-on-Amazon-EC2) also works.
-* You can [install Crossbar.io yourself](../docs/Local-Installation).
 
 # Devices
 
