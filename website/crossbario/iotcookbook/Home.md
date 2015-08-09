@@ -1,16 +1,76 @@
-<div class="cookbook_topbox_landingpage">
-   <div id="cookbook_home_topimage_container">
-      <img id="cookbook_home_topimage" src="../static/img/iotcookbook/lego_duplo_smaller.jpg" alt="" />
+<img id="cookbook_home_topimage" src="../static/img/iotcookbook/lego_duplo_smaller.jpg" alt="" style="float: right; max-width: 340px; margin: 20px; padding: 0;" />
+
+**MAKERS & DEVELOPERS**: The **IoT Cookbook** provides a collection of ready-to-build recipes for IoT components to create your next IoT application.
+
+Building on tested and documented components, makers and developers get a head start and can focus on creating the actual application functionality.
+
+<strong>Crossbar.io</strong> allows you to <strong>talk to WAMP-enabled IoT devices</strong> from more than <strong><a href="http://wamp.ws/implementations/#libraries">9 programming languages</a></strong>. The IoT Cookbook has material for different languages as well. And we show how to build your own, reusable components, giving you the ultimate control.
+
+The IoT Cookbook is a community effort and all open-source: the <b><a href="https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook">code is on GitHub</a></b> and Apache 2.0 or MIT licensed, and the recipes and texts are free to use under the Creative Commons license.
+
+<p class="note">
+<b>News, 2015/08/08:</b> We've streamlined the Getting Started pages for all devices, in particular the Yun is now much simpler to setup. And we've released first pages for the Intel Edison
+</p>
+<br>
+
+<b>Quick access by device type:</b>
+
+All recipes and documentation in the IoT Cookbook can be accessed starting from one of the covered devices. The devices we currently cover in the IoT Cookbook are:
+<br><br>
+
+<div id="devices_quick_access">
+   <div class="device">
+      <a href="Arduino-Yun">
+         Arduino Yun (MIPS)<br>
+         <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">
+      </a>
    </div>
-   <h2>
-      You want to solve a problem - we offer components and recipes to build your solutions
-   </h2>
+   <div class="device">
+      <a href="Intel-Edison">
+         Intel Edison (x86)<br>
+         <img class="cookbook_home_device" src="../static/img/iotcookbook/edison/edison.jpg" alt="" >
+      </a>
+   </div>
+   <div class="device">
+      <a href="Raspberry-Pi">
+         Raspberry Pi (ARM)<br>
+         <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">
+      </a>
+   </div>
+   <div class="device">
+      <a href="Tessel">
+         Tessel / Tessel 2 (MIPS)<br>
+         <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="" >
+      </a>
+   </div>
+</div>
+
+<div style="clear: both;">&nbsp;</div>
+
+<br>
+
+<p class="note">
+<b>Note:</b>
+If you find errors, bugs or other issues in above, or if you have new contributions (awesome!!), we would be happy to receive your <a href="https://github.com/crossbario/crossbarwww">feedback or PRs on GitHub</a>!
+</p>
+
+
+# Overview
+
+<div class="cookbook_topbox_landingpage">
+   <p>
+      <b>You want to solve a problem and focus your efforts at the application level</b>, not fiddle around to get some basic IoT sensor or actuator component built and connected to your application backends.
+   </p>
+   <p>
+      With the component collection and all the recipes and tutorials, the IoT Cookbook wants to <b>free you from having to reinvent the wheels all over again</b>:
+   </p>
+   <br>
    <ul>
       <li>
          All components come with <strong>built-in connectivity</strong>. They can connect from anywhere, and you can easily build distributed applications.
       </li>
       <li>
-         All components can <strong>communicate freely with each other</strong> - including calling procedures. The compoments connect via a Crossbar.io application router. Client libraries for WAMP, the protocol used, are available for 9 languages (and growing). You can also integrate services with REST APIs, so your applications can talk to pretty much anything on the internet.
+         All components can <strong>communicate freely with each other</strong> - including calling procedures. The components connect via a Crossbar.io application router. Client libraries for WAMP, the protocol used, are available for <strong><a href="http://wamp.ws/implementations/#libraries">9 languages</a></strong> (and growing). You can also integrate services with REST APIs, so your applications can talk to pretty much anything on the internet.
       </li>
       <li>
          All recipes include <strong>step-by-step instructions</strong> to get things working. Just follow the instructions - no need to worry about the technological background details. If you want to dive deeper into the technology, we provide links to get your started.
@@ -25,7 +85,19 @@
 </div>
 
 
-# The Devices
+# Running things
+
+The code for all of the above is in the [crossbarexamples repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. Clone this locally or download it as a ZIP file.
+
+# Getting a WAMP router
+
+There are three main ways to gettin a WAMP router
+
+* We offer a [demo instance](../docs/Demo-Instance) (**under construction**) for testing and light development workloads.
+* You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](../docs/Setup-on-Microsoft-Azure), but [Amazon EC2](../docs/Setup-on-Amazon-EC2) also works.
+* You can [install Crossbar.io yourself](../docs/Local-Installation).
+
+# Devices
 
 Pick a microcontroller and see what we are offering for it:
 
@@ -34,13 +106,15 @@ Pick a microcontroller and see what we are offering for it:
 * [[Tessel]]
 * Upcoming: [Intel Edison](Intel-Edison-Setup)
 
+<!--
 <div id="cookbook_home_devices_container">
       <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">
       <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">
       <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="">
 </div>
+-->
 
-# The components
+# Components
 
 Building blocks, ready to use for solving your problem!
 
@@ -71,7 +145,7 @@ plus generic remote access & control of GPIO pins on the
 * [Arduino Yun](Arduino Yun Serial to WAMP Bridge)
 * [Raspberry Pi](Raspberry Pi Remote GPIO) (**under construction**)
 
-# The applications
+# Applications
 
 Applications which use the components. Get an idea for how combining things works, find code to re-use, be inspired - and maybe already find a solution which fits your needs!
 
@@ -79,15 +153,3 @@ Applications which use the components. Get an idea for how combining things work
 * [Digital Signage](Digital Signage)
 * [Euro Pallet Load](Euro Pallet Load)
 * [Real-time charting with the Arduino Yun](Arduino Yun Real-time Charting) (**under construction**)
-
-# Running things
-
-The code for all of the above is in the [crossbarexamples repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. Clone this locally or download it as a ZIP file.
-
-# Getting a WAMP router
-
-There are three main ways to gettin a WAMP router
-
-* We offer a [demo instance](../docs/Demo-Instance) (**under construction**) for testing and light development workloads.
-* You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](../docs/Setup-on-Microsoft-Azure), but [Amazon EC2](../docs/Setup-on-Amazon-EC2) also works.
-* You can [install Crossbar.io yourself](../docs/Local-Installation).

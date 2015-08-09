@@ -113,6 +113,7 @@ This section covers security issues and fine-tuning of advanced options. Tips fo
 * [Network Tuning](Network Tuning)
 * [Reverse Proxies](Reverse Proxies)
 * [SSL/TLS Interception Proxies](SSL-TLS-Interception-Proxies)
+* [General IoT Security](Security)
 
 ### Compliance and Performance
 

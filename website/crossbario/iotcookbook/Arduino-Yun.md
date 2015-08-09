@@ -1,8 +1,12 @@
+<div class="topimage_container">
+<img id="cookbook_home_topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="" class="header_img" />
+</div>
+
 This is the **Crossbar.io IoT Cookbook's Yun homepage**.
 
 The material here introduces the [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN) and how to make it into a real IoT device by connecting to Crossbar.io. We also provide ready-to-go recipes for complete IoT components and apps based on the Yun and Crossbar.io.
 
-We suggest you read the [Overview](Arduino-Yun-Overview) first. 
+We suggest you read the [Overview](Arduino-Yun-Overview) first.
 
 If you just want generic access to the Yun's GPIO ports (read, write and monitor for changes), then do the [Quick Setup](Arduino-Yun-Quick-Setup) and use the [Generic Serial-to-WAMP bridge](Arduino Yun Generic Serial to WAMP Bridge).
 
@@ -17,7 +21,7 @@ If you want to do custome stuff, then take a look at the Specific Tutorials, or 
 
 ## Basic Tutorials
 
-A three part tutorial that shows how to hook up the Yun to Crossbar.io and communicate from any other WAMP component. Available for 
+A three part tutorial that shows how to hook up the Yun to Crossbar.io and communicate from any other WAMP component. Available for
 
 * [Python](Arduino Yun Python Tutorial)
 * [JavaScript/NodeJS](Arduino Yun JavaScript Tutorial)

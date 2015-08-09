@@ -1,5 +1,5 @@
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/raspberry_pi.jpg" alt="">   
+   <img class="header_img" src="../../static/img/iotcookbook/raspberry_pi.jpg" alt="">
 </div>
 
 The [Raspberry Pi](https://www.raspberrypi.org/) is a family of small computers which all feature ethernet, USB and HDMI connections and run Linux (among other options).
