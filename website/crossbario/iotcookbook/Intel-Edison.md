@@ -9,3 +9,11 @@ We also provide ready-to-go recipes for complete IoT components and apps based o
 ## Getting Started
 
 * [Edison Setup](Intel-Edison-Setup): setting up the Intel Edison with Python (Twisted) and JavaScript (NodeJS)
+
+## Tutorials
+
+<img src="../../static/img/iotcookbook/edison/edison_with_tinkerkit.jpg" alt="">
+
+* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial1
+* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial2
+

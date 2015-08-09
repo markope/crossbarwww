@@ -171,10 +171,3 @@ function toggle_led () {
 
 toggle_led();
 ```
-
-## Tutorials
-
-<img src="../../static/img/iotcookbook/edison/edison_with_tinkerkit.jpg" alt="">
-
-* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial1
-* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial2
