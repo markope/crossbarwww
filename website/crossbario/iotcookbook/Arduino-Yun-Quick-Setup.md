@@ -54,7 +54,9 @@ which downloads and runs [this script](https://raw.githubusercontent.com/crossba
 
 The Yun will now reboot. Done!
 
-**You now have AutobahnPython (on Python/Twisted) and AutobahnJS (on NodeJS) setup on the Yun, as well as a generic serial-to-WAMP bridge.**
+**You now have AutobahnPython (on Python/Twisted) and AutobahnJS (on NodeJS) setup on the Yun**
+
+If you want to use the **serial-to-WAMP bridge**, then follow [these instructions](Arduino YUn Serial to WAMP Bridge).
 
 ## Running the software for the MCU
 
