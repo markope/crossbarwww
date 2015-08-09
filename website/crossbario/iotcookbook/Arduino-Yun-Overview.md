@@ -23,7 +23,7 @@ The Yun's CPU and RAM are enough to run things like Node.js (but not much more).
 
 Now, while the Arduino Yun (like all Arduinos) already allows you to create awesome hardware oriented projects, wouldn't it be great if you could connect your Arduino Yun to other devices, browsers or mobile apps, communicating in *(soft) real-time* over the Web?
 
-We'll be making the Yun into a real IoT device by connecting it to Crossbar.io. This allows the Yun to publish real-time events e.g. to distribute sensor readings, and securily control the Yun with remote procedure calls from any other WAMP component:
+We'll be making the Yun into a real IoT device by connecting it to Crossbar.io. This allows the Yun to publish real-time events e.g. to distribute sensor readings, and securily control the Yun with remote procedure calls from any other WAMP component (**get the full presentation [here](../../static/img/docs/design/crossbar_iot_integration/crossbar_iot_integration.pdf)**)
 
 <img src="../../static/img/iotcookbook/crossbar_iot_integration_1.png" alt="">
 

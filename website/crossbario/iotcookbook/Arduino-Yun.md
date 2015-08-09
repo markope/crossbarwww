@@ -10,7 +10,9 @@
 1. [Apps](#apps)
 1. [Recipes](#recipes)
 
-The material here introduces the [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN), how to connect the Yun to Crossbar.io and how to talk to the Yun from any other WAMP component, such as a browser or a backend. We also provide ready-to-go recipes for complete IoT components and apps based on the Yun and Crossbar.io.
+The material here introduces the [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN), how to connect the Yun to Crossbar.io and how to talk to the Yun from any other WAMP component, such as a browser or a backend (more: [Crossbar.io/Yun integration in 3 slides](../../static/img/docs/design/crossbar_iot_integration/crossbar_iot_integration.pdf)).
+
+We also provide ready-to-go recipes for complete IoT components and apps based on the Yun and Crossbar.io.
 
 <!--
 We suggest you read the [Overview](Arduino-Yun-Overview) first.
