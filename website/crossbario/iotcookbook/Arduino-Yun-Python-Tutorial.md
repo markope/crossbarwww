@@ -55,8 +55,18 @@ scp controller.py root@192.168.1.141:~/
 
 ### Part Three
 
-Tutorial [Part Three](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial3) now combines the knowledge from the previous parts and extends the Python program to act as a bridge between the serial connection (talking to the microcontroller) and a WAMP session (talking to Crossbar.io).
+Tutorial [Part Three](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial3) now combines the knowledge from the previous parts and extends the Python program to act as a bridge between the serial connection (talking to the microcontroller) and a WAMP session (talking to Crossbar.io). The system here looks like this
 
 <img src="../../static/img/iotcookbook/yun_tutorial_part3.jpg" alt="" />
 
-The code for the third part can be run just like the code for the second part (just switch the files you use).
+You can run Crossbar.io with a working configuration from the tutorial base directory by doing
+
+```
+crossbar start
+```
+
+This serves the frontend at `http://localhost:8080`. Open the JavaScript console to see received values, click on the buttons to toggle the LED on the Yun. 
+
+The bridge component provides a couple of procedures ("get_sensors", "set_led"), and publishes the current data. Here you need to modify the code with the IP of the computer that you run Crossbar.io on.
+
+Otherwise the code for the third part can be run just like the code for the second part (just switch the files you use).
