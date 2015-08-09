@@ -1,4 +1,6 @@
-<img id="cookbook_home_topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="" style="float: right; max-width: 340px; margin: 20px; padding: 0;" />
+<div class="topimage_container">
+<img id="cookbook_home_topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="" class="header_img" />
+</div>
 
 This is the **Crossbar.io IoT Cookbook's Yun homepage**.
 

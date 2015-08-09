@@ -1,5 +1,5 @@
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/tessel.jpg" alt="">   
+   <img class="header_img" src="../../static/img/iotcookbook/tessel.jpg" alt="">
 </div>
 
 The [Tessel](http://tessel.io) is a microcontroller with built-in wifi which can be programmed in JavaScript.
