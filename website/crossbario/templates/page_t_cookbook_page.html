@@ -9,8 +9,12 @@
 {% block content %}
 
 <div id="contents">
-   <h1>{{ title }}</h1>
-   {{ contents|safe }}
+<!--
+    <div id="cookbook_logo"></div>
+-->
+    <img id="cookbook_logo" src="{{ url_for('static', filename = 'img/iotcookbook/iotcookbook.png') }}" />
+    <h1>{{ title }}</h1>
+    {{ contents|safe }}
 </div>
 
 {% endblock %}
