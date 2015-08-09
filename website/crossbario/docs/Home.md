@@ -39,6 +39,7 @@ Installing locally or in the cloud.
   * [Setup on Microsoft Azure](Setup on Microsoft Azure)
   * [Setup on Amazon EC2](Setup on Amazon EC2)
   * [Setup on Heroku](Setup on Heroku)
+* [Installation from Source](Installation from Source)
 * [Updating from the Repository](Updating from the Repository)
 
 ### Choose your Weapon

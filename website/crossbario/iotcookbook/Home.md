@@ -87,36 +87,35 @@ If you find errors, bugs or other issues in above, or if you have new contributi
 
 # Running things
 
-The code for all of the above is in the [crossbarexamples repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. Clone this locally or download it as a ZIP file.
+All the code and examples from the IoT Cookbook is on GitHub **[here](https://github.com/crossbario/crossbarexamples/iotcookbook)**. Clone this locally or [download](https://github.com/crossbario/crossbarexamples/archive/master.zip) it as a ZIP archive.
 
-# Getting a WAMP router
+Most of the examples in the IoT Cookbook **require a WAMP router** for communication between WAMP-enabled IoT devices and other application components. While you can use [any WAMP router](http://wamp.ws/implementations/#routers), we recommend Crossbar.io. Here are your options:
 
-There are three main ways to gettin a WAMP router
+**Option 1**: Use our hosted [Crossbar.io demo instance](../docs/Demo-Instance) for testing and light development
 
-* We offer a [demo instance](../docs/Demo-Instance) (**under construction**) for testing and light development workloads.
-* You can quickly spin up a virtual machine with Crossbar.io preinstalled. We suggest [Microsoft Azure](../docs/Setup-on-Microsoft-Azure), but [Amazon EC2](../docs/Setup-on-Amazon-EC2) also works.
-* You can [install Crossbar.io yourself](../docs/Local-Installation).
+**Option 2**: Spin up your own VM with [Crossbar.io on Microsoft Azure](../docs/Setup-on-Microsoft-Azure):
+
+<a href="http://azure.microsoft.com/en-us/marketplace/partners/tavendo/crossbar-on-azure-ubuntu1404/">
+   <img src="../static/img/iotcookbook/crossbar_sample_533x324.png" alt="" style="box-shadow: none; border: none;" />
+</a>
+
+**Option 3**: Spin up your own VM with [Crossbar.io on Amazon EC2](../docs/Setup-on-Amazon-EC2)
+
+**Option 4**: Install and [run Crossbar.io locally](../docs/Local-Installation)
+
 
 # Devices
 
-Pick a microcontroller and see what we are offering for it:
+Pick a device and see what we are offering for it:
 
 * [[Raspberry Pi]]
 * [[Arduino Yun]]
 * [[Tessel]]
 * Upcoming: [Intel Edison](Intel-Edison-Setup)
 
-<!--
-<div id="cookbook_home_devices_container">
-      <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">
-      <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">
-      <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="">
-</div>
--->
-
 # Components
 
-Building blocks, ready to use for solving your problem!
+IoT building blocks, ready to use in your application:
 
 * Sensors
    * Accelerometer - [Tessel](Tessel Accelerometer)/[Yun](Arduino Yun Accelerometer)
@@ -139,11 +138,11 @@ Building blocks, ready to use for solving your problem!
    + [Reveal.js Remote Control](Reveal.js Remote Control)
    + [WAMP widgets](WAMP Browser Widgets) (**under construction**)
 
-
 plus generic remote access & control of GPIO pins on the
 
 * [Arduino Yun](Arduino Yun Serial to WAMP Bridge)
 * [Raspberry Pi](Raspberry Pi Remote GPIO) (**under construction**)
+
 
 # Applications
 
