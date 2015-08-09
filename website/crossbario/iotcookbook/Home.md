@@ -68,7 +68,7 @@ Building blocks, ready to use for solving your problem!
 
 plus generic remote access & control of GPIO pins on the
 
-* [Arduino Yun](Arduino Yun Remote GPIO)
+* [Arduino Yun](Arduino Yun Serial to WAMP Bridge)
 * [Raspberry Pi](Raspberry Pi Remote GPIO) (**under construction**)
 
 # The applications

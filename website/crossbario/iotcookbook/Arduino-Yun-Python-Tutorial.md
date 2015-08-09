@@ -6,6 +6,8 @@ This tutorial shows you the basics of programming the Yun, as well as how to con
 
 We'll show you how to run code within the the Arduino MCU on the Yun, how to communication between the MCU and the Linux system works, and how to connect the Linux system as part of a WAMP application. 
 
+This is the Python version of this tutorial. There is also a [JavaScript/Node.js version](Arduino Yun JavaScript Tutorial) if you feel more comfortable with this.
+
 ## Prerequisites
 
 You need to have a basic understanding of Python, and some knowledge of C would be good (though you can probably do some basic hacking of the C code for the MCU without that). 

@@ -31,9 +31,9 @@ var connection = new autobahn.Connection({
 });
 ```
 
-You need to have completed the setup for remote GPIO access on the Yun - see [[Arduino Yun Remote GPIO]], and have a Tinkerkit accelerometer connected. (This is expected on pins 2 and 3 / I2/3 on the Tinkerkit shield.)
+You need to set up the Yun for [using AutobahnJS](Arduino Yun AutobahnJS Setup), and have a Tinkerkit accelerometer connected. (This is expected on pins 2 and 3 / I2/3 on the Tinkerkit shield.)
 
-Transfer `accelerometer_yun.js` on the Yun, e.g. by doing 
+Transfer `accelerometer_yun.js` onto the Yun, e.g. by doing 
 
 ```console
 scp accelerometer_yun.js root@<IP of your Yun>:~/

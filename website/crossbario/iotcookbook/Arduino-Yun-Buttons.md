@@ -33,7 +33,7 @@ var connection = new autobahn.Connection({
 
 Additionally, in the `buttons` array, only those parts corresponding to actually connected buttons should be commented in. Otherwise, with e.g. a connection pattern like `0--3--`, while a press on `0` will produce the correct event, a press on `3`will produce events for the unconnected buttons `1` and `2` in addition to `3`.
 
-You need to have completed the setup for remote GPIO access on the Yun - see [[Arduino Yun Remote GPIO]]. 
+You need to set up the Yun for [using AutobahnJS](Arduino Yun AutobahnJS Setup), including setting up firmata on the MCU.
 
 Transfer `buttons_yun.js` on the Yun, e.g. by doing 
 

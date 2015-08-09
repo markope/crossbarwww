@@ -50,7 +50,7 @@ var connection = new autobahn.Connection({
 });
 ```
 
-You **need** to have completed the **setup for remote GPIO access** on the Yun - see [[Arduino Yun Remote GPIO]], and have at least one weighing pad connected.
+You need to set up the Yun for [using AutobahnJS](Arduino Yun AutobahnJS Setup), including setting up Firmata on the MCU part of the Yun, and have at least one weighing pad connected.
 
 The general configuration for the component is:
 

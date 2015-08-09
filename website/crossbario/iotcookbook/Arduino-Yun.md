@@ -22,9 +22,6 @@ A three part tutorial that shows how to hook up the Yun to Crossbar.io and commu
 * [Python](Arduino Yun Python Tutorial)
 * [JavaScript/NodeJS](Arduino Yun JavaScript Tutorial)
 
------------------
-
-
 
 ## Components
 
@@ -44,7 +41,6 @@ A three part tutorial that shows how to hook up the Yun to Crossbar.io and commu
 
 * [Alarm](Apps Alarm) - simple alarm system. Uses accelerometers, buttons, signallight components and comes with a Web frontend (for desktop + mobile). Can include Arduino Yun, [[Raspberry Pi]] and [[Tessel]]
 
-
 ## Specific Tutorials
 
 * [System Recovery](Arduino Yun System Recovery): resetting the Yun's WiFi settings and the Arduino part, restoring factory defaults for the Linux part
@@ -56,5 +52,3 @@ A three part tutorial that shows how to hook up the Yun to Crossbar.io and commu
 * [Setting up Autobahn|Python](Arduino-Yun-AutobahnPython-Setup): setting up Autobahn|Python and Twisted for Python programming on the Yun
 * [Setting up Autobahn|JS](Arduino-Yun-AutobahnJS-Setup): setting up Autobahn|JS and Node for JavaScript programming on the Yun
 * [Preparing an image](Arduino-Yun-Prepare-Image): how to create an extroot overlay SD card image for distribution
-* [Remote GPIO](Arduino Yun Remote GPIO): generic access to the Yun's GPIO pins from WAMP
-

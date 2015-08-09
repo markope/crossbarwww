@@ -87,7 +87,7 @@ No changes to the backend are required when using Hardware Controls - they use t
 
 The hardware requirements on the Yun are two Tinkerkit buttons and two Tinkerkit LEDs. The buttons need to be connected to pin 0 (arm/disarm the alarm) and 1 (trigger/cancel the alarm). The LEDS need to be connected to pin 11 (armed state indicator) and pin 10 (alarm state indicator).
 
-You need to set up the Yun for [remote GPIO access](Arduino Yun Remote GPIO). Instead of the generic library provided there, use `hardware_controls_yun.js` in the `hardware_controls` folder.
+You need to set up the Yun for [using AutobahnJS](Arduino Yun AutobahnJS Setup). Then put `hardware_controls_yun.js` in the `hardware_controls` folder onto the yun.
 
 Once you have your hardware connected, run the script
 

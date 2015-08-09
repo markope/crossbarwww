@@ -33,7 +33,7 @@ var connection = new autobahn.Connection({
 });
 ```
 
-You need to have completed the setup for remote GPIO access on the Yun - see [[Arduino Yun Remote GPIO]]. 
+You need to set up the Yun for [using AutobahnJS](Arduino Yun AutobahnJS Setup).
 
 Transfer `ambientlight_yun.js` on the Yun, e.g. by doing 
 
