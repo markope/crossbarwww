@@ -1,4 +1,4 @@
-This quick setup represents the simplest, fastest way we could find to get the software necessary to connect to a WAMP router onto the Yun. Once you've completed this you'll be able to run WAMP components in Python or JavaScript/Node.js, as well as use the generic serial-to-WAMP bridge.
+This quick setup represents the simplest, fastest way we could find to get the software necessary to connect to a WAMP router onto the Yun. Once you've completed this you'll be able to run WAMP components in Python or JavaScript/Node.js.
 
 We recommend the quick setup if you just want to start using the Yun as part of a WAMP application. In case you want to learn more about the Yun, or need to modify parts things, the specific tutorials give you information about individual aspects of setting up the Yun.
 
@@ -54,7 +54,9 @@ which downloads and runs [this script](https://raw.githubusercontent.com/crossba
 
 The Yun will now reboot. Done!
 
-**You now have AutobahnPython (on Python/Twisted) and AutobahnJS (on NodeJS) setup on the Yun, as well as a generic serial-to-WAMP bridge.**
+**You now have AutobahnPython (on Python/Twisted) and AutobahnJS (on NodeJS) setup on the Yun**
+
+If you want to use the **serial-to-WAMP bridge**, then follow [these instructions](Arduino YUn Serial to WAMP Bridge).
 
 ## Running the software for the MCU
 
