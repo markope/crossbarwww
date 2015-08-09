@@ -50,7 +50,7 @@ Tun run the code for the second part:
 * transfer this to the Linux part of the Yun, e.g. using SSH
 
 ```shell
-scp ...
+scp controller.py root@192.168.1.141:~/ 
 ```
 
 ### Part Three
@@ -58,3 +58,5 @@ scp ...
 Tutorial [Part Three](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial3) now combines the knowledge from the previous parts and extends the Python program to act as a bridge between the serial connection (talking to the microcontroller) and a WAMP session (talking to Crossbar.io).
 
 <img src="../../static/img/iotcookbook/yun_tutorial_part3.jpg" alt="" />
+
+The code for the third part can be run just like the code for the second part (just switch the files you use).
