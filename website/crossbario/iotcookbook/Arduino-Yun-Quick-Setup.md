@@ -1,4 +1,4 @@
-This quick setup represents the simplest, fastest way we could find to get the software necessary to connect to a WAMP router onto the Yun. Once you've completed this you'll be able to run WAMP components in Python or JavaScript/Node.js, as well as use the generic serial-to-WAMP bridge.
+This quick setup represents the simplest, fastest way we could find to get the software necessary to connect to a WAMP router onto the Yun. Once you've completed this you'll be able to run WAMP components in Python or JavaScript/Node.js.
 
 We recommend the quick setup if you just want to start using the Yun as part of a WAMP application. In case you want to learn more about the Yun, or need to modify parts things, the specific tutorials give you information about individual aspects of setting up the Yun.
 

@@ -4,7 +4,9 @@ The [Firmata](https://github.com/firmata/protocol) code for the MCU part of the 
 
 ## Disable Console on Serial
 
-The firmata code establishes its own serial bridge, so we need to [disable the standard bridge](Arduino Yun Disable Bridge)
+The firmata code establishes its own serial bridge, so we need to [disable the standard bridge](Arduino Yun Disable Bridge).
+
+> Note: This is already the case if you've set up your Yun following the [Quick Setup](Arduino Yun Quick Setup) instructions.
 
 ## Connecting the Yun to the IDE
 

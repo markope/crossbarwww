@@ -23,15 +23,25 @@ This does not mean that you have to use JavaScript for your application: we prov
 
 ## Installation
 
-We offer [Quick Setup instructions](Arduino Yun Quick Setup) which use an image you can write to SD card, and which already has the necessary software for the serial-to-WAMP bridge installed for the Linux side.
+### AutobahnJS
+
+We offer [Quick Setup instructions](Arduino Yun Quick Setup) which use an image you can write to SD card, and which already has all the preparations for the serial-to-WAMP bridge installed for the Linux side. Otherwise you need to get AutobahnJS working on the Yun for the following.
+
+### The bridge code
+
+Get the [bridge code](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/serial_to_wamp) onto the Yun. If you've mounted the Yun's file system on your PC, just copy it over. Otherwise you can do
+
+```shell
+scp serial_to_wamp.js root@192.168.1.141:~/
+```
+
+from the directory the code is in (and where you replace the above IP with that of your Yun).
+
+### The MCU code
 
 For the MCU, you need to [install Firmata](Arduino Yun Installing Firmata).
 
-You can also do things manually:
-
-* [Disable Bridge](Arduino Yun Disable Bridge).
-* [Install Autobahn|JS](Arduino Yun AutobahnJS Setup)
-* get the [bridge code](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/serial_to_wamp) onto the Yun
+### Running things
 
 To run the bridge, just do 
 
