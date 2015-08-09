@@ -10,12 +10,21 @@ We also provide ready-to-go recipes for complete IoT components and apps based o
 
 ## Getting Started
 
-* [Edison Setup](Intel-Edison-Setup): setting up the Intel Edison with Python (Twisted) and JavaScript (NodeJS)
+* [Edison Setup](Intel-Edison-Setup): setting up the Intel Edison for Python and JavaScript development
+
+## Library
+
+* [Intel Edison on Wikipedia](https://en.wikipedia.org/wiki/Intel_Edison)
+* [Intel Edison Homepage](https://www-ssl.intel.com/content/www/us/en/do-it-yourself/edison.html)
+* [Intel Edison Getting Started](https://software.intel.com/en-us/iot/library/edison-getting-started)
+* [Intel Edison on Arduino](https://www.arduino.cc/en/ArduinoCertified/IntelEdison)
+* [Intel Edison Kit for Arduino](http://download.intel.com/support/edison/sb/edisonarduino_hg_331191007.pdf)
+
 
 ## Tutorials
 
 <img src="../../static/img/iotcookbook/edison/edison_with_tinkerkit.jpg" alt="">
 
-* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial1
-* https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial2
+* [Tutorial 1](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial1)
+* [Tutorial 2](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial2)
 

@@ -157,7 +157,7 @@ undefined
 
 You can also use the following simple [blinking program](https://github.com/crossbario/crossbarexamples/blob/master/iotcookbook/device/edison/blinky/blinky.js) to test:
 
-```python
+```javascript
 var mraa = require('mraa');
 var led = new mraa.Gpio(13);
 led.dir(mraa.DIR_OUT);
