@@ -23,79 +23,29 @@
 
 
 #wrap {
-  /*
-     background-image: url(/static/img/schaltplan_2.png);
-   opacity: 0.2;
-   */
 }
 
 #iotcookbook_introblock {
   position: relative;
-  margin-bottom: 12px;
-  margin-left: 40px;
-  padding: 20px;
-/*
-  border: 2px solid #7c6a00;
-  border: 2px solid #FFDE00;
-  border: 2px solid rgba(124, 106, 0, 0.15);
-  border-top: 6px solid #FFDE00;
-*/
-  border-radius: 3px;
   float: right;
   display: inline;
-  width: 340px;
-  height: 180px;
-  color: #fff;
-  font-size: 18px;
-  background-image: url(/static/img/iotcookbook/lego_duplo_smaller.jpg);
-  background-image: url(/static/img/iotcookbook/lego-bricks-large.jpg);
-  background-image: url(/static/img/iotcookbook/lego-bricks-large.png);
-/*
-  background-color: rgba(0, 0, 0, .9);
-  */
+  width: 310px;
+  height: 150px;
 
-  background-color: #FFDE00;
-  color: #333;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  margin-left: 30px;
+  margin-right: 12px;
+  padding: 20px;
 
-  background-color: rgba(124, 106, 0, 0.4);
-  background-color: #B5A650;
-  color: #fff;
-
-  background-color: rgba(181, 166, 80, 0.44);
+  font-size: 16px;
+  background-color: rgba(181, 166, 80, 0.26);
   color: #444;
 
+  background-image: url(/static/img/iotcookbook/lego-bricks-large.png);
   background-position: bottom right;
   background-size: 40%;
   background-repeat: no-repeat;
-}
-
-#contents #iotcookbook_introblock_image {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 0;
-  box-shadow: none;
-  border: none;
-  max-height: 60%;
-  max-width: 50%;
-  z-index: 0;
-  opacity: .5;
-}
-
-#contents #iotcookbook_introblock_image3 {
-  width: 80%;
-  margin: auto;
-  padding: 0;
-  box-shadow: none;
-  border: none;
-}
-
-#contents #iotcookbook_introblock_image2 {
-  display: inline;
-  float: left;
-  width: 340px;
-  box-shadow: none;
-  border: none;
 }
 
 #cookbook_background {
