@@ -29,6 +29,75 @@
    */
 }
 
+#iotcookbook_introblock {
+  position: relative;
+  margin-bottom: 12px;
+  margin-left: 40px;
+  padding: 20px;
+/*
+  border: 2px solid #7c6a00;
+  border: 2px solid #FFDE00;
+  border: 2px solid rgba(124, 106, 0, 0.15);
+  border-top: 6px solid #FFDE00;
+*/
+  border-radius: 3px;
+  float: right;
+  display: inline;
+  width: 340px;
+  height: 180px;
+  color: #fff;
+  font-size: 18px;
+  background-image: url(/static/img/iotcookbook/lego_duplo_smaller.jpg);
+  background-image: url(/static/img/iotcookbook/lego-bricks-large.jpg);
+  background-image: url(/static/img/iotcookbook/lego-bricks-large.png);
+/*
+  background-color: rgba(0, 0, 0, .9);
+  */
+
+  background-color: #FFDE00;
+  color: #333;
+
+  background-color: rgba(124, 106, 0, 0.4);
+  background-color: #B5A650;
+  color: #fff;
+
+  background-color: rgba(181, 166, 80, 0.44);
+  color: #444;
+
+  background-position: bottom right;
+  background-size: 40%;
+  background-repeat: no-repeat;
+}
+
+#contents #iotcookbook_introblock_image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  max-height: 60%;
+  max-width: 50%;
+  z-index: 0;
+  opacity: .5;
+}
+
+#contents #iotcookbook_introblock_image3 {
+  width: 80%;
+  margin: auto;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+}
+
+#contents #iotcookbook_introblock_image2 {
+  display: inline;
+  float: left;
+  width: 340px;
+  box-shadow: none;
+  border: none;
+}
+
 #cookbook_background {
   position: absolute;
   left: 0;
@@ -136,15 +205,34 @@
 
 #devices_quick_access div {
   float: left;
-  max-width: 200px;
-  max-height: 140px;
+  width: 180px;
+  height: 140px;
+  margin: 8px;
+  padding: 12px;
+/*
+  background-color: #fafafa;
+  border: 2px solid #7c6a00;
+  border: 2px solid rgba(124, 106, 0, 0.15);
+*/
+/*
+  border: 2px solid #FFDE00;
+  border-radius: 1px;
+*/
+  border-top: 3px solid #FFDE00;
+  border-top: 2px solid #7c6a00;
+}
+
+#devices_quick_access div:hover {
+  border-top: 2px solid #FFDE00;
 }
 
 #devices_quick_access img {
-  width: 100%;
-  max-height: 140px;
+  max-width: 100%;
+  max-height: 100px;
   box-shadow: none;
   border: none;
+  margin: auto;
+  padding: 8px;
 }
 
 .note {

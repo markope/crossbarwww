@@ -1,12 +1,19 @@
-<img id="cookbook_home_topimage" src="../static/img/iotcookbook/lego_duplo_smaller.jpg" alt="" style="float: right; max-width: 340px; margin: 20px; padding: 0;" />
+<div id="iotcookbook_introblock">
+   <div>
+   <!--
+      <i>For MAKERS &amp; DEVELOPERS</i>:<br>-->
+      The <strong>IoT Cookbook</strong> provides a collection of ready-to-build recipes for connected IoT components to create your next IoT application.<br><br>
 
-**MAKERS & DEVELOPERS**: The **IoT Cookbook** provides a collection of ready-to-build recipes for IoT components to create your next IoT application.
+      <iframe allowtransparency="true" frameborder="0" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?url=http://crossbar.io/iotcookbook/&via=crossbario&count=none&hashtags=iot,wamp,crossbar&text=IoT Cookbook: ready-to-build, open-source recipes for connected IoT components" style="width:70px; height:20px;"></iframe>
+   </div>
+</div>
 
-Building on tested and documented components, makers and developers get a head start and can focus on creating the actual application functionality.
-
-<strong>Crossbar.io</strong> allows you to <strong>talk to WAMP-enabled IoT devices</strong> from more than <strong><a href="http://wamp.ws/implementations/#libraries">9 programming languages</a></strong>. The IoT Cookbook has material for different languages as well. And we show how to build your own, reusable components, giving you the ultimate control.
-
-The IoT Cookbook is a community effort and all open-source: the <b><a href="https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook">code is on GitHub</a></b> and Apache 2.0 or MIT licensed, and the recipes and texts are free to use under the Creative Commons license.
+<p>
+   The <strong>IoT Cookbook</strong> provides a collection of ready-to-build recipes for connected IoT components to create your next IoT application.
+</p>
+<p>
+   Building on tested and documented components, makers and developers get a head start and can focus on creating their actual application functionality.
+</p>
 
 <p class="note">
 <b>News, 2015/08/08:</b> We've streamlined the Getting Started pages for all devices, in particular the Yun is now much simpler to setup. And we've released first pages for the Intel Edison
@@ -19,35 +26,33 @@ All recipes and documentation in the IoT Cookbook can be accessed starting from 
 <br><br>
 
 <div id="devices_quick_access">
-   <div class="device">
-      <a href="Arduino-Yun">
+   <a href="Arduino-Yun">
+      <div class="device">
          Arduino Yun (MIPS)<br>
          <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">
-      </a>
-   </div>
-   <div class="device">
-      <a href="Intel-Edison">
-         Intel Edison (x86)<br>
-         <img class="cookbook_home_device" src="../static/img/iotcookbook/edison/edison.jpg" alt="" >
-      </a>
-   </div>
-   <div class="device">
-      <a href="Raspberry-Pi">
-         Raspberry Pi (ARM)<br>
-         <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">
-      </a>
-   </div>
-   <div class="device">
-      <a href="Tessel">
-         Tessel / Tessel 2 (MIPS)<br>
-         <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="" >
-      </a>
-   </div>
+      </div>
+   </a>
+   <a href="Intel-Edison">
+      <div class="device">
+            Intel Edison (x86)<br>
+            <img class="cookbook_home_device" src="../static/img/iotcookbook/edison/edison.jpg" alt="" >
+      </div>
+   </a>
+   <a href="Raspberry-Pi">
+      <div class="device">
+            Raspberry Pi (ARM)<br>
+            <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">
+      </div>
+   </a>
+   <a href="Tessel">
+      <div class="device">
+            Tessel (MIPS)<br>
+            <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="" >
+      </div>
+   </a>
 </div>
 
-<div style="clear: both;">&nbsp;</div>
-
-<br>
+<div style="clear: both; height: 0;">&nbsp;</div>
 
 <p class="note">
 <b>Note:</b>
@@ -64,6 +69,10 @@ If you find errors, bugs or other issues in above, or if you have new contributi
    <p>
       With the component collection and all the recipes and tutorials, the IoT Cookbook wants to <b>free you from having to reinvent the wheels all over again</b>:
    </p>
+<p>
+   Components are connected using <strong>Crossbar.io</strong>, which
+   allows you to <strong>communicate WAMP-enabled IoT devices</strong> from more than <strong><a href="http://wamp.ws/implementations/#libraries">9 programming languages</a></strong>. The IoT Cookbook has material for different languages as well. And we show how to build your own, reusable components, giving you the ultimate control.
+</p>
    <br>
    <ul>
       <li>
