@@ -1,4 +1,4 @@
-/* sticky footer */
+/* Materialize: sticky footer */
 body {
    display: flex;
    min-height: 100vh;
@@ -9,6 +9,7 @@ main {
    flex: 1 0 auto;
 }
 
+/* Materialize adjustments */
 .icon-block {
    padding: 0 15px;
 }
