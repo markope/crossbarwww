@@ -56,7 +56,7 @@ The Yun will now reboot. Done!
 
 **You now have AutobahnPython (on Python/Twisted) and AutobahnJS (on NodeJS) setup on the Yun**
 
-If you want to use the **serial-to-WAMP bridge**, then follow [these instructions](Arduino YUn Serial to WAMP Bridge).
+If you want to use the **serial-to-WAMP bridge**, then follow [these instructions](Arduino Yun Serial to WAMP Bridge).
 
 ## Running the software for the MCU
 
@@ -69,7 +69,7 @@ The above sets up the software on the Linux side of the Yun. For the MCU side:
 
 Check out the components and apps for the Arduino Yun (listed on the [Arduino Yun entry page](Arduino-Yun)) - there's a change you'll find the functionality you require already implemented.
 
-Read about how to use the [serial-to-WAMP bridge](Arduin Yun Serial to WAMP Bridge).
+Read about how to use the [serial-to-WAMP bridge](Arduino Yun Serial to WAMP Bridge).
 
 Learn step-by-step about the basics of programming the Yun with our three-part tutorial for
 

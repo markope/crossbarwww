@@ -104,7 +104,6 @@ The code for this in the [Crossbarexamples repository](https://github.com/crossb
 
 This also serves an HTML page which attempts to read from an analog input and write to a digital output. This is mainly for illustrative purposes, to give you some examples for how the API can be used.
 
-
 ## Next
 
 For examples of how remote GPIO can be used see e.g.
