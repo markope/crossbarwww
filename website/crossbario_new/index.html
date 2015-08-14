@@ -4,11 +4,73 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>Crossbar.io</title>
+
+      <!-- Material Design icon font
+         FIXME: self-host
+         https://google.github.io/material-design-icons/
+         https://github.com/google/material-design-icons/tree/master/iconfont
+      -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- Materialize -->
       <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+
+      <!-- Site specific -->
       <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
    </head>
    <body>
-      <div class="container">
+<!--
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Starter Template</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+      </div>
+      <div class="row center">
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+-->
+
+      <header>
+         <nav class="orange lighten-1" role="navigation">
+            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+               <ul class="right hide-on-med-and-down">
+                  <li><a href="#">Navbar 1</a></li>
+                  <li><a href="#">Navbar 2</a></li>
+               </ul>
+               <ul id="nav-mobile" class="side-nav">
+                  <li><a href="#">Navbar 1</a></li>
+                  <li><a href="#">Navbar 2</a></li>
+               </ul>
+               <a href="#" data-activates="nav-mobile" class="button-collapse">
+                  <i class="material-icons">menu</i>
+               </a>
+            </div>
+         </nav>
+      </header>
+
+      <main class="container">
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Crossbar.io</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Open-source unified application router</h5>
+      </div>
+      <div class="row center">
+        <a href="#!" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+<!--
          <div class="row">
             <div class="col s12 m6">
                <div class="card blue-grey darken-1">
@@ -26,7 +88,57 @@
                </div>
             </div>
          </div>
-      </div>
+-->
+      </main>
+
+      <footer class="page-footer orange">
+         <div class="container">
+            <div class="row">
+               <div class="col l6 s12">
+                  <h5 class="white-text">Crossbar.io</h5>
+                  <p class="grey-text text-lighten-4">
+                     Crossbar.io is an open-source project started by <a class="orange-text text-darken-2" href="http://tavendo.com">Tavendo</a>.
+                     We have a growing user community and active community contributions.
+                     Our mission is: take middleware to the next-level - IoT.
+                  </p>
+               </div>
+               <div class="col l2 s12">
+                  <h5 class="white-text">About</h5>
+                  <ul>
+                     <li><a class="white-text" href="#!">Our Team</a></li>
+                     <li><a class="white-text" href="#!">Tavendo</a></li>
+                  </ul>
+               </div>
+               <div class="col l2 s12">
+                  <h5 class="white-text">Connect</h5>
+                  <ul>
+                     <li><a class="white-text" href="#!">GitHub</a></li>
+                     <li><a class="white-text" href="#!">Mailing List</a></li>
+                     <li><a class="white-text" href="#!">Twitter</a></li>
+                     <li><a class="white-text" href="#!">Contact us</a></li>
+                  </ul>
+               </div>
+               <div class="col l2 s12">
+                  <h5 class="white-text">Resources</h5>
+                  <ul>
+                     <li><a class="white-text" href="#!">Getting Started</a></li>
+                     <li><a class="white-text" href="#!">Documentation</a></li>
+                     <li><a class="white-text" href="#!">Downloads</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="footer-copyright">
+            <div class="container">
+               Made by <a class="orange-text text-lighten-3" href="#">Tavendo</a>: &nbsp;
+               <a class="orange-text bold text-lighten-3" href="#">copyright &amp; trademarks</a>
+               &middot;
+               <a class="orange-text text-lighten-3" href="#">privacy &amp; cookie policy</a>
+               &middot;
+               <a class="orange-text text-lighten-3" href="#">terms of use</a>
+            </div>
+         </div>
+      </footer>
 
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
