@@ -40,28 +40,37 @@
 -->
 
       <header>
-         <nav class="b-color-5" role="navigation">
-            <div class="nav-wrapper container">
-               <a id="logo-container" href="#" class="brand-logo">
-                  <img src="static/img/crossbar_icon_inverted.svg" width="40" height="40" />
-                  <img src="static/img/crossbar_name_white.svg" width="128" height="20" />
-               </a>
-               <ul class="right hide-on-med-and-down">
-                  <li><a href="#">Navbar 1</a></li>
-                  <li><a href="#">Navbar 2</a></li>
-               </ul>
-               <ul id="nav-mobile" class="side-nav">
-                  <li><a href="#">Navbar 1</a></li>
-                  <li><a href="#">Navbar 2</a></li>
-               </ul>
-               <a href="#" data-activates="nav-mobile" class="button-collapse">
-                  <i class="material-icons">menu</i>
-               </a>
-            </div>
-         </nav>
+         <div class="navbar-fixed">
+            <nav class="b-color-5 nav-scroll-top" role="navigation" id="nav">
+               <div class="nav-wrapper container">
+                  <a id="logo-container" href="#" class="brand-logo">
+                     <img src="static/img/crossbar_icon_and_text_vectorized_yellow_icon.svg" height="40" style="padding-top: 12px" />
+<!--                     
+                     <img src="static/img/crossbar_icon_inverted.svg" width="40" height="40" />
+                     <img src="static/img/crossbar_name_white.svg" width="128" height="20" />
+-->                     
+                  </a>
+                  <ul class="right hide-on-med-and-down">
+                     <li><a href="#">Overview</a></li>
+                     <li><a href="#">Demos</a></li>
+                     <li><a href="#">Documentation</a></li>
+                     <li><a href="#">About Us</a></li>
+                  </ul>
+                  <ul id="nav-mobile" class="side-nav">
+                     <li><a href="#">Overview</a></li>
+                     <li><a href="#">Demos</a></li>
+                     <li><a href="#">Documentation</a></li>
+                     <li><a href="#">About Us</a></li>
+                  </ul>
+                  <a href="#" data-activates="nav-mobile" class="button-collapse">
+                     <i class="material-icons">menu</i>
+                  </a>
+               </div>
+            </nav>
+         </div>
       </header>
 
-      <main>
+      <main id="main">
          {% block main %}{% endblock %}
       </main>
 
