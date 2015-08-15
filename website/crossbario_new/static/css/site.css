@@ -3,10 +3,17 @@ body {
    display: flex;
    min-height: 100vh;
    flex-direction: column;
+   background-color: #333 !important;
 }
 
 main {
    flex: 1 0 auto;
+   background-color: #fff !important;
+   padding-bottom: 20px;
+}
+
+footer.page-footer {
+   margin-top: 0;
 }
 
 /* Materialize adjustments */
@@ -15,6 +22,10 @@ main {
 }
 .icon-block .material-icons {
    font-size: inherit;
+}
+
+.card .card-action {
+  border-top: 1px solid rgba(255,222,0,1);
 }
 
 /*
@@ -80,8 +91,8 @@ main {
 .b-color-9 {
     background-color: #49a6d8 !important;
     background-color: #003552 !important;
-    background-color: #0F608C !important; 
-    background-color: #333 !important; 
+    background-color: #0F608C !important;
+    background-color: #333 !important;
 }
 
 .color-9 {
@@ -128,7 +139,7 @@ main {
 .nav-scroll-top .brand-logo {
     opacity: 0 !important;
     transition: all 0.3s ease-in-out;
-} 
+}
 
 .nav-scroll-nontop {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
@@ -139,7 +150,7 @@ main {
 .nav-scroll-nontop .brand-logo {
     opacity: 1 !important;
     transition: all 0.3s ease-in-out;
-} 
+}
 
 
 /*
