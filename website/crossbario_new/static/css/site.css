@@ -21,14 +21,107 @@ main {
  http://old.driven-by-data.net/about/chromajs/#/0
  */
 
+
+.color-0 {
+    color: #ffffff !important;
+}
 .color-1 {
-    color: rgb(255, 222, 0) !important;
+    color: #ffde00 !important;
+}
+.color-2 {
+    color: #c0a80f !important;
+}
+.color-3 {
+    color: #857411 !important;
+}
+.color-4 {
+    color: #4e450e !important;
+}
+.color-5 {
+    color: #1e1a00 !important;
+}
+.color-6 {
+    color: #000000 !important;
+}
+.color-7 {
+    color: #ECDB6C !important;
 }
 
+.b-color-0 {
+    background-color: #ffffff !important;
+}
 .b-color-1 {
-    background-color: rgb(255, 222, 0) !important;
+    background-color: #ffde00 !important;
+}
+.b-color-2 {
+    background-color: #c0a80f !important;
+}
+.b-color-3 {
+    background-color: #857411 !important;
+}
+.b-color-4 {
+    background-color: #4e450e !important;
+}
+.b-color-5 {
+    background-color: #333 !important;
+}
+.b-color-6 {
+    background-color: #000000 !important;
+}
+
+.b-color-7 {
+    background-color: #aaa !important;
+}
+
+.b-color-8 {
+    background-color: #999 !important;
+}
+
+.b-color-9 {
+    background-color: #49a6d8 !important;
+    background-color: #003552 !important;
+    background-color: #0F608C !important; 
+    background-color: #333 !important; 
+}
+
+.color-9 {
+    color: #49a6d8 !important;
+    color: #003552 !important;
+    color: #0F608C !important;
+}
+
+.b-color-10 {
+    background-color: #666 !important;
+}
+
+.color-11 {
+    color: #888 !important;
+}
+
+
+.active, .active a, .new, .btn {
+    color: rgba(0, 0, 0, .8)  !important;
+    color: #333 !important;
+    background-color: #ffde00 !important;
+}
+
+.collection-item {
+    color: #666  !important;
 }
 
 .b-color-1-darken-1 {
     background-color: rgb(255, 222, 0) !important;
 }
+
+.symbol {
+    color: #4e450e;
+    background-color: #ffde00 !important;
+    padding: 3px;
+}
+
+
+/*
+rgb(255, 222, 0)
+#ffde00 #c9af29 #958334 #645936 #333333
+#ffde00 #c0a80f #857411 #4e450e #1e1a00
+*/
