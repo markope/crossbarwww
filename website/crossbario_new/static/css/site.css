@@ -16,3 +16,19 @@ main {
 .icon-block .material-icons {
    font-size: inherit;
 }
+
+/*
+ http://old.driven-by-data.net/about/chromajs/#/0
+ */
+
+.color-1 {
+    color: rgb(255, 222, 0) !important;
+}
+
+.b-color-1 {
+    background-color: rgb(255, 222, 0) !important;
+}
+
+.b-color-1-darken-1 {
+    background-color: rgb(255, 222, 0) !important;
+}
