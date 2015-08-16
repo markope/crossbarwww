@@ -15,4 +15,4 @@ Make sure the Yun is fully booted before performing reset/recovery. Then:
 
 Both functions will also reboot the Yun (after releasing the button). Restoring the system image to factory defaults also resets any Wifi configuration you've done.
 
-If you've previously tinkered around with the Yun, we suggest resetting it before following this tutorial, since it decreases chances of software/configuration conflicts.
+If you've previously tinkered around with the Yun, we suggest resetting it before following any of our tutorials, since it decreases chances of software/configuration conflicts.
