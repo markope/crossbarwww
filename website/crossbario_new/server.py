@@ -45,6 +45,10 @@ app.secret_key = str(uuid.uuid4())
 def page_home():
    return render_template('index.html')
 
+@app.route('/docs')
+def page_docs_home():
+   return render_template('docpage.html')
+
 
 if __name__ == "__main__":
     log.startLogging(sys.stdout)

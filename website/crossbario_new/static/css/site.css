@@ -32,6 +32,30 @@ footer.page-footer {
  http://old.driven-by-data.net/about/chromajs/#/0
  */
 
+ nav ul a:hover {
+    background-color: #ffde00;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+ }
+
+.frontsubtitle {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 200px;
+}
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
 
 .color-0 {
     color: #ffffff !important;
@@ -144,14 +168,23 @@ footer.page-footer {
 .nav-scroll-nontop {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
     background-color: #333 !important;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.35s ease-in-out;
 }
 
 .nav-scroll-nontop .brand-logo {
     opacity: 1 !important;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.35s ease-in-out;
 }
 
+.logo-on {
+    opacity: 1 !important;
+    transition: all 0.35s ease-in-out;
+}
+
+.logo-off {
+    opacity: 0 !important;
+    transition: all 0.35s ease-in-out;
+}
 
 /*
 rgb(255, 222, 0)
