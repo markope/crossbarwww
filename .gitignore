@@ -1,8 +1,9 @@
 *.sublime-workspace
 .sconsign.dblite
-website/crossbario/build*
 build
+website/crossbario/build*
 website/crossbario/static/img/gen
+website/crossbario/static/img/docs/gen/
 .DS_Store
 *~
 Thumbs.db

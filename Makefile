@@ -27,6 +27,8 @@ requirements:
 clean:
 	rm -rf website/crossbario/build
 	rm -rf website/crossbario/build_uploaded
+	rm -rf website/crossbario/static/img/gen/
+	rm -rf website/crossbario/static/img/docs/gen/
 	scons -uc
 
 img:

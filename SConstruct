@@ -63,16 +63,16 @@ IMG_SOURCE_DIR = "design"
 IMG_GEN_DIR    = "website/crossbario/static/img/gen"
 
 
-## Directory to upload
+# Directory to be uploaded to Amazon S3 bucket
 UPLOAD_DIR = 'website/crossbario/build'
 
-## Contains fingerprints of uploaded files
+# Contains fingerprints of uploaded files
 UPLOADED_DIR = 'website/crossbario/build_uploaded'
 
-## The Tavendo S3 Bucket to upload to
+# The Tavendo Amazon S3 Bucket to upload to
 BUCKET = 'crossbar.io'
 
-## The Bucket Prefix to upload files to
+# The Bucket Prefix to upload files to
 BUCKET_PREFIX = ''
 
 
@@ -94,15 +94,15 @@ env = Environment(tools = ['default', 'taschenmesser'],
                   ENV  = os.environ)
 
 
-## Process SVGs
-##
+# Process SVGs
+#
 imgs = env.process_svg(SVG_FILES, IMG_SOURCE_DIR, IMG_GEN_DIR)
 
 Alias("img", imgs)
 
 
-## Upload to Amazon S3
-##
+# Upload to Amazon S3
+#
 uploaded = env.s3_dir_uploader(UPLOADED_DIR, UPLOAD_DIR, BUCKET, BUCKET_PREFIX)
 
 Depends(uploaded, imgs)
@@ -110,17 +110,3 @@ Depends(uploaded, imgs)
 Clean(uploaded, UPLOADED_DIR)
 
 Alias("upload", uploaded)
-
-
-
-# ## build optimized SVGs, PNGs and gzipped versions of the former
-# ## inside IMG_GEN_DIR
-# ##
-# for svg in SVG_FILES:
-#    svgOpt = env.Scour("%s/%s" % (IMG_GEN_DIR, svg),
-#                       "%s/%s" % (IMG_SOURCE_DIR, svg),
-#                       SCOUR_OPTIONS = {'enable_viewboxing': True})
-#    env.GZip("%s.gz" % svgOpt[0], svgOpt)
-
-#    png = env.Svg2Png("%s.png" % os.path.splitext(str(svgOpt[0]))[0], svgOpt, SVG2PNG_OPTIONS = {})
-#    env.GZip("%s.gz" % png[0], png)
