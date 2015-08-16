@@ -11,7 +11,7 @@
     $(window).scroll(function () {
         var pos = $(document).scrollTop();
 
-        if (pos > 0) {
+        if (pos > 50) {
             $("nav").removeClass("nav-scroll-top");
             $("nav").addClass("nav-scroll-nontop");
 
