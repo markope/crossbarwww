@@ -41,6 +41,54 @@ footer.page-footer {
 */
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    color: #888;
+}
+
+main a, main a:visited {
+    color: #333;
+/*
+    text-decoration: underline;
+    color: #ffde00;
+    color: #666;
+    font-weight: 600;
+    padding-left: 2px;
+    border-bottom: solid 1px #ffde00;
+    */
+}
+
+main a:hover {
+    color: #000;
+    border-bottom: solid 2px #ffde00;
+/*    transition: all 0.05s ease-in-out;
+*/
+}
+
+code {
+    background-color: #EADF91;
+    color: #817417;
+}
+
+.highlight-code {
+    padding: 12px 20px 12px 30px;
+    font-size: 12px;
+    width: 90%;
+    margin-left: 3em;
+    background-color:  rgba(0,0,0,.1);
+/*
+    border-bottom: solid 1px #aaa;
+    */
+}
+
+.headerlink {
+    display: none;
+}
+
+blockquote {
+    border-left: 5px solid #ffde00 !important;
+}
+
 /*
  http://old.driven-by-data.net/about/chromajs/#/0
  */
