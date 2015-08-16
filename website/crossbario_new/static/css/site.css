@@ -38,6 +38,18 @@ footer.page-footer {
     transition: all 0.2s ease-in-out;
  }
 
+ .feature-block {
+    margin: 8px;
+    border-top: solid 3px #ffde00;
+    color: #666;
+ }
+
+ .feature-block h5 {
+    font-weight: 300;
+ }
+
+
+
 .frontsubtitle {
     font-size: 18px;
     font-weight: 300;
