@@ -7,3 +7,5 @@ website/crossbario/static/img/docs/gen/
 .DS_Store
 *~
 Thumbs.db
+*.pyc
+bower_components

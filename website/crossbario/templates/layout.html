@@ -16,10 +16,13 @@
       -->
 
       <!-- Materialize -->
-      <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/materialize.min.css') }}"  media="screen,projection"/>
+
+      <!-- Pygments -->
+      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/pygments.css') }}"  media="screen,projection"/>
 
       <!-- Site specific -->
-      <link href="static/css/site.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link href="{{ url_for('static', filename = 'css/site.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
    </head>
    <body>
 <!--
@@ -44,7 +47,7 @@
             <nav class="b-color-5 nav-scroll-top" role="navigation" id="nav">
                <div class="nav-wrapper container">
                   <a id="logo-container" href="/" class="brand-logo">
-                     <img src="static/img/crossbar_icon_and_text_vectorized_yellow_icon.svg" height="40" style="padding-top: 12px" />
+                     <img src="{{ url_for('static', filename = 'img/crossbar_icon_and_text_vectorized_yellow_icon.svg') }}" height="40" style="padding-top: 12px" />
 <!--
                      <img src="static/img/crossbar_icon_inverted.svg" width="40" height="40" />
                      <img src="static/img/crossbar_name_white.svg" width="128" height="20" />
@@ -55,12 +58,14 @@
                      <li><a href="#">How it works</a></li>
                      <li><a href="#">Demos</a></li>
                      <li><a href="/docs">Documentation</a></li>
+                     <li><a href="/iotcookbook">IoT Cookbook</a></li>
                   </ul>
                   <ul id="nav-mobile" class="side-nav">
                      <li><a href="#">Overview</a></li>
                      <li><a href="#">How it works</a></li>
                      <li><a href="#">Demos</a></li>
                      <li><a href="/docs">Documentation</a></li>
+                     <li><a href="/iotcookbook">IoT Cookbook</a></li>
                   </ul>
                   <a href="#" data-activates="nav-mobile" class="button-collapse">
                      <i class="material-icons">menu</i>
@@ -124,9 +129,9 @@
       </footer>
 
       <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="static/js/jquery.min.js"></script>
-      <script type="text/javascript" src="static/js/materialize.min.js"></script>
-      <script type="text/javascript" src="static/js/stickyfill.min.js"></script>
-      <script src="static/js/site.js"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/materialize.min.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/stickyfill.min.js') }}"></script>
+      <script src="{{ url_for('static', filename = 'js/site.js') }}"></script>
    </body>
 </html>

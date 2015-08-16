@@ -28,9 +28,26 @@ footer.page-footer {
   border-top: 1px solid rgba(255,222,0,1);
 }
 
+.imagebox {
+    width: 70%;
+    margin: auto;
+}
+
+.imagebox img {
+    text-align: center;
+/*
+    display: block;
+    margin: auto;
+*/
+}
+
 /*
  http://old.driven-by-data.net/about/chromajs/#/0
  */
+
+ nav {
+    z-index: 10 !important;
+ }
 
  nav ul a:hover {
     background-color: #ffde00;
