@@ -56,9 +56,11 @@ h1 {
 }
 
 h2 {
+/*
     border-top: 1px solid #E7C800;
     border-top: 2px solid #ffde00;
     padding-top: 8px;
+*/
 }
 
 h3 {
@@ -80,8 +82,8 @@ h3 {
 }
 
 #page li:before {
-    content: "▪  ";
     content: "■ ";
+    content: "▪  ";
     color: #B8A318;
     color: #E7C800;
     color: #ffde00;
@@ -122,20 +124,38 @@ main a:hover {
 }
 
 code {
-    background-color: #EADF91;
-    background-color: rgba(255, 222, 0, .6);
+    font-size: 14px;
     color: #817417;
+    font-weight: bold;
+/*
+    padding: 2px 4px 2px 4px;
+    border-radius: 3px;
+    background-color: rgba(255, 222, 0, .6);
+*/
+}
+
+pre.plaincode {
+    font-size: 14px;
+    color: #817417 !important;
+    background-color: rgba(255, 222, 0, .6);
+    border-radius: 3px;
+    margin-left: 2em;
+    padding: 8px 8px 8px 20px;
+}
+
+pre.plaincode > code {
+    font-weight: normal;
+    background-color: transparent !important;
+    padding: 0 !important;
 }
 
 .highlight-code {
-    padding: 12px 20px 12px 30px;
+    padding: 8px 12px 8px 20px;
     font-size: 13px;
     width: 90%;
     margin-left: 2em;
-    background-color:  rgba(0,0,0,.05);
-/*
-    border-left: solid 2px rgba(255, 222, 0, .6);
-*/
+    background-color:  #f4f4f4;
+    border-radius: 3px;
 }
 
 .headerlink {

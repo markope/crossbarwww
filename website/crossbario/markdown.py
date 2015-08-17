@@ -94,14 +94,18 @@ class DocPageRenderer(mistune.Renderer):
 
    def header(self, text, level, raw=None):
       if not HEADER_PAT.match(raw):
-         print("invalid header (does not match pattern {}): {}".format(HEADER_PAT_REGEX, raw))
+         print("invalid level {} header '{}' (does not match pattern {}): {}".format(level, raw, HEADER_PAT_REGEX, raw))
+
       if text != raw:
          print("invalid header: {}".format(raw))
-      if True: # render anchors besides headline elements
+
+      if level > 1: # don't render anchors for main page title
+         # render anchors besides headline elements
          anchor = text.lower().strip().replace(' ', '-')
          res = u"""<h{level} id="{anchor}">{text}<a class="headerlink" title="Permalink to this headline" href="#{anchor}">¶</a></h{level}>""".format(level=level, text=text, anchor=anchor)
       else:
          res = mistune.Renderer.header(self, text, level, raw)
+
       return res
 
    def wiki_link(self, alt, link):
@@ -122,7 +126,7 @@ class DocPageRenderer(mistune.Renderer):
             print("failed to load lexer for language '{}'".format(lang))
 
       if not lexer:
-         return "\n<pre><code>{}</code></pre>\n".format(mistune.escape(code))
+         return '\n<pre class="plaincode"><code>{}</code></pre>\n'.format(mistune.escape(code.strip()))
 
       formatter = HtmlFormatter()
       return '\n<div class="highlight-code">{}</div>\n'.format(highlight(code, lexer, formatter))
