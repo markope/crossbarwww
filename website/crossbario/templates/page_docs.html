@@ -13,10 +13,6 @@
         <div class="col s10">
             <h1>{{ title }}</h1>
             {{ contents|safe }}
-            <hr>
-            {% if last_commit %}
-            <p>Last edit by {{ last_commit }}</p>
-            {% endif %}
         </div>
         <div class="col s1">
             &nbsp;

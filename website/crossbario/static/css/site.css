@@ -8,8 +8,9 @@ body {
 
 main {
    flex: 1 0 auto;
-   background-color: #fff !important;
+   background-color: #f8f8f8 !important;
    padding-bottom: 20px;
+    font-size: 16px;
 }
 
 footer.page-footer {
@@ -17,6 +18,7 @@ footer.page-footer {
 }
 
 /* Materialize adjustments */
+
 .icon-block {
    padding: 0 15px;
 }
@@ -29,26 +31,71 @@ footer.page-footer {
 }
 
 .imagebox {
-    width: 70%;
+/*
+    width: 400px;
+    max-width: 400px;
+    */
+    width: 360px;
     margin: auto;
 }
 
 .imagebox img {
     text-align: center;
-/*
-    display: block;
-    margin: auto;
-*/
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
-    color: #888;
+    color: #aaa;
+    color: #E7C800;
 }
 
+h1 {
+    color: #E7C800;
+}
+
+h2 {
+    color: #E7C800;
+    border-bottom: 1px solid #E7C800;
+    padding-bottom: 4px;
+}
+
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+main li {
+    font-size: 16px;
+    list-style: none;
+    padding-left: 2em;
+    text-indent: -.7em;
+    line-height: 1.6em;
+}
+
+main li:before {
+    content: "■ ";
+    content: "▪  ";
+    color: #ffde00;
+    color: #B8A318;
+    color: #E7C800;
+    padding-right: .3em;
+}
+
+
 main a, main a:visited {
-    color: #333;
+    color: #b59f00;
+    color: #49a6d8;
+    color: #5287A3;
+    color: #817417;
+    color: #B69E00;
 /*
+    color: #ffde00;
+    color: #B8A318;
+
+    border-bottom: solid 1px #ffde00;
     text-decoration: underline;
     color: #ffde00;
     color: #666;
@@ -59,34 +106,43 @@ main a, main a:visited {
 }
 
 main a:hover {
-    color: #000;
-    border-bottom: solid 2px #ffde00;
+    color: #B8A318;
+    color: #E7C800;
+    text-decoration: underline;
 /*    transition: all 0.05s ease-in-out;
+    border-bottom: solid 2px #ffde00;
 */
 }
 
 code {
     background-color: #EADF91;
+    background-color: rgba(255, 222, 0, .6);
     color: #817417;
 }
 
 .highlight-code {
     padding: 12px 20px 12px 30px;
-    font-size: 12px;
+    font-size: 13px;
     width: 90%;
-    margin-left: 3em;
-    background-color:  rgba(0,0,0,.1);
+    margin-left: 2em;
+    background-color:  rgba(0,0,0,.05);
 /*
-    border-bottom: solid 1px #aaa;
-    */
+    border-left: solid 2px rgba(255, 222, 0, .6);
+*/
 }
 
 .headerlink {
-    display: none;
+    opacity: 0;
+}
+
+.headerlink:hover {
+    transition: all 0.1s ease-in-out;
+    opacity: 1;
+    text-decoration: none;
 }
 
 blockquote {
-    border-left: 5px solid #ffde00 !important;
+    border-left: 5px solid rgba(255, 222, 0, .6) !important;
 }
 
 /*

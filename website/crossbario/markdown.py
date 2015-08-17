@@ -77,7 +77,7 @@ HEADER_PAT = re.compile(HEADER_PAT_REGEX)
 IMAGE_TEMPLATE = """
 <div class="imagebox">
     <img
-        class="materialboxed z-depth-2"
+        class="materialboxed z-depth-1"
         data-caption="{title}"
         src="{src}"
         alt="{title}" />

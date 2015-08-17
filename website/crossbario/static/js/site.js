@@ -6,47 +6,31 @@
         console.log("document ready.");
     }); // end of document ready
 
-    var logo_state = true;
+    // automatic fade in/out of navbar logo on
+    // landing page when scrolled
+    if (SITE_AREA === "landing") {
 
-    $(window).scroll(function () {
-        var pos = $(document).scrollTop();
+        var logo_state = true;
 
-        if (pos > 50) {
-            $("nav").removeClass("nav-scroll-top");
-            $("nav").addClass("nav-scroll-nontop");
+        $(window).scroll(function () {
+            var pos = $(document).scrollTop();
 
-            $("#biglogo").removeClass("logo-on");
-            $("#biglogo").addClass("logo-off");
-        } else {
-            $("nav").removeClass("nav-scroll-nontop");
-            $("nav").addClass("nav-scroll-top");
+            if (pos > 50) {
+                $("nav").removeClass("nav-scroll-top");
+                $("nav").addClass("nav-scroll-nontop");
 
-            $("#biglogo").removeClass("logo-off");
-            $("#biglogo").addClass("logo-on");
-        }
-
-
-/*
-        logo_state = $("#biglogo").attr('class') == "logo-on";
-        if (logo_state) {
-            if (pos < 50) {
-                $("#biglogo").removeClass("logo-off");
-                $("#biglogo").addClass("logo-on");
-            } else {
                 $("#biglogo").removeClass("logo-on");
                 $("#biglogo").addClass("logo-off");
-            }
+            } else {
+                $("nav").removeClass("nav-scroll-nontop");
+                $("nav").addClass("nav-scroll-top");
 
-        } else {
-            if (pos > 0) {
                 $("#biglogo").removeClass("logo-off");
                 $("#biglogo").addClass("logo-on");
-            } else {
-                $("#biglogo").removeClass("logo-on");
-                $("#biglogo").addClass("logo-off");
             }
-        }
-*/
-    });
+        });
+    } else {
+        // navbar logo auto fade in/out: OFF
+    }
 
 })(jQuery); // end of jQuery name space

@@ -55,11 +55,13 @@ app.pages_iotcookbook = DocPages(d)
 #
 @app.route('/')
 def page_home():
+   session['site_area'] = 'landing'
    return render_template('index.html')
 
 @app.route('/docs/<path:path>/')
 @app.route('/docs/')
 def page_docs(path=None):
+   session['site_area'] = 'docs'
    if path is None or path.strip() == "":
       title = 'Documentation'
       path = 'Home'
@@ -76,6 +78,7 @@ def page_docs(path=None):
 @app.route('/iotcookbook/<path:path>/')
 @app.route('/iotcookbook/')
 def page_iotcookbook(path=None):
+   session['site_area'] = 'iotcookbook'
    if path is None or path.strip() == "":
       title = 'IoT Cookbook'
       path = 'Home'

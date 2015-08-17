@@ -7,18 +7,17 @@
 
 <div class="container">
     <div class="row">
-       <div class="col s2">
-       &nbsp;
-       </div>
-       <div class="col s10">
-          <h1>{{ title }}</h1>
-          {{ contents|safe }}
-          <hr>
-          {% if last_commit %}
-          <p>Last edit by {{ last_commit }}</p>
-          {% endif %}
-       </div>
-   </div>
+        <div class="col s1">
+            &nbsp;
+        </div>
+        <div class="col s10">
+            <h1>{{ title }}</h1>
+            {{ contents|safe }}
+        </div>
+        <div class="col s1">
+            &nbsp;
+        </div>
+    </div>
 </div>
 
 {% endblock %}
