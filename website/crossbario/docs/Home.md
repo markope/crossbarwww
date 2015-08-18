@@ -168,6 +168,8 @@ Guides for using Crossbar.io in specific scenarios, or for using specific featur
 * Crossbar.io features
 
   - [Starting and Stopping Crossbar.io](Starting and Stopping Crossbar.io)
+  - [Logging in Crossbar.io](Logging in Crossbar.io)
+  - [Configuring Crossbar.io's Logging](Configuring Crossbar.io's Logging)
 
 * [Crossbar.io Demo Instance](Demo Instance)
 
