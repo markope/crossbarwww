@@ -88,6 +88,7 @@ The Configuration section covers configuring the basics of Crossbar.io, e.g. rea
            - [HTTP Caller](HTTP Bridge Services Caller)
            - [HTTP Subscriber](HTTP Bridge Services Subscriber)
            - [HTTP Callee](HTTP Bridge Services Callee)
+           - [HTTP Webhooks](HTTP Bridge Services Webhook)
         - [File Upload Service](File-Upload-Service)
      - [Flash Policy Transports](Flash-Policy-Transports)
   - [Router Components](Router-Components)

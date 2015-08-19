@@ -12,3 +12,4 @@ Crossbar will receive the event data via the request and forward the event via s
 Crossbar will forward the call to the performing server and return the result.
 * The [HTTP Subscriber](HTTP Bridge Services Subscriber) is a service that forwards WAMP PubSub events to HTTP endpoints.
 * The [HTTP Callee](HTTP Bridge Services Callee) is a service that translates WAMP procedure calls to HTTP requests.
+* The [HTTP Webhook Service](HTTP Bridge Services Webhook) broadcasts incoming HTTP/POST requests on a fixed WAMP topic.
