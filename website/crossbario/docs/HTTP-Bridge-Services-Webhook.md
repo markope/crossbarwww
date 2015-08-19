@@ -29,6 +29,53 @@ curl -H "Content-Type: text/plain" \
    http://127.0.0.1:8080/webhook
 ```
 
+## Configuration
+
+The *HTTP Webhook Service* is configured on a path of a Web transport - here is part of a Crossbar configuration:
+
+```javascript
+{
+   "workers": [
+      {
+         "type": "router",
+         ...
+         "transports": [
+            {
+               "type": "web",
+               ...
+               "paths": {
+                  ...
+                  "webhook": {
+                     "type": "webhook",
+                     "realm": "realm1",
+                     "role": "anonymous",
+                     "options": {
+                         "topic": "com.myapp.topic1"
+                     }
+                  }
+               }
+            }
+         ]
+      }
+   ]
+}
+```
+
+The service dictionary has the following parameters:
+
+option | description
+---|---
+**`type`** | MUST be `"webhook"` (*required*)
+**`realm`** | The realm to which the forwarding session is attached that will inject the submitted events, e.g. `"realm1"` (*required*)
+**`role`** | The fixed (authentication) role the forwarding session is authenticated as when attaching to the router-realm, e.g. `"role1"` (*required*)
+**`options`** | A dictionary of options (required, see below).
+
+The `options` dictionary has the following configuration parameters:
+
+option | description
+---|---
+**`topic`** | The topic to which the forwarded events will be sent.
+
 
 ## With GitHub
 
