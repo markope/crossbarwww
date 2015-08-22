@@ -102,11 +102,20 @@ class DocPageRenderer(mistune.Renderer):
       if level > 1: # don't render anchors for main page title
          # render anchors besides headline elements
          anchor = text.lower().strip().replace(' ', '-')
-         res = u"""<h{level} id="{anchor}">{text}<a class="headerlink" title="Permalink to this headline" href="#{anchor}">¶</a></h{level}>""".format(level=level, text=text, anchor=anchor)
+#         res = u"""<h{level} id="{anchor}">{text}<a class="headerlink" title="Permalink to this headline" href="#{anchor}">¶</a></h{level}>""".format(level=level, text=text, anchor=anchor)
+         res = u"""<a name="{anchor}" class="anchor"></a><h{level}>{text}<a class="headerlink" title="Permalink to this headline" href="#{anchor}">¶</a></h{level}>""".format(level=level, text=text, anchor=anchor)
+
+         # only render "Goto Top" Links for h2/h3, and not on Home page
+         #if level < 4 and self._prefix is not None:
+         #   # we are rendering the "Goto Top" _before_ a new header
+         #   res += u'<a class="goto-top" href="#top">Goto Top</a>'
       else:
-         res = mistune.Renderer.header(self, text, level, raw)
+         res = u"""<a name="top" class="anchor"></a>""" + mistune.Renderer.header(self, text, level, raw)
 
       return res
+
+   def hrule(self):
+      return u'<a class="goto-top" href="#top">Goto Top</a>'
 
    def wiki_link(self, alt, link):
       if self._prefix:

@@ -340,3 +340,27 @@ rgb(255, 222, 0)
 #ffde00 #c9af29 #958334 #645936 #333333
 #ffde00 #c0a80f #857411 #4e450e #1e1a00
 */
+
+/*
+ We have a fixed navbar, and to make intra-page header anchors / targets
+ not disappear under the top navbar, we offset the anchor target.
+ */
+a.anchor {
+    display: block;
+    position: relative;
+    top: -90px;
+    visibility: hidden;
+}
+
+#main a.goto-top {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.6em;
+    margin-bottom: 2em;
+    border-top: solid 1px #aaa;
+    padding-top: 4px;
+    text-decoration: none;
+    text-align: center;
+}
