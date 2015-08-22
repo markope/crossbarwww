@@ -71,7 +71,7 @@ class MyInlineLexer(mistune.InlineLexer):
         return self.renderer.wiki_link(alt, link)
 
 
-HEADER_PAT_REGEX = r"^[a-zA-Z0-9_,\-\?\. ]*$"
+HEADER_PAT_REGEX = r"^[a-zA-Z0-9_,\+\-\?\. ]*$"
 HEADER_PAT = re.compile(HEADER_PAT_REGEX)
 
 IMAGE_TEMPLATE = """
@@ -169,6 +169,7 @@ class DocPages:
       errors = 0
 
       for dirpath, dirnames, filenames in os.walk(docroot):
+         dirpath_rel = os.path.relpath(dirpath, docroot)
          for f in filenames:
             base, ext = os.path.splitext(f)
             if ext in extensions:
@@ -189,7 +190,8 @@ class DocPages:
                      errors += 1
                   else:
                      path = base
-                     self._pages[base] = contents
+                     #path = os.path.join(dirpath_rel, base)
+                     self._pages[path] = contents
       print("processed {} files: {} ok, {} error".format(total, len(self._pages), errors))
 
       #self._pages[None] = self._pages[index]

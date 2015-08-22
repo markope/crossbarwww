@@ -63,7 +63,7 @@ h6 { font-size: 18px;}
     margin-bottom: 1em;
 }
 
-#page li {
+#page ul > li {
     font-size: 16px;
     list-style: none;
     padding-left: 2em;
@@ -71,7 +71,7 @@ h6 { font-size: 18px;}
     line-height: 1.7em;
 }
 
-#page li:before {
+#page ul > li:before {
     content: "■ ";
     content: "▪  ";
     color: #B8A318;
@@ -79,7 +79,6 @@ h6 { font-size: 18px;}
     color: #ffde00;
     padding-right: .3em;
 }
-
 
 main a, main a:visited {
     color: #b59f00;
