@@ -33,11 +33,9 @@ footer.page-footer {
 }
 
 .imagebox {
-/*
     width: 400px;
-    max-width: 400px;
-    */
-    width: 360px;
+    max-width: 100%;
+    height: auto;
     margin: auto;
 }
 
@@ -48,23 +46,15 @@ footer.page-footer {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
-    color: #E7C800;
     color: #aaa;
 }
 
-h1 {
-}
-
-h2 {
-/*
-    border-top: 1px solid #E7C800;
-    border-top: 2px solid #ffde00;
-    padding-top: 8px;
-*/
-}
-
-h3 {
-}
+h1 { font-size: 44px;}
+h2 { font-size: 36px;}
+h3 { font-size: 30px;}
+h4 { font-size: 26px;}
+h5 { font-size: 22px;}
+h6 { font-size: 18px;}
 
 #page ul {
     list-style: none;
@@ -154,7 +144,7 @@ pre.plaincode > code {
     font-size: 13px;
     width: 90%;
     margin-left: 2em;
-    background-color:  #f4f4f4;
+    background-color:  #EAEAEA;
     border-radius: 3px;
 }
 
