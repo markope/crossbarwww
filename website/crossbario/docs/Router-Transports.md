@@ -39,7 +39,7 @@ Crossbar.io also allows Web transports. A Web transport allows running one or mo
 * [JSON Value Service](JSON Value Service)
 * [CGI Script Service](CGI Script Service)
 * [WSGI Host Service](WSGI Host Service)
-* [HTTP Pusher Service](HTTP Pusher Service)
+* [HTTP Bridge Services](HTTP Bridge Services)
 
 ## Configuration
 
