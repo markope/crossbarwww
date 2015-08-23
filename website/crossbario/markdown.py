@@ -115,7 +115,7 @@ class DocPageRenderer(mistune.Renderer):
       return res
 
    def hrule(self):
-      return u'<a class="goto-top" href="#top">Goto Top</a>'
+      return u'<a class="goto-top" href="#top">Top</a>'
 
    def wiki_link(self, alt, link):
       if self._prefix:

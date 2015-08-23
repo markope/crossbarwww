@@ -354,13 +354,13 @@ a.anchor {
 
 #main a.goto-top {
     display: block;
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.6em;
     margin-bottom: 2em;
-    border-top: solid 1px #aaa;
-    padding-top: 4px;
-    text-decoration: none;
+    border-top: solid 1px #999;
+    padding-top: 6px;
+    text-decoration: underline;
     text-align: center;
 }
