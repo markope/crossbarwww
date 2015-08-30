@@ -6,6 +6,7 @@ import re
 import sys
 import uuid
 import mimetypes
+import argparse
 
 from twisted.python import log
 from twisted.internet import reactor
@@ -46,7 +47,7 @@ else:
 app = SiteFlask(__name__)
 app.secret_key = str(uuid.uuid4())
 app.config['DEBUG'] = True
-app.config['CROSSBARDOCS'] = os.path.abspath('../../../crossbardocs')
+app.config['CROSSBARDOCS'] = os.path.abspath('../crossbardocs')
 
 d = os.path.join(app.config['CROSSBARDOCS'], 'pages', 'docs')
 print("Processsing Markdown pages from {} ..".format(d))
@@ -114,10 +115,40 @@ def static_img_iotcookbook(filename):
 
 
 if __name__ == "__main__":
-    log.startLogging(sys.stdout)
-    resource = WSGIResource(reactor, reactor.getThreadPool(), app)
-    site = Site(resource)
-    site.noisy = False
-    site.log = lambda _: None
-    reactor.listenTCP(8080, site)
-    reactor.run()
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("-d", "--debug", action="store_true", help="Enable debug output.")
+    parser.add_argument("-f", "--freeze", action="store_true", help="Enable freeze mode.")
+    parser.add_argument("--port", type=int, default=8080, help='Web port to use for embedded Web server. Use 0 to disable.')
+    args = parser.parse_args()
+
+    if args.freeze:
+        #
+        # freeze mode
+        #
+        from flask_frozen import Freezer
+        freezer = Freezer(app)
+
+        @freezer.register_generator
+        def list_doc_pages():
+            for p in app.pages_docs._pages.keys():
+                yield "/docs/{}/".format(p)
+
+        @freezer.register_generator
+        def list_cookbook_pages():
+            for p in app.pages_iotcookbook._pages.keys():
+                yield "/iotcookbook/{}/".format(p)
+
+        freezer.freeze()
+    else:
+        #
+        # dynamic serving mode
+        #
+        log.startLogging(sys.stdout)
+        resource = WSGIResource(reactor, reactor.getThreadPool(), app)
+        site = Site(resource)
+        site.noisy = False
+        site.log = lambda _: None
+        reactor.listenTCP(args.port, site)
+        reactor.run()

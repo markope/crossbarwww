@@ -33,19 +33,20 @@ clean:
 
 img:
 	scons img
-# images for the documentation are created via 'make img' inside 'static/img/docs'
-
 
 freeze:
-	python website/crossbario/server.py -f    --widgeturl ''
+	python website/crossbario/server.py -f
 
 test: img
-	python website/crossbario/server.py    -d --widgeturl '' -p 8080
-
-test_frozen: img
-	python website/crossbario/server.py -f -d --widgeturl '' -p 8080
+	python website/crossbario/server.py -p 8080
 
 upload:
 	scons upload
 
 deploy: img freeze upload
+
+# http://crossbarwwwtest.s3-website-eu-west-1.amazonaws.com/
+deploy_s3cmd: img freeze
+	cd website/crossbario/build
+	s3cmd sync -P . s3://crossbarwwwtest/
+	cd ../../..
