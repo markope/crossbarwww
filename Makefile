@@ -45,8 +45,7 @@ upload:
 
 deploy: img freeze upload
 
-# http://crossbarwwwtest.s3-website-eu-west-1.amazonaws.com/
-deploy_s3cmd: img freeze
-	cd website/crossbario/build
-	s3cmd sync -P . s3://crossbarwwwtest/
-	cd ../../..
+# To upload to: # http://crossbarwwwtest.s3-website-eu-west-1.amazonaws.com/
+#
+# cd website/crossbario/build
+# s3cmd sync -P --skip-existing --delete-removed . s3://crossbarwwwtest/
