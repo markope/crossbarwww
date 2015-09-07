@@ -1,3 +1,45 @@
+/******************************/
+/*  Using our own font stack instead of Roboto from Materialize CSS */
+/*  Since rendering of Roboto on Win 7 is completely screwed in */
+/*  Firefox and IE at the time of writing! */
+
+@font-face {
+   font-family: 'Segoe UI';
+   src: local('Segoe UI');
+   font-weight: 400;
+}
+
+@font-face {
+   font-family: 'Segoe UI';
+   src: local('Segoe UI Italic');
+   font-weight: normal;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'Segoe UI';
+   src: local('Segoe UI Semibold');
+   font-weight: 500;
+}
+
+@font-face {
+   font-family: 'Segoe UI';
+   src: local('Segoe UI Light');
+   font-weight: 300;
+}
+
+body {
+   font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font-size: 16px;
+   line-height: 1.428571429;
+   background-color: #fcfcfc;
+   color: #333;
+}
+
+/*****************************/
+
+
+
 /* Materialize: sticky footer */
 body {
    display: flex;
@@ -18,6 +60,7 @@ main {
 footer.page-footer {
    margin-top: 0;
 }
+
 
 /* Materialize adjustments */
 

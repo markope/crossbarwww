@@ -13,7 +13,7 @@ http://google.github.io/material-design-icons/
        url(../font/material-design-icons/Material-Design-Icons.woff2) format('woff2'),
        url(../font/material-design-icons/Material-Design-Icons.woff) format('woff'),
        url(../font/material-design-icons/Material-Design-Icons.ttf) format('truetype');
-}
+  }
 
 .material-icons {
   font-family: 'Material Icons';
@@ -21,8 +21,8 @@ http://google.github.io/material-design-icons/
   font-style: normal;
   font-size: 24px;  /* Preferred icon size */
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  /*width: 1em;*/
+  /*height: 1em;*/
   line-height: 1;
   text-transform: none;
   letter-spacing: normal;

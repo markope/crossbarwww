@@ -9,14 +9,14 @@
          FIXME: self-host
          https://google.github.io/material-design-icons/
          https://github.com/google/material-design-icons/tree/master/iconfont
+      -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      -->
-
-      <!--
-      <link type="text/css" rel="stylesheet" href="static/css/material_icon_fonts.css" />
-      -->
-
+      
+      
       <!-- Materialize -->
+      <!-- self-hosting below does not work across all tested browsers -->
+      <!-- non-obvious what the difference between this and getting it via Google CDN is -->
+      <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/material_icon_fonts.css') }}" /> -->
       <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/materialize.min.css') }}"  media="screen,projection"/>
 
       <!-- Pygments -->
@@ -35,6 +35,9 @@
                   <a id="logo-container" href="/" class="brand-logo">
                      <img src="{{ url_for('static', filename = 'img/crossbar_icon_and_text_vectorized_yellow_icon.svg') }}" height="40" style="padding-top: 12px" />
                   </a>
+                  <a href="#" data-activates="nav-mobile" class="button-collapse">
+                     <i class="material-icons">menu</i>
+                  </a>
                   <ul class="right hide-on-med-and-down">
                      <li><a href="#">Overview</a></li>
                      <li><a href="#">How it works</a></li>
@@ -49,9 +52,7 @@
                      <li><a href="/docs">Documentation</a></li>
                      <li><a href="/iotcookbook">IoT Cookbook</a></li>
                   </ul>
-                  <a href="#" data-activates="nav-mobile" class="button-collapse">
-                     <i class="material-icons">menu</i>
-                  </a>
+                  
                </div>
             </nav>
          </div>
