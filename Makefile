@@ -34,16 +34,23 @@ clean:
 img:
 	scons img
 
+img_import:
+	mkdir -p website/crossbario/build/static/img/
+	cp -R ../crossbardocs/static/img/docs website/crossbario/static/img/
+	cp -R ../crossbardocs/static/img/docs website/crossbario/build/static/img/
+	cp -R ../crossbardocs/static/img/iotcookbook website/crossbario/static/img/
+	cp -R ../crossbardocs/static/img/iotcookbook website/crossbario/build/static/img/
+
 freeze:
 	python website/crossbario/server.py -f
 
-test: img
-	python website/crossbario/server.py -p 8080
+test: img img_import
+	python website/crossbario/server.py --port 8080
 
 upload:
 	scons upload
 
-deploy: img freeze upload
+deploy: img img_import freeze upload
 
 # To upload to: # http://crossbarwwwtest.s3-website-eu-west-1.amazonaws.com/
 #

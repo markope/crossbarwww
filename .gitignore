@@ -9,3 +9,5 @@ website/crossbario/static/img/docs/gen/
 Thumbs.db
 *.pyc
 bower_components
+website/crossbario/static/img/docs/
+website/crossbario/static/img/iotcookbook/
