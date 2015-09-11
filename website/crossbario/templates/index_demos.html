@@ -1,0 +1,187 @@
+<div class="container">
+
+   <h1>Live Demos</h1>
+   <div id="demoBox">
+      <p>
+         Crossbar.io is great for building advanced, distributed applications for Mobile, Web and Internet-of-Things (IoT).
+         To give you a taste, here are a couple of live demos.
+      </p>
+      
+
+      <div class="demos-overview-link">
+         Check out all <a href="https://demo.crossbar.io/">demos</a>
+         or go directly to one randomly picked:
+      </div>
+      <br>
+      <ul class="demos_list">
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/pubsub/index.html" class="z-depth-1">
+               PubSub
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_pubsub.png') }}" alt="screenshot of PubSub demo" />
+            </a>
+            Basic publish &amp; subscribe
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/notification/index.html" class="z-depth-1">
+               Notification
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_notifications.png') }}" alt="screenshot of notifications demo" />
+            </a>
+            Real-time notifications
+         </li>
+
+         <li>
+            <a href="https://demo.crossbar.io/chat/index.html#ch1" class="z-depth-1">
+               Chat
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_chat.png') }}" alt="screenshot of chat demo" />
+            </a>
+            A group chat widget
+         </li>
+
+         <li>
+            <a href="https://demo.crossbar.io/gauges/index.html" class="z-depth-1">
+               Gauges
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_gauges.png') }}" alt="screenshot of gauges demo"/>
+            </a>
+            Gauges with real-time sync
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/sliders/index.html" class="z-depth-1">
+               Sliders
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_sliders.png') }}" alt="screenshot of sliders demo"/>
+            </a>
+            Sliders with real-time UI sync
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/colorpicker/index.html" class="z-depth-1">
+               Colorpicker
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_colorpicker.png') }}" alt="screenshot of colorpicker demo"/>
+            </a>
+            A collaborative colorpicker
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/beatbox/index.html" class="z-depth-1">
+               Beatbox
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_beatbox.png') }}" alt="screenshot of beatbox demo" />
+            </a>
+            A collaborative beatbox
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/votes/index.html" class="z-depth-1">
+               Votes
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_votes.png') }}" alt="screenshot of votes demo" />
+            </a>
+            Collaborative live voting
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/editform/index.html" class="z-depth-1">
+               Edit Form
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_editform.png') }}" alt="screenshot of edit form demo" />
+            </a>
+            Synching changes in a form
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/visitors_counter/index.html" class="z-depth-1">
+               Visitors Counter
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_visitors_counter.png') }}" alt="screenshot of visitors counter demo" />
+            </a>
+            Live Visitors Counter as a Web Component
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/spreadsheet/index.html" class="z-depth-1">
+               Spreadsheet
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_spread.png') }}" alt="screenshot of spreadsheet demo" />
+            </a>
+            Control logic in a WAMP-connected spreadsheet
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/dashboard/index.html" class="z-depth-1">
+               Live Dashboard
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_dashboard.png') }}" alt="screenshot of dashboard demo" />
+            </a>
+            Visualize data live
+         </li>
+
+         <li class="nonDisplay">
+            <a href="https://demo.crossbar.io/videocontrol" class="z-depth-1">
+               Video Control
+               <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_videocontrol.png') }}" alt="screenshot of video control demo" />
+            </a>
+            Control video playback in the browser from your mobile.
+         </li>
+
+      </ul>
+
+      <!-- trying out how this looks with materialize image cards -->
+      <!-- <div class="row">
+        <div class="col s6">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_videocontrol.png') }}" alt="screenshot of video control demo" />
+              <span class="card-title grey-text text-darken-4">Video Control</span>
+            </div>
+            <div class="card-content">
+              <p>
+                 Control video playback in the browser from your mobile.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s6">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_dashboard.png') }}" alt="screenshot of video control demo" />
+              <span class="card-title">Dashboard</span>
+            </div>
+            <div class="card-content">
+              <p>
+                 Visualize data live.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+ -->
+
+   </div>
+
+</div>
+
+
+<script>
+   // randomly pick two of the existing demos for display
+
+   // get all demo list elements into array
+   var demosNodeList = document.querySelectorAll(".demos_list > li");
+   var demosArray = [];
+   // set all to display: none
+   // and copy nodesList into real array with array methods
+   for(var i = 0; i < demosNodeList.length; i++) {
+      demosNodeList[i].classList.add("nonDisplay");
+      demosArray[i] = demosNodeList[i];
+   }
+
+   // pick a number between one and the array length
+   // display this element + remove from array
+   function displayRandomDemo() {
+      var d = Math.floor(Math.random() * demosArray.length);
+      demosArray[d].classList.remove("nonDisplay");
+      demosArray.splice(d, 1);
+   }
+
+   // pick the two demos
+   displayRandomDemo();
+   displayRandomDemo();
+</script>

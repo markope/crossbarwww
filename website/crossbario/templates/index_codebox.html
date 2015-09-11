@@ -1,0 +1,44 @@
+<div class="container">
+   <h1>Show me some code!</h1>
+   <div>
+      <p>
+         Here is what <strong>application components</strong> look like in <strong>some languages</strong> supported by Crossbar.io
+      </p>
+      
+      <div class="row codeBox z-depth-2">
+         <div class="col s12">
+            <ul class="tabs codeSwitches">
+               <li class="tab col s3">
+                  <a href="#codebox_js" class="grey-text text-darken-2">JavaScript</a>
+               </li>
+               <li class="tab col s3">
+                  <a href="#codebox_python" class="grey-text text-darken-2">Python</a>
+               </li>
+               <li class="tab col s3">
+                  <a href="#codebox_cpp" class="grey-text text-darken-2">C++</a>
+               </li>
+               <li class="tab col s3">
+                  <a href="#codebox_php" class="grey-text text-darken-2">PHP</a>
+               </li>
+            </ul>
+         </div>
+         <div id="codebox_js" class="codeContainer col s12">
+            {% highlight 'javascript' %}{% include 'codebox/example.js' %}{% endhighlight %}
+         </div>
+         <div id="codebox_python" class="codeContainer col s12">
+            {% highlight 'python' %}{% include 'codebox/example.py' %}{% endhighlight %}
+         </div>
+         <div id="codebox_cpp" class="codeContainer col s12">
+            {% highlight 'cpp' %}{% include 'codebox/example.cpp' %}{% endhighlight %}
+         </div>
+         <div id="codebox_php" class="codeContainer col s12">
+            {% highlight 'php' %}{% include 'codebox/example.php' %}{% endhighlight %}
+         </div>
+      </div>
+
+   </div>
+   
+
+</div>
+
+

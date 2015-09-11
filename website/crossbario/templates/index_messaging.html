@@ -1,0 +1,173 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- the content -->
+<div class="carousel">
+
+   <div class="slideContainer">
+      <div class="row slide shown" id="carousel_rpc">
+         <div class="col s12 m6">
+         <img src="static/img/rpc_call.svg" style="width: 90%; padding: 8px;"/>
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Remote Procedure Calls</h1>
+            <p>
+               With the Remote Procedure Call pattern, any component can reister a procedure that any other component can call. Crossbar.io routes calls to the component that registered the respective procedure and returns the result to the caller.
+            </p>
+         </div>   
+      </div>
+
+      <div class="row slide" id="carousel_pubsub">
+         <div class="col s12 m6">
+         <img src="static/img/rpc_call.svg" style="width: 90%; padding: 8px;"/>
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Publish & Subscribe</h1>
+            <p>
+                Publish and Subscribe allows for the simple, scalable distribution of information. A component publishes data on a topic to the router, and this dispatches events to all components which are presently subscribed to the topic.
+            </p>
+         </div>   
+      </div>
+
+      <div class="row slide" id="carousel_polyglot">
+         <div class="col s12 m6">
+         <img src="static/img/rpc_call.svg" style="width: 90%; padding: 8px;"/>
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Polyglot Applications</h1>
+            <p>
+               Components can be written in any language with support for WAMP (the protocol which Crossbar.io uses). You can mix components written in different languages within the same application.
+            </p>
+         </div>   
+      </div>
+   </div>
+
+   <!-- the navigation -->
+   <div class="navigation">
+      <ul>
+      
+         <li class="waves-effect disabled">
+            <button>
+               <i class="material-icons">chevron_left</i>
+            </button>
+         </li>
+      
+         <li class="waves-effect active">
+            <button id="0">
+               1
+            </button>
+         </li>
+         <li class="waves-effect">
+            <button id="1">
+               2
+            </button>
+         </li>
+         <li class="waves-effect">
+            <button id="2">
+               3
+            </button>
+         </li>
+<!--          <li class="waves-effect">
+            <button id="3">
+               4
+            </button>
+         </li>
+         <li class="waves-effect">
+            <button id="4">
+               5
+            </button>
+         </li> -->
+          
+         <li class="waves-effect">
+            <button>
+               <i class="material-icons">chevron_right</i>
+            </button>
+         </li>
+          
+      </ul>
+   </div>
+   
+</div>
+
+
+
+<script>
+var currentSlide = 0;
+var totalSlides = null;
+var slides = null;
+var seqNavUp = null;
+var seqNavDown = null;
+
+function sequentialNavigation (direction) {
+   console.log("sequential", direction, currentSlide, totalSlides);
+
+   if (direction === "up" && (currentSlide < totalSlides - 1)) {
+      directNavigation(currentSlide + 1);
+   } else if (direction == "down" && currentSlide > 0) {
+      directNavigation(currentSlide - 1);
+   }
+
+}
+
+function directNavigation (slideNumber) {
+   console.log("direct", slideNumber);
+   currentSlide = slideNumber;
+
+   // display the selected slide
+   slides.forEach(function (el, i) {
+      if (slideNumber === i) {
+         slides[i].classList.add("shown");
+         navKeys[i].classList.add("active");
+      } else {
+         slides[i].classList.remove("shown");
+         navKeys[i].classList.remove("active");
+      }
+   })
+
+   // set sequential navigation buttons states
+   if (currentSlide === totalSlides - 1) {
+      seqNavUp.classList.add("disabled");
+   } else {
+      seqNavUp.classList.remove("disabled");
+   }
+
+   if (currentSlide === 0) {
+      seqNavDown.classList.add("disabled");
+   } else {
+      seqNavDown.classList.remove("disabled");
+   }
+  
+}
+
+// get the navigation keys and wire them up
+var navKeysList = document.querySelectorAll(".carousel .navigation li");
+console.log("navKeys", navKeys);
+// convert to actual array
+var navKeys = Array.prototype.slice.call(navKeysList);
+
+// sequential navigation keys
+seqNavDown = navKeys.shift();
+seqNavUp = navKeys.pop();
+
+seqNavDown.addEventListener("click", function(evt) {
+   sequentialNavigation("down"); 
+});
+seqNavUp.addEventListener("click", function(evt) {
+   sequentialNavigation("up"); 
+});
+
+totalSlides = navKeys.length;
+
+// direct access keys
+navKeys.forEach(function (el, i) {
+   el.addEventListener("click", function(evt) {
+      directNavigation(parseInt(evt.target.id));
+   })
+});
+
+// get the 
+var slides = Array.prototype.slice.call(document.querySelectorAll(".carousel .slide"));
+</script>
