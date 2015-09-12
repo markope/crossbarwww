@@ -418,13 +418,20 @@ a.anchor {
 
 /* carousel formatting*/
 
+.carousel {
+    margin-top: 3em;
+}
 
 .carousel .row {
     visibility: hidden;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
 }
 
 .carousel .row.shown {
     visibility: visible;
+    opacity: 1;
+    transition: all 0.15s ease-in-out 0.17s;
 }
 
 .carousel .slideContainer {
@@ -446,6 +453,15 @@ a.anchor {
 .carousel li.disabled {
     color: #888;
 }
+
+.navigation {
+    text-align: center;
+}
+
+.navigation ul {
+    display: inline-block;
+}
+
 
 /* codebox formatting */
 
