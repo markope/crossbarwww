@@ -416,10 +416,19 @@ a.anchor {
 }
 
 
+.centeredText {
+    text-align: center;
+}
+
+
 /* carousel formatting*/
 
 .carousel {
     margin-top: 3em;
+}
+
+.carousel h1 {
+    text-align: center;
 }
 
 .carousel .row {
@@ -460,6 +469,11 @@ a.anchor {
 
 .navigation ul {
     display: inline-block;
+}
+
+.navigation ul, 
+.navigation .material-icons {
+    font-size: 24px;
 }
 
 

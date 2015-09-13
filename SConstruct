@@ -55,8 +55,12 @@ SVG_FILES = [
    'pubsub_subscribe.svg',
    'pubsub_publish.svg',
 
-   'iot_draft.svg',
-   'web_draft.svg'
+   'iot_overview.svg',
+   'web_draft.svg',
+
+   'carousel_supported_languages.svg',
+   'carousel_polyglot.svg',
+   'carousel_realtime.svg'
 ]
 
 IMG_SOURCE_DIR = "design"

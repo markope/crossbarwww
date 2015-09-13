@@ -1,22 +1,40 @@
 <div class="carousel">
 
+   <h1>
+      The Basics
+   </h1>
+
    <!-- the content -->
    <div class="slideContainer">
-      <div class="row slide shown" id="carousel_rpc">
+
+      <div class="row slide shown" id="carousel_overview">
          <div class="col s12 m6">
-         <img src="static/img/rpc_call.svg" style="width: 90%; padding: 8px;"/>
+         <img src="static/img/gen/iot_overview.svg">
+
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">One Connection for Everything</h1>
+            <p>
+               Crossbar.io is a router for the open WAMP protocol. WAMP client implementations are available across 9 languages, enabling you to connect anything to Crossbar.io. You get both efficient data distribution using PubSub and a dedicated Command & Control channel, so that all application messaging can be via a single protocol
+            </p>
+         </div>   
+      </div>
+
+      <div class="row slide" id="carousel_rpc">
+         <div class="col s12 m6">
+         <img src="static/img/gen/rpc_call.svg" style="width: 95%">
          </div>
          <div class="col s12 m6">
             <h1 class="frontsubtitle">Remote Procedure Calls</h1>
             <p>
-               With the Remote Procedure Call pattern, any component can reister a procedure that any other component can call. Crossbar.io routes calls to the component that registered the respective procedure and returns the result to the caller.
+               With the Remote Procedure Call pattern, any component can register a procedure that any other component can call. Crossbar.io routes calls to the component that registered the respective procedure and returns the result to the caller.
             </p>
          </div>   
       </div>
 
       <div class="row slide" id="carousel_pubsub">
          <div class="col s12 m6">
-         <img src="static/img/rpc_call.svg" style="width: 90%; padding: 8px;"/>
+         <img src="static/img/gen/pubsub_publish.svg" style="width: 90%">
          </div>
          <div class="col s12 m6">
             <h1 class="frontsubtitle">Publish & Subscribe</h1>
@@ -26,17 +44,42 @@
          </div>   
       </div>
 
+      <div class="row slide" id="carousel_supported_lanugages">
+         <div class="col s12 m6">
+         <img src="static/img/gen/carousel_supported_languages.svg">
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Multi-language</h1>
+            <p>
+               WAMP support is available for 9 languages (and growing). Implementations are open source and under liberal licenses, so you can integrate them into your free and commercial projects. 
+            </p>
+         </div>   
+      </div>
+
       <div class="row slide" id="carousel_polyglot">
          <div class="col s12 m6">
-         <img src="static/img/rpc_call.svg" style="width: 90%; padding: 8px;"/>
+         <img src="static/img/gen/carousel_polyglot.svg">
          </div>
          <div class="col s12 m6">
             <h1 class="frontsubtitle">Polyglot Applications</h1>
             <p>
-               Components can be written in any language with support for WAMP (the protocol which Crossbar.io uses). You can mix components written in different languages within the same application.
+               You can mix components written in different languages within the same application. Choose the right tool for the job at a component level instead of for your entire project. Integrate third-party components or even across applications without caring about implementation language.
             </p>
          </div>   
       </div>
+
+      <div class="row slide" id="carousel_realtime">
+         <div class="col s12 m6">
+         <img src="static/img/gen/carousel_realtime.svg">
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Real-time connections</h1>
+            <p>
+               Connections are persistent, bi-directional and low latency. For the roundtrip between our office in Erlangen and cloud hoster in Frankfurt, WAMP communication is ~2ms slower than ping. The default transport is WebSocket, enabling native connections into the browser. 
+            </p>
+         </div>   
+      </div>
+
    </div>
 
    <!-- the navigation -->
@@ -64,7 +107,7 @@
                3
             </button>
          </li>
-        <!--  <li class="waves-effect">
+         <li class="waves-effect">
             <button id="3">
                4
             </button>
@@ -72,7 +115,12 @@
          <li class="waves-effect">
             <button id="4">
                5
-            </button> -->
+            </button>
+         </li>
+         <li class="waves-effect">
+            <button id="5">
+               6
+            </button>
          </li>
           
          <li class="waves-effect">
