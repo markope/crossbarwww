@@ -22,6 +22,7 @@ SVG_FILES = [
    'crossbar_icon_and_text_vectorized.svg',
    'crossbar_icon_and_text_vectorized_inverted.svg',
    'crossbar_icon_and_text_vectorized_inverted_white.svg',
+   'crossbar_icon_and_text_vectorized_yellow_icon.svg',
    'crossbar_text_vectorized.svg',
 
    'github.svg',

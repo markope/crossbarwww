@@ -37,24 +37,46 @@
             <nav class="b-color-5 {% if session['site_area'] == 'landing' %} nav-scroll-top {% else %} nav-scroll-nontop {% endif %}" role="navigation" id="nav">
                <div class="nav-wrapper container">
                   <a id="logo-container" href="/" class="brand-logo">
-                     <img src="{{ url_for('static', filename = 'img/crossbar_icon_and_text_vectorized_yellow_icon.svg') }}" height="40" style="padding-top: 12px" />
+                     <img src="{{ url_for('static', filename = 'img/gen/crossbar_icon_and_text_vectorized_yellow_icon.svg') }}" height="40" style="padding-top: 12px" />
                   </a>
                   <a href="#" data-activates="nav-mobile" class="button-collapse">
                      <i class="material-icons">menu</i>
                   </a>
                   <ul class="right hide-on-med-and-down">
-                     <li><a href="#">Overview</a></li>
-                     <li><a href="#">How it works</a></li>
-                     <li><a href="#">Demos</a></li>
-                     <li><a href="/docs">Documentation</a></li>
-                     <li><a href="/iotcookbook">IoT Cookbook</a></li>
+                     <li>
+                        <a href="/">Overview</a>
+                     </li>
+                     <!-- <li><a href="#">How it works</a></li> -->
+                     <li>
+                        <a href="https://demo.crossbar.io/">
+                           Demos
+                           <img src="{{ url_for('static', filename = 'img/gen/link_external.svg') }}" alt="external link">
+                        </a>
+                     </li>
+                     <li>
+                        <a href="/docs">Documentation</a>
+                     </li>
+                     <li>
+                        <a href="/iotcookbook">IoT Cookbook</a>
+                     </li>
                   </ul>
                   <ul id="nav-mobile" class="side-nav">
-                     <li><a href="#">Overview</a></li>
-                     <li><a href="#">How it works</a></li>
-                     <li><a href="#">Demos</a></li>
-                     <li><a href="/docs">Documentation</a></li>
-                     <li><a href="/iotcookbook">IoT Cookbook</a></li>
+                     <li>
+                        <a href="/">Overview</a>
+                     </li>
+                     <!-- <li><a href="#">How it works</a></li> -->
+                     <li>
+                        <a href="https://demo.crossbar.io/">
+                           Demos
+                           <img src="{{ url_for('static', filename = 'img/gen/link_external.svg') }}" alt="external link">
+                        </a>
+                     </li>
+                     <li>
+                        <a href="/docs">Documentation</a>
+                     </li>
+                     <li>
+                        <a href="/iotcookbook">IoT Cookbook</a
+                        </li>
                   </ul>
                   
                </div>
