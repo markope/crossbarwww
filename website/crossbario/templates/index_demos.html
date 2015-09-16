@@ -1,18 +1,20 @@
-<div class="container">
+<div class="container center">
 
-   <h1>Live Demos</h1>
-   <div id="demoBox">
+   <div class="row maxWidth inlineBlock textLeft">
+      <h1>Live Demos</h1>
       <p>
-         Crossbar.io is great for building advanced, distributed applications for Mobile, Web and Internet-of-Things (IoT).
+         Crossbar.io is great for building advanced, distributed applications for Mobile, Web and Internet-of-Things (IoT). <br>
          To give you a taste, here are a couple of live demos.
       </p>
-      
-
       <div class="demos-overview-link">
          Check out all <a href="https://demo.crossbar.io/">demos</a>
          or go directly to one randomly picked:
-      </div>
-      <br>
+      </div>      
+   </div>
+   
+   
+   <div id="demoBox">
+
       <ul class="demos_list">
 
          <li class="nonDisplay">
@@ -121,67 +123,63 @@
 
       </ul>
 
-      <!-- trying out how this looks with materialize image cards -->
-      <!-- <div class="row">
-        <div class="col s6">
-          <div class="card">
-            <div class="card-image">
-              <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_videocontrol.png') }}" alt="screenshot of video control demo" />
-              <span class="card-title grey-text text-darken-4">Video Control</span>
-            </div>
-            <div class="card-content">
-              <p>
-                 Control video playback in the browser from your mobile.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col s6">
-          <div class="card">
-            <div class="card-image">
-              <img src="{{ url_for('static', filename = 'img/demoscreenshots/screenshot_dashboard.png') }}" alt="screenshot of video control demo" />
-              <span class="card-title">Dashboard</span>
-            </div>
-            <div class="card-content">
-              <p>
-                 Visualize data live.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
- -->
-
    </div>
 
 </div>
 
 
 <script>
+(function () {
    // randomly pick two of the existing demos for display
 
    // get all demo list elements into array
    var demosNodeList = document.querySelectorAll(".demos_list > li");
    var demosArray = [];
-   // set all to display: none
-   // and copy nodesList into real array with array methods
-   for(var i = 0; i < demosNodeList.length; i++) {
-      demosNodeList[i].classList.add("nonDisplay");
-      demosArray[i] = demosNodeList[i];
+   var demoSelectionArray = [];
+   
+   // copy nodesList into real array with array methods
+   function initializeDemos () {
+      for(var i = 0; i < demosNodeList.length; i++) {
+         demosNodeList[i].classList.add("nonDisplay");
+         demosArray[i] = demosNodeList[i];
+         demoSelectionArray[i] = demosNodeList[i];
+      }
+   }
+   initializeDemos();   
+
+   function hideDemos () {
+      demosArray.forEach(function (el) {
+         el.classList.add("nonDisplay");
+      });
    }
 
    // pick a number between one and the array length
    // display this element + remove from array
    function displayRandomDemo() {
-      var d = Math.floor(Math.random() * demosArray.length);
-      demosArray[d].classList.remove("nonDisplay");
-      demosArray.splice(d, 1);
+      var d = Math.floor(Math.random() * demoSelectionArray.length);
+      demoSelectionArray[d].classList.remove("nonDisplay");
+      demoSelectionArray.splice(d, 1);
    }
 
-   // pick the two demos
-   displayRandomDemo();
-   displayRandomDemo();
+   // rotate the demos which are displayed
+   function rotateDemos () {
+      
+      // pick from selection array so that all demos are rotated through
+      if (demoSelectionArray.length < 3) {
+         // not enought demos left to pick, so re-init
+         initializeDemos();
+      } else {
+         hideDemos();   
+      }
+
+      displayRandomDemo();
+      displayRandomDemo();
+      displayRandomDemo();
+   }
+
+   rotateDemos();
+
+   setInterval(rotateDemos, 12000)
+})();
+
 </script>

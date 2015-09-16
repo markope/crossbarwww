@@ -61,6 +61,20 @@ footer.page-footer {
    margin-top: 0;
 }
 
+footer.page-footer .footer-copyright {
+   line-height: 1.7em;
+   height: auto;
+}
+
+footer.page-footer .footer-copyright .container {
+   margin-top: 0.7em;
+   margin-bottom: 0.7em;
+}
+
+footer.page-footer .footer-copyright span {
+   display: inline-block;
+}
+
 
 /* Materialize adjustments */
 
@@ -425,9 +439,81 @@ a.anchor {
 
 
 .centeredText {
-    text-align: center;
+   text-align: center;
 }
 
+/* want page footer blocks to adjust on mid-sized */
+
+.page-footer .col {
+   display: inline-block;
+   float: none;
+   vertical-align: top;
+}
+
+@media only screen and (min-width: 601px) {
+   .page-footer .col.m6 {
+      width: 49.5%;
+   }
+}
+
+@media only screen and (min-width: 993px) {
+    .page-footer .col.l2 {
+        width: 15%;
+    }
+}
+
+
+/*****************************
+  Landing page formatting
+******************************/
+
+.maxWidth {
+   max-width: 800px;
+}
+
+.maxWidthWider {
+   max-width: 900px;
+}
+
+.inlineBlock {
+   display: inline-block;
+}
+
+.textLeft {
+   text-align: left;
+}
+
+
+/* fork us on github banner */
+#github {
+   width: 132px;
+   height: 133px;
+   position: fixed;
+   top: 0px;
+   right: 0px;
+   border: 0;
+   transition: all 0.5s;
+}
+
+#github {
+   background-image: url('../img/gen/github_path.svg');
+   /*-webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));*/
+   filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+   z-index: 1002;/* otherwise the crossbar log overlays this partially and prevents the hover */
+}
+
+#github:hover {
+   background-image: url('../img/gen/github_path_highlighted.svg');
+   -webkit-filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.7));
+   filter: svg-drop-shadow;
+}
+
+
+#github.noShow {
+   visibility: hidden;
+   opacity: 0;
+   transition: all 0.5s;
+}
 
 /* carousel formatting*/
 
@@ -456,11 +542,61 @@ a.anchor {
 
 }
 
-.carousel .slide:nth-of-type(n + 2) {
+/* variant one: 
+   one slide determines the height of the container,
+   the others are absolutely positioned, 
+   only visibility + opacity are switched
+*/
+
+   /* first slide is positioned relative and determines 
+      the height of the container
+   */
+
+/*.carousel .slide:nth-of-type(n + 2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}*/
+
+   /* last slide is positioned relative and determines
+      the height of the container
+   */
+
+/*.carousel .slide {
     position: absolute;
     top: 0;
     left: 0;
 }
+
+.carousel .slide:last-of-type {
+   position: relative;
+}
+*/
+
+/* variant two:
+   slides are switched in their position dynamically,
+   so that the height of the container adjusts to 
+   the currently displayed slide
+*/
+
+.carousel .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 22rem;
+}
+
+@media (max-width: 600px) {
+   .carousel .slide {
+      min-height: 34rem;
+   }
+}
+
+.carousel .slide.shown {
+   position: relative;
+}
+
+
 
 .carousel button {
     border: none;
@@ -471,8 +607,9 @@ a.anchor {
     color: #888;
 }
 
-.navigation {
+.carousel .navigation {
     text-align: center;
+    clear: both;
 }
 
 .navigation ul {
@@ -486,38 +623,38 @@ a.anchor {
 
     /* carousel image size adjustments */
 .slide img {
-    max-width: 23rem;
-    display: inline-block;
-    min-height: 20rem; /* otherwise IE restricts the image height to that of the text block */
+   width: 100%;
+   max-width: 23rem;
+   display: inline-block;
+   min-height: 20rem; /* otherwise IE restricts the image height to that of the text block */
 }
 
 .slide .col.image  {
-    text-align: center;
-}
-
-#iot_overview_img {
-
-}
-
-#rpc_call_img {
-
+   text-align: center;
 }
 
 #pubsub_publish_img {
-    max-width: 21rem;
-}
-
-#carousel_supported_languages_img {
-
-}
-
-#carousel_polyglot_img {
-
+   max-width: 21rem;
 }
 
 #carousel_realtime_img {
-    
-max-width: 21rem;
+   max-width: 21rem;
+}
+
+#carousel_realtime table {
+   font-size: 90%;
+}
+
+#carousel_realtime thead {
+   font-weight: 500;
+}
+
+#carousel_realtime tr {
+   line-height: 1em;
+}
+
+#carousel_realtime td {
+   
 }
 
 
@@ -535,6 +672,7 @@ max-width: 21rem;
     vertical-align: top;
     float: none;
     margin: 0;
+    text-align: left;
 }
 
 @media only screen and (min-width: 601px) {
@@ -549,10 +687,6 @@ max-width: 21rem;
     }
 }
 
-
-
-
-
 .inlineCollection .col p {
     /* font-size: 16px; */
     color: #888;
@@ -562,45 +696,79 @@ max-width: 21rem;
 
 /* codebox formatting */
 
+
+
 .container .row.codeBox {
-      margin-left: 1rem;
-      margin-right: 1rem;
-      margin-top: 2rem;
-   }
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+ }
 
-   .codeSwitches a {
-      text-decoration: none;
+ 
+/* less margin on narrower screens */
+ @media (max-width: 650px) {
+   .container .row.codeBox {
+      margin-left: 0;
+      margin-right: 0;
    }
+}
 
-   .codeSwitches a:hover {
-      text-decoration: none;
-   }   
+.codeBox li#switch_js {
+   min-width: 10em;
+}
 
-   /* overwrite materialize CSS tab 'active' indicator color */
-   .codeBox .tabs .indicator {
-      background-color: transparent;
-      background-color: #FFDE00;
-   }
+.codeBox li#switch_python {
+   min-width: 6em;
+}
 
-   /* 
-      We need min height on code containers themselves 
-      since we don't want things to jump when switching
-      the language to show.
-      Since the code doesn't line-wrap, we can count on 
-      one specific language determining the maximum height
-      necessary.
-   */
-   .codeContainer {
-      min-height: 35em;
-   }
+.codeBox li#switch_cpp {
+   min-width: 4em;
+}
 
-   /* 
-      min height on the pre so that the scroll bar
-      is at the bottom on the container
-   */
-   .codeContainer pre {
-      min-height: 33em;
-   }
+.codeBox li#switch_php {
+   min-width: 3em;
+}
+
+
+
+.codeSwitches a {
+   text-decoration: none;
+}
+
+.codeSwitches a:hover {
+   text-decoration: none;
+}  
+
+.codeBox .indicator {
+   display: none;
+}
+
+
+ /* overwrite materialize CSS tab 'active' indicator color */
+ .codeBox .tabs .indicator {
+    background-color: transparent;
+    background-color: #FFDE00;
+ }
+
+ /* 
+    We need min height on code containers themselves 
+    since we don't want things to jump when switching
+    the language to show.
+    Since the code doesn't line-wrap, we can count on 
+    one specific language determining the maximum height
+    necessary.
+ */
+ .codeContainer {
+    min-height: 35em;
+ }
+
+ /* 
+    min height on the pre so that the scroll bar
+    is at the bottom on the container
+ */
+ .codeContainer pre {
+    min-height: 33em;
+ }
 
 
 
@@ -608,6 +776,9 @@ max-width: 21rem;
 
 #demoBox {
    margin-top: 0.2em;
+   max-width: 1024px;
+   text-align: center;
+   display: inline-block;
 }
 
 .demos-overview-link {
@@ -631,22 +802,22 @@ max-width: 21rem;
    list-style: none;
    margin: 0 auto;
    min-height: 100px;
-   text-align: center;
-   max-width: 100%;
+   /* text-align: center; */
+   /* max-width: 100%; */
    padding: 0;
+   /* display: inline-block; */
 }
 
 .demos_list > li {
    width: 280px;
    height: 320px;
-
    position: relative;
    color: #444;
    margin-bottom: 16px;
    margin: 13px 16px 16px;
    padding: 0px;
    display: inline-block;
-   text-align: center;
+   /* text-align: center; */
    vertical-align: top;
 }
 

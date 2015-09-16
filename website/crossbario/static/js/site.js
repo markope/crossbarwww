@@ -21,12 +21,16 @@
 
                 $("#biglogo").removeClass("logo-on");
                 $("#biglogo").addClass("logo-off");
+
+                $("#github").addClass("noShow");
             } else {
                 $("nav").removeClass("nav-scroll-nontop");
                 $("nav").addClass("nav-scroll-top");
 
                 $("#biglogo").removeClass("logo-off");
                 $("#biglogo").addClass("logo-on");
+
+                $("#github").removeClass("noShow");
             }
         });
     } else {

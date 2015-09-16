@@ -11,6 +11,9 @@
          https://github.com/google/material-design-icons/tree/master/iconfont
       -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- Modernizr -->
+      <script src="{{ url_for('static', filename = 'js/modernizr.custom.svg.fontface.vw.media.js') }}"></script>
       
       
       <!-- Materialize -->
@@ -91,48 +94,56 @@
       <footer class="page-footer color-5 b-color-10">
          <div class="container">
             <div class="row">
-               <div class="col l6 s12">
+               <div class="col s12 m6 l6">
                   <h5 class="color-1 light">Crossbar.io</h5>
                   <p class="color-0">
                      Crossbar.io is an open-source project started by <a class="color-0" href="http://tavendo.com">Tavendo</a>.
                      We have a growing user community and active community contributions.
-                     Our mission is: take middleware to the next-level - IoT.
+                     Our mission is: take middleware to the next-level - the IoT.
                   </p>
                </div>
-               <div class="col l2 s12">
+               <div class="col s12 m6 l2">
                   <h5 class="color-1 light">About</h5>
                   <ul>
-                     <li><a class="color-0" href="#!">Our Team</a></li>
-                     <li><a class="color-0" href="#!">Tavendo</a></li>
+                     <!-- <li><a class="color-0" href="#!">Our Team</a></li> -->
+                     <li><a class="color-0" href="http://tavendo.com">Tavendo</a></li>
                   </ul>
                </div>
-               <div class="col l2 s12">
+               <div class="col s12 m6 l2">
                   <h5 class="color-1 light">Connect</h5>
                   <ul>
-                     <li><a class="color-0" href="#!">GitHub</a></li>
-                     <li><a class="color-0" href="#!">Mailing List</a></li>
-                     <li><a class="color-0" href="#!">Twitter</a></li>
-                     <li><a class="color-0" href="#!">Contact us</a></li>
+                     <li><a class="color-0" href="https://github.com/crossbario/crossbar">GitHub</a></li>
+                     <li><a class="color-0" href="https://groups.google.com/forum/#!forum/crossbario">Mailing List</a></li>
+                     <li><a class="color-0" href="https://twitter.com/crossbario">Twitter</a></li>
+                     <li><a class="color-0" href="mailto:service@tavendo.de">Contact us</a></li>
                   </ul>
                </div>
-               <div class="col l2 s12">
+               <div class="col s12 m6 l2">
                   <h5 class="color-1 light">Resources</h5>
                   <ul>
-                     <li><a class="color-0" href="#!">Getting Started</a></li>
-                     <li><a class="color-0" href="#!">Documentation</a></li>
-                     <li><a class="color-0" href="#!">Downloads</a></li>
+                     <li><a class="color-0" href="/docs/Quick-Start/">Getting Started</a></li>
+                     <li><a class="color-0" href="/docs/">Documentation</a></li>
+                     <!-- <li><a class="color-0" href="#!">Downloads</a></li> -->
                   </ul>
                </div>
             </div>
          </div>
          <div class="footer-copyright color-0 b-color-5">
             <div class="container">
-               Made by <a class="white-text" href="#">Tavendo</a>: &nbsp;
-               <a class="color-0" href="#">copyright &amp; trademarks</a>
-               &middot;
-               <a class="color-0" href="#">privacy &amp; cookie policy</a>
-               &middot;
-               <a class="color-0" href="#">terms of use</a>
+               <span>
+                  Made by <a class="white-text" href="http://tavendo.com">Tavendo</a>:
+               </span>
+               <span>
+                  <a class="color-0" href="/copyright-and-trademarks/">copyright &amp; trademarks</a> 
+                  &middot; 
+               </span>
+               <span>
+                  <a class="color-0" href="/privacy/">privacy &amp; cookie policy</a> 
+                  &middot;
+               </span> 
+               <span>
+                  <a class="color-0" href="/terms-of-use/">terms of use</a>
+               </span>
             </div>
          </div>
       </footer>
@@ -148,5 +159,65 @@
          var SITE_AREA = "{{ session['site_area'] }}";
       </script>
       <script src="{{ url_for('static', filename = 'js/site.js') }}"></script>
+
+            <!-- yahoo browser detect for some corner cases -->
+      <script src="{{ url_for('static', filename = 'js/yahooBrowserDetect.js') }}"></script>
+
+      <script type="text/javascript">
+         // SVG vs. PNG detection and switching
+
+         if(!Modernizr.svg) {
+            // switch out all SVGs for PNGs on unsupported browsers
+            // loads both SVG + PNG on these, but then it's only a fallback
+            // for some cases
+            switchToPNG();
+         }
+         // Android browser does very badly with SVG, so switch to PNG for this
+         if(YAHOO.env.ua.android != 0 && YAHOO.env.ua.chrome === 0) {
+            // alert("android browser!"  + YAHOO.env.ua.chrome);
+            switchToPNG();
+            var html= document.getElementsByTagName("html");
+            // needed for the CSS background image switching which is based on the Modernizr classes
+            $(html).removeClass("svg").addClass("no-svg");
+         }
+
+         // check if forceSwitchToPNG is present in link fragment identifier - needed for testing, since I most likely won't have a browser lacking SVG support at hand
+         var pageURL = window.location.href;
+         if(pageURL.indexOf('#') !== -1) {
+            var hashPart = pageURL.split('#')[1];
+            if(hashPart === "forceSwitchToPNG") {
+               forceSwitchToPNG = true;
+               switchToPNG();
+               var html= document.getElementsByTagName("html");
+               // needed for the CSS background image switching which is based on the Modernizr classes
+               $(html).removeClass("svg").addClass("no-svg");
+            }
+         }
+
+         function switchToPNG () {
+            // get all img elements on the page
+            // and replace any SVGs with PNGs
+            // requires that SVG & PNGs exist at the same path
+            // with only different file extensions
+
+            var imgLinks = document.getElementsByTagName("img"),
+                imgLinksLength = imgLinks.length;
+
+            for(var i = 0; i < imgLinksLength; i++ ) {
+               var cur = imgLinks[i],
+                   curLink = cur.src,
+                   curLinkType = curLink.split(".").pop(),
+                   curLinkBase = curLink.slice(0, curLink.lastIndexOf(".")),
+                   newLink;
+
+               if(curLinkType === "svg") {
+                  newLink = curLinkBase + ".png";
+                  cur.src = newLink;
+               }
+
+            }
+         }
+
+      </script>
    </body>
 </html>

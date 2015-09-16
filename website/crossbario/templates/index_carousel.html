@@ -1,8 +1,8 @@
 <div class="carousel">
 
-   <h1>
+<!--    <h1>
       The Basics
-   </h1>
+   </h1> -->
 
    <!-- the content -->
    <div class="slideContainer">
@@ -74,8 +74,47 @@
          <div class="col s12 m6">
             <h1 class="frontsubtitle">Real-time connections</h1>
             <p>
-               Connections are persistent, bi-directional and low latency. For the roundtrip between our office in Erlangen and cloud hoster in Frankfurt, WAMP communication is ~2ms slower than ping. The default transport is WebSocket, enabling native connections into the browser. 
+               Connections are persistent, bi-directional and low latency. For the round-trip shown on the left WAMP communication is ~2ms slower than ping. 
+               <br>
+               Some more sample round-trip times:
             </p>
+            <table class="bordered">
+               <thead>
+                  <tr>
+                     <td>
+                        Frankfurt (Germany) to
+                     </td>
+                     <td>
+                        Distance
+                     </td>
+                     <td>
+                        Time 
+                     </td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>London</td>
+                     <td>640 km</td>
+                     <td>17 ms</td>
+                  </tr>
+                  <tr>
+                     <td>Madrid</td>
+                     <td>1450 km</td>
+                     <td>41 ms</td>
+                  </tr>
+                  <tr>
+                     <td>Istanbul</td>
+                     <td>1870 km</td>
+                     <td>51 ms</td>
+                  </tr>
+                  <tr>
+                     <td>Los Angeles</td>
+                     <td>9300 km</td>
+                     <td>163 ms</td>
+                  </tr>
+               </tbody>               
+            </table>
          </div>   
       </div>
 

@@ -65,6 +65,21 @@ def page_home():
     session['site_area'] = 'landing'
     return render_template('index.html')
 
+@app.route('/copyright-and-trademarks/')
+def page_copyrights():
+    session['site_area'] = 'legal'
+    return render_template('copyright_and_trademarks.html')
+
+@app.route('/privacy/')
+def page_privacy():
+    session['site_area'] = 'legal'
+    return render_template('privacy.html')
+
+@app.route('/terms-of-use/')
+def page_terms():
+    session['site_area'] = 'legal'
+    return render_template('terms_of_use.html')
+
 
 @app.route('/docs/<path:path>/')
 @app.route('/docs/')
