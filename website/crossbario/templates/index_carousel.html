@@ -1,9 +1,5 @@
 <div class="carousel">
 
-<!--    <h1>
-      The Basics
-   </h1> -->
-
    <!-- the content -->
    <div class="slideContainer">
 
@@ -12,45 +8,17 @@
             <img src="static/img/gen/iot_overview.svg" id="iot_overview_img">
          </div>
          <div class="col s12 m6">
-            <h1 class="frontsubtitle">One Connection for Everything</h1>
+            <h1 class="frontsubtitle">Unified Connectivity for Everything</h1>
             <p>
-               Crossbar.io is a router for the open WAMP protocol. WAMP client implementations are available across 9 languages, enabling you to connect anything to Crossbar.io. You get both efficient data distribution using PubSub and a dedicated Command & Control channel, so that all application messaging can be via a single protocol
+               Crossbar.io is an open-source message router for the <a href="http://wamp.ws/">WAMP protocol</a> that runs
+               on-premise, in the cloud or embedded in devices.
             </p>
-         </div>   
-      </div>
-
-      <div class="row slide" id="carousel_rpc">
-         <div class="col s12 m6 image">
-            <img src="static/img/gen/rpc_call.svg" id="rpc_call_img">
-         </div>
-         <div class="col s12 m6">
-            <h1 class="frontsubtitle">Remote Procedure Calls</h1>
             <p>
-               With the Remote Procedure Call pattern, any component can register a procedure that any other component can call. Crossbar.io routes calls to the component that registered the respective procedure and returns the result to the caller.
+               WAMP is an <a href="https://github.com/tavendo/WAMP/tree/master/spec">open-standard</a> Web protocol that lets application components talk transparently and in real-time with each other.
             </p>
-         </div>   
-      </div>
-
-      <div class="row slide" id="carousel_pubsub">
-         <div class="col s12 m6 image">
-            <img src="static/img/gen/pubsub_publish.svg" id="pubsub_publish_img">
-         </div>
-         <div class="col s12 m6">
-            <h1 class="frontsubtitle">Publish & Subscribe</h1>
             <p>
-                Publish and Subscribe allows for the simple, scalable distribution of information. A component publishes data on a topic to the router, and this dispatches events to all components which are presently subscribed to the topic.
-            </p>
-         </div>   
-      </div>
 
-      <div class="row slide" id="carousel_supported_lanugages">
-         <div class="col s12 m6 image">
-            <img src="static/img/gen/carousel_supported_languages.svg" id="carousel_supported_languages_img">
-         </div>
-         <div class="col s12 m6">
-            <h1 class="frontsubtitle">Multi-language</h1>
-            <p>
-               WAMP support is available for 9 languages (and growing). Implementations are open source and under liberal licenses, so you can integrate them into your free and commercial projects. 
+               Using Crossbar.io and WAMP developers can realize an agile application architecture consisting of loosely coupled components.
             </p>
          </div>   
       </div>
@@ -60,9 +28,15 @@
             <img src="static/img/gen/carousel_polyglot.svg" id="carousel_polyglot_img">
          </div>
          <div class="col s12 m6">
-            <h1 class="frontsubtitle">Polyglot Applications</h1>
+            <h1 class="frontsubtitle">Multi-language Applications</h1>
             <p>
-               You can mix components written in different languages within the same application. Choose the right tool for the job at a component level instead of for your entire project. Integrate third-party components or even across applications without caring about implementation language.
+               WAMP client libraries are available for <a href="http://wamp.ws/implementations/#libraries">more than 9 languages</a> enabling you to connect anything to Crossbar.io.
+            </p>
+            <p>
+               With Crossbar.io, you can mix components written in different languages within the same application.
+            </p>
+            <p>
+               Choose the right tool for the job at a component level instead of for your entire project.
             </p>
          </div>   
       </div>
@@ -74,9 +48,7 @@
          <div class="col s12 m6">
             <h1 class="frontsubtitle">Real-time connections</h1>
             <p>
-               Connections are persistent, bi-directional and low latency. For the round-trip shown on the left WAMP communication is ~2ms slower than ping. 
-               <br>
-               Some more sample round-trip times:
+               WAMP connections are persistent, bi-directional and low-latency:
             </p>
             <table class="bordered">
                <thead>
@@ -115,10 +87,55 @@
                   </tr>
                </tbody>               
             </table>
+            <p class="center">
+               Round-trip times over WAMP
+            </p>
+         </div>
+      </div>
+
+      <div class="row slide" id="carousel_pubsub">
+         <div class="col s12 m6 image">
+            <img src="static/img/gen/pubsub_publish.svg" id="pubsub_publish_img">
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Publish & Subscribe</h1>
+            <p>
+               With the Publish &amp; Subscribe pattern, application
+               components subscribe to topics to get notified when
+               other components publish to these topics.
+            </p>
+            <p>
+               A component publishes data on a topic to Crossbar.io, and the router dispatches events to all components which are presently subscribed to the topic.
+            </p>
+            <p>
+               Using the Publish &amp; Subscribe pattern allows your
+               application components to distribute information to other
+               components in real-time.
+            </p>
+         </div>   
+      </div>
+
+      <div class="row slide" id="carousel_rpc">
+         <div class="col s12 m6 image">
+            <img src="static/img/gen/rpc_call.svg" id="rpc_call_img">
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Remote Procedure Calls</h1>
+            <p>
+               With the Remote Procedure Call pattern, any component can register a procedure that any other component can call. 
+            </p>
+            <p>
+               Crossbar.io routes calls to the component that registered the respective procedure and returns the result to the caller.
+            </p>
+            <p>
+               The Remote Procedure Call pattern can be used as a secure command &amp; control channel, regardless where the called
+               component resides.
+            </p>
          </div>   
       </div>
 
    </div>
+
 
    <!-- the navigation -->
    <div class="navigation">
@@ -156,23 +173,16 @@
             </button>
          </li>
          <li class="waves-effect">
-            <button id="5">
-               6
-            </button>
-         </li>
-          
-         <li class="waves-effect">
             <button>
                <i class="material-icons">chevron_right</i>
             </button>
          </li>
           
       </ul>
+   <hr>
    </div>
    
 </div>
-
-
 
 <script>
 

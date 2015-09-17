@@ -10,51 +10,31 @@
 <div class="b-color-9 color-0">
    <div class="container maxWidth">
       <div class="section no-pad-bot" id="index-banner">
-         <!-- <div class="container" style="width: 86%;"> -->
-         <!-- <div class="container"> -->
-            <br><br>
-            <div id="biglogo" class="row center">
-               <div class="header col s12">
-                  <img  src="static/img/gen/crossbar_icon_and_text_vectorized_yellow_icon.svg" height="51" />
-               </div>
-               <h5 class="header col s12 light">Open-source unified application router</h5>
-               
-               <!-- "social" buttons -->
-               <iframe src="http://ghbtns.com/github-btn.html?user=crossbario&repo=crossbar&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
-               <a href="https://twitter.com/crossbario" class="twitter-follow-button" data-show-count="true">Follow @crossbario</a>
-               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+         <br><br>
+         <div id="biglogo" class="row center">
+            <div class="header col s12" style="margin-bottom: -10px;">
+               <img  src="static/img/gen/crossbar_icon_and_text_vectorized_yellow_icon.svg" height="51" />
             </div>
-            
-            <!-- initial brief explanations of what this is + benefits -->
-            
-            <h1 class="center">
-               Distributed Applications - <br>
-               Done Right   
-            </h1>
-            <p>
-               Crossbar.io is an open-source server platform which enables real-time communication between application components and devices in IoT, mobile and Web applications.
-            </p>
-            <!-- <p>
-               Application developers can concentrate on the functionality of their specific solution, using an agile application architecture consisting of loosely coupled components.
-            </p> -->
-            <p>
-               Call into any component via routed Remote Procedure Calls and distribute information using Publish & Subscribe. 
-            </p>
-            <p>
-               Concentrate on the functionality of your solution, using Crossbar.io's authentication, authorization, component hosting and other powerful features.
-            </p>
+            <h5 class="header col s12 light" style="margin-bottom: 18px;">Connecting Systems, Devices and People</h5>
+            <!-- "social" buttons -->
+            <iframe src="http://ghbtns.com/github-btn.html?user=crossbario&repo=crossbar&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
+            <a href="https://twitter.com/crossbario" class="twitter-follow-button" data-show-count="true">Follow @crossbario</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+         </div>           
+         <br>
 
-            
-            {% include 'index_carousel.html' %}
+         <p>
+            <b>Next-generation Application Messaging.</b><br>
+            Crossbar.io is an open-source server platform which enables unified real-time communication between application components and devices in IoT, mobile and Web applications.
+         </p>
+         <br>
+         
+         {% include 'index_carousel.html' %}
 
-            <hr>
-            <br>
-            <div class="row center" style="padding-bottom: 28px;">
-               <a href="/docs/Quick-Start" id="download-button" class="btn-large waves-effect waves-light b-color-1 color-4">Get Started</a>
-            </div>
-             
-
-         <!-- </div> -->
+         <br><br>
+         <div class="row center" style="padding-bottom: 28px;">
+            <a href="/docs/Quick-Start" id="download-button" class="btn-large waves-effect waves-light b-color-1 color-4">Get Started</a>
+         </div>
       </div>
    </div>
 </div>
@@ -65,5 +45,6 @@
 
 {% include 'index_demos.html' %}
 
+<br><br>
 
 {% endblock %}

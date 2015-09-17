@@ -176,6 +176,15 @@ main a:hover {
 */
 }
 
+.carousel a, .carousel a:visited {
+  color: #fff;
+}
+
+.carousel a:hover {
+    color: #ffde00;
+}
+
+
 code {
     font-size: 14px;
     color: #817417;
@@ -247,7 +256,7 @@ blockquote {
 
  .feature-block h5 {
     font-weight: 300;
-    color: #000;
+    /*color: #000;*/
  }
 
 
