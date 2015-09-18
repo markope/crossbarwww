@@ -75,8 +75,8 @@ UPLOAD_DIR = 'website/crossbario/build'
 UPLOADED_DIR = 'website/crossbario/build_uploaded'
 
 # The Tavendo Amazon S3 Bucket to upload to
-#BUCKET = 'crossbar.io'
-BUCKET = 'crossbarwwwtest'
+BUCKET = 'crossbar.io'
+#BUCKET = 'crossbarwwwtest'
 
 # The Bucket Prefix to upload files to
 BUCKET_PREFIX = ''
