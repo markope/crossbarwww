@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+
+{% block subheader %}
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+
+   <h1>
+      How it Works
+   </h1>
+
+   <p>
+      This page aims to give you a basic introduction to what Crossbar.io is, how it works and how to get started.
+   </p>
+
+   <h2>
+      What it Does
+   </h2>
+
+   <p>
+      Crossbar.io is a message router which connects components in distributed applications.   
+   </p>
+   <p>
+      It provides (soft) real-time communications, and has both Publish & Subscribe (PubSub) for information distribution and routed Remote Procedure Calls for components calling each other.
+   </p>
+   <p>
+      Crossbar.io uses the open WAMP protocol, which gives you access to an ecosystem of open source client libraries covering, at present, 9 languages.
+   </p>
+   <p>
+      You can create polyglot applications, i.e. connect application components written in different languages.
+   </p>
+   <p>
+      With WebSocket as the (default) transport, application components can run in the browser, and you can call procedures in the browser.
+   </p>
+
+   <h2>
+      Sample Application Architectures
+   </h2>
+
+   <p>
+      Note: 
+         * things to cover: IoT, browser frontend, native frontend, server backend, multiple server backend components
+         * one or more application schematics
+   </p>
+
+   <h2>
+      The Messaging Patterns
+   </h2>
+
+   <p>
+      WAMP, the open protocol that Crossbar.io implements, provides two messaging patterns, which combined cover all application messaging needs:
+   </p>
+   <ul>
+      <li>
+         Publish& Subscribe (PubSub)
+      </li>
+      <li>
+         routed Remote Procedure Calls (rRPC)
+      </li>
+   </ul>
+
+   <h3>
+      Publish &amp; Subscribe
+   </h3>
+   <p>
+      With the <strong>Publish &amp; Subscribe</strong> pattern, any component can
+   </p>
+   <ul>
+      <li>
+         <strong>Subscribe</strong> to receive events published from other components
+      </li>
+      <li>
+         <strong>Publish</strong> events which other subscribed components will receive
+      </li>
+   </ul>
+   <p>
+      Crossbar.io routes event published to all components that have subscribed to receive events for the topic:
+   </p>
+
+   <div class="pattern-illustration-container">
+      <img src="{{ url_for('static', filename = 'img/gen/pubsub_subscribe.svg') }}" alt="PubSub pattern - subscribing with Crossbar.io" class="pattern-illustration first">
+      <img src="{{ url_for('static', filename = 'img/gen/pubsub_publish.svg') }}" alt="PubSub pattern - publishing to Crossbar.io, and Crossbar.io dispatching to subscribers" class="pattern-illustration second">
+   </div>
+
+   <p>
+      PubSub decouples the publishers and subscribers. This reduces complexity in both, brings scalability and enables using a single connection from each component.
+   </p>
+
+   <h3>
+      Remote Procedure Calls
+   </h3>
+
+   <p>
+      With the <strong>Remote Procedure Call</strong> pattern, any component can
+   </p>
+   <ul>
+      <li>
+         <strong>Register</strong> a procedure that other components can call
+      </li>
+      <li>
+         <strong>Call</strong> procedures registered by other components
+      </li>
+   </ul>
+   <p>
+      Crossbar.io routes calls to the component that registered the respective procedure and returns the result to the caller:
+   </p>
+
+   <div class="pattern-illustration-container">
+      <img src="{{ url_for('static', filename = 'img/gen/rpc_register.svg') }}" alt="RPC pattern - registering a procedure with the Crossbar.io router" class="pattern-illustration first">
+      <img src="{{ url_for('static', filename = 'img/gen/rpc_call.svg') }}" alt="PRC pattern - calling a remote procedure and receiving the result, routed via Crossbar.io" class="pattern-illustration second">
+   </div>
+
+   <p>
+      Routed RPCs transfer the concept of decoupling in PubSub to calling procedures. Callers do not know the identity of callees and there is no caller-callee direct connection. The components use the single WAMP connection to the router.
+   </p>
+   <p>
+      Additionally this concept allows features like load-balancing calls between multipel registered components at the router.
+   </p>
+
+
+   <h2>
+      The Code
+   </h2>
+
+   <h3>
+      Connecting
+   </h3>
+
+   <h3>
+      Subscribing
+   </h3>
+
+   <h3>
+      Calling
+   </h3>
+
+   <p>
+      For more code examples see the <a href="/docs/Examples">overview</a> we provide.
+   </p>
+
+
+
+
+
+   <h2>
+      Additional Features
+   </h2>
+
+   <p>
+      We want to make developing and deploying applications using Crossbar.io as easy as possible. Below are some features which we've integrated so far to achieve this.
+   </p>
+
+   <h3>
+      Advanved WAMP Features
+   </h3>
+
+   <h3>
+      Integrated Authentication and Authorization
+   </h3>
+
+   <h3>
+      HTTP bridging services
+   </h3>
+   <p>
+      HTTP bridging services allow you to integrate anything which publishes or receives HTTP (such as REST services) as any of the WAMP roles (subscriber, publisher, callee and caller).
+   </p>
+
+   <h3>
+      Application Component Hosting
+   </h3>
+   <p>
+      Crossbar.io can spin up and monitor application components for you. Use any runtime on your system, and manage your application's backend from Crossbar.io.
+   </p>
+
+   <h3>
+      Integrated Static Web Server
+   </h3>
+   <p>
+      Use the integrated static Web server to deliver the browser front-end for your WAMP applications.
+   </p>
+
+
+
+
+   <h2>
+      Crossbar.io's Architecture
+   </h2>
+
+   <p>
+      Crossbar.io has a <strong>multi-process architecture</strong>. A controller process spawns and monitors multiple worker processes.
+   </p>
+   <p>
+      Routing of WAMP messages is handled in one or more such worker processes.
+   </p>
+   <p>
+      Hosting of application components is also done in worker processes. This can be using any runtime available in the environment Crossbar.io is running in.
+   </p>
+   <p>
+      The multi-process architecture means that you can scale up WAMP routing by using multiple router processes (as long as there is no need for communication between clients on separate processes). You can also scale you application backends to make full use of the cores available.
+   </p>
+   <p>
+      A technical detail: Crossbar.io uses WAMP internally for the communication between the controller and the workers.
+   </p>
+
+   <h2>
+      Compared to others
+   </h2>
+
+   <h2>
+      Next Steps
+   </h2>
+
+</div>
+
+{% endblock %}

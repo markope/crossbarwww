@@ -65,6 +65,11 @@ def page_home():
     session['site_area'] = 'landing'
     return render_template('index.html')
 
+@app.route('/how-it-works/')
+def page_how_it_works():
+    session['site_area'] = 'howitworks'
+    return render_template('how_it_works.html')
+
 @app.route('/copyright-and-trademarks/')
 def page_copyrights():
     session['site_area'] = 'legal'
