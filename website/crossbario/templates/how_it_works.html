@@ -20,10 +20,13 @@
    </h2>
 
    <p>
-      Crossbar.io is a message router which connects components in distributed applications.   
+      Crossbar.io is an open source message router which connects components in distributed applications.   
    </p>
 
-   <img src="" alt="initial image showing a WAMP application with browser, mobile, server and iot devices connected - adaptation of the one on the landing page">
+   <div class="imageContainer">
+      <img id="crossbarOverview" src="../static/img/gen/crossbar_overview.svg" alt="application componenents connected to a Crossbar.io node: two backend components, one database, a mobile client, two browser clients, an IoT sensor and an IoT actuator">
+   </div>
+   
 
    <p>
       It provides (soft) real-time communications, with Publish & Subscribe (PubSub) for information distribution and routed Remote Procedure Calls for components calling each other. Using these patterns you can handle all your application's communications using a single protocol.
@@ -31,6 +34,9 @@
    <p>
       Crossbar.io uses the open <a href="http://wamp.ws">WAMP protocol</a>, which gives you access to an ecosystem of open source client libraries covering, at present, 9 languages.
    </p>
+   <div class="imageContainer">
+      <img id="supportedLanguages" src="../static/img/gen/carousel_supported_languages.svg" alt="supported languages: Python, JavaScript, Java, PHP, C#, C++, Erlang, Objective-C, Lua">
+   </div>
    <p>
       You can create polyglot applications, i.e. connect application components written in different languages.
    </p>
@@ -38,7 +44,7 @@
       With WebSocket as the (default) transport, application components can run in the browser, and you can call procedures in the browser, making it an equal participant in applications.
    </p>
 
-   <h2>
+   {# <h2>
       Sample Application Architectures
    </h2>
 
@@ -46,7 +52,7 @@
       Note: 
          * things to cover: IoT, browser frontend, native frontend, server backend, multiple server backend components
          * one or more application schematics
-   </p>
+   </p> #}
 
    <h2>
       The Messaging Patterns
@@ -82,7 +88,7 @@
       Crossbar.io routes event published to all components that have subscribed to receive events for the topic:
    </p>
 
-   <div class="patternContainer">
+   <div class="patternContainer imageContainer">
       <img src="{{ url_for('static', filename = 'img/gen/pubsub_subscribe.svg') }}" alt="PubSub pattern - subscribing with Crossbar.io" class="pattern-illustration first">
       <img src="{{ url_for('static', filename = 'img/gen/pubsub_publish.svg') }}" alt="PubSub pattern - publishing to Crossbar.io, and Crossbar.io dispatching to subscribers" class="pattern-illustration second">
    </div>
@@ -110,7 +116,7 @@
       Crossbar.io routes calls to the component that registered the respective procedure and returns the result to the caller:
    </p>
 
-   <div class="patternContainer">
+   <div class="patternContainer imageContainer">
       <img src="{{ url_for('static', filename = 'img/gen/rpc_register.svg') }}" alt="RPC pattern - registering a procedure with the Crossbar.io router" class="pattern-illustration first">
       <img src="{{ url_for('static', filename = 'img/gen/rpc_call.svg') }}" alt="PRC pattern - calling a remote procedure and receiving the result, routed via Crossbar.io" class="pattern-illustration second">
    </div>
@@ -133,6 +139,7 @@
    <p>
       To establish a connecting from your application component to Crossbar.io all you need to add in your code is
    </p>
+   <div class="highlight-code">
    {% highlight 'javascript' %}
    var connection = new autobahn.Connection({
       url: "ws://example.com/ws",
@@ -148,7 +155,9 @@
    }
 
    connetion.open();
-   {% endhighlight %}
+   {% endhighlight %}   
+   </div>
+   
    <p class="note">
       (Each connection is to a <strong>realm</strong>, and routing only occurs within this realm. A Crossbar.io router can handle multiple realms.)
    </p>
@@ -159,6 +168,7 @@
    <p>
       Subscribing to an example topic "com.example.mytopic" is as easy as
    </p>
+   <div class="highlight-code">
    {% highlight 'javascript' %}
    var onTopic = function (args) {
       console.log("news for 'mytopic'", args[0]);
@@ -166,6 +176,7 @@
 
    session.subscribe("com.myapp.mytopic", onTopic);
    {% endhighlight %}
+   </div>
 
    <h3>
       Publishing
@@ -173,9 +184,11 @@
    <p>
       To publish to this you just do
    </p>
+   <div class="highlight-code">
    {% highlight 'javascript' %}
    session.publish("com.myapp.mytopic", ["news"]);
    {% endhighlight %}
+   </div>
 
    <h3>
       Registering
@@ -183,6 +196,7 @@
    <p>
       Registering an example procedure ("com.example.myprocedure") requires nothing more than
    </p>
+   <div class="highlight-code">
    {% highlight 'javascript' %}
    var myProcedure = function(args) {
       return args[0] + args[1];
@@ -190,6 +204,7 @@
 
    session.register("com.myapp.myprocedure", myProcedure);
    {% endhighlight %}
+   </div>
 
    <h3>
       Calling
@@ -197,11 +212,14 @@
    <p>
       Calling the procedure registered above is done like this
    </p>
+   <div class="highlight-code">
    {% highlight 'javascript' %}
    session.call('com.myapp.pyProcedure', [2, 3]).then(function (res) {
       console.log('result is', res);
    }, session.log);
    {% endhighlight %}
+   </div>
+
    <p class="note">
       ("session.log" logs the arguments it receives plus some data about the receiving session itself.)
    </p>
@@ -239,7 +257,7 @@
       Authorization is role-based, and you can allow each of the four WAMP actions (publish, subscribe, call, register) individually on the level of the URIs used to identify topics and registrations. If you require even more control, then you can use dynamic authorizer components to implement your own logic.
    </p>
    <p class="learnMore">
-      <a href="/docs/Authentication/">learn more about Authentication</a>
+      <a href="/docs/Authentication/">learn more about Authentication</a><br>
       <a href="/docs/Authorization/">learn more about Authorization</a>
    </p>
 
@@ -280,6 +298,17 @@
       Crossbar.io's Architecture
    </h2>
 
+   <h3>
+      Performant
+   </h3>
+
+   <h3>
+      Secure
+   </h3>
+
+   <h3>
+      Multi-process
+   </h3>
    <p>
       Crossbar.io has a <strong>multi-process architecture</strong>. A controller process spawns and monitors multiple worker processes.
    </p>
@@ -298,13 +327,40 @@
       A technical detail: Crossbar.io uses WAMP internally for the communication between the controller and the workers.
    </p>
 
+
    <h2>
-      Compared to others
+      Compared to…
    </h2>
+
+   <p>
+      
+   </p>
+
 
    <h2>
       Next Steps
    </h2>
+
+   <p>
+      You can
+   </p>   
+   <ul>
+      <li>
+         get started in the <a href="/docs/Choose-your-Weapon/">programming language of your choice</a>
+      </li>
+      <li>
+         play with some <a href="https://demo.crossbar.io">live demos</a>
+      </li>
+      <li>
+         see if our <a href="/docs/FAQ/">FAQ</a> answers any questions you may have right now
+      </li>
+      <li>
+         find out how to install Crossbar.io <a href="/docs/Installation">on your system</a>
+      </li>
+      <li>
+         explore how to quickly use Crossbar.io in the <a href="/iotcookbook/">IoT space</a>
+      </li>
+   </ul>
 
 </div>
 

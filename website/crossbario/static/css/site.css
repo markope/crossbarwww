@@ -858,9 +858,10 @@ a.anchor {
   max-width: 800px;
 }
 
-.patternContainer {
+.imageContainer {
   background-color: #353535;
   border-radius: 2px;
+  text-align: center;
 }
 
 .patternContainer img {
@@ -875,3 +876,15 @@ margin-bottom: 1.1rem;
   font-size: inherit;
 }
 
+.howItWorks #crossbarOverview {
+  max-width: 400px;
+}
+
+
+.howItWorks #supportedLanguages {
+  max-width: 300px;
+}
+
+.howItWorks .note {
+  font-style: italic;
+}

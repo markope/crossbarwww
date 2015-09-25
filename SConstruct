@@ -61,7 +61,9 @@ SVG_FILES = [
 
    'carousel_supported_languages.svg',
    'carousel_polyglot.svg',
-   'carousel_realtime.svg'
+   'carousel_realtime.svg',
+
+   'crossbar_overview.svg'
 ]
 
 IMG_SOURCE_DIR = "design"
