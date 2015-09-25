@@ -46,20 +46,22 @@
                      <i class="material-icons">menu</i>
                   </a>
                   <ul class="right hide-on-med-and-down">
-                     <li>
+                     <li class="{% if session['site_area'] == 'landing' %} active {% endif %}">
                         <a href="/">Overview</a>
                      </li>
-                     <!-- <li><a href="#">How it works</a></li> -->
+                     <li class="{% if session['site_area'] == 'howitworks' %} active {% endif %}">
+                        <a href="/how-it-works/">How it works</a>
+                     </li>
                      <li>
                         <a href="https://demo.crossbar.io/">
                            Demos
                            <img src="{{ url_for('static', filename = 'img/gen/link_external.svg') }}" alt="external link">
                         </a>
                      </li>
-                     <li>
+                     <li class="{% if session['site_area'] == 'docs' %} active {% endif %}">
                         <a href="/docs">Documentation</a>
                      </li>
-                     <li>
+                     <li class="{% if session['site_area'] == 'iotcookbook' %} active {% endif %}">
                         <a href="/iotcookbook">IoT Cookbook</a>
                      </li>
                   </ul>
@@ -67,7 +69,9 @@
                      <li>
                         <a href="/">Overview</a>
                      </li>
-                     <!-- <li><a href="#">How it works</a></li> -->
+                     <li>
+                        <a href="/how-it-works/">How it works</a>
+                     </li>
                      <li>
                         <a href="https://demo.crossbar.io/">
                            Demos
