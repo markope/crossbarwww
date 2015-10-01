@@ -85,6 +85,11 @@ def page_terms():
     session['site_area'] = 'legal'
     return render_template('terms_of_use.html')
 
+@app.route('/impressum/')
+def page_impressum():
+    session['site_area'] = 'legal'
+    return render_template('anbieterkennung.html')
+
 
 @app.route('/docs/<path:path>/')
 @app.route('/docs/')
