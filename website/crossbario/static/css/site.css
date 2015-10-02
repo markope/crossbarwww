@@ -862,14 +862,20 @@ a.anchor {
   background-color: #353535;
   border-radius: 2px;
   text-align: center;
+  max-width: 600px;
+  min-width: 200px;
+  width: 90%;
+  display: inline-block;
+  margin-bottom: 1.7rem;
 }
 
 .patternContainer img {
-width: 41%;
-min-width: 200px;
-margin-left: 5%;
-margin-top: 1rem;
-margin-bottom: 1.1rem;
+  width: 41%;
+  min-width: 200px;
+  max-width: 600px;
+  margin-left: 5%;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .howItWorks li {
@@ -883,8 +889,111 @@ margin-bottom: 1.1rem;
 
 .howItWorks #supportedLanguages {
   max-width: 300px;
+  margin: 0.5rem 0;
+}
+
+.howItWorks #polyglotApplications   {
+  max-width: 300px;
+  margin: 1rem 0;
+}
+
+.howItWorks #httpBridge {
+  max-width: 400px;
+}
+
+.howItWorks #encryptedTransports {
+  max-width: 400px;
 }
 
 .howItWorks .note {
-  font-style: italic;
+  
+font-style: italic;
 }
+
+.howItWorks .separator {
+  width: 100%;
+  border-top: solid 1px #999;
+  margin-top: 2.6em;
+  margin-bottom: 2.6em;
+}
+
+
+#page.howItWorks .codeBox ul {
+list-style: none;
+}
+
+#page.howItWorks .codeBox li {
+  
+/* width: 50%; */
+  
+/* min-width: initial; */
+  
+font-size: inherit;
+  
+list-style: none;
+  
+padding-left: 0;
+  
+text-indent: 0;
+  
+line-height: 3em;
+}
+
+#page.howItWorks .codeBox li:before {
+  
+content: none;
+}
+
+#page ul.codeSwitches {
+  margin-bottom: 0;
+}
+
+.codeContainer.connect {
+  min-height: 21em;
+}
+
+.codeContainer.connect pre {
+  min-height: 20em;
+}
+
+
+
+.codeContainer.subscribe {
+  min-height: 12em;
+}
+
+.codeContainer.subscribe pre {
+  min-height: 11em;
+}
+
+
+
+.codeContainer.publish {
+  min-height: 2em;
+}
+
+.codeContainer.publish pre {
+  min-height: 1em;
+}
+
+
+
+.codeContainer.register {
+  min-height: 12em;
+}
+
+.codeContainer.register pre {
+  min-height: 11em;
+}
+
+
+
+.codeContainer.call {
+  min-height: 8em;
+}
+
+.codeContainer.call pre {
+  min-height: 7em;
+}
+
+

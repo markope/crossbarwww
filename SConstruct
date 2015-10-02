@@ -63,7 +63,11 @@ SVG_FILES = [
    'carousel_polyglot.svg',
    'carousel_realtime.svg',
 
-   'crossbar_overview.svg'
+   'crossbar_overview.svg',
+
+
+   'http_bridge_publish.svg',
+   'encrypted_transports.svg'
 ]
 
 IMG_SOURCE_DIR = "design"
