@@ -905,6 +905,29 @@ a.anchor {
   max-width: 400px;
 }
 
+.howItWorks #multiProcess {
+  max-width: 400px;
+}
+
+.howItWorks #manyClients {
+  max-width: 300px;
+}
+
+
+.howItWorks #ccLogo {
+  width: 48%;
+  max-width: 200px;
+  margin-right: 5%;
+  vertical-align: top;
+  margin-top: 3%;
+}
+
+.howItWorks #osiLogo {
+  width: 48%;
+  max-width: 150px;
+  margin: 3% 0;
+}
+
 .howItWorks .note {
   
 font-style: italic;

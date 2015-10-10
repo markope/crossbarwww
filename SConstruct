@@ -67,7 +67,14 @@ SVG_FILES = [
 
 
    'http_bridge_publish.svg',
-   'encrypted_transports.svg'
+   'encrypted_transports.svg',
+   'multi_process.svg',
+   'many_clients.svg',
+   'cc.svg',
+   'cc_logo_white.svg',
+   'osi_logo.svg',
+   'opensource.svg'
+
 ]
 
 IMG_SOURCE_DIR = "design"

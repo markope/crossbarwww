@@ -73,6 +73,14 @@
       </div>
    </div>
 
+   <p>
+      With its use of WebSocket as one possible transport, applications can extend right into the browser. An adaptible feature set at the protocol level and pluggable transports mean that low-end devices can equally be included.
+   </p>
+
+   <p>
+      This means that you can realize applications which include the Web, your classic server backends and the coming wave of IoT devices, all working together using a single tech stack.
+   </p>
+
    <div class="separator"></div>
 
    
@@ -104,6 +112,9 @@
          routed Remote Procedure Calls (rRPC)
       </li>
    </ul>
+   <p>
+      This reduces complexity in your applications, since you can work with a single protocol for all communication between components.
+   </p>
 
    <h3>
       Publish &amp; Subscribe
@@ -393,7 +404,9 @@ except Exception as e:
       </div>
    </div>
 
-
+   <h3>
+      More code
+   </h3>
    <p>
       For more code examples see the <a href="/docs/Examples">overview of examples</a> we provide.
    </p>
@@ -464,7 +477,7 @@ except Exception as e:
       Integrated Static Web Server
    </h3>
    <p>
-      Use the integrated static Web server to deliver the browser front-end for your WAMP applications. 
+      Crossbar.io offers an integrated static Web server. Use this to deliver the browser front-end for your WAMP applications, or other assets where using HTTP infrastructe features such as caching is an advantage.
    </p>
    <p class="learnMore">
       <a href="/docs/Static-Web-Service/">learn more</a>
@@ -494,6 +507,32 @@ except Exception as e:
    <h2>
       Crossbar.io's Architecture
    </h2>
+   <p>
+      Crossbar.io is the product of several iterations of developing WAMP routers. It is designed with performance, security and extensibility in mind. Crossbar.io nodes are managed by a node controller which manages components such as the actual WAMP router and application components themselves. Crossbar.io uses WAMP internally to manage its components.
+   </p>
+
+   <h3>
+      Multi-process
+   </h3>
+   <p>
+      Crossbar.io has a <strong>multi-process architecture</strong>. A controller process spawns and monitors multiple worker processes.
+   </p>
+   <p>
+      Routing of WAMP messages is handled in one or more such worker processes.
+   </p>
+   <p>
+      Hosting of application components is also done in worker processes. This can be using any runtime available in the environment Crossbar.io is running in.
+   </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="multiProcess" src="{{ url_for('static', filename = 'img/gen/multi-process.svg') }}" alt="diagram of a WAMP node running two WAMP application routers and two WAMP application components">
+      </div>
+   </div> 
+
+   <p>
+      The multi-process architecture means that you can scale up WAMP routing by using multiple router processes (as long as there is no need for communication between clients on separate processes). You can also scale you application backends to make full use of the cores available.
+   </p>
 
    <h3>
       Performant
@@ -501,10 +540,15 @@ except Exception as e:
    <p>
       Crossbar.io is engineered from the ground up for performance. A single instance can handle 100s of thousands of concurrent WAMP connections, and tens of thousands of messages per second.
    </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="manyClients" src="{{ url_for('static', filename = 'img/gen/many_clients.svg') }}" alt="diagram of a Crossbar.io node with a large number of connected clients">
+      </div>
+   </div> 
    <p>
       A multi-node extension is in the works, which will allow you to scale out to handle millions of connections and messages.
    </p>
-
 
    <h3>
       Secure
@@ -523,44 +567,80 @@ except Exception as e:
       With Crossbar.io running under your control, your and your customers' data remains under your control.
    </p>
 
-   <h3>
-      Multi-process
-   </h3>
+
+   <h2>
+      Open Source, Open Protocol
+   </h2>
+
    <p>
-      Crossbar.io has a <strong>multi-process architecture</strong>. A controller process spawns and monitors multiple worker processes.
+      With Crossbar.io and WAMP, you're not buying into a proprietary stack of technology. Crossbar.io is open source, and WAMP is an open protocol.
+   </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="ccLogo" src="{{ url_for('static', filename = 'img/gen/cc_logo_white.svg') }}" alt="logo for the Creative Commons project">
+         <img id="osiLogo" src="{{ url_for('static', filename = 'img/gen/opensource.svg') }}" alt="logo for the Open Software Initiative">
+      </div>
+   </div>
+
+   <p>
+      WAMP is being developed by a community of implementers and users in an open process on GitHub and the WAMP mailing list. There is an expanding ecosystem of implementations, both of clients and routers. We're also currently starting to get WAMP on track to become an IETF standard. 
    </p>
    <p>
-      Routing of WAMP messages is handled in one or more such worker processes.
+      Crossbar.io is released under the AGPL v3. Since connections between the router and clients are solely via a network protocol, this gives the advantages of a copyleft license (all developments have to be contributed back to the community) without the disadvantages of worrying about license compatibility in your application.
    </p>
-   <p>
-      Hosting of application components is also done in worker processes. This can be using any runtime available in the environment Crossbar.io is running in.
-   </p>
-   <p>
-      The multi-process architecture means that you can scale up WAMP routing by using multiple router processes (as long as there is no need for communication between clients on separate processes). You can also scale you application backends to make full use of the cores available.
-   </p>
-      
+
+       
 <!--    <div class="center">
       <div class="imageContainer">
          <img src="" alt="diagram of CB node with multiple routers, each with a large amount of clients connected. clients are shown as mere dots (fill + circumference stroke">
       </div>
    </div> -->
-      
-
-   <p class="note">
-      A technical detail: Crossbar.io uses WAMP internally for the communication between the controller and the workers.
-   </p>
 
    <div class="separator"></div>
 
-   <!-- <h2>
+    <h2>
       Compared to…
    </h2>
 
-   <p>
-      
-   </p> 
 
-   <div class="separator"></div>-->
+   <h3>
+      … other protocols
+   </h3>
+   <p>
+      With WAMP, Crossbar.io offers not just a pattern for distributing information among application components, but also one for calling procedures among these. This reduces complexity in your technology stack, and speeds up development.
+   </p> 
+   <p>
+      The use of WebSockets, and a development which started out in the Web means that you can natively integrate browsers. With a Node.js backend you can go full-stack JavaScript, or write polyglot applications, choosing the right tool for the job on a per-component basis.
+   </p>
+
+   --- add image which stresses the Web side of things: JS/browser, JS/nodejs, C#/Java as classic server languages, C++ on and IoT device ---
+
+   <h3>
+      … online services
+   </h3>
+
+   <p>
+      There are a lot of online message routing services. These offer the convenience of no setup and no administration headaches. They also mean that you give up control over your infrastructure, and rely on a particular service's continued existence for the operation of your application.
+   </p>
+
+   --- add image: "the service you are trying to use no longer exists"
+
+   <p>
+      With Crossbar.io you are in control - of your infrastructure and your application data. And Crossbar.io can run almost anywhere - from a Raspberry Pi to your high-end server. Use it locally to connect application components within your network, or in the cloud to connect huge numbers of users - the possibilities are endless, and it's all up to you how you use them!
+   </p>
+
+   <h3>
+      … frameworks
+   </h3>
+
+   <p>
+      Crossbar.io is a WAMP router and does message routing. Anything that Crossbar.io offers in addition to the message routing is purely optional. Unlike the real-time and IoT frameworks out there using Crossbar.io does not force you to use any particular language, set of tools or other technology. You can do anything from simply extending an existing application with a bit of real-time functionality to designing a new application to use WAMP as its core protocol. Choose what you are comfortable with and what makes most sense for your particular requirements.
+   </p>
+
+   --- add image: application with the CB router and the connections highlighted, and the rest in the background, stressing what is our sole concern ---
+
+   <div class="separator"></div>
 
    <a name="next-steps" class="anchor"></a>
    <h2>
