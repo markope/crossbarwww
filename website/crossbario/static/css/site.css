@@ -1020,3 +1020,85 @@ content: none;
 }
 
 
+
+/* scalability section */
+
+.scalesBox {
+
+}
+
+.scalesBox .scalesHeader {
+
+}
+
+.scalesBox table {
+background-color: #EAEAEA;
+border-radius: 5px;
+padding: 1em 1.5em;/* border-collapse: separate; */}
+
+.scalesBox tbody {
+}
+
+.scalesBox th {
+text-align: center;
+background-color: #B3B3B3;
+border-radius: 0;
+}
+
+.scalesBox tr {
+
+}
+
+.scalesBox tr:nth-of-type(2n) {
+  background-color: gainsboro;
+}
+
+
+.scalesBox tr:nth-of-type(2) td {
+  vertical-align: top;
+}
+
+.scalesBox .hardware {
+
+}
+
+.scalesBox .connections,
+.scalesBox .calls,
+.scalesBox .events,
+.scalesBox .requests {
+  
+}
+
+.scalesBox tr td {
+text-align: center;
+border-radius: 0;
+}
+
+.scalesBox tr td:first-of-type {
+  
+vertical-align: middle;
+  
+text-align: left;
+  
+font-weight: bold;
+  
+padding-left: 1em;
+}
+
+
+.scalesBox .connections {
+  
+}
+
+.scalesBox .calls {
+  
+}
+
+.scalesBox .events {
+  
+}
+
+.scalesBox .requests {
+  
+}
+
