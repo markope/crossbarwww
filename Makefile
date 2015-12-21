@@ -34,23 +34,29 @@ clean:
 img:
 	scons img
 
-img_import:
+import_docs:
 	mkdir -p website/crossbario/build/static/img/
 	cp -R ../crossbardocs/static/img/docs website/crossbario/static/img/
 	cp -R ../crossbardocs/static/img/docs website/crossbario/build/static/img/
 	cp -R ../crossbardocs/static/img/iotcookbook website/crossbario/static/img/
 	cp -R ../crossbardocs/static/img/iotcookbook website/crossbario/build/static/img/
 
+import_reports:
+	mkdir -p website/crossbario/static/reports/wstest/
+	mkdir -p website/crossbario/build/static/reports/wstest/
+	cp -R ../crossbar-reports/wstest/20151221/ website/crossbario/static/reports/wstest/
+	cp -R ../crossbar-reports/wstest/20151221/ website/crossbario/build/static/reports/wstest/
+
 freeze:
 	python website/crossbario/server.py -f
 
-test: img img_import
+test: img import_docs import_reports
 	python website/crossbario/server.py --port 8080
 
 upload:
 	scons upload
 
-deploy: img img_import freeze upload
+deploy: img import_docs import_reports freeze upload
 
 # To upload to: # http://crossbarwwwtest.s3-website-eu-west-1.amazonaws.com/
 #
