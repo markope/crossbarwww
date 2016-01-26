@@ -14,6 +14,7 @@ which only allows a single registration per URI WAMP offers invocation rules for
 * random
 * first
 * last
+* balance
 
 ## Basics of Invocation Rules
 
@@ -28,6 +29,8 @@ Two invocation rules are provided for load balancing of calls across multiple re
 With `roundrobin`, a call is routed to the component which comes after the component to which the previous call was routed. Order is determined through a list of components which have registred for the procedure, where registrations are appended to the list. Once the end of the list has been reached, the first component in the list is called next.
 
 With `random` a call is routed to a random component from the list of components which have registered the procedure.
+
+With `balance` a call is routed to the next non busy component from the list of components which have registered the procedure. A non busy component is one which is not currently serving an invocation on the same URI. If all componentes are busy then one of the busy components is picked randomly as in random mode.
 
 Here are examples of registering procedures using the above invocation rules in a JavaScript application using Autobahn|JS as its WAMP library:
 
