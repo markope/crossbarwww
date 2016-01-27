@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block subheader %}
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+   <div class="row">
+      <div class="col hide-on-small-only m3 l2">
+         <div class="pinned">
+            <ul class="section table-of-contents">
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#structure">Structure</a></li>
+              <li><a href="#initialization">Intialization</a></li>
+            </ul>
+         </div>
+      </div>
+      <div class="col s12 m9 l10">
+         <div class="container">
+            <div id="introduction" class="row section scrollspy">
+               <h1 class="col s12 color-11 light">Introduction</h1>
+               <div class="col s12 m6">
+                  {% include 'examples/card.html' %}
+               </div>
+               <div class="col s12 m6">
+                  {% include 'examples/paginate.html' %}
+               </div>
+            </div>
+            <div id="structure" class="row section scrollspy">
+               <h1 class="col s12 color-11 light">Structure</h1>
+               <div class="col s12">
+                   {% include 'examples/part2.html' %}
+               </div>
+            </div>
+            <div id="initialization" class="row section scrollspy">
+               <h1 class="col s12 color-11 light">Initialization</h1>
+               <div class="col s12">
+                   {% include 'examples/collection.html' %}
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% endblock %}

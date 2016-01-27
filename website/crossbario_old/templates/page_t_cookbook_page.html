@@ -1,0 +1,20 @@
+{% extends "layout_t.html" %}
+
+{% block subheader %}
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/pygments.css') }}" />
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/docpage.css') }}" />
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/cookbookpage.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+<div id="contents">
+<!--
+    <div id="cookbook_logo"></div>
+-->
+    <img id="cookbook_logo" src="{{ url_for('static', filename = 'img/iotcookbook/iotcookbook.png') }}" />
+    <h1>{{ title }}</h1>
+    {{ contents|safe }}
+</div>
+
+{% endblock %}

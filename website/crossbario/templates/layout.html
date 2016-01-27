@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Crossbar.io</title>
+
+      <link rel="shortcut icon" href="{{ url_for('static', filename = 'img/favicon.ico') }}" type="image/ico">
+
+      <!-- Material Design icon font
+         FIXME: self-host
+         https://google.github.io/material-design-icons/
+         https://github.com/google/material-design-icons/tree/master/iconfont
+      -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- Modernizr -->
+      <script src="{{ url_for('static', filename = 'js/modernizr.custom.svg.fontface.vw.media.js') }}"></script>
+      
+      
+      <!-- Materialize -->
+      <!-- self-hosting below does not work across all tested browsers -->
+      <!-- non-obvious what the difference between this and getting it via Google CDN is -->
+      <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/material_icon_fonts.css') }}" /> -->
+      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/materialize.min.css') }}"  media="screen,projection"/>
+
+      <!-- Pygments -->
+      <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/pygments.css') }}"  media="screen,projection"/>
+
+      <!-- Site specific -->
+      <link href="{{ url_for('static', filename = 'css/code.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link href="{{ url_for('static', filename = 'css/site.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+      <!-- page-specific css gets added here -->
+      {% block subheader %}{% endblock %}
+
+   </head>
+   <body>
+
+      <header>
+         <div class="navbar-fixed">
+            <nav class="b-color-5 {% if session['site_area'] == 'landing' %} nav-scroll-top {% else %} nav-scroll-nontop {% endif %}" role="navigation" id="nav">
+               <div class="nav-wrapper container">
+                  <a id="logo-container" href="/" class="brand-logo">
+                     <img src="{{ url_for('static', filename = 'img/gen/crossbar_icon_and_text_vectorized_yellow_icon.svg') }}" height="40" style="padding-top: 12px" />
+                  </a>
+                  <a href="#" data-activates="nav-mobile" class="button-collapse">
+                     <i class="material-icons">menu</i>
+                  </a>
+                  <ul class="right hide-on-med-and-down">
+                     <li class="{% if session['site_area'] == 'landing' %} active {% endif %}">
+                        <a href="/">Overview</a>
+                     </li>
+                     <!-- <li class="{% if session['site_area'] == 'howitworks' %} active {% endif %}">
+                        <a href="/how-it-works/">How it works</a>
+                     </li> -->
+                     <li>
+                        <a href="https://demo.crossbar.io/">
+                           Demos
+                           <img src="{{ url_for('static', filename = 'img/gen/link_external.svg') }}" alt="external link">
+                        </a>
+                     </li>
+                     <li class="{% if session['site_area'] == 'docs' %} active {% endif %}">
+                        <a href="/docs">Documentation</a>
+                     </li>
+                     <li class="{% if session['site_area'] == 'iotcookbook' %} active {% endif %}">
+                        <a href="/iotcookbook">IoT Cookbook</a>
+                     </li>
+                  </ul>
+                  <ul id="nav-mobile" class="side-nav">
+                     <li class="{% if session['site_area'] == 'landing' %} active {% endif %}">
+                        <a href="/">Overview</a>
+                     </li>
+                     <!-- <li class="{% if session['site_area'] == 'howitworks' %} active {% endif %}">
+                        <a href="/how-it-works/">How it works</a>
+                     </li> -->
+                     <li>
+                        <a href="https://demo.crossbar.io/">
+                           Demos
+                           <img src="{{ url_for('static', filename = 'img/gen/link_external.svg') }}" alt="external link">
+                        </a>
+                     </li>
+                     <li class="{% if session['site_area'] == 'docs' %} active {% endif %}">
+                        <a href="/docs">Documentation</a>
+                     </li>
+                     <li  class="{% if session['site_area'] == 'iotcookbook' %} active {% endif %}">
+                        <a href="/iotcookbook">IoT Cookbook</a
+                        </li>
+                  </ul>
+                  
+               </div>
+            </nav>
+         </div>
+      </header>
+
+      <main id="main">
+         {% block main %}{% endblock %}
+      </main>
+
+      <footer class="page-footer color-5 b-color-10">
+         <div class="container">
+            <div class="row">
+               <div class="col s12 m6 l6">
+                  <h5 class="color-1 light">Crossbar.io</h5>
+                  <p class="color-0">
+                     Crossbar.io is an open-source project started by <a class="color-0" href="http://tavendo.com">Tavendo</a>.
+                     We have a growing user community and active community contributions.
+                     Our mission is: take middleware to the next-level - the IoT.
+                  </p>
+               </div>
+               <div class="col s12 m6 l2">
+                  <h5 class="color-1 light">About</h5>
+                  <ul>
+                     <!-- <li><a class="color-0" href="#!">Our Team</a></li> -->
+                     <li><a class="color-0" href="http://tavendo.com">Tavendo</a></li>
+                  </ul>
+               </div>
+               <div class="col s12 m6 l2">
+                  <h5 class="color-1 light">Connect</h5>
+                  <ul>
+                     <li><a class="color-0" href="https://github.com/crossbario/crossbar">GitHub</a></li>
+                     <li><a class="color-0" href="https://groups.google.com/forum/#!forum/crossbario">Mailing List</a></li>
+                     <li><a class="color-0" href="https://twitter.com/crossbario">Twitter</a></li>
+                     <li><a class="color-0" href="mailto:service@tavendo.de">Contact us</a></li>
+                  </ul>
+               </div>
+               <div class="col s12 m6 l2">
+                  <h5 class="color-1 light">Resources</h5>
+                  <ul>
+                     <li><a class="color-0" href="/docs/Quick-Start/">Getting Started</a></li>
+                     <li><a class="color-0" href="/docs/">Documentation</a></li>
+                     <!-- <li><a class="color-0" href="#!">Downloads</a></li> -->
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="footer-copyright color-0 b-color-5">
+            <div class="container">
+               <span>
+                  Made by <a class="white-text" href="http://tavendo.com">Tavendo</a>:
+               </span>
+               <span>
+                  <a class="color-0" href="/copyright-and-trademarks/">copyright &amp; trademarks</a> 
+                  &middot; 
+               </span>
+               <span>
+                  <a class="color-0" href="/privacy/">privacy &amp; cookie policy</a> 
+                  &middot;
+               </span> 
+               <span>
+                  <a class="color-0" href="/terms-of-use/">terms of use</a>
+                  &middot;
+               </span>
+               <span>
+                  <a class="color-0" href="/impressum/">impressum</a>
+               </span>
+            </div>
+         </div>
+      </footer>
+
+      <!-- JS deps -->
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/materialize.min.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/stickyfill.min.js') }}"></script>
+
+      <!-- site specific JS -->
+      <script type="text/javascript">
+         var SITE_AREA = "{{ session['site_area'] }}";
+      </script>
+      <script src="{{ url_for('static', filename = 'js/site.js') }}"></script>
+
+            <!-- yahoo browser detect for some corner cases -->
+      <script src="{{ url_for('static', filename = 'js/yahooBrowserDetect.js') }}"></script>
+
+      <script type="text/javascript">
+         // SVG vs. PNG detection and switching
+
+         if(!Modernizr.svg) {
+            // switch out all SVGs for PNGs on unsupported browsers
+            // loads both SVG + PNG on these, but then it's only a fallback
+            // for some cases
+            switchToPNG();
+         }
+         // Android browser does very badly with SVG, so switch to PNG for this
+         if(YAHOO.env.ua.android != 0 && YAHOO.env.ua.chrome === 0) {
+            // alert("android browser!"  + YAHOO.env.ua.chrome);
+            switchToPNG();
+            var html= document.getElementsByTagName("html");
+            // needed for the CSS background image switching which is based on the Modernizr classes
+            $(html).removeClass("svg").addClass("no-svg");
+         }
+
+         // check if forceSwitchToPNG is present in link fragment identifier - needed for testing, since I most likely won't have a browser lacking SVG support at hand
+         var pageURL = window.location.href;
+         if(pageURL.indexOf('#') !== -1) {
+            var hashPart = pageURL.split('#')[1];
+            if(hashPart === "forceSwitchToPNG") {
+               forceSwitchToPNG = true;
+               switchToPNG();
+               var html= document.getElementsByTagName("html");
+               // needed for the CSS background image switching which is based on the Modernizr classes
+               $(html).removeClass("svg").addClass("no-svg");
+            }
+         }
+
+         function switchToPNG () {
+            // get all img elements on the page
+            // and replace any SVGs with PNGs
+            // requires that SVG & PNGs exist at the same path
+            // with only different file extensions
+
+            var imgLinks = document.getElementsByTagName("img"),
+                imgLinksLength = imgLinks.length;
+
+            for(var i = 0; i < imgLinksLength; i++ ) {
+               var cur = imgLinks[i],
+                   curLink = cur.src,
+                   curLinkType = curLink.split(".").pop(),
+                   curLinkBase = curLink.slice(0, curLink.lastIndexOf(".")),
+                   newLink;
+
+               if(curLinkType === "svg") {
+                  newLink = curLinkBase + ".png";
+                  cur.src = newLink;
+               }
+
+            }
+         }
+
+      </script>
+
+
+      {% if not session["no_network"] %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-23019220-6', 'crossbar.io');
+        ga('send', 'pageview');
+      </script>
+      {% endif %}
+   </body>
+</html>

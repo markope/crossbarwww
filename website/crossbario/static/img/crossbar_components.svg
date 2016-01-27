@@ -5,15 +5,6 @@
 <rect y="458.52" width="283.61" x="356.07" height="54.973"/>
 </clipPath>
 </defs>
-<metadata>
-<rdf:RDF>
-<cc:Work rdf:about="">
-<dc:format>image/svg+xml</dc:format>
-<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-<dc:title/>
-</cc:Work>
-</rdf:RDF>
-</metadata>
 <g transform="translate(210.18 -114.44)">
 <g transform="translate(-205.18 119.44)">
 <path d="m113.54 441.74v81.6h938.99v-81.6h-938.99z" fill-rule="evenodd" fill="#d9d9d9"/>

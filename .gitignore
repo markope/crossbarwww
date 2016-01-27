@@ -1,7 +1,14 @@
 *.sublime-workspace
 .sconsign.dblite
-website/crossbario/build*
 build
+website/crossbario/build*
 website/crossbario/static/img/gen
+website/crossbario/static/img/docs/gen/
 .DS_Store
 *~
+Thumbs.db
+*.pyc
+bower_components
+website/crossbario/static/img/docs/
+website/crossbario/static/img/iotcookbook/
+website/crossbario/static/reports/

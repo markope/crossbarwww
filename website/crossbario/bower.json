@@ -1,0 +1,25 @@
+{
+  "name": "crossbarwww",
+  "version": "0.0.0",
+  "homepage": "https://github.com/crossbario/crossbarwww",
+  "authors": [
+    "Tobias Oberstein <tobias.oberstein@tavendo.de>"
+  ],
+  "description": "Crossbar.io Website",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "autobahn": "~0.9.6",
+    "materialize": "~0.97.0",
+    "material-design-icons": "~2.0.0",
+    "chroma-js": "~1.0.1",
+    "Stickyfill": "~1.1.2"
+  }
+}

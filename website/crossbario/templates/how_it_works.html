@@ -1,0 +1,673 @@
+{% extends "layout.html" %}
+
+{% block subheader %}
+{% endblock %}
+
+{% block main %}
+
+<div class="container howItWorks" id="page">
+
+   <h1>
+      How it Works
+   </h1>
+
+   <p>
+      This page aims to give you a basic introduction to what Crossbar.io does, its technological basis, and how the get started using it.
+   </p>
+   <ul>
+      <li>
+         <a href="#what-it-does">What it Does</a>
+      </li>
+      <li>
+         <a href="#the-messaging-patterns">The Messaging Patterns</a>
+      </li>
+      <li>
+         <a href="#the-code">The Code</a>
+      </li>
+      <li>
+         <a href="#additional-features">Additional Features</a>
+      </li>
+      <li>
+         <a href="#crossbarios-architecture">Crossbar.io's Architecture</a>
+      </li>
+      <li>
+         <a href="#next-steps">Next Steps</a>
+      </li>
+   </ul>
+
+   <a name="what-it-does" class="anchor"></a>
+   <h2>
+      What it Does 
+   </h2>
+
+   <p>
+      Crossbar.io is an open source message router which connects components in distributed applications.   
+   </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="crossbarOverview" src="../static/img/gen/crossbar_overview.svg" alt="application componenents connected to a Crossbar.io node: two backend components, one database, a mobile client, two browser clients, an IoT sensor and an IoT actuator">
+      </div>
+   </div>
+   
+   <p>
+      It provides (soft) real-time communications, with Publish & Subscribe (PubSub) for information distribution and routed Remote Procedure Calls for components calling each other. With these patterns you can handle all your application's communications using a single protocol.
+   </p>
+   <p>
+      Crossbar.io uses the open <a href="http://wamp.ws">WAMP protocol</a>, which gives you access to an ecosystem of open source client libraries covering, at present, 9 languages.
+   </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="supportedLanguages" src="../static/img/gen/carousel_supported_languages.svg" alt="supported languages: Python, JavaScript, Java, PHP, C#, C++, Erlang, Objective-C, Lua">
+      </div>
+   </div>
+   
+   <p>
+      You can create polyglot applications, i.e. connect application components written in different languages.
+   </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="polyglotApplications" src="../static/img/gen/carousel_polyglot.svg" alt="polyglot application with components written in different languages communicating using Crossbar.io">
+      </div>
+   </div>
+
+   <p>
+      With its use of WebSocket as one possible transport, applications can extend right into the browser. An adaptible feature set at the protocol level and pluggable transports mean that low-end devices can equally be included.
+   </p>
+
+   <p>
+      This means that you can realize applications which include the Web, your classic server backends and the coming wave of IoT devices, all working together using a single tech stack.
+   </p>
+
+   <div class="separator"></div>
+
+   
+   <!-- <h2>
+      Sample Application Architectures
+   </h2>
+
+   <p>
+      Note: 
+         * things to cover: IoT, browser frontend, native frontend, server backend, multiple server backend components
+         * one or more application schematics
+   </p> -->
+
+
+
+   <a name="the-messaging-patterns" class="anchor"></a>
+   <h2>
+      The Messaging Patterns</a>
+   </h2>
+
+   <p>
+      WAMP, the open protocol that Crossbar.io implements, provides two messaging patterns, which combined cover all application messaging needs:
+   </p>
+   <ul>
+      <li>
+         Publish& Subscribe (PubSub)
+      </li>
+      <li>
+         routed Remote Procedure Calls (rRPC)
+      </li>
+   </ul>
+   <p>
+      This reduces complexity in your applications, since you can work with a single protocol for all communication between components.
+   </p>
+
+   <h3>
+      Publish &amp; Subscribe
+   </h3>
+   <p>
+      With the <strong>Publish &amp; Subscribe</strong> pattern, any component can
+   </p>
+   <ul>
+      <li>
+         <strong>Subscribe</strong> to receive events published from other components
+      </li>
+      <li>
+         <strong>Publish</strong> events which other subscribed components will receive
+      </li>
+   </ul>
+   <p>
+      Crossbar.io routes event published to all components that have subscribed to receive events for the topic:
+   </p>
+
+   <div class="center">
+      <div class="patternContainer imageContainer">
+         <img src="{{ url_for('static', filename = 'img/gen/pubsub_subscribe.svg') }}" alt="PubSub pattern - subscribing with Crossbar.io" class="pattern-illustration first">
+         <img src="{{ url_for('static', filename = 'img/gen/pubsub_publish.svg') }}" alt="PubSub pattern - publishing to Crossbar.io, and Crossbar.io dispatching to subscribers" class="pattern-illustration second">
+      </div>
+   </div>
+
+   <p>
+      PubSub decouples the publishers and subscribers. This reduces complexity in both, brings scalability and enables using a single connection from each component to the router for all messaging traffic.
+   </p>
+
+   <h3>
+      Remote Procedure Calls
+   </h3>
+
+   <p>
+      With the <strong>Remote Procedure Call</strong> pattern, any component can
+   </p>
+   <ul>
+      <li>
+         <strong>Register</strong> a procedure that other components can call
+      </li>
+      <li>
+         <strong>Call</strong> procedures registered by other components
+      </li>
+   </ul>
+   <p>
+      Crossbar.io routes calls to the component that registered the respective procedure and returns the result to the caller:
+   </p>
+
+   <div class="center">
+      <div class="patternContainer imageContainer">
+         <img src="{{ url_for('static', filename = 'img/gen/rpc_register.svg') }}" alt="RPC pattern - registering a procedure with the Crossbar.io router" class="pattern-illustration first">
+         <img src="{{ url_for('static', filename = 'img/gen/rpc_call.svg') }}" alt="PRC pattern - calling a remote procedure and receiving the result, routed via Crossbar.io" class="pattern-illustration second">
+      </div>
+   </div>
+
+   <p>
+      Routed RPCs transfer the concept of decoupling in PubSub to calling procedures. Callers do not need to know the identity of callees and there is no caller-callee direct connection necessary. The components use the single WAMP connection to the router.
+   </p>
+   <p>
+      Calling procedures works with components in the browser as well, making it an equal participant in applications.
+   </p>
+   <p>
+      This concept also allows features like easily load-balancing calls between multipel registered components at the router.
+   </p>
+
+   <div class="separator"></div>
+
+
+
+   <a name="the-code" class="anchor"></a>
+   <h2>
+      The Code
+   </h2>
+
+   <p class="note">
+      We give sample code only for some supported languages.
+   </p>
+
+   <h3>
+      Connecting
+   </h3>
+   <p>
+      To establish a connecting from your application component to Crossbar.io all you need to add in your code is
+   </p>
+
+   <div class="row codeBox z-depth-2">
+      <div class="col s12">
+         <ul class="tabs codeSwitches">
+            <li class="tab col s6">
+               <a href="#connect_js" class="grey-text text-darken-2">JavaScript</a>
+            </li>
+            <li class="tab col s6">
+               <a href="#connect_python" class="grey-text text-darken-2">Python</a>
+            </li>
+         </ul>
+      </div>
+      <div id="connect_js" class="codeContainer connect col s12">
+         {% highlight 'javascript' %}
+var connection = new autobahn.Connection({
+   url: "ws://example.com/ws",
+   realm: "realm1"
+});
+
+connection.onopen = function (session, details) {
+   // Publish, Subscribe, Call and Register
+};
+
+connection.onclose = function (reason, details) {
+   // handle connection lost
+}
+
+connection.open();
+         {% endhighlight %}
+      </div>
+      <div id="connect_python" class="codeContainer connect col s12">
+         {% highlight 'python' %}
+from twisted.internet.defer import inlineCallbacks
+from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
+
+class MyComponent(ApplicationSession):
+
+    @inlineCallbacks
+    def onJoin(self, details):
+        # Publish, Subscribe, Call and Register
+
+if __name__ == '__main__':
+    runner = ApplicationRunner(url=u"ws://localhost:8080/ws", realm=u"realm1")
+    runner.run(MyComponent)
+         {% endhighlight %}
+      </div>
+   </div>
+   
+   <p class="note">
+      (Each connection is to a <strong>realm</strong>, and routing only occurs within this realm. A Crossbar.io router can handle multiple realms.)
+   </p>
+   
+   <h3>
+      Subscribing
+   </h3>
+   <p>
+      Subscribing to an example topic "com.example.mytopic" is as easy as
+   </p>
+
+
+   <div class="row codeBox z-depth-2">
+      <div class="col s12">
+         <ul class="tabs codeSwitches">
+            <li class="tab col s6">
+               <a href="#subscribe_js" class="grey-text text-darken-2">JavaScript</a>
+            </li>
+            <li class="tab col s6">
+               <a href="#subscribe_python" class="grey-text text-darken-2">Python</a>
+            </li>
+         </ul>
+      </div>
+      <div id="subscribe_js" class="codeContainer subscribe col s12">
+         {% highlight 'javascript' %}
+var onTopic = function (args) {
+   console.log("news for 'mytopic'", args[0]);
+}
+
+session.subscribe("com.myapp.mytopic", onTopic);
+         {% endhighlight %}
+      </div>
+      <div id="subscribe_python" class="codeContainer subscribe col s12">
+         {% highlight 'python' %}
+def on_topic(news):
+   print("news for 'mytopic'", news)         
+
+try:
+   yield self.subscribe(on_topic, u'com.myapp.mytopic')
+   print("subscribed to topic")
+except Exception as e:
+   print("could not subscribe to topic: {0}".format(e))
+         {% endhighlight %}
+      </div>
+   </div>
+   
+
+   <h3>
+      Publishing
+   </h3>
+   <p>
+      To publish to this you just do
+   </p>
+
+   <div class="row codeBox z-depth-2">
+      <div class="col s12">
+         <ul class="tabs codeSwitches">
+            <li class="tab col s6">
+               <a href="#publish_js" class="grey-text text-darken-2">JavaScript</a>
+            </li>
+            <li class="tab col s6">
+               <a href="#publish_python" class="grey-text text-darken-2">Python</a>
+            </li>
+         </ul>
+      </div>
+      <div id="publish_js" class="codeContainer publish col s12">
+         {% highlight 'javascript' %}
+session.publish("com.myapp.mytopic", ["news"]);
+         {% endhighlight %}
+      </div>
+      <div id="publish_python" class="codeContainer publish col s12">
+         {% highlight 'python' %}
+self.publish(u'com.myapp.mytopic', news)
+         {% endhighlight %}
+      </div>
+   </div> 
+
+   <h3>
+      Registering
+   </h3>
+   <p>
+      Registering an example procedure ("com.example.myprocedure") requires nothing more than
+   </p>
+
+   <div class="row codeBox z-depth-2">
+      <div class="col s12">
+         <ul class="tabs codeSwitches">
+            <li class="tab col s6">
+               <a href="#register_js" class="grey-text text-darken-2">JavaScript</a>
+            </li>
+            <li class="tab col s6">
+               <a href="#register_python" class="grey-text text-darken-2">Python</a>
+            </li>
+         </ul>
+      </div>
+      <div id="register_js" class="codeContainer register col s12">
+         {% highlight 'javascript' %}
+var myProcedure = function(args) {
+   return args[0] + args[1];
+};
+
+session.register("com.myapp.myprocedure", myProcedure);
+         {% endhighlight %}
+      </div>
+      <div id="register_python" class="codeContainer register col s12">
+         {% highlight 'python' %}
+def my_procedure(x, y):
+   return x + y
+
+try:
+   yield self.register(my_procedure, u'com.myapp.myprocedure')
+   print("procedure registered")
+except Exception as e:
+   print("could not register procedure: {0}".format(e))
+         {% endhighlight %}
+      </div>
+   </div>
+
+
+
+   <h3>
+      Calling
+   </h3>
+   <p>
+      Calling the procedure registered above is done like this
+   </p>
+
+   <div class="row codeBox z-depth-2">
+      <div class="col s12">
+         <ul class="tabs codeSwitches">
+            <li class="tab col s6">
+               <a href="#call_js" class="grey-text text-darken-2">JavaScript</a>
+            </li>
+            <li class="tab col s6">
+               <a href="#call_python" class="grey-text text-darken-2">Python</a>
+            </li>
+         </ul>
+      </div>
+      <div id="call_js" class="codeContainer call col s12">
+         {% highlight 'javascript' %}
+session.call('com.myapp.pyProcedure', [2, 3]).then(function (res) {
+   console.log('result is', res);
+}, console.log);
+         {% endhighlight %}
+      </div>
+      <div id="call_python" class="codeContainer call col s12">
+         {% highlight 'python' %}
+try:
+   res = yield self.call(u'com.myapp.myprocedure', 2, 3)
+   print("call result: {}".format(res))
+except Exception as e:
+   print("call error: {0}".format(e))
+         {% endhighlight %}
+      </div>
+   </div>
+
+   <h3>
+      More code
+   </h3>
+   <p>
+      For more code examples see the <a href="/docs/Examples">overview of examples</a> we provide.
+   </p>
+
+   <div class="separator"></div>
+
+
+   <a name="additional-features" class="anchor"></a>
+   <h2>
+      Additional Features
+   </h2>
+
+   <p>
+      We want to make developing and deploying applications using Crossbar.io as easy as possible. Below are some features which we've integrated so far to achieve this.
+   </p>
+
+   <h3>
+      Advanved WAMP Features
+   </h3>
+   <p>
+      Crossbar.io implements the widest range of advanced WAMP features, which allow you to e.g.:
+   </p>
+   <ul>
+      <li>
+         subscribe to a range of topics with a single subscription using prefix or wildcard subscriptions,
+      </li>
+      <li>
+         have hot-standby components or load balance calls using shared subscriptions,
+      </li>
+      <li>
+         react to changes in connections, subscriptions or registrations using meta-events.
+      </li>
+   </ul>
+   <p class="learnMore">
+      <a href="/docs/WAMP-Features/">learn more</a>
+   </p>
+
+   <h3>
+      Integrated Authentication and Authorization
+   </h3>
+   <p>
+      Authenticate connections via an integrated challenge-response mechanism, using cookies, one-time tokens, or connect your custom authenticator which gives you full flexibility and can tie in with your existing authentication infrastructure.
+   </p>
+   <p>
+      Authorization is role-based, and you can allow each of the four WAMP actions (publish, subscribe, call, register) individually on the level of the URIs used to identify topics and registrations. If you require even more control, use dynamic authorizer components to implement your own authorization logic.
+   </p>
+   <p class="learnMore">
+      <a href="/docs/Authentication/">learn more about Authentication</a><br>
+      <a href="/docs/Authorization/">learn more about Authorization</a>
+   </p>
+
+   <h3>
+      HTTP bridge services
+   </h3>
+   <p>
+      HTTP bridge services allow you to integrate anything which publishes or receives HTTP (such as REST services) as any of the WAMP roles (subscriber, publisher, callee and caller). Integrate your WAMP application with the wider Web out there. 
+   </p>
+   <p class="learnMore">
+      <a href="/docs/HTTP-Bridge/">learn more</a>
+   </p>
+   <div class="center">
+      <div class="imageContainer">
+         <img id="httpBridge" src="{{ url_for('static', filename = 'img/gen/http_bridge_publish.svg') }}" alt="diagram of a WAMP component publishing to a HTTP service">
+      </div>
+   </div>   
+
+   <h3>
+      Integrated Static Web Server
+   </h3>
+   <p>
+      Crossbar.io offers an integrated static Web server. Use this to deliver the browser front-end for your WAMP applications, or other assets where using HTTP infrastructe features such as caching is an advantage.
+   </p>
+   <p class="learnMore">
+      <a href="/docs/Static-Web-Service/">learn more</a>
+   </p>
+
+   <h3>
+      Application Component Hosting
+   </h3>
+   <p>
+      Crossbar.io can spin up and monitor application components for you. Use any runtime on your system, and manage your application's backend from Crossbar.io.
+   </p>
+   <p class="learnMore">
+      <a href="/docs/Processes/">learn more</a>
+   </p>
+
+<!--    <div class="center">
+      <div class="imageContainer">
+         <img src="" alt="diagram of CB node with a router and two application components, with different languages given for the components">
+      </div>
+   </div> -->
+
+
+   <div class="separator"></div>
+
+
+   <a name="crossbarios-architecture" class="anchor"></a>
+   <h2>
+      Crossbar.io's Architecture
+   </h2>
+   <p>
+      Crossbar.io is the product of several iterations of developing WAMP routers. It is designed with performance, security and extensibility in mind. Crossbar.io nodes are managed by a node controller which manages components such as the actual WAMP router and application components themselves. Crossbar.io uses WAMP internally to manage its components.
+   </p>
+
+   <h3>
+      Multi-process
+   </h3>
+   <p>
+      Crossbar.io has a <strong>multi-process architecture</strong>. A controller process spawns and monitors multiple worker processes.
+   </p>
+   <p>
+      Routing of WAMP messages is handled in one or more such worker processes.
+   </p>
+   <p>
+      Hosting of application components is also done in worker processes. This can be using any runtime available in the environment Crossbar.io is running in.
+   </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="multiProcess" src="{{ url_for('static', filename = 'img/gen/multi_process.svg') }}" alt="diagram of a WAMP node running two WAMP application routers and two WAMP application components">
+      </div>
+   </div> 
+
+   <p>
+      The multi-process architecture means that you can scale up WAMP routing by using multiple router processes (as long as there is no need for communication between clients on separate processes). You can also scale you application backends to make full use of the cores available.
+   </p>
+
+   <h3>
+      Performant
+   </h3>
+   <p>
+      Crossbar.io is engineered from the ground up for performance. A single instance can handle 100s of thousands of concurrent WAMP connections, and tens of thousands of messages per second.
+   </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="manyClients" src="{{ url_for('static', filename = 'img/gen/many_clients.svg') }}" alt="diagram of a Crossbar.io node with a large number of connected clients">
+      </div>
+   </div> 
+   <p>
+      A multi-node extension is in the works, which will allow you to scale out to handle millions of connections and messages.
+   </p>
+
+   <h3>
+      Secure
+   </h3>
+   <p>
+      We take security seriously. Connections between clients and the router can be encrypted using TLS/SSL. 
+   </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="encryptedTransports" src="{{ url_for('static', filename = 'img/gen/encrypted_transports.svg') }}" alt="connections between WAMP clients and Crossbar.io which are encrypted using TLS">
+      </div>
+   </div>
+
+   <p>
+      With Crossbar.io running under your control, your and your customers' data remains under your control.
+   </p>
+
+
+   <h2>
+      Open Source, Open Protocol
+   </h2>
+
+   <p>
+      With Crossbar.io and WAMP, you're not buying into a proprietary stack of technology. Crossbar.io is open source, and WAMP is an open protocol.
+   </p>
+
+   <div class="center">
+      <div class="imageContainer">
+         <img id="ccLogo" src="{{ url_for('static', filename = 'img/gen/cc_logo_white.svg') }}" alt="logo for the Creative Commons project">
+         <img id="osiLogo" src="{{ url_for('static', filename = 'img/gen/opensource.svg') }}" alt="logo for the Open Software Initiative">
+      </div>
+   </div>
+
+   <p>
+      WAMP is being developed by a community of implementers and users in an open process on GitHub and the WAMP mailing list. There is an expanding ecosystem of implementations, both of clients and routers. We're also currently starting to get WAMP on track to become an IETF standard. 
+   </p>
+   <p>
+      Crossbar.io is released under the AGPL v3. Since connections between the router and clients are solely via a network protocol, this gives the advantages of a copyleft license (all developments have to be contributed back to the community) without the disadvantages of worrying about license compatibility in your application.
+   </p>
+
+       
+<!--    <div class="center">
+      <div class="imageContainer">
+         <img src="" alt="diagram of CB node with multiple routers, each with a large amount of clients connected. clients are shown as mere dots (fill + circumference stroke">
+      </div>
+   </div> -->
+
+   <div class="separator"></div>
+
+    <h2>
+      Compared to…
+   </h2>
+
+
+   <h3>
+      … other protocols
+   </h3>
+   <p>
+      With WAMP, Crossbar.io offers not just a pattern for distributing information among application components, but also one for calling procedures among these. This reduces complexity in your technology stack, and speeds up development.
+   </p> 
+   <p>
+      The use of WebSockets, and a development which started out in the Web means that you can natively integrate browsers. With a Node.js backend you can go full-stack JavaScript, or write polyglot applications, choosing the right tool for the job on a per-component basis.
+   </p>
+
+   --- add image which stresses the Web side of things: JS/browser, JS/nodejs, C#/Java as classic server languages, C++ on and IoT device ---
+
+   <h3>
+      … online services
+   </h3>
+
+   <p>
+      There are a lot of online message routing services. These offer the convenience of no setup and no administration headaches. They also mean that you give up control over your infrastructure, and rely on a particular service's continued existence for the operation of your application.
+   </p>
+
+   --- add image: "the service you are trying to use no longer exists"
+
+   <p>
+      With Crossbar.io you are in control - of your infrastructure and your application data. And Crossbar.io can run almost anywhere - from a Raspberry Pi to your high-end server. Use it locally to connect application components within your network, or in the cloud to connect huge numbers of users - the possibilities are endless, and it's all up to you how you use them!
+   </p>
+
+   <h3>
+      … frameworks
+   </h3>
+
+   <p>
+      Crossbar.io is a WAMP router and does message routing. Anything that Crossbar.io offers in addition to the message routing is purely optional. Unlike the real-time and IoT frameworks out there using Crossbar.io does not force you to use any particular language, set of tools or other technology. You can do anything from simply extending an existing application with a bit of real-time functionality to designing a new application to use WAMP as its core protocol. Choose what you are comfortable with and what makes most sense for your particular requirements.
+   </p>
+
+   --- add image: application with the CB router and the connections highlighted, and the rest in the background, stressing what is our sole concern ---
+
+   <div class="separator"></div>
+
+   <a name="next-steps" class="anchor"></a>
+   <h2>
+      Next Steps
+   </h2>
+
+   <p>
+      You can
+   </p>   
+   <ul>
+      <li>
+         get started in the <a href="/docs/Choose-your-Weapon/">programming language of your choice</a>
+      </li>
+      <li>
+         play with some <a href="https://demo.crossbar.io">live demos</a>
+      </li>
+      <li>
+         see if our <a href="/docs/FAQ/">FAQ</a> answers any questions you may have right now
+      </li>
+      <li>
+         find out how to install Crossbar.io <a href="/docs/Installation">on your system</a>
+      </li>
+      <li>
+         explore how to quickly use Crossbar.io in the <a href="/iotcookbook/">IoT space</a>
+      </li>
+   </ul>
+
+</div>
+
+{% endblock %}

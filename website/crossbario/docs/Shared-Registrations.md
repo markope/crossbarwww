@@ -14,7 +14,7 @@ which only allows a single registration per URI WAMP offers invocation rules for
 * random
 * first
 * last
-* balance
+* leastbusy
 
 ## Basics of Invocation Rules
 
@@ -30,13 +30,19 @@ With `roundrobin`, a call is routed to the component which comes after the compo
 
 With `random` a call is routed to a random component from the list of components which have registered the procedure.
 
-With `balance` a call is routed to the next non busy component from the list of components which have registered the procedure. A non busy component is one which is not currently serving an invocation on the same URI. If all componentes are busy then one of the busy components is picked randomly as in random mode.
+With `leastbusy` a call is routed to the next non busy component from the list of components which have registered the procedure. A non busy component is one which is not currently serving an invocation on the same URI. If all componentes are busy then one of the busy components is picked randomly as in random mode.
 
-Here are examples of registering procedures using the above invocation rules in a JavaScript application using Autobahn|JS as its WAMP library:
+Here are examples of registering procedures using the above invocation rules in two of the WAMP library:
 
+Autobahn|JS
 ```javascript
 session.register("com.myapp.procedure1", procedure1, { invoke: "roundrobin"});
 session.register("com.myapp.procedure2", procedure2, { invoke: "random"});
+```
+
+Autobahn|Python
+```python
+self.register(self.procedure1, u'com.myapp.procedure1', options=RegisterOptions(invoke=u'roundrobin'))
 ```
 
 ## High Availability
@@ -62,6 +68,6 @@ session.register("com.myapp.procedure5", procedure5, { invoke: "single"});
 
 Since this is the default, it is unnecessary though, unless there is a need to make the invocation rule explicit in the code for reasons of readability.
 
-> Note: the above examples are for Autobahn|JS since we also maintain and use this WAMP client library, and JavaScript is the closest there is to a lingua franca in programming. Users of other WAMP client libraries should feel free to add code examples for these!
+> Note: the above examples are for Autobahn|JS and Autobahn|Python since we also maintain and use these WAMP libraries. Users of other WAMP client libraries should feel free to add code examples for these!
 
 For an example showing shared registrations in action, see the [Crossbar.io Examples](https://github.com/crossbario/crossbarexamples/tree/master/sharedregs).

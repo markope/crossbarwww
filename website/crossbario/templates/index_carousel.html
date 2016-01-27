@@ -1,0 +1,266 @@
+<div class="carousel">
+
+   <!-- the content -->
+   <div class="slideContainer">
+
+      <div class="row slide shown" id="carousel_overview">
+         <div class="col s12 m6 image">
+            <img src="static/img/gen/iot_overview.svg" id="iot_overview_img">
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Unified Connectivity for Everything</h1>
+            <p>
+               Crossbar.io is an open-source message router for the <a href="http://wamp-proto.org/">WAMP protocol</a> that runs
+               on-premise, in the cloud or embedded in devices.
+            </p>
+            <p>
+               WAMP is an <a href="https://github.com/wamp-proto/wamp-proto/">open-standard</a> Web protocol that lets application components talk transparently and in real-time with each other.
+            </p>
+            <p>
+
+               Using Crossbar.io and WAMP developers can realize an agile application architecture consisting of loosely coupled components.
+            </p>
+         </div>   
+      </div>
+
+      <div class="row slide" id="carousel_polyglot">
+         <div class="col s12 m6 image">
+            <img src="static/img/gen/carousel_polyglot.svg" id="carousel_polyglot_img">
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Multi-language Applications</h1>
+            <p>
+               WAMP client libraries are available for <a href="http://wamp.ws/implementations/#libraries">more than 9 languages</a> enabling you to connect anything to Crossbar.io.
+            </p>
+            <p>
+               With Crossbar.io, you can mix components written in different languages within the same application.
+            </p>
+            <p>
+               Choose the right tool for the job at a component level instead of for your entire project.
+            </p>
+         </div>   
+      </div>
+
+      <div class="row slide" id="carousel_realtime">
+         <div class="col s12 m6 image">
+            <img src="static/img/gen/carousel_realtime.svg" id="carousel_realtime_img">
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Real-time connections</h1>
+            <p>
+               WAMP connections are persistent, bi-directional and low-latency:
+            </p>
+            <table class="bordered">
+               <thead>
+                  <tr>
+                     <td>
+                        Frankfurt (Germany) to
+                     </td>
+                     <td>
+                        Distance
+                     </td>
+                     <td>
+                        Time 
+                     </td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>London</td>
+                     <td>640 km</td>
+                     <td>17 ms</td>
+                  </tr>
+                  <tr>
+                     <td>Madrid</td>
+                     <td>1450 km</td>
+                     <td>41 ms</td>
+                  </tr>
+                  <tr>
+                     <td>Istanbul</td>
+                     <td>1870 km</td>
+                     <td>51 ms</td>
+                  </tr>
+                  <tr>
+                     <td>Los Angeles</td>
+                     <td>9300 km</td>
+                     <td>163 ms</td>
+                  </tr>
+               </tbody>               
+            </table>
+            <p class="center">
+               Round-trip times over WAMP
+            </p>
+         </div>
+      </div>
+
+      <div class="row slide" id="carousel_pubsub">
+         <div class="col s12 m6 image">
+            <img src="static/img/gen/pubsub_publish.svg" id="pubsub_publish_img">
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Publish & Subscribe</h1>
+            <p>
+               With the Publish &amp; Subscribe pattern, application
+               components subscribe to topics to get notified when
+               other components publish to these topics.
+            </p>
+            <p>
+               A component publishes data on a topic to Crossbar.io, and the router dispatches events to all components which are presently subscribed to the topic.
+            </p>
+            <p>
+               Using the Publish &amp; Subscribe pattern allows your
+               application components to distribute information to other
+               components in real-time.
+            </p>
+         </div>   
+      </div>
+
+      <div class="row slide" id="carousel_rpc">
+         <div class="col s12 m6 image">
+            <img src="static/img/gen/rpc_call.svg" id="rpc_call_img">
+         </div>
+         <div class="col s12 m6">
+            <h1 class="frontsubtitle">Remote Procedure Calls</h1>
+            <p>
+               With the Remote Procedure Call pattern, any component can register a procedure that any other component can call. 
+            </p>
+            <p>
+               Crossbar.io routes calls to the component that registered the respective procedure and returns the result to the caller.
+            </p>
+            <p>
+               The Remote Procedure Call pattern can be used as a secure command &amp; control channel, regardless where the called
+               component resides.
+            </p>
+         </div>   
+      </div>
+
+   </div>
+
+
+   <!-- the navigation -->
+   <div class="navigation">
+      <ul>
+      
+         <li class="waves-effect disabled">
+            <button>
+               <i class="material-icons">chevron_left</i>
+            </button>
+         </li>
+      
+         <li class="waves-effect active">
+            <button id="0">
+               1
+            </button>
+         </li>
+         <li class="waves-effect">
+            <button id="1">
+               2
+            </button>
+         </li>
+         <li class="waves-effect">
+            <button id="2">
+               3
+            </button>
+         </li>
+         <li class="waves-effect">
+            <button id="3">
+               4
+            </button>
+         </li>
+         <li class="waves-effect">
+            <button id="4">
+               5
+            </button>
+         </li>
+         <li class="waves-effect">
+            <button>
+               <i class="material-icons">chevron_right</i>
+            </button>
+         </li>
+          
+      </ul>
+   <hr>
+   </div>
+   
+</div>
+
+<script>
+
+(function () {
+
+      var currentSlide = 0;
+      var totalSlides = null;
+      var slides = null;
+      var seqNavUp = null;
+      var seqNavDown = null;
+
+      function sequentialNavigation (direction) {
+
+         if (direction === "up" && (currentSlide < totalSlides - 1)) {
+            directNavigation(currentSlide + 1);
+         } else if (direction == "down" && currentSlide > 0) {
+            directNavigation(currentSlide - 1);
+         }
+
+      }
+
+      function directNavigation (slideNumber) {
+
+         currentSlide = slideNumber;
+
+         // display the selected slide
+         slides.forEach(function (el, i) {
+            if (slideNumber === i) {
+               slides[i].classList.add("shown");
+               navKeys[i].classList.add("active");
+            } else {
+               slides[i].classList.remove("shown");
+               navKeys[i].classList.remove("active");
+            }
+         })
+
+         // set sequential navigation buttons states
+         if (currentSlide === totalSlides - 1) {
+            seqNavUp.classList.add("disabled");
+         } else {
+            seqNavUp.classList.remove("disabled");
+         }
+
+         if (currentSlide === 0) {
+            seqNavDown.classList.add("disabled");
+         } else {
+            seqNavDown.classList.remove("disabled");
+         }
+        
+      }
+
+      // get the navigation keys and wire them up
+      var navKeysList = document.querySelectorAll(".carousel .navigation li");
+      // convert to actual array
+      var navKeys = Array.prototype.slice.call(navKeysList);
+
+      // remove sequential navigation keys & wire them up
+      seqNavDown = navKeys.shift();
+      seqNavUp = navKeys.pop();
+
+      seqNavDown.addEventListener("click", function(evt) {
+         sequentialNavigation("down"); 
+      });
+      seqNavUp.addEventListener("click", function(evt) {
+         sequentialNavigation("up"); 
+      });
+
+      totalSlides = navKeys.length;
+
+      // wire up direct access keys
+      navKeys.forEach(function (el, i) {
+         el.addEventListener("click", function(evt) {
+            directNavigation(parseInt(evt.target.id));
+         })
+      });
+
+      // get the slides
+      slides = Array.prototype.slice.call(document.querySelectorAll(".carousel .slide"));
+})()
+
+</script>
